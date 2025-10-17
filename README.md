@@ -1,56 +1,32 @@
 # compliance-gpt
 
-Plan Conversion Compliance Framework — controls, artifacts, and templates to preserve **qualified plan** status during a recordkeeper conversion or Cycle restatement.
+**AI-assisted plan document compliance** — automate the reconciliation, exception tracking, and sign-off workflows that preserve **qualified plan** status during recordkeeper conversions and Cycle restatements.
 
-## Why this exists
+## The problem
 
-When plans move providers or restate onto a new IRS pre-approved document cycle, you must:
+When retirement plans move providers or restate onto a new IRS pre-approved document cycle, compliance teams must:
 - Maintain reliance under **IRC §401(a)** (tax qualification)
 - Evidence ERISA / DOL obligations (written plan, records, disclosures)
 - Prove the new document **still says what the old plan said** (or that deliberate changes were approved)
 
-This repo provides the **control stack** and **working artifacts** to do that reliably.
+Today this is done manually with Word redlines, Excel spreadsheets, and email chains. It's error-prone, slow, and doesn't scale.
 
-## Quick start
+## What compliance-gpt does
 
-1. Read `/process/README.md` for the control flow.
-2. Use `/templates/plan_comparison_workbook.csv` to map old→new plan provisions.
-3. Track mismatches in `/templates/exception_log.csv`.
-4. Complete `/templates/signoff_checklist.md` and compile the Execution Package.
+compliance-gpt automates the four-control framework defined in [`/process`](./process/):
+
+1. **Plan Qualification** — verify document lineage and Opinion Letter reliance
+2. **Document Reconciliation** — AI-powered provision mapping and variance detection
+3. **Exception Handling** — structured tracking of deviations to closure
+4. **Sign-off** — automated execution package assembly and audit trail
+
+## Status
+
+**In development.** The compliance process framework is documented in [`/process`](./process/README.md). Requirements for the software implementation are being finalized in `/requirements`.
 
 ## Repo map
 
-- `/process` — the four controls (001–004) with scope, triggers, activities, and acceptance criteria.
-- `/templates` — CSV/MD templates for the comparison workbook, exception log, and sign-off checklist.
-- `/docs` — references (IRC / ERISA / Rev. Proc.) and any firm-specific notes.
+- **[`/process`](./process/README.md)** — the four-control compliance framework (the "spec")
+- **`/requirements`** — functional and technical requirements for the software (coming soon)
 
-## Overview (Mermaid)
-
-```mermaid
-flowchart TD
-  A[Control 001: Plan Qualification] --> B[Control 002: Document Reconciliation]
-  B --> C[Control 003: Exception Handling]
-  C --> D[Control 004: Amendment & Sign-off]
-
-  subgraph Inputs
-    I1[Old Plan Docs (Basic + Adoption + Amendments)]
-    I2[Target Cycle 3 Docs (Basic + Blank Adoption)]
-    I3[IRS Opinion Letters & Sponsor Data]
-  end
-
-  I1 --> B
-  I2 --> B
-  I3 --> A
-
-  subgraph Evidence
-    E1[Qualification Review Memo]
-    E2[Comparison Workbook]
-    E3[Exception Log & Approvals]
-    E4[Executed Plan Package]
-  end
-
-  A --> E1
-  B --> E2
-  C --> E3
-  D --> E4
-```
+See [`/process/README.md`](./process/README.md) for detailed control flow and documentation.
