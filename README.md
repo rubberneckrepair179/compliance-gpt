@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" alt="compliance-gpt banner">
+</p>
+
 # compliance-gpt
 
 **AI-assisted plan document compliance** — automate the reconciliation, exception tracking, and sign-off workflows that preserve **qualified plan** status during recordkeeper conversions and Cycle restatements.
