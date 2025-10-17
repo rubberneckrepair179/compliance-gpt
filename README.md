@@ -22,11 +22,12 @@ compliance-gpt automates the four-control framework defined in [`/process`](./pr
 
 ## Status
 
-**In development.** The compliance process framework is documented in [`/process`](./process/README.md). Requirements for the software implementation are being finalized in `/requirements`.
+**Requirements complete.** The compliance process framework is documented in [`/process`](./process/README.md). Functional requirements informed by market research are in [`/requirements`](./requirements/README.md). Next: technical architecture and prototype.
 
 ## Repo map
 
 - **[`/process`](./process/README.md)** — the four-control compliance framework (the "spec")
-- **`/requirements`** — functional and technical requirements for the software (coming soon)
+- **[`/requirements`](./requirements/README.md)** — functional requirements for MVP (doc-to-doc comparison focus)
+- **[`/research`](./research/)** — market research on existing TPA tools and AI opportunities
 
 See [`/process/README.md`](./process/README.md) for detailed control flow and documentation.
