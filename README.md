@@ -26,12 +26,28 @@ compliance-gpt automates the four-control framework defined in [`/process`](./pr
 
 ## Status
 
-**Requirements complete.** The compliance process framework is documented in [`/process`](./process/README.md). Functional requirements informed by market research are in [`/requirements`](./requirements/README.md). Next: technical architecture and prototype.
+**Phase 1 Design Complete** (Oct 17, 2025)
+
+✅ Process framework defined
+✅ Market research completed
+✅ Functional requirements drafted
+✅ **Technical design complete** — architecture, data models, LLM strategy
+
+**Next:** Phase 2 POC (Proof-of-Concept) to validate semantic provision mapping accuracy
 
 ## Repo map
 
 - **[`/process`](./process/README.md)** — the four-control compliance framework (the "spec")
 - **[`/requirements`](./requirements/README.md)** — functional requirements for MVP (doc-to-doc comparison focus)
 - **[`/research`](./research/)** — market research on existing TPA tools and AI opportunities
+- **[`/design`](./design/README.md)** — technical architecture, data models, and LLM strategy ✨ **NEW**
 
-See [`/process/README.md`](./process/README.md) for detailed control flow and documentation.
+### Design Highlights
+
+**Model Selection:** Claude Sonnet 4.5 + hybrid embeddings architecture
+**Data Storage:** SQLite (queryable, transactional, local-first)
+**UI Strategy:** CLI-first POC → Web UI MVP → Docker deployment
+**Expected Accuracy:** 75-90% automation (vs 4-8 hours manual)
+**Cost Estimate:** ~$1.12 per document pair
+
+See [`/design/README.md`](./design/README.md) for complete architecture and design decisions.
