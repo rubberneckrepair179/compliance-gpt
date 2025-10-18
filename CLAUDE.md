@@ -41,29 +41,46 @@ compliance-gpt/
 │   ├── README.md               # Requirements overview, MVP scope, traceability
 │   └── functional_requirements.md  # 62 requirements organized by control
 │
-└── research/                    # Market research & competitive analysis
-    ├── README.md
-    └── market_research.pdf     # DeepResearch output on TPA tools, gaps, AI opportunities
+├── research/                    # Market research & competitive analysis
+│   ├── README.md
+│   └── market_research.pdf     # DeepResearch output on TPA tools, gaps, AI opportunities
+│
+└── design/                      # Technical design (NEW - Phase 1 complete)
+    ├── README.md               # Design philosophy, structure, roadmap
+    ├── architecture/
+    │   └── system_architecture.md  # Component diagram, data flow, tech stack
+    ├── data_models/
+    │   ├── provision_model.md      # Provision JSON schema
+    │   └── mapping_model.md        # Source→Target mapping structure
+    └── llm_strategy/
+        ├── README.md               # LLM strategy navigation
+        ├── model_selection.md      # Claude Sonnet 4.5 selection & rationale
+        ├── decision_matrix.md      # Quick reference scorecard
+        └── llm_research_report.md  # Comprehensive research findings
 ```
 
 ---
 
 ## Project Status
 
-**Phase:** Requirements Complete ✅
-**Next:** Technical architecture → Prototype → User testing
+**Phase:** Design Phase 1 Complete ✅ (Oct 17, 2025)
+**Next:** Phase 2 POC (Proof-of-Concept) for semantic provision mapping
 
 **What's Done:**
 1. ✅ Process framework defined (`/process`) - Four sequential controls (001-004)
 2. ✅ Market research completed (`/research/market_research.pdf`)
 3. ✅ Functional requirements drafted (`/requirements/functional_requirements.md`)
 4. ✅ Competitive analysis (PlanPort is only AI competitor, does single-doc analysis only)
+5. ✅ **Phase 1 Design complete** (`/design`) - Architecture, data models, LLM strategy
+6. ✅ **Model selection:** Claude Sonnet 4.5 + hybrid embeddings architecture
+7. ✅ **Technology decisions:** SQLite storage, CLI-first UI, Docker deployment
 
 **What's Next:**
-1. ⬜ Technical architecture (LLM strategy, data models, system design)
-2. ⬜ Proof-of-concept for REQ-021 (semantic provision mapping)
-3. ⬜ User testing with real plan documents
-4. ⬜ MVP implementation
+1. ⬜ **Vision model research** - Evaluate LandingAI DPT for locked PDF/table extraction
+2. ⬜ **Phase 2 POC** - Validate 70%+ accuracy on semantic provision mapping (REQ-021)
+3. ⬜ **Test dataset** - Acquire sample plan documents (Relius, ASC, ftwilliam)
+4. ⬜ **POC implementation** - 2-3 weeks, 5 document pairs, CLI-based
+5. ⬜ **MVP development** - After POC validation
 
 ---
 
@@ -100,9 +117,17 @@ compliance-gpt/
 **Context:** Market research confirmed locked/encrypted PDFs are a "known issue" in the industry. Providers lock documents to prevent tampering, but this blocks programmatic text extraction.
 
 **Solution:** Fallback strategy
-1. Try standard PDF text extraction APIs first
-2. If locked/encrypted, fall back to vision-based extraction (OCR or multimodal LLM)
+1. Try standard PDF text extraction APIs first (PyPDF2, pdfplumber)
+2. If locked/encrypted, fall back to vision-based extraction
 3. Preserve document structure (sections, headers, tables) regardless of method
+
+**Vision Model Research (Phase 2):**
+- **LandingAI DPT** (Document Pre-trained Transformer) - Andrew Ng recommendation
+  - Specialized for complex tables/financial documents
+  - "3 simple lines of code" integration
+- **Claude Sonnet 4.5 with vision** - Integrated with primary LLM
+- **GPT-5 vision** - Alternative if Claude vision underperforms
+- **Benchmark needed:** Test on plan documents with vesting tables, contribution matrices
 
 ### 4. Cross-Vendor Semantic Mapping
 
@@ -336,12 +361,21 @@ Market research validated this represents the **majority workflow**:
 
 ## Project History / Changelog
 
-**2025-10-17** - Initial project setup
-- Created `/process` framework (four controls, templates, references)
-- Ran DeepResearch on TPA compliance tools landscape
-- Drafted functional requirements (62 requirements organized by control)
-- Established competitive differentiation (vs Relius/ASC/PlanPort)
-- Created CLAUDE.md for cross-session context
+**2025-10-17** - Phase 1 Design Complete
+- **Morning:** Created `/process` framework (four controls, templates, references)
+- **Morning:** Ran DeepResearch on TPA compliance tools landscape
+- **Morning:** Drafted functional requirements (62 requirements organized by control)
+- **Afternoon:** Created `/design` structure (architecture, data models, LLM strategy)
+- **Afternoon:** Comprehensive LLM research (Claude Sonnet 4.5 vs GPT-5 comparison)
+- **Evening:** Phase 1 design review and key decisions:
+  - ✅ SQLite for structured storage (not just JSON)
+  - ✅ 10-15 minute processing acceptable (95%+ time savings vs manual)
+  - ✅ CLI-first UI for POC (Web UI for MVP)
+  - ✅ Docker for production deployment
+  - ✅ Hybrid embeddings + LLM architecture (95% cost reduction)
+  - ✅ No alternative matches stored (abstain when ambiguous)
+  - ✅ Sequential multi-reviewer workflow (CLI limitation)
+  - ✅ LandingAI DPT identified for vision fallback research
 
 **Previous Work:**
 - Sergio had explored PDF text extraction issues in earlier project
