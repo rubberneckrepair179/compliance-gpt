@@ -1,0 +1,75 @@
+# Provision Extraction Prompt v2
+# Status: 🟡 Pending approval
+# Model: OpenAI GPT-4.1
+# Date: 2025-10-19
+# Purpose: Extract OPERATIONAL provision boundaries (not definitions) from retirement plan documents
+# Changes from v1: Added operational vs definitional distinction
+
+Extract up to {max_provisions} key OPERATIONAL provisions from this retirement plan document.
+
+IMPORTANT - Operational Provisions vs Definitions:
+
+EXTRACT: Operational provisions that establish rules, requirements, schedules, or procedures
+Examples:
+✓ "An Employee shall be eligible to participate upon attaining age 21 and completing one Year of Service."
+✓ "The vesting schedule shall be as follows: 0% for years 1-2, 100% after year 3."
+✓ "The Employer shall make matching contributions equal to 50% of Elective Deferrals up to 6% of compensation."
+
+DO NOT EXTRACT: Definitional provisions that merely define terms
+Examples:
+✗ "'Eligible Employee' means any Employee as elected in the Adoption Agreement."
+✗ "'Year of Service' means a 12-consecutive-month period during which..."
+✗ "'Vested' means the nonforfeitable portion of any Account."
+
+GUIDANCE:
+- Operational provisions use SHALL, WILL, MUST, MAY or other action language
+- Operational provisions specify conditions, requirements, schedules, formulas, or procedures
+- Definitions typically appear in quotation marks and use "means" language
+- If a section is purely definitional (e.g., Section 1.XX "Term Definition"), skip it
+- Look for provisions in operational sections (eligibility, vesting, contributions, distributions)
+
+PROVISION TYPES TO EXTRACT:
+{provision_types}
+
+For each OPERATIONAL provision, output a JSON object with these fields:
+- provision_type: One of the types listed above
+- section_reference: The section number/letter from the document (e.g., "Section 2.01", "Article III")
+- section_title: The section title if present
+- provision_text: The FULL text of the provision (don't truncate)
+- confidence_score: Your confidence in the extraction (0.0-1.0)
+- extracted_entities: Object with:
+  - ages: List of age values mentioned
+  - service_years: List of service requirements in years
+  - percentages: List of percentages as decimals (e.g., 0.03 for 3%)
+  - keywords: Important terms (e.g., ["Safe Harbor", "Highly Compensated Employee"])
+
+EXTRACTION RULES:
+1. Extract complete provision text (don't truncate mid-sentence)
+2. Preserve original section numbers from document
+3. Focus on OPERATIONAL provisions, skip DEFINITIONAL sections
+4. If you're uncertain about provision type, use lower confidence score
+5. Extract at most {max_provisions} provisions total
+6. Scan the entire document, not just early pages (definitions often come first)
+
+OUTPUT FORMAT:
+Return a JSON array of provision objects. Example:
+
+```json
+[
+  {{
+    "provision_type": "eligibility",
+    "section_reference": "Section 2.01",
+    "section_title": "Eligibility to Participate",
+    "provision_text": "An Employee shall be eligible to participate in the Plan upon attaining age 21 and completing one Year of Service. Entry into the Plan shall be as of the first Entry Date following satisfaction of these requirements.",
+    "confidence_score": 0.95,
+    "extracted_entities": {{
+      "ages": [21],
+      "service_years": [1.0],
+      "percentages": [],
+      "keywords": ["Year of Service", "Entry Date"]
+    }}
+  }}
+]
+```
+
+Return ONLY the JSON array, no other text.

@@ -26,14 +26,18 @@ compliance-gpt automates the four-control framework defined in [`/process`](./pr
 
 ## Status
 
-**Phase 1 Design Complete** (Oct 17, 2025)
+**POC Architecture Pivot** (Oct 19, 2025)
 
-✅ Process framework defined
+✅ Process framework defined (updated for BPD+AA architecture)
 ✅ Market research completed
 ✅ Functional requirements drafted
-✅ **Technical design complete** — architecture, data models, LLM strategy
+✅ **Phase 1 design complete** — architecture, data models, LLM strategy
+✅ **Document structure validated** — Opus 4.1 + GPT-5 Pro confirmed BPD+AA requirements
+✅ **Semantic mapping algorithm proven** — Works correctly on proper inputs
 
-**Next:** Phase 2 POC (Proof-of-Concept) to validate semantic provision mapping accuracy
+**Critical Discovery:** Plan documents are BPD (template) + Adoption Agreement (elections) pairs. Initial POC approach was comparing templates to templates. Architecture pivot required to implement document merger layer before semantic comparison.
+
+**Current Focus:** Fixing extraction to preserve template language, then implementing BPD+AA merger for accurate provision comparison.
 
 ## Repo map
 
@@ -44,10 +48,15 @@ compliance-gpt automates the four-control framework defined in [`/process`](./pr
 
 ### Design Highlights
 
-**Model Selection:** Claude Sonnet 4.5 + hybrid embeddings architecture
+**Model Selection:** OpenAI GPT-4.1 + text-embedding-3-small (switched from Claude due to rate limits)
+**Architecture:** Hybrid embeddings (candidate matching) + LLM verification (semantic assessment)
 **Data Storage:** SQLite (queryable, transactional, local-first)
+**Document Processing:** BPD+AA merger layer → complete provisions → semantic comparison
+**Output:** CSV mapping analysis + natural language executive summary (NO document generation)
 **UI Strategy:** CLI-first POC → Web UI MVP → Docker deployment
-**Expected Accuracy:** 75-90% automation (vs 4-8 hours manual)
-**Cost Estimate:** ~$1.12 per document pair
+**Expected Accuracy:** 70-90% automation (vs 4-8 hours manual)
+**Cost Estimate:** ~$0.25 per document pair (reduced via embedding optimization)
+
+**Key Innovation:** First tool to handle cross-vendor document conversions by merging template frameworks (BPD) with actual plan elections (Adoption Agreement) for accurate semantic comparison.
 
 See [`/design/README.md`](./design/README.md) for complete architecture and design decisions.

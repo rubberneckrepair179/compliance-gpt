@@ -9,26 +9,31 @@ Detect and resolve variances between source plan docs and target template to pre
 **Scope**  
 All conversions/restatements involving provider change or Cycle update.
 
-**Trigger Event**  
-Receipt of the intake package (source docs, target docs, Opinion Letters).
+**Trigger Event**
+Receipt of the intake package (source BPD + source AA, target BPD + target AA or target BPD template, Opinion Letters).
 
 **Owner / Performer**  
 Owner: Plan Document Compliance / QA  
 Performer: Compliance Analyst
 
 **Key Activities**
-1) Intake validation (completeness, last restatement date)  
-2) Provision mapping (Eligibility, Compensation, Contributions, Vesting, Distributions, Loans, Hardship, etc.)  
-3) Variance identification (missing elections, defaults, regulatory shifts)  
-4) Variance classification (Administrative / Design / Regulatory)  
-5) Impact analysis (qualification, operational, disclosure)  
-6) Resolution & approval (amendment or sponsor-approved change)  
-7) Evidence retention (workbook, memo, sign-offs)
+1) Intake validation (completeness, last restatement date)
+2) **Document merger** (BPD + AA → complete provisions with actual elections)
+3) Provision mapping (Eligibility, Compensation, Contributions, Vesting, Distributions, Loans, Hardship, etc.)
+4) Variance identification (missing elections, defaults, regulatory shifts)
+5) Variance classification (Administrative / Design / Regulatory)
+6) Impact analysis (qualification, operational, disclosure)
+7) Resolution & approval (amendment or sponsor-approved change)
+8) Evidence retention (workbook, memo, sign-offs)
+
+**Note:** BPDs are templates that reference "as elected in the Adoption Agreement" for actual plan terms. Document reconciliation requires merging BPD framework with AA elections to produce complete, comparable provisions.
 
 **Artifacts / Evidence**
-- Plan Comparison Workbook (side-by-side)  
-- Exception Log  
-- Compliance Review Memo  
+- Plan Comparison Workbook (side-by-side merged provisions: [Source BPD + AA] vs [Target BPD + AA])
+- **Mapping Analysis CSV** (provision mappings, variance classifications, election recommendations)
+- **Executive Summary Report** (natural language summary for sponsor review)
+- Exception Log
+- Compliance Review Memo
 - Legal/QA approvals
 
 **Acceptance Criteria**

@@ -1,0 +1,60 @@
+# Semantic Mapping Prompt v1
+# Status: ✅ Approved for POC (2025-10-19)
+# Model: OpenAI GPT-4.1
+# Purpose: Verify if two provisions represent the same concept despite different wording
+
+You are an ERISA compliance specialist. Compare these two retirement plan provisions and determine if they represent the same concept despite different wording or formatting.
+
+SOURCE PROVISION:
+Type: {source_type}
+Section: {source_section}
+Text: {source_text}
+
+TARGET PROVISION:
+Type: {target_type}
+Section: {target_section}
+Text: {target_text}
+
+ANALYSIS REQUIRED:
+1. Semantic Equivalence: Do they convey the same rule/requirement?
+2. Variance Detection: If similar but not identical, what changed?
+3. Impact Assessment: Does the change affect participant rights or plan operations?
+
+OUTPUT (JSON):
+{{
+  "is_match": true/false,
+  "similarity_score": 0.0-1.0,
+  "variance_type": "none|administrative|design|regulatory",
+  "impact_level": "none|low|medium|high",
+  "reasoning": "Specific evidence from both texts...",
+  "confidence_score": 0.0-1.0
+}}
+
+VARIANCE CLASSIFICATIONS:
+The following are ILLUSTRATIVE examples, not exhaustive. Do not force-fit provisions into these categories if no variance exists.
+
+- none: Texts are semantically identical
+  Example: "Age 21 and 1 year of service" vs "Attainment of age 21 and completion of one Year of Service"
+
+- administrative: Wording/formatting only, no substantive change
+  Example: Section numbering changed, but provision text unchanged
+
+- design: Substantive change affecting plan design
+  Example: Vesting schedule changed from 3-year cliff to 6-year graded
+  Note: Determining if sponsor approval is required will be enhanced in future versions
+
+- regulatory: Required by law/IRS cycle change
+  Example: SECURE Act 2.0 required changes to distribution rules
+
+CONFIDENCE GUIDELINES:
+- 0.90-1.0: High confidence in assessment
+- 0.70-0.89: Medium confidence, human review recommended
+- <0.70: Low confidence, abstain from definitive matching
+
+IMPORTANT:
+- Focus on semantic meaning, not keywords or section numbers
+- If provisions are substantively the same despite different wording, classify as "none" (no variance)
+- Only classify as variance if there is an actual difference in meaning or effect
+- When uncertain, use lower confidence score and provide detailed reasoning
+
+Return ONLY the JSON object, no other text.

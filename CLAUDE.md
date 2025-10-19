@@ -45,42 +45,64 @@ compliance-gpt/
 │   ├── README.md
 │   └── market_research.pdf     # DeepResearch output on TPA tools, gaps, AI opportunities
 │
-└── design/                      # Technical design (NEW - Phase 1 complete)
-    ├── README.md               # Design philosophy, structure, roadmap
-    ├── architecture/
-    │   └── system_architecture.md  # Component diagram, data flow, tech stack
-    ├── data_models/
-    │   ├── provision_model.md      # Provision JSON schema
-    │   └── mapping_model.md        # Source→Target mapping structure
-    └── llm_strategy/
-        ├── README.md               # LLM strategy navigation
-        ├── model_selection.md      # Claude Sonnet 4.5 selection & rationale
-        ├── decision_matrix.md      # Quick reference scorecard
-        └── llm_research_report.md  # Comprehensive research findings
+├── design/                      # Technical design (Phase 1 complete)
+│   ├── README.md               # Design philosophy, structure, roadmap
+│   ├── architecture/
+│   │   └── system_architecture.md  # Component diagram, data flow, tech stack
+│   ├── data_models/
+│   │   ├── provision_model.md      # Provision JSON schema
+│   │   └── mapping_model.md        # Source→Target mapping structure
+│   └── llm_strategy/
+│       ├── README.md               # LLM strategy navigation
+│       ├── model_selection.md      # Model selection rationale
+│       ├── decision_matrix.md      # Quick reference scorecard
+│       └── llm_research_report.md  # Comprehensive research findings
+│
+├── prompts/                     # LLM prompts (externalized, version controlled)
+│   ├── README.md               # Prompt documentation and versioning guide
+│   ├── provision_extraction_v1.txt  # Provision boundary detection prompt
+│   └── semantic_mapping_v1.txt      # Provision comparison prompt (pending approval)
+│
+└── src/                        # POC implementation (Python)
+    ├── extraction/             # PDF and provision extraction
+    ├── mapping/                # Semantic mapping and comparison
+    ├── models/                 # Pydantic data models
+    └── config.py               # Configuration management
 ```
 
 ---
 
 ## Project Status
 
-**Phase:** Design Phase 1 Complete ✅ (Oct 17, 2025)
-**Next:** Phase 2 POC (Proof-of-Concept) for semantic provision mapping
+**Phase:** POC Architecture Pivot (Oct 19, 2025) 🔄
+**Previous:** Design Phase 1 Complete ✅ (Oct 17, 2025)
+**Critical Discovery:** BPD+AA architecture fundamentally changes implementation approach
+
+**Major Architectural Pivot (Oct 19, 2025):**
+🔴 **CRITICAL FINDING:** Both source and target documents are BPD (template) + AA (elections) pairs, NOT standalone documents. Initial POC approach was comparing templates to templates, which produced 0% match rate (correctly).
+
+**Validated by:** OpenAI GPT-5 Pro with actual PDF analysis
+**Impact:** Requires document merger layer (BPD + AA → complete provisions) before semantic comparison
 
 **What's Done:**
-1. ✅ Process framework defined (`/process`) - Four sequential controls (001-004)
+1. ✅ Process framework defined (`/process`) - Updated for BPD+AA architecture
 2. ✅ Market research completed (`/research/market_research.pdf`)
-3. ✅ Functional requirements drafted (`/requirements/functional_requirements.md`)
+3. ✅ Functional requirements drafted (`/requirements/functional_requirements.md`) - Pending update
 4. ✅ Competitive analysis (PlanPort is only AI competitor, does single-doc analysis only)
-5. ✅ **Phase 1 Design complete** (`/design`) - Architecture, data models, LLM strategy
-6. ✅ **Model selection:** Claude Sonnet 4.5 + hybrid embeddings architecture
-7. ✅ **Technology decisions:** SQLite storage, CLI-first UI, Docker deployment
+5. ✅ **Phase 1 Design complete** (`/design`) - Requires update for BPD+AA merger
+6. ✅ **Model selection:** OpenAI GPT-4.1 (switched from Claude due to rate limits)
+7. ✅ **POC extraction & semantic mapping** - Proved algorithm works, but revealed wrong input data
+8. ✅ **Document structure validation** - Opus 4.1 + GPT-5 Pro confirmed BPD+AA architecture
+9. ✅ **Prompt engineering workflow** - Externalized prompts with approval process
 
-**What's Next:**
-1. ⬜ **Vision model research** - Evaluate LandingAI DPT for locked PDF/table extraction
-2. ⬜ **Phase 2 POC** - Validate 70%+ accuracy on semantic provision mapping (REQ-021)
-3. ⬜ **Test dataset** - Acquire sample plan documents (Relius, ASC, ftwilliam)
-4. ⬜ **POC implementation** - 2-3 weeks, 5 document pairs, CLI-based
-5. ⬜ **MVP development** - After POC validation
+**Current Status (Ready for Next Session):**
+1. ⬜ **Fix extraction prompt** - Stop hallucinating values from examples, preserve template language
+2. ⬜ **Re-extract from BPDs** - Get actual "as elected in AA" text, not invented values
+3. ⬜ **Extract from Adoption Agreements** - Parse elected values (checkboxes, fill-ins)
+4. ⬜ **Build BPD crosswalk** - Map BPD 01 sections ↔ BPD 05 sections by topic
+5. ⬜ **Implement BPD+AA merger** - Substitute elected values into template provisions
+6. ⬜ **Re-run semantic mapper** - Compare merged provisions (expect 70-90% match rate)
+7. ⬜ **Generate CSV output** - Mapping analysis + executive summary (NO document generation)
 
 ---
 
@@ -306,6 +328,28 @@ Market research validated this represents the **majority workflow**:
 2. Consider locked PDF handling (vision fallback required)
 3. Target 70-90% automation (inspired by PlanPort benchmark)
 4. Output must match `/process/templates/` CSV schema for compatibility
+
+**When developing LLM prompts:** ⭐ CRITICAL WORKFLOW
+1. **NEVER hardcode prompts in Python code** - Always externalize to `/prompts` directory
+2. **ALWAYS seek Sergio's approval** before implementing new prompts or modifying existing ones
+3. **Slow down and review** - Prompt engineering is a collaborative, iterative process
+4. **Present draft prompts** for discussion before implementation
+5. **Document prompt rationale** - Explain why specific instructions/examples were included
+6. **Version prompts** - Use descriptive filenames (e.g., `provision_extraction_v1.txt`)
+
+**Prompt Development Workflow:**
+1. AI proposes draft prompt with rationale
+2. Sergio reviews and provides feedback
+3. Iterate on prompt design together
+4. Once approved, externalize to `/prompts` directory
+5. Python code loads prompt from file at runtime
+6. Track prompt versions and changes in git
+
+**Why this matters:**
+- Prompts are the core "business logic" of LLM-first applications
+- Small prompt changes can have large impacts on output quality
+- Domain expertise (ERISA/retirement plans) is critical for prompt accuracy
+- Sergio owns the regulatory/compliance requirements that prompts must enforce
 
 ---
 
