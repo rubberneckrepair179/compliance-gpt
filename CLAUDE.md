@@ -63,6 +63,9 @@ compliance-gpt/
 │   ├── provision_extraction_v1.txt  # Provision boundary detection prompt
 │   └── semantic_mapping_v1.txt      # Provision comparison prompt (pending approval)
 │
+├── test_results/                # Red Team Sprint findings and quality validation
+│   └── red_team_YYYY-MM-DD.md  # Adversarial testing reports
+│
 └── src/                        # POC implementation (Python)
     ├── extraction/             # PDF and provision extraction
     ├── mapping/                # Semantic mapping and comparison
@@ -354,6 +357,65 @@ Market research validated this represents the **majority workflow**:
 - Small prompt changes can have large impacts on output quality
 - Domain expertise (ERISA/retirement plans) is critical for prompt accuracy
 - Sergio owns the regulatory/compliance requirements that prompts must enforce
+
+**When conducting Red Team Sprints:** ⭐ CRITICAL QUALITY ASSURANCE
+Red Team Sprints are adversarial testing sessions conducted after major milestones to validate claims about accuracy, performance, and quality before proceeding to the next phase.
+
+**Purpose:**
+- Validate LLM output quality claims (e.g., "94% high confidence," "19% match rate")
+- Identify false positives (incorrect matches) and false negatives (missed matches)
+- Test edge cases and unusual document structures
+- Calibrate confidence scoring thresholds
+- Prevent costly errors in high-stakes compliance domain
+
+**When to Conduct:**
+- After completing major milestones (e.g., "BPD crosswalk complete," "AA extraction complete")
+- Before declaring a component "production-ready"
+- When introducing new prompts or model versions
+- When accuracy claims will inform product/architecture decisions
+
+**Sprint Structure:**
+1. **Define Test Scope** (15 min)
+   - Identify specific claims to validate
+   - Select representative sample size (typically 10-20 items per category)
+   - Define pass/fail criteria
+
+2. **Execute Adversarial Testing** (2-4 hours)
+   - Manual verification of random samples
+   - Targeted testing of edge cases
+   - Cross-reference with domain expertise
+   - Document all failures with evidence
+
+3. **Document Findings** (30 min)
+   - Create `/test_results/red_team_YYYY-MM-DD.md`
+   - Record validated claims vs. discrepancies
+   - Classify failures by severity (Critical/High/Medium/Low)
+   - Propose corrective actions
+
+4. **Update Project Artifacts** (30 min)
+   - Adjust accuracy claims in CLAUDE.md if needed
+   - Update requirements if targets unrealistic
+   - Iterate on prompts based on failures
+   - Add defensive measures to architecture
+
+**Example Test Categories:**
+- Semantic mapping accuracy (false positive/negative rates)
+- Vision extraction completeness (missed provisions, hallucinations)
+- Variance classification correctness (Administrative vs Design vs Regulatory)
+- Impact level assessment (High vs Medium vs Low)
+- Confidence score calibration (90%+ scores should be 90%+ accurate)
+- Edge case handling (unusual formatting, handwritten amendments, corrupted PDFs)
+
+**Exit Criteria:**
+- Either: Claims validated with documented evidence
+- Or: Specific issues documented with corrective action plan
+- Never: Proceed with unvalidated claims
+
+**Integration with Development:**
+- Red Team findings may require prompt iteration
+- Failed tests block progression to next milestone
+- All findings tracked in version control (`/test_results/`)
+- Lessons learned inform future prompt engineering
 
 ---
 
