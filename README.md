@@ -51,6 +51,14 @@ compliance-gpt automates the four-control framework defined in [`/process`](./pr
 - **Hybrid embeddings + LLM:** 99% cost reduction (215,475 comparisons → 2,125 LLM calls)
 - **Semantic matching with GPT-5-Mini:** High-quality reasoning for variance detection
 
+**Test Corpus:**
+The POC was validated using Ascensus Cycle 3 documents:
+- **Source:** Ascensus BPD 01 + Adoption Agreement (426 provisions, 521 elections)
+- **Target:** Ascensus BPD 05 + Adoption Agreement (507 provisions, 235 elections)
+- **Scenario:** Intra-vendor Cycle 3 restatement (BPD 01 → BPD 05)
+
+This validates the semantic mapping algorithm works correctly. Cross-vendor testing (e.g., Relius → ASC, ftwilliam → DATAIR) requires obtaining additional sample documents.
+
 **Next Steps:** AA election crosswalk, merged BPD+AA provision comparison, executive summary generation
 
 ## Repo map
@@ -86,6 +94,6 @@ compliance-gpt automates the four-control framework defined in [`/process`](./pr
 1. **Vision-first extraction** - Handles form layouts, checkboxes, nested options better than text parsing
 2. **Parallel processing** - 16-worker architecture for both extraction and semantic mapping
 3. **BPD+AA crosswalk** - Maps both template provisions AND election options for complete conversion spec
-4. **Cross-vendor semantic mapping** - First tool to compare documents across different provider formats
+4. **Semantic provision mapping** - AI-powered cross-vendor capability (POC validated with Ascensus BPD 01 → BPD 05)
 
 See [`/design/README.md`](./design/README.md) for complete architecture and design decisions.

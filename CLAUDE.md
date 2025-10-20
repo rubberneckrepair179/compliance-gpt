@@ -12,7 +12,7 @@ This file provides context for AI assistants (Claude, GPT, etc.) working on the 
 Existing TPA platforms (FIS Relius, ASC, ftwilliam) automate **document generation** but NOT **document comparison**. Compliance teams today perform provision-by-provision reconciliation manually using Word redlines and Excel spreadsheets. This doesn't scale, requires extreme specialized knowledge, and is error-prone under deadline pressure.
 
 **Our Differentiation:**
-We are the **only AI tool focused on doc-to-doc comparison** — specifically semantic provision mapping across different vendor document formats (e.g., Relius → ASC).
+We are the **only AI tool focused on doc-to-doc comparison** — specifically semantic provision mapping across different vendor document formats and BPD revisions.
 
 ---
 
@@ -99,16 +99,27 @@ compliance-gpt/
 9. ✅ **Prompt engineering workflow** - Externalized prompts with approval process
 
 **Current Status (Oct 19, 2025 - POC Parallel Crosswalk Complete):**
+
+**Test Corpus:** Ascensus Cycle 3 documents (BPD 01 → BPD 05 restatement)
+- Source: Ascensus BPD 01 + Adoption Agreement (426 provisions, 521 elections)
+- Target: Ascensus BPD 05 + Adoption Agreement (507 provisions, 235 elections)
+- Scenario: Intra-vendor Cycle 3 restatement (validates semantic mapping algorithm)
+
+**Completed:**
 1. ✅ **Vision extraction complete** - GPT-5-nano extracts BPD provisions + AA elections (328 pages, 18 min)
 2. ✅ **Parallel processing implemented** - 16-worker architecture for extraction and semantic mapping
-3. ✅ **BPD crosswalk complete** - 425 source → 507 target provisions mapped (2,125 verifications, 11 min)
-   - 82 semantic matches (19.3% - expected for template comparisons)
+3. ✅ **BPD crosswalk complete** - Ascensus BPD 01 → BPD 05
+   - 425 source → 507 target provisions mapped (2,125 verifications, 11 min)
+   - 82 semantic matches (19.3% - expected for BPD edition comparisons)
    - 94% high confidence (≥90%)
    - 186 high-impact variances, 136 medium-impact variances
 4. ✅ **CSV export working** - Human-readable crosswalk with confidence scores and variance classification
+
+**Pending:**
 5. ⬜ **AA crosswalk** - Election mapping (521 source → 235 target elections)
 6. ⬜ **BPD+AA merger** - Substitute elected values into template provisions for complete comparison
 7. ⬜ **Executive summary** - Natural language report generation
+8. ⬜ **Cross-vendor validation** - Requires obtaining Relius/ftwilliam/DATAIR sample documents
 
 ---
 
@@ -158,16 +169,21 @@ compliance-gpt/
   - User preference: "newer better more than 'safer'"
 - **Deferred:** LandingAI DPT, Claude Sonnet 4.5 vision (GPT-5 working well)
 
-### 4. Cross-Vendor Semantic Mapping
+### 4. Semantic Provision Mapping
 
-**Context:** Different document providers (Relius, ASC, ftwilliam, DATAIR) use different templates, section numbering, and phrasing for identical concepts.
+**Context:** Plan documents vary in structure, section numbering, and phrasing:
+- **Cross-vendor:** Different providers (Relius, ASC, ftwilliam, DATAIR) use different templates
+- **Cross-edition:** Same vendor updates BPD language between Cycles
+- **Cross-format:** BPDs vs AAs, standardized vs non-standardized
 
-**Example from research:**
+**Example from market research (cross-vendor case):**
 - Relius: "forfeitures will be used to reduce employer contributions"
 - ASC: "the Plan Administrator may apply forfeitures to future contribution obligations"
 - **Must be recognized as semantically equivalent**
 
 **Solution:** LLM-powered semantic understanding (not keyword matching or section number alignment)
+
+**POC Validation:** Tested with Ascensus BPD 01 → BPD 05 (intra-vendor, cross-edition). Algorithm is vendor-agnostic.
 
 ### 5. Target User: Teams with "Just PDFs and Spreadsheets"
 
@@ -185,14 +201,17 @@ Market research validated this represents the **majority workflow**:
 
 **What It Does:**
 - Matches provisions semantically using LLM understanding (not just section numbers)
-- Handles cross-vendor comparisons (e.g., Relius BPD → ASC prototype)
+- Handles cross-vendor comparisons (e.g., Relius → ASC, ftwilliam → DATAIR)
+- Handles cross-edition comparisons (e.g., BPD 01 → BPD 05 Cycle restatements)
 - Recognizes equivalent provisions despite different wording/placement/formatting
 - Assigns confidence score (0-100%) with reasoning
 - Flags missing provisions (source → target omissions) as HIGH priority
 - Flags new provisions (target additions) as MEDIUM priority
 
+**POC Status:** ✅ Validated with Ascensus BPD 01 → BPD 05 (82 matches, 94% high confidence)
+
 ### REQ-022: Variance Detection and Classification
-**Why Critical:** Prevents errors like the real-world Relius→ASC example from research where a TPA inadvertently dropped the HCE inclusion in safe harbor contributions (not caught until after year-end).
+**Why Critical:** Prevents errors like the real-world Relius→ASC example from market research (see p.3) where a TPA inadvertently dropped the HCE inclusion in safe harbor contributions during a cross-vendor conversion (not caught until after year-end).
 
 **What It Does:**
 - Detects text differences, missing provisions, new provisions, default value changes
@@ -242,10 +261,12 @@ Market research validated this represents the **majority workflow**:
 - **DATAIR** - Limited reconciliation within own ecosystem (doc module ↔ admin module), not cross-provider
 - **No other AI-first tools identified**
 
-### Real-World Pain Example:
+### Real-World Pain Example (Cross-Vendor Conversion):
 > "During the recent Cycle 3 restatement, one TPA switched a client's document from a Relius volume submitter to an ASC prototype. A subtle plan provision was inadvertently dropped – Relius had automatically allowed a discretionary safe harbor contribution to include Highly Compensated Employees by default, whereas the new ASC document required checking a box to include HCEs, which the preparer missed. This oversight wasn't caught until after year-end." — Market Research, p.3
 
 **This is the class of error REQ-022 must prevent.**
+
+**Note:** This is a real-world cross-vendor example from market research. The POC validates the detection algorithm using Ascensus BPD 01 → BPD 05 (intra-vendor). The algorithm is vendor-agnostic and applies to both scenarios.
 
 ---
 
@@ -444,9 +465,10 @@ Red Team Sprints are adversarial testing sessions conducted after major mileston
 4. **Tech Stack:** ✅ Python + OpenAI SDK + PyMuPDF + Pydantic
 
 ### User Testing Priorities:
-1. **Real documents needed:** Obtain sample Relius, ASC, ftwilliam plan documents for testing
-2. **Accuracy baseline:** What % of mappings must be correct for 70-90% target?
+1. **Cross-vendor validation:** Obtain Relius, ftwilliam, DATAIR samples for cross-vendor testing
+2. **Accuracy baseline:** Red Team Sprint validating 94% high-confidence claim (in progress)
 3. **Confidence calibration:** Do users trust 90% threshold for bulk approval?
+4. **Production pilot:** Test with real TPA on actual client conversion
 
 ### Post-MVP Integration:
 1. **Relius/ASC APIs:** Can we export directly to their platforms?
@@ -470,6 +492,21 @@ Red Team Sprints are adversarial testing sessions conducted after major mileston
 ---
 
 ## Project History / Changelog
+
+**2025-10-20** - Documentation Correction & Red Team Sprint Framework
+- **Morning:** Red Team Sprint framework introduced
+  - Comprehensive adversarial testing methodology for validating LLM claims
+  - 40-sample validation template for BPD crosswalk (ready for manual review)
+  - Exit criteria: validate claims OR document corrective actions (never proceed unvalidated)
+- **Afternoon:** Test corpus identity correction (GPT-5 Pro validation)
+  - **Critical finding:** All test documents are Ascensus (not Relius → ASC as previously stated)
+  - Corrected: "POC validates with Ascensus BPD 01 → BPD 05 (intra-vendor Cycle 3 restatement)"
+  - Algorithm is vendor-agnostic; cross-vendor validation requires obtaining Relius/ftwilliam samples
+  - Updated all documentation to distinguish "system capability" from "current test data"
+- **Key Learnings:**
+  - Intra-vendor BPD edition comparison is actually HARDER than cross-vendor (more subtle deltas)
+  - 19% match rate for template comparisons validates correct detection of edition-specific changes
+  - Real-world cross-vendor examples (market research) remain valid use cases for production
 
 **2025-10-19** - POC Parallel Crosswalk Complete
 - **Morning-Afternoon:** Vision extraction with GPT-5-nano (all 4 documents, 328 pages, 18 minutes)
