@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     openai_api_key: Optional[str] = os.getenv("OPENAI_API_KEY")
 
     # Model Configuration
-    llm_model: str = os.getenv("LLM_MODEL", "gpt-5")
+    llm_model: str = os.getenv("LLM_MODEL", "gpt-5-mini")  # gpt-5-mini for semantic matching (reasoning), gpt-5-nano for vision (structure)
     llm_provider: str = os.getenv("LLM_PROVIDER", "openai")  # openai or anthropic
     embedding_model: str = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
 

@@ -13,6 +13,7 @@ Architecture:
 from pathlib import Path
 from typing import List, Dict, Tuple
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 import numpy as np
 from openai import OpenAI
@@ -40,16 +41,18 @@ class SemanticMapper:
     expensive LLM calls only for verification.
     """
 
-    def __init__(self, provider: str = None, top_k: int = 3) -> None:
+    def __init__(self, provider: str = None, top_k: int = 3, max_workers: int = 16) -> None:
         """
         Initialize semantic mapper.
 
         Args:
             provider: 'openai' or 'anthropic' (defaults to settings.llm_provider)
             top_k: Number of candidates to verify with LLM (default 3)
+            max_workers: Number of parallel workers for LLM verification (default 16)
         """
         self.provider = provider or settings.llm_provider
         self.top_k = top_k
+        self.max_workers = max_workers
         self.console = console
 
         # Initialize clients
@@ -334,37 +337,51 @@ class SemanticMapper:
             source_provisions, target_provisions, source_embeddings, target_embeddings
         )
 
-        # Step 3: LLM verification
+        # Step 3: LLM verification (parallel)
         self.console.print(
-            f"[cyan]Verifying top candidates with LLM ({self.provider.upper()})...[/cyan]"
+            f"[cyan]Verifying top candidates with LLM ({self.provider.upper()}, {self.max_workers} workers)...[/cyan]"
         )
 
         all_mappings = []
-        verified_count = 0
         total_verifications = len(source_provisions) * self.top_k
 
+        # Get target provision objects
+        target_prov_map = {str(p.provision_id): p for p in target_provisions}
+
+        # Build verification tasks
+        verification_tasks = []
         for source_prov in source_provisions:
             source_id = str(source_prov.provision_id)
             candidates = candidates_map[source_id]
 
-            # Get target provision objects
-            target_prov_map = {str(p.provision_id): p for p in target_provisions}
-
             for candidate in candidates:
                 target_id = str(candidate.target_provision_id)
                 target_prov = target_prov_map[target_id]
+                verification_tasks.append((source_prov, target_prov, candidate.embedding_similarity))
 
-                # Verify with LLM
-                mapping = self.verify_mapping(
-                    source_prov, target_prov, candidate.embedding_similarity
-                )
-                all_mappings.append(mapping)
+        # Parallel verification
+        verified_count = 0
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            # Submit all tasks
+            future_to_task = {
+                executor.submit(self.verify_mapping, source_prov, target_prov, emb_score): (source_prov, target_prov)
+                for source_prov, target_prov, emb_score in verification_tasks
+            }
 
-                verified_count += 1
-                if verified_count % 5 == 0:
-                    self.console.print(
-                        f"[dim]  Verified {verified_count}/{total_verifications}...[/dim]"
-                    )
+            # Collect results as they complete
+            for future in as_completed(future_to_task):
+                try:
+                    mapping = future.result()
+                    all_mappings.append(mapping)
+                    verified_count += 1
+
+                    if verified_count % 50 == 0:
+                        self.console.print(
+                            f"[dim]  Verified {verified_count}/{total_verifications}...[/dim]"
+                        )
+                except Exception as e:
+                    source_prov, target_prov = future_to_task[future]
+                    self.console.print(f"[red]Error verifying {source_prov.section_reference}: {e}[/red]")
 
         self.console.print(f"[green]✓ Completed {verified_count} verifications[/green]\n")
 

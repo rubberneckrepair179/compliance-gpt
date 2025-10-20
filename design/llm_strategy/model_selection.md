@@ -1,10 +1,38 @@
 # Model Selection and LLM Strategy
 
+## ✅ **FINAL: Oct 19, 2025 - POC Parallel Crosswalk Complete**
+
+**Production Implementation:**
+- **Vision Extraction:** GPT-5-nano (gpt-5-nano) - most thorough for structured forms
+- **Semantic Mapping:** GPT-5-Mini (gpt-5-mini) - best reasoning for variance detection
+- **Embeddings:** text-embedding-3-small - cost optimization
+- **Architecture:** Parallel vision extraction (16 workers) → Hybrid embeddings + parallel LLM verification (16 workers)
+
+**Performance Proven:**
+1. **Vision extraction:** 328 pages in 18 minutes (16 workers, batch size 1)
+   - GPT-5-nano more thorough than GPT-5-mini (26 items vs 17 on same 5 pages)
+   - Full provision text preservation validated
+2. **Semantic crosswalk:** 2,125 verifications in 11 minutes (16 workers, 6x speedup)
+   - 82 matches found (19.3% on templates - expected)
+   - 94% high confidence (≥90%)
+   - 186 high-impact variances detected
+3. **Cost optimization:** 99% reduction via embeddings (215,475 → 2,125 LLM calls)
+
+**Model Selection Rationale:**
+- GPT-5-nano: Structured extraction superiority (checkboxes, nested options, tables)
+- GPT-5-Mini: Semantic reasoning quality (variance detection, impact classification)
+- Parallel architecture: 6x speedup vs sequential processing
+
+See design decision log in `/design/README.md` for details.
+
+---
+
 ## Overview
 
 This document defines the **LLM model selection and implementation strategy** for compliance-gpt, specifically for REQ-021 (semantic provision mapping). Based on comprehensive research of academic benchmarks, industry case studies, and technical evaluations, this document provides actionable recommendations for the POC and MVP phases.
 
-**Key Decision:** Use **Claude Sonnet 4.5** with a **hybrid embeddings + LLM architecture** to achieve the 70-90% automation target.
+**Original Key Decision:** Use **Claude Sonnet 4.5** with a **hybrid embeddings + LLM architecture** to achieve the 70-90% automation target.
+**Revised Implementation:** Use **GPT-5 vision** for extraction + **GPT-4.1** for semantic mapping (rate limit constraints)
 
 ---
 

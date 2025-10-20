@@ -1,0 +1,66 @@
+[
+  {
+    "filename": "401(k) Profit Sharing Plan.pdf",
+    "file_size_mb": 5.11,
+    "page_count": 104,
+    "title": "3001 QRP Nonstandardized Adoption Agreement 401(k) Profit Sharing Plan",
+    "author": "Ascensus",
+    "subject": "",
+    "first_page_preview": "SAMPLE\nQualified Retirement Plan \nNonstandardized Adoption \nAgreement \n401(k) Profit \nSharing Plan \n",
+    "classification": {
+      "is_bpd": false,
+      "is_aa": false,
+      "has_cycle_3": false,
+      "has_cycle_1": false,
+      "is_blank_template": false
+    }
+  },
+  {
+    "filename": "Basic Plan Document.pdf",
+    "file_size_mb": 3.58,
+    "page_count": 81,
+    "title": "3000 BPD QRP Defined Contribution Basic Plan Document 01",
+    "author": "Ascensus",
+    "subject": "",
+    "first_page_preview": "SAMPLE\nQualified Retirement Plan \nDefined \nContribution \nBasic Plan \nDocument 01 \n",
+    "classification": {
+      "is_bpd": false,
+      "is_aa": false,
+      "has_cycle_3": false,
+      "has_cycle_1": false,
+      "is_blank_template": false
+    }
+  },
+  {
+    "filename": "Blank Cycle 3 Adoption Agreement.pdf",
+    "file_size_mb": 1.14,
+    "page_count": 45,
+    "title": "Plan Document",
+    "author": "Relius Documents",
+    "subject": "Plan Document",
+    "first_page_preview": "Non-Standardized Defined Contribution \n\u00a9 2020 Ascensus LLC or its suppliers \n1 \nADOPTION AGREEMENT FOR \nNON-STANDARDIZED \nDEFINED CONTRIBUTION PRE-APPROVED PLAN \nCAUTION: Failure to properly fill out this Adoption Agreement may result in disqualification of the Plan. \nEMPLOYER INFORMATION \n(An amendment to the Adoption Agreement is not needed solely to reflect a change in this Employer Information Section.) \n1.\nEMPLOYER'S NAME, ADDRESS, TELEPHONE NUMBER, TIN AND FISCAL YEAR\nName:\nAddress:\nStreet \nCity \nState \nZip \nTelephone:    \nTaxpayer Identification Number (TIN): \nEmployer's Fiscal Year ends:    \n2.\nTYPE OF ENTITY\na.\n[   ] \nCorporation (including tax-exempt or non-profit Corporation)\nb. [   ] \nProfessional Service Corporation\nc.\n[   ] \nS Corporation\nd. [   ] \nLimited Liability Company that is taxed as:\n1. [   ] \na partnership or sole proprietorship\n2. [   ] \na Corporation\n3. [   ] \nan S Corporation\ne.\n[   ] \nSole Proprietorship\nf.\n[   ] \nPartnership (including limited liability)\ng. ",
+    "classification": {
+      "is_bpd": false,
+      "is_aa": true,
+      "has_cycle_3": false,
+      "has_cycle_1": false,
+      "is_blank_template": true
+    }
+  },
+  {
+    "filename": "Cycle 3 Basic Plan Document 05-001.pdf",
+    "file_size_mb": 0.99,
+    "page_count": 98,
+    "title": "",
+    "author": "",
+    "subject": "",
+    "first_page_preview": " \n \n \nASCENSUS, LLC \nDEFINED CONTRIBUTION PRE-APPROVED PLAN \n \n",
+    "classification": {
+      "is_bpd": false,
+      "is_aa": false,
+      "has_cycle_3": false,
+      "has_cycle_1": false,
+      "is_blank_template": false
+    }
+  }
+]

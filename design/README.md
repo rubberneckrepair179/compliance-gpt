@@ -93,14 +93,17 @@ We use a phased design strategy that balances architectural planning with early 
 ### Phase 1: ANCHOR (Complete)
 - ✅ Design structure created
 - ✅ System architecture defined
-- ✅ Core data models specified (provision, mapping, variance)
+- ✅ Core data models specified (provision, mapping, variance, crosswalk)
 - ✅ LLM strategy research completed
 - ✅ Model selection documented
 
-### Phase 2: VALIDATE THE CORE (Next)
-- ⬜ LLM model selection research
-- ⬜ Acquire sample plan documents for testing
-- ⬜ Build semantic mapping POC
+### Phase 2: VALIDATE THE CORE (In Progress)
+- ✅ LLM model selection research (GPT-5 vision + GPT-4.1 semantic)
+- ✅ Acquire sample plan documents for testing (4 documents: source/target BPD+AA)
+- ✅ Build semantic mapping POC (hybrid embeddings + LLM)
+- ✅ BPD crosswalk generated (15 1:1 matches, 27% match rate on templates)
+- 🔄 Vision extraction running (GPT-5 vision for BPDs + AAs)
+- ⬜ Build AA crosswalk
 - ⬜ Measure POC accuracy against 70% threshold
 
 ### Phase 3: FILL IN THE MIDDLE (Future)
@@ -126,6 +129,10 @@ We use a phased design strategy that balances architectural planning with early 
 | 2025-10-17 | CLI-first UI for POC | Fastest to build, validates workflow before investing in GUI | Web UI deferred to MVP phase |
 | 2025-10-17 | Docker for production deployment | Reproducible deployment for customer sites | pip install for POC/MVP, Docker for production |
 | 2025-10-17 | Vision model research needed | Recent models may excel at table/format interpretation | Research task added to Phase 2 prep |
+| 2025-10-19 | Switch to GPT-5 vision extraction | Vision models handle form layouts, checkboxes, nested options better than text parsing | All document extraction now vision-based |
+| 2025-10-19 | GPT-5 model confirmed available | User preference: "newer better more than 'safer'" - GPT-5 (gpt-5-2025-08-07) works with max_completion_tokens=16000 | Primary vision model for POC |
+| 2025-10-19 | BPD+AA crosswalk architecture | Both source and target are BPD+AA pairs, not standalone docs - need separate BPD and AA crosswalks | Dual crosswalk generation (provisions + elections) |
+| 2025-10-19 | Vision over text parsing for AAs | Adoption Agreements have complex nested options (d.1, d.2, d.3) - vision extraction captures structure better | AA extraction uses GPT-5 vision exclusively |
 
 *(Additional decisions will be logged here as design progresses)*
 

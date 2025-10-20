@@ -74,9 +74,9 @@ compliance-gpt/
 
 ## Project Status
 
-**Phase:** POC Architecture Pivot (Oct 19, 2025) 🔄
-**Previous:** Design Phase 1 Complete ✅ (Oct 17, 2025)
-**Critical Discovery:** BPD+AA architecture fundamentally changes implementation approach
+**Phase:** POC Parallel Crosswalk Complete (Oct 19, 2025) ✅
+**Previous:** POC Architecture Pivot (Oct 19, 2025)
+**Achievement:** Vision extraction + parallel semantic mapping working end-to-end
 
 **Major Architectural Pivot (Oct 19, 2025):**
 🔴 **CRITICAL FINDING:** Both source and target documents are BPD (template) + AA (elections) pairs, NOT standalone documents. Initial POC approach was comparing templates to templates, which produced 0% match rate (correctly).
@@ -95,14 +95,17 @@ compliance-gpt/
 8. ✅ **Document structure validation** - Opus 4.1 + GPT-5 Pro confirmed BPD+AA architecture
 9. ✅ **Prompt engineering workflow** - Externalized prompts with approval process
 
-**Current Status (Ready for Next Session):**
-1. ⬜ **Fix extraction prompt** - Stop hallucinating values from examples, preserve template language
-2. ⬜ **Re-extract from BPDs** - Get actual "as elected in AA" text, not invented values
-3. ⬜ **Extract from Adoption Agreements** - Parse elected values (checkboxes, fill-ins)
-4. ⬜ **Build BPD crosswalk** - Map BPD 01 sections ↔ BPD 05 sections by topic
-5. ⬜ **Implement BPD+AA merger** - Substitute elected values into template provisions
-6. ⬜ **Re-run semantic mapper** - Compare merged provisions (expect 70-90% match rate)
-7. ⬜ **Generate CSV output** - Mapping analysis + executive summary (NO document generation)
+**Current Status (Oct 19, 2025 - POC Parallel Crosswalk Complete):**
+1. ✅ **Vision extraction complete** - GPT-5-nano extracts BPD provisions + AA elections (328 pages, 18 min)
+2. ✅ **Parallel processing implemented** - 16-worker architecture for extraction and semantic mapping
+3. ✅ **BPD crosswalk complete** - 425 source → 507 target provisions mapped (2,125 verifications, 11 min)
+   - 82 semantic matches (19.3% - expected for template comparisons)
+   - 94% high confidence (≥90%)
+   - 186 high-impact variances, 136 medium-impact variances
+4. ✅ **CSV export working** - Human-readable crosswalk with confidence scores and variance classification
+5. ⬜ **AA crosswalk** - Election mapping (521 source → 235 target elections)
+6. ⬜ **BPD+AA merger** - Substitute elected values into template provisions for complete comparison
+7. ⬜ **Executive summary** - Natural language report generation
 
 ---
 
@@ -143,13 +146,14 @@ compliance-gpt/
 2. If locked/encrypted, fall back to vision-based extraction
 3. Preserve document structure (sections, headers, tables) regardless of method
 
-**Vision Model Research (Phase 2):**
-- **LandingAI DPT** (Document Pre-trained Transformer) - Andrew Ng recommendation
-  - Specialized for complex tables/financial documents
-  - "3 simple lines of code" integration
-- **Claude Sonnet 4.5 with vision** - Integrated with primary LLM
-- **GPT-5 vision** - Alternative if Claude vision underperforms
-- **Benchmark needed:** Test on plan documents with vesting tables, contribution matrices
+**Vision Model Research (Phase 2):** ✅ **COMPLETED**
+- **GPT-5 vision (gpt-5-2025-08-07)** - **SELECTED** and working successfully
+  - Successfully extracts provisions from BPDs (templates with "as elected in AA" language)
+  - Successfully extracts election options from AAs (checkboxes, nested options, fill-in fields)
+  - Handles complex nested structures (option d.1, d.2, d.3 under option d)
+  - Requires `max_completion_tokens=16000` (not max_tokens, GPT-5-specific parameter)
+  - User preference: "newer better more than 'safer'"
+- **Deferred:** LandingAI DPT, Claude Sonnet 4.5 vision (GPT-5 working well)
 
 ### 4. Cross-Vendor Semantic Mapping
 
@@ -371,11 +375,11 @@ Market research validated this represents the **majority workflow**:
 
 ## Open Questions / Future Decisions
 
-### Technical Architecture (Next Phase):
-1. **LLM Strategy:** Which model(s) for semantic mapping? (GPT-4, Claude, open-source?)
-2. **Data Models:** How to represent provisions, mappings, variances in structured format?
-3. **Storage:** Local-first (MVP) vs cloud? User privacy constraints?
-4. **Tech Stack:** Python (likely for LLM integration) vs Node.js vs other?
+### Technical Architecture (Resolved/Updated):
+1. **LLM Strategy:** ✅ GPT-5 vision for extraction, GPT-4.1 for semantic mapping (Claude deferred due to rate limits)
+2. **Data Models:** ✅ Provision, mapping, variance, crosswalk models complete
+3. **Storage:** ✅ SQLite for structured storage (local-first compliant)
+4. **Tech Stack:** ✅ Python + OpenAI SDK + PyMuPDF + Pydantic
 
 ### User Testing Priorities:
 1. **Real documents needed:** Obtain sample Relius, ASC, ftwilliam plan documents for testing
@@ -405,6 +409,22 @@ Market research validated this represents the **majority workflow**:
 
 ## Project History / Changelog
 
+**2025-10-19** - POC Parallel Crosswalk Complete
+- **Morning-Afternoon:** Vision extraction with GPT-5-nano (all 4 documents, 328 pages, 18 minutes)
+  - Tested GPT-5-mini vs GPT-5-nano: nano proved more thorough (26 items vs 17 on same 5 pages)
+  - Parallel extraction implemented (16 workers, batch size 1 to avoid JSON parse failures)
+  - Enhanced prompts to preserve full provision text (user feedback-driven iteration)
+- **Evening:** Parallel semantic crosswalk implementation
+  - Added ThreadPoolExecutor to SemanticMapper (16 workers)
+  - Completed BPD crosswalk: 2,125 verifications in 11 minutes (6x speedup)
+  - Results: 82 matches (19.3%), 94% high confidence, 186 high-impact variances
+  - CSV export working with confidence scores and variance classification
+- **Key Learnings:**
+  - Batch size 1 prevents JSON parse failures (88% failure rate with batch size 5)
+  - GPT-5-nano more thorough than mini for structured extraction
+  - GPT-5-Mini better for semantic reasoning than nano
+  - 19% match rate on templates is expected/correct (election-dependent provisions can't match)
+
 **2025-10-17** - Phase 1 Design Complete
 - **Morning:** Created `/process` framework (four controls, templates, references)
 - **Morning:** Ran DeepResearch on TPA compliance tools landscape
@@ -421,6 +441,28 @@ Market research validated this represents the **majority workflow**:
   - ✅ Sequential multi-reviewer workflow (CLI limitation)
   - ✅ LandingAI DPT identified for vision fallback research
 
+**2025-10-19** - POC Architecture Pivot & Vision Extraction
+- **Critical Discovery:** Plan documents are BPD+AA pairs (not standalone docs)
+  - BPDs contain template provisions with "as elected in AA" language
+  - Adoption Agreements contain election options (structure) + elections (values when filled)
+  - Need separate BPD and AA crosswalks for complete conversion mapping
+- **Vision Extraction Strategy:**
+  - Text parsing failed for complex AA forms (nested options, checkboxes)
+  - Pivoted to vision-first extraction using GPT-5 (gpt-5-2025-08-07)
+  - Successfully tested on single AA page - perfect structure capture
+- **BPD Crosswalk Generated:**
+  - Extracted 55 source + 234 target provisions using text extraction
+  - Built semantic mapper with hybrid embeddings + LLM
+  - Generated crosswalk: 15 high-confidence 1:1 matches (27% match rate on templates)
+  - Validated semantic mapping algorithm works correctly
+- **GPT-5 Vision Technical Findings:**
+  - Model name: gpt-5-2025-08-07 (confirmed available)
+  - Requires `max_completion_tokens=16000` (not `max_tokens`)
+  - Successfully extracts nested option structures (d.1, d.2, d.3 under option d)
+  - Handles fill-in fields, checkboxes, section context
+  - User preference: "newer better more than 'safer'"
+- **Current Status:** Running full vision extraction on all 4 documents
+
 **Previous Work:**
 - Sergio had explored PDF text extraction issues in earlier project
 - Learned some PDFs are locked → required vision-based approach (informed REQ-002)
@@ -435,5 +477,5 @@ Market research validated this represents the **majority workflow**:
 
 ---
 
-*Last Updated: 2025-10-17*
-*Next Review: After technical architecture phase*
+*Last Updated: 2025-10-19*
+*Next Review: After vision extraction completion and AA crosswalk generation*

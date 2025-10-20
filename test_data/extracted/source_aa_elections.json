@@ -1,0 +1,76 @@
+{
+  "source_document": "source_aa.pdf",
+  "total_elections": 7,
+  "elections": [
+    {
+      "question_number": "10",
+      "section_title": "ACA and EACA",
+      "question_text": "ACA and EACA For an Employee who has met the eligibility requirements set forth in Section Two of the Adoption Agreement and who fails to provide the Employer a salary reduction agreement, will a portion of such Employee\u2019s Compensation be automatically withheld and contributed to the Plan as an Elective Deferral (select one)? Yes, for Employees hired on or after the Effective Date. Yes, for Employees who meet the eligibility requirements in Section Two, Part A of the Adoption Agreement on or aft",
+      "election_type": "text_entry",
+      "options": [],
+      "page_number": 13,
+      "topic": "Employer Information",
+      "notes": null
+    },
+    {
+      "question_number": "11",
+      "section_title": "QACA",
+      "question_text": "QACA QACA Elective Deferral Rates The following percentage of each Eligible Employee\u2019s Compensation will be automatically withheld each payroll and contributed to the Plan as an Elective Deferral if Option 3 was selected in item 9(a) above and if an Eligible Employee does not timely return a salary reduction agreement (select an option and complete the blanks, if applicable): ______% (not less than three or more than ten) ______% (not less than four or more than ten) ______% (not less than five ",
+      "election_type": "text_entry",
+      "options": [],
+      "page_number": 14,
+      "topic": "Employer Information",
+      "notes": null
+    },
+    {
+      "question_number": "12",
+      "section_title": "Automatic Increase for Employees who are Not Automatically Enrolled or for Plans Without Automatic E",
+      "question_text": "Automatic Increase for Employees who are Not Automatically Enrolled or for Plans Without Automatic Enrollment Authorization to Increase Elective Deferrals Automatically Will Elective Deferrals be increased automatically each year for Employees who are not automatically enrolled under items 10 or 11 above? Yes, for Contributing Participants whose salary reduction agreements are below _______ percent of Compensation. Increases will occur by _______ percent per payroll once per year up to a maximum",
+      "election_type": "text_entry",
+      "options": [],
+      "page_number": 16,
+      "topic": "Employer Information",
+      "notes": null
+    },
+    {
+      "question_number": "10",
+      "section_title": "ACA and EACA",
+      "question_text": "ACA and EACA For an Employee who has met the eligibility requirements set forth in Section Two of this Participating Employer Election Attachment and who fails to provide the Employer a salary reduction agreement, will a portion of such Employee\u2019s Compensation be automatically withheld and contributed to the Plan as an Elective Deferral (select one)? Yes, for Employees hired on or after the Effective Date. Yes, for Employees who meet the eligibility requirements in Section Two, Part A of this Pa",
+      "election_type": "text_entry",
+      "options": [],
+      "page_number": 66,
+      "topic": "Employer Information",
+      "notes": null
+    },
+    {
+      "question_number": "11",
+      "section_title": "QACA",
+      "question_text": "QACA QACA Elective Deferral Rates The following percentage of each Eligible Employee\u2019s Compensation will be automatically withheld each payroll and contributed to the Plan as an Elective Deferral if Option 3 was selected in item 9(a) above and if an Eligible Employee does not timely return a salary reduction agreement (select an option and complete the blanks, if applicable): _____% (not less than three or more than ten) _____% (not less than four or more than ten) _____% (not less than five or ",
+      "election_type": "text_entry",
+      "options": [],
+      "page_number": 67,
+      "topic": "Eligibility",
+      "notes": null
+    },
+    {
+      "question_number": "12",
+      "section_title": "Automatic Increase for Employees who are Not Automatically Enrolled or for Plans Without Automatic E",
+      "question_text": "Automatic Increase for Employees who are Not Automatically Enrolled or for Plans Without Automatic Enrollment Authorization to Increase Elective Deferrals Automatically Will Elective Deferrals be increased automatically each year for Employees who are not automatically enrolled under items 10 or 11 above? Yes, for Contributing Participants whose salary reduction agreements are below ______ percent of Compensation. Increases will occur by ______ percent per payroll once per year up to a maximum o",
+      "election_type": "text_entry",
+      "options": [],
+      "page_number": 70,
+      "topic": "Employer Information",
+      "notes": null
+    },
+    {
+      "question_number": "3",
+      "section_title": "Limitation",
+      "question_text": "Limitation The maximum number of In-Plan Roth Rollovers a Recipient may request is (select one)? Other (specify the number of rollovers (e.g. one, one per year)). _______________________________________________. NOTE: If no option is selected, Option 1 will apply. SECTION FOUR: VESTING AND FORFEITURES Complete Parts A through L Vesting Schedule for Matching Contributions A Participant will become Vested in the portion of their Individual Account derived from Matching Contributions (including ACP",
+      "election_type": "text_entry",
+      "options": [],
+      "page_number": 86,
+      "topic": "Employer Information",
+      "notes": null
+    }
+  ]
+}
