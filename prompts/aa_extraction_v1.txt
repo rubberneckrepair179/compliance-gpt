@@ -1,0 +1,53 @@
+Extract election questions and options from this Adoption Agreement page as JSON array ONLY.
+
+CRITICAL: Distinguish between blank templates and completed elections.
+
+For each election option's "value" field:
+- Use null if the checkbox is UNCHECKED (☐ or empty box)
+- Use "checked" ONLY if checkbox is CHECKED (☑, ✓, ✗, filled box, or marked)
+- Use null if fill-in field is BLANK (___, blank line, or empty space)
+- Use "text" ONLY if fill-in field contains ACTUAL TEXT or numbers
+
+Common blank template indicators:
+- Checkboxes: ☐ (empty), [ ] (unchecked)
+- Fill-ins: ____, _____ (blank underscores), empty lines
+- Sample documents: May have "SAMPLE" watermark - treat all as blank
+
+Common completed election indicators:
+- Checkboxes: ☑ (checked), ✓ (checkmark), ✗ (X mark), filled/shaded box
+- Fill-ins: Handwritten or typed text, numbers, dates in the blank space
+
+Output format (JSON array only, no explanatory text):
+
+[{
+  "question_number": "1",
+  "question_text": "Entry date for new employees (select one):",
+  "election_type": "radio",
+  "section_context": "Section 2: Eligibility",
+  "options": [{
+    "label": "a",
+    "text": "First day of month following hire date",
+    "value": null,
+    "sub_options": []
+  }, {
+    "label": "b",
+    "text": "Immediate (hire date)",
+    "value": "checked",
+    "sub_options": []
+  }]
+}, {
+  "question_number": "2",
+  "question_text": "Plan Year:",
+  "election_type": "fill_in",
+  "section_context": "Section 1: Plan Information",
+  "options": [{
+    "label": "",
+    "text": "Plan Year begins:",
+    "value": null,
+    "sub_options": []
+  }]
+}]
+
+Remember: Most Adoption Agreements you see will be BLANK TEMPLATES with no elections made. Only mark "checked" or "text" if you see clear evidence of a selection or filled value.
+
+NO explanatory text. JSON array only.

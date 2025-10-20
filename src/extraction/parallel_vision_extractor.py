@@ -17,41 +17,16 @@ import time
 
 from src.config import settings
 
-# Stricter prompts - JSON only, no explanations
-BPD_PROMPT = """Extract provisions from this retirement plan Basic Plan Document page.
+# Load prompts from external files
+def load_prompt(filename):
+    """Load prompt from prompts directory"""
+    prompt_path = Path(__file__).parent.parent.parent / "prompts" / filename
+    with open(prompt_path, 'r') as f:
+        return f.read()
 
-For EACH provision, extract:
-- section_number: Section reference (e.g., "1.1", "Article IV")
-- section_title: Section heading or defined term
-- provision_text: THE COMPLETE LEGAL TEXT of the provision including all paragraphs, sub-sections (a), (b), (1), (2), etc. PRESERVE ALL LANGUAGE EXACTLY.
-- provision_type: definition, eligibility, contribution, vesting, distribution, loan, administrative, or other
-
-Return ONLY a JSON array. No explanatory text before or after.
-
-Example:
-[{
-  "section_number": "3.2",
-  "section_title": "Employer Matching Contributions",
-  "provision_text": "The Employer shall make matching contributions equal to 100% of the first 3% of compensation deferred as elective deferrals, plus 50% of the next 2% of compensation deferred. Matching contributions shall be made for each payroll period and shall be allocated to Participants who made elective deferrals during such period.",
-  "provision_type": "contribution"
-}]"""
-
-AA_PROMPT = """Extract election questions/options from this Adoption Agreement page as JSON array ONLY.
-
-[{
-  "question_number": "1",
-  "question_text": "...",
-  "election_type": "checkbox|fill_in|radio|multi_select",
-  "section_context": "...",
-  "options": [{
-    "label": "a",
-    "text": "...",
-    "value": null|"checked"|"text",
-    "sub_options": [...]
-  }]
-}]
-
-NO explanatory text. JSON array only."""
+# Load extraction prompts
+BPD_PROMPT = load_prompt("provision_extraction_v2.txt")
+AA_PROMPT = load_prompt("aa_extraction_v1.txt")
 
 
 def process_page_batch(client, model, pdf_path, page_start, page_end, doc_type):
