@@ -1,0 +1,385 @@
+{
+  "document": "test_data/raw/source/aa/source_aa.pdf",
+  "page": 2,
+  "model": "gpt-5-nano",
+  "prompt_version": "aa_extraction_v2.txt",
+  "elections": [
+    {
+      "id": "q1_01",
+      "question_number": "1.01",
+      "question_text": "Name of Adopting Employer",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.01"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_02",
+      "question_number": "1.02",
+      "question_text": "Address",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.02"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_03",
+      "question_number": "1.03",
+      "question_text": "City",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.03"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_04",
+      "question_number": "1.04",
+      "question_text": "State",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.04"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_05",
+      "question_number": "1.05",
+      "question_text": "Zip",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.05"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_06",
+      "question_number": "1.06",
+      "question_text": "Telephone",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.06"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_07",
+      "question_number": "1.07",
+      "question_text": "Adopting Employer\u2019s Federal Tax Identification Number",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.07"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_08",
+      "question_number": "1.08",
+      "question_text": "Adopting Employer\u2019s Tax Year End (specify month and day)",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.08"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_09",
+      "question_number": "1.09",
+      "question_text": "Type of Business (select one):",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.09"
+      },
+      "kind": "single_select",
+      "value": {
+        "option_id": null
+      },
+      "options": [
+        {
+          "option_id": "q1_09_opt_a",
+          "label": "a",
+          "option_text": "Sole Proprietorship",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "option_id": "q1_09_opt_b",
+          "label": "b",
+          "option_text": "Partnership",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "option_id": "q1_09_opt_c",
+          "label": "c",
+          "option_text": "C Corporation",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "option_id": "q1_09_opt_d",
+          "label": "d",
+          "option_text": "S Corporation",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "option_id": "q1_09_opt_e",
+          "label": "e",
+          "option_text": "LLC",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "option_id": "q1_09_opt_f",
+          "label": "f",
+          "option_text": "Nonprofit",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "option_id": "q1_09_opt_g",
+          "label": "g",
+          "option_text": "Other. (Specify a legal entity recognized under federal income tax laws.)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "id": "q1_10",
+      "question_number": "1.10",
+      "question_text": "Name of Plan",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.10"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_11",
+      "question_number": "1.11",
+      "question_text": "Plan Sequence Number",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.11"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_12",
+      "question_number": "1.12",
+      "question_text": "Trust Identification Number (if applicable)",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.12"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_13",
+      "question_number": "1.13",
+      "question_text": "Account Number",
+      "section_context": "Part A - Adopting Employer",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.13"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_14",
+      "question_number": "1.14",
+      "question_text": "Related Employers Participation (Option 1: Yes, all Related Employers of the Adopting Employer will participate in this Plan. Option 2: No, Related Employers of the Adopting Employer will participate in this Plan only if listed on a Participating Employer Attachment.)",
+      "section_context": "Part B - Participating Employers",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.14"
+      },
+      "kind": "single_select",
+      "value": {
+        "option_id": null
+      },
+      "options": [
+        {
+          "option_id": "q1_14_opt_a",
+          "label": "a",
+          "option_text": "Yes, all Related Employers of the Adopting Employer will participate in this Plan",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "option_id": "q1_14_opt_b",
+          "label": "b",
+          "option_text": "No, Related Employers of the Adopting Employer will participate in this Plan only if listed on a Participating Employer Attachment",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "id": "q1_15",
+      "question_number": "1.15",
+      "question_text": "Employers That Are Not Related Employers \u2014 Will an Employer that is not a Related Employer be allowed to participate in the Plan?",
+      "section_context": "Part B - Participating Employers",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.15"
+      },
+      "kind": "single_select",
+      "value": {
+        "option_id": null
+      },
+      "options": [
+        {
+          "option_id": "q1_15_opt_a",
+          "label": "a",
+          "option_text": "Yes",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "option_id": "q1_15_opt_b",
+          "label": "b",
+          "option_text": "No",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "id": "q1_16",
+      "question_number": "1.16",
+      "question_text": "New Plan Effective Date",
+      "section_context": "Section One: Effective Dates",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.16"
+      },
+      "kind": "text",
+      "value": null
+    },
+    {
+      "id": "q1_17",
+      "question_number": "1.17",
+      "question_text": "Pre-Tax Elective Deferrals (Select one):",
+      "section_context": "Section One: Effective Dates",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.17"
+      },
+      "kind": "single_select",
+      "value": {
+        "option_id": null
+      },
+      "options": [
+        {
+          "option_id": "q1_17_opt_a",
+          "label": "a",
+          "option_text": "The next payroll date coinciding with or following the later of the date this Adoption Agreement is signed or the Effective Date",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "option_id": "q1_17_opt_b",
+          "label": "b",
+          "option_text": "______________ (Must be on or before the later of the date this Adoption Agreement is signed or the Effective Date.)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "id": "q1_18",
+      "question_number": "1.18",
+      "question_text": "Roth Elective Deferrals (Select one):",
+      "section_context": "Section One: Effective Dates",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.18"
+      },
+      "kind": "single_select",
+      "value": {
+        "option_id": null
+      },
+      "options": [
+        {
+          "option_id": "q1_18_opt_a",
+          "label": "a",
+          "option_text": "The next payroll date coinciding with or following the later of the date this Adoption Agreement is signed or the Effective Date",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "option_id": "q1_18_opt_b",
+          "label": "b",
+          "option_text": "______________ (Must be on or after the later of the date this Adoption Agreement is signed or the Effective Date.)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    }
+  ]
+}

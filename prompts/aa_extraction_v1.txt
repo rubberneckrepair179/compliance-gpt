@@ -1,53 +1,137 @@
-Extract election questions and options from this Adoption Agreement page as JSON array ONLY.
+Extract election questions from this Adoption Agreement page as JSON array ONLY.
 
 CRITICAL: Distinguish between blank templates and completed elections.
 
-For each election option's "value" field:
-- Use null if the checkbox is UNCHECKED (☐ or empty box)
-- Use "checked" ONLY if checkbox is CHECKED (☑, ✓, ✗, filled box, or marked)
-- Use null if fill-in field is BLANK (___, blank line, or empty space)
-- Use "text" ONLY if fill-in field contains ACTUAL TEXT or numbers
+ELECTION MODEL:
 
-Common blank template indicators:
-- Checkboxes: ☐ (empty), [ ] (unchecked)
-- Fill-ins: ____, _____ (blank underscores), empty lines
-- Sample documents: May have "SAMPLE" watermark - treat all as blank
+Each election question has:
+{
+  "question_number": "1",
+  "question_text": "...",
+  "election_type": "radio|checkbox|fill_in|multi_select",
+  "section_context": "...",
+  "has_election": true/false,        // Was ANY election made for this question?
+  "election_value": null/"text",     // For fill_in type: the actual text entered
+  "options": [...]                   // For radio/checkbox/multi_select: the available choices
+}
 
-Common completed election indicators:
-- Checkboxes: ☑ (checked), ✓ (checkmark), ✗ (X mark), filled/shaded box
-- Fill-ins: Handwritten or typed text, numbers, dates in the blank space
+For FILL_IN type elections:
+- has_election: false if field is blank (underscores ____, empty)
+- has_election: true if field has text
+- election_value: null if blank, "the actual text" if filled
+- options: [] (empty - no choices to select from)
 
-Output format (JSON array only, no explanatory text):
+Example blank fill-in:
+{
+  "question_text": "Plan Name: _____",
+  "election_type": "fill_in",
+  "has_election": false,
+  "election_value": null,
+  "options": []
+}
+
+Example completed fill-in:
+{
+  "question_text": "Plan Name: _____",
+  "election_type": "fill_in",
+  "has_election": true,
+  "election_value": "ABC Company 401(k) Plan",
+  "options": []
+}
+
+For RADIO/CHECKBOX/MULTI_SELECT type elections:
+- has_election: false if NO boxes are checked
+- has_election: true if ANY box is checked
+- election_value: null (not applicable for choice-based elections)
+- options: array of choices, each with:
+    {
+      "label": "a",
+      "option_text": "...",
+      "is_selected": true/false,
+      "filled_value": null/"text"    // Only if option has "Other (specify): ___" sub-field
+    }
+
+Example blank radio:
+{
+  "question_text": "Entry date (select one):",
+  "election_type": "radio",
+  "has_election": false,
+  "election_value": null,
+  "options": [{
+    "label": "a",
+    "option_text": "First day of month",
+    "is_selected": false,
+    "filled_value": null
+  }, {
+    "label": "b",
+    "option_text": "Immediate",
+    "is_selected": false,
+    "filled_value": null
+  }]
+}
+
+Example completed radio:
+{
+  "question_text": "Entry date (select one):",
+  "election_type": "radio",
+  "has_election": true,
+  "election_value": null,
+  "options": [{
+    "label": "a",
+    "option_text": "First day of month",
+    "is_selected": false,
+    "filled_value": null
+  }, {
+    "label": "b",
+    "option_text": "Immediate",
+    "is_selected": true,
+    "filled_value": null
+  }]
+}
+
+Example "Other (specify)" option:
+{
+  "question_text": "Vesting schedule:",
+  "election_type": "radio",
+  "has_election": true,
+  "election_value": null,
+  "options": [{
+    "label": "a",
+    "option_text": "Immediate",
+    "is_selected": false,
+    "filled_value": null
+  }, {
+    "label": "b",
+    "option_text": "Other (specify): _____",
+    "is_selected": true,
+    "filled_value": "3-year cliff"
+  }]
+}
+
+VISUAL INDICATORS:
+
+Blank template (has_election = false, is_selected = false):
+- Checkboxes: ☐ [ ] (empty)
+- Fill-ins: ____ _____ (underscores), blank lines
+- Sample watermark: "SAMPLE" on document
+
+Completed election (has_election = true, is_selected = true):
+- Checkboxes: ☑ ✓ ✗ [X] (marked)
+- Fill-ins: Handwritten or typed text in the blank
+- Circled or highlighted options
+
+IMPORTANT: Most Adoption Agreements are BLANK TEMPLATES.
+Default: has_election = false, is_selected = false, election_value = null
+Only mark as completed if you see clear visual evidence.
+
+Output JSON array only (no explanatory text):
 
 [{
   "question_number": "1",
-  "question_text": "Entry date for new employees (select one):",
-  "election_type": "radio",
-  "section_context": "Section 2: Eligibility",
-  "options": [{
-    "label": "a",
-    "text": "First day of month following hire date",
-    "value": null,
-    "sub_options": []
-  }, {
-    "label": "b",
-    "text": "Immediate (hire date)",
-    "value": "checked",
-    "sub_options": []
-  }]
-}, {
-  "question_number": "2",
-  "question_text": "Plan Year:",
-  "election_type": "fill_in",
-  "section_context": "Section 1: Plan Information",
-  "options": [{
-    "label": "",
-    "text": "Plan Year begins:",
-    "value": null,
-    "sub_options": []
-  }]
+  "question_text": "...",
+  "election_type": "...",
+  "section_context": "...",
+  "has_election": false,
+  "election_value": null,
+  "options": [...]
 }]
-
-Remember: Most Adoption Agreements you see will be BLANK TEMPLATES with no elections made. Only mark "checked" or "text" if you see clear evidence of a selection or filled value.
-
-NO explanatory text. JSON array only.

@@ -48,20 +48,42 @@ This directory contains all LLM prompts used in the compliance-gpt project. Prom
 
 ## Current Prompts
 
-### provision_extraction_v1.txt
+### provision_extraction_v2.txt
 - **Status**: ✅ Approved (implemented in POC)
-- **Purpose**: Extract provision boundaries from plan documents
-- **Model**: OpenAI GPT-4.1
-- **Input**: Raw PDF text (up to 20 pages)
-- **Output**: JSON array of provisions with metadata
-- **Performance**: 90-95% confidence on test documents
+- **Purpose**: Extract provision boundaries from Basic Plan Documents
+- **Model**: OpenAI GPT-5-nano (vision)
+- **Input**: PDF pages as images
+- **Output**: JSON array of provisions with full text
+- **Performance**: 426 provisions extracted from 81-page source BPD
+
+### aa_extraction_v1.txt
+- **Status**: ❌ DEPRECATED - Had false positive bug (blank template misidentified as completed)
+- **Purpose**: Extract election questions from Adoption Agreements
+- **Model**: OpenAI GPT-5-nano (vision)
+- **Issue**: Ambiguous value field, no clear rules for blank vs completed elections
+- **Superseded by**: aa_extraction_v2.txt
+
+### aa_extraction_v2.txt
+- **Status**: 🟡 Pending validation (implemented, awaiting test)
+- **Purpose**: Extract election questions from Adoption Agreements with discriminated union model
+- **Model**: OpenAI GPT-5-nano (vision)
+- **Input**: PDF pages as images
+- **Output**: JSON array of elections with kind-based structure (text, single_select, multi_select)
+- **Key Features**:
+  - Discriminated union by "kind" field
+  - Clear status triage: unanswered/answered/ambiguous/conflict
+  - Nested fill-ins within options
+  - Provenance tracking (page, question_number)
+  - Confidence scoring
+- **Data Model**: See `/src/models/election.py`
 
 ### semantic_mapping_v1.txt
-- **Status**: 🟡 Pending approval
+- **Status**: ✅ Approved (implemented in POC)
 - **Purpose**: Compare provisions across different vendor documents
-- **Model**: TBD (OpenAI GPT-4.1 or Claude Sonnet 4.5)
-- **Input**: Two provision objects
-- **Output**: Similarity score, variance classification, reasoning
+- **Model**: OpenAI GPT-5-Mini
+- **Input**: Two provision objects with embedding similarity score
+- **Output**: Similarity assessment, variance classification, reasoning
+- **Performance**: 82 matches found (19.3%), 94% high confidence (≥90%)
 
 ## Prompt Engineering Guidelines
 
@@ -87,8 +109,10 @@ This directory contains all LLM prompts used in the compliance-gpt project. Prom
 
 | Date | Prompt | Version | Change | Rationale |
 |------|--------|---------|--------|-----------|
-| 2025-10-19 | provision_extraction | v1 | Initial implementation | POC baseline |
-| 2025-10-19 | semantic_mapping | v1 | Draft pending | Next phase requirement |
+| 2025-10-19 | provision_extraction | v2 | Vision-based extraction with full text | POC implementation |
+| 2025-10-19 | semantic_mapping | v1 | Hybrid embeddings + LLM verification | POC implementation |
+| 2025-10-20 | aa_extraction | v1 | Initial AA extraction (DEPRECATED) | False positive bug on blank templates |
+| 2025-10-20 | aa_extraction | v2 | Discriminated union model | Advisor's model: kind-based structure with status triage |
 
 ---
 

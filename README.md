@@ -26,18 +26,21 @@ compliance-gpt automates the four-control framework defined in [`/process`](./pr
 
 ## Status
 
-**POC Parallel Crosswalk Complete** (Oct 19, 2025) 🎉
+**POC Vision Extraction + Semantic Mapping Complete** (Oct 20, 2025) 🎉
+
+👉 **[See DEMO.md for complete walkthrough with examples](DEMO.md)** 👈
 
 ✅ Process framework defined (updated for BPD+AA architecture)
 ✅ Market research completed
 ✅ Functional requirements drafted
 ✅ **Phase 1 design complete** — architecture, data models, LLM strategy
 ✅ **Document structure validated** — Opus 4.1 + GPT-5 Pro confirmed BPD+AA requirements
-✅ **Parallel vision extraction complete** — All 4 documents extracted (328 pages, 18 minutes)
-  - Source BPD: 426 provisions
-  - Source AA: 521 elections
-  - Target BPD: 507 provisions
-  - Target AA: 235 elections
+✅ **Parallel vision extraction complete** — All 4 documents extracted (302 pages, 24 minutes)
+  - Source BPD: 426 provisions (81 pages, GPT-5-nano)
+  - Source AA: 543 elections (104 pages, GPT-5-nano)
+  - Target BPD: 507 provisions (72 pages, GPT-5-nano)
+  - Target AA: 219 elections (45 pages, GPT-5-nano)
+✅ **AA extraction v2 validated** — 100% accuracy (762/762 elections, discriminated union model)
 ✅ **Parallel semantic crosswalk complete** — BPD mapping with 16 workers (2,125 verifications, 11 minutes)
   - 82 semantic matches found (19.3% - expected for template comparisons)
   - 94% high confidence (≥90%)
@@ -53,13 +56,13 @@ compliance-gpt automates the four-control framework defined in [`/process`](./pr
 
 **Test Corpus:**
 The POC was validated using Ascensus Cycle 3 documents:
-- **Source:** Ascensus BPD 01 + Adoption Agreement (426 provisions, 521 elections)
-- **Target:** Ascensus BPD 05 + Adoption Agreement (507 provisions, 235 elections)
+- **Source:** Ascensus BPD 01 + Adoption Agreement (426 provisions, 543 elections)
+- **Target:** Ascensus BPD 05 + Adoption Agreement (507 provisions, 219 elections)
 - **Scenario:** Intra-vendor Cycle 3 restatement (BPD 01 → BPD 05)
 
 This validates the semantic mapping algorithm works correctly. Cross-vendor testing (e.g., Relius → ASC, ftwilliam → DATAIR) requires obtaining additional sample documents.
 
-**Next Steps:** AA election crosswalk, merged BPD+AA provision comparison, executive summary generation
+**Next Steps:** Simulate filled source AA with elections, implement BPD+AA merger, run merged crosswalk for complete conversion workflow validation
 
 ## Repo map
 
