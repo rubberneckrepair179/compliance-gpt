@@ -493,6 +493,29 @@ Red Team Sprints are adversarial testing sessions conducted after major mileston
 
 ## Project History / Changelog
 
+**2025-10-21** - Embedding Research & False Positive Fix
+- **Morning:** Vendor identity correction (Lauren Leneis meeting)
+  - Source = Relius Cycle 3, Target = Ascensus (cross-vendor, not intra-vendor)
+  - This validates algorithm on hardest use case (cross-vendor conversion)
+  - File reorganization: `test_data/raw/relius/` and `test_data/raw/ascensus/`
+  - Re-ran both crosswalks with correct direction: BPD (623→426, 92 matches), AA (182→550, 22 matches)
+- **Afternoon:** Critical false positive discovered in AA crosswalk
+  - **Finding:** Age eligibility (Q 1.04) matched to State address (Q 1.04) with 92% confidence
+  - **Root cause:** Embeddings included question numbers → 1.0 cosine similarity for unrelated elections
+  - GPT-5-Mini hallucinated semantic connection ("State" = "state the age")
+- **Evening:** Research-driven fix for embedding pollution
+  - Generated comprehensive research paper on semantic matching in legal documents
+  - **Key insight:** "If we include non-semantics in the string we are going to skew cosine similarity"
+  - Implemented Priority 1 & 2 fixes:
+    1. Stripped question numbers from embeddings, added section context and election kind
+    2. Added chain-of-thought prompting, negative example (Age→State), explicit warnings
+  - **Result:** Embedding similarity drops to 47% (was 100% for false matches), LLM correctly rejects with 99% confidence
+- **Key Learnings:**
+  - Question numbers are provenance metadata only, must NOT influence semantic similarity
+  - Embedding input must be "semantically clean" - only meaningful content, no structural artifacts
+  - Chain-of-thought prompting prevents LLM hallucination
+  - This is basic research - "boldly going where others have not yet gone"
+
 **2025-10-20** - Documentation Correction & Red Team Sprint Framework
 - **Morning:** Red Team Sprint framework introduced
   - Comprehensive adversarial testing methodology for validating LLM claims

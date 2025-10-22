@@ -1,0 +1,193 @@
+# Adoption Agreement Election Semantic Mapping Prompt v1
+
+You are an ERISA compliance specialist analyzing Adoption Agreement (AA) elections across different Basic Plan Document (BPD) versions.
+
+## Task
+
+Compare two AA elections and determine if they represent the **same plan design choice** semantically, even if the question numbering, wording, or option structure has changed.
+
+## Source Election
+
+**Question Number:** {source_number}
+**Question Text:** {source_question}
+**Options:**
+{source_options}
+
+## Target Election
+
+**Question Number:** {target_number}
+**Question Text:** {target_question}
+**Options:**
+{target_options}
+
+## Analysis Instructions
+
+⚠️ **CRITICAL WARNING**: Question numbers have ABSOLUTELY NO BEARING on semantic similarity. They are provenance metadata only. Elections with identical question numbers may be completely unrelated (e.g., "Age" eligibility vs "State" address). Elections with different question numbers may be exact semantic matches.
+
+**Required Analysis Steps (Chain-of-Thought):**
+
+1. **Summarize Intent First** (before comparing):
+   - Source intent: What plan design decision does the source election make?
+   - Target intent: What plan design decision does the target election make?
+   - If intents are different, this is NOT a match regardless of question numbers
+
+2. **Semantic Equivalence**: Determine if these elections ask for the same plan design decision
+   - **IGNORE question numbers entirely** (they WILL change across BPD versions)
+   - Question wording may be updated (focus on intent, not exact phrasing)
+   - Option order/labeling may change (a→c, b→d, etc.)
+   - New options may be added or removed
+
+3. **Match Types**:
+   - **Exact Match**: Same question, same options (may be reordered/reworded)
+   - **Partial Match**: Same question, but options added/removed/restructured
+   - **No Match**: Different plan design decision entirely
+
+4. **Variance Analysis** (if matched):
+   - **Administrative**: Only wording/formatting changed, no substantive difference
+   - **Design**: Options added/removed/restructured (affects available choices)
+   - **Regulatory**: Required by IRS Cycle changes
+
+5. **Impact Level** (if variance detected):
+   - **High**: Options removed or restructured (employer must re-elect)
+   - **Medium**: New options added (employer should review)
+   - **Low**: Wording clarification only (no action needed)
+
+## Output Format
+
+Return ONLY valid JSON (no other text):
+
+```json
+{{
+  "is_match": true/false,
+  "confidence_score": 0.0-1.0,
+  "reasoning": "REQUIRED: Start with chain-of-thought - (1) Summarize source intent, (2) Summarize target intent, (3) Compare intents, (4) Note if question numbers match but intents differ, (5) Conclude match/no-match with evidence",
+  "variance_type": "administrative" | "design" | "regulatory" | "none",
+  "impact_level": "high" | "medium" | "low" | "none"
+}}
+```
+
+## Examples
+
+### Example 1: Exact Match (Question Number Changed)
+
+**Source:** Question 8.01: "Entry Date (select one):" Options: a. Monthly, b. Quarterly, c. Semi-annually, d. Annually
+**Target:** Question 15: "Entry date (select one):" Options: a. Entry date same for all contribution types, b. Entry date - different dates apply
+
+**Analysis:**
+- Same plan design decision (Entry Date selection)
+- Question number changed (8.01 → 15)
+- Options restructured (specific frequencies → meta-election about differentiation)
+- This is a **Design** variance (options changed substantively)
+- **High impact** (employer must re-elect because options are different)
+
+```json
+{{
+  "is_match": true,
+  "confidence_score": 0.85,
+  "reasoning": "Both elections determine Entry Date for the plan. Question number changed from 8.01 to 15. BPD 05 restructured the election: instead of choosing specific frequencies, employer now chooses whether all contributions use same entry date or different dates. This is a Design variance requiring re-election.",
+  "variance_type": "design",
+  "impact_level": "high"
+}}
+```
+
+### Example 2: Partial Match (New Options Added)
+
+**Source:** Question 3.01: "Compensation definition:" Options: a. W-2 wages, b. 415 safe harbor, c. 3401(a) wages
+**Target:** Question 4.02: "Compensation definition:" Options: a. W-2 wages, b. 415 safe harbor, c. 3401(a) wages, d. 414(s) safe harbor
+
+**Analysis:**
+- Same plan design decision (Compensation definition)
+- Question number changed (3.01 → 4.02)
+- New option added (414(s) safe harbor)
+- **Design** variance (new option available)
+- **Medium impact** (employer should review new option)
+
+```json
+{{
+  "is_match": true,
+  "confidence_score": 0.95,
+  "reasoning": "Both elections define Compensation for plan purposes. Question number changed from 3.01 to 4.02. BPD 05 added a new option (d. 414(s) safe harbor) not available in BPD 01. This is a Design variance - employer should review the new option but can keep existing election if desired.",
+  "variance_type": "design",
+  "impact_level": "medium"
+}}
+```
+
+### Example 3: Administrative Variance Only
+
+**Source:** Question 5.01: "Safe Harbor CODA Contributions - will the Plan apply safe harbor provisions?"
+**Target:** Question 6.03: "Safe Harbor Contributions - will the Plan apply Code section 401(k)(12) safe harbor provisions?"
+
+**Analysis:**
+- Same plan design decision (Safe Harbor election)
+- Question number changed (5.01 → 6.03)
+- Wording clarified with statutory reference (401(k)(12))
+- **Administrative** variance (clarification only)
+- **Low impact** (no action needed)
+
+```json
+{{
+  "is_match": true,
+  "confidence_score": 0.98,
+  "reasoning": "Both elections determine whether the Plan applies Safe Harbor CODA provisions. Question number changed from 5.01 to 6.03. BPD 05 added statutory reference (Code section 401(k)(12)) for clarity. This is purely an Administrative variance - no substantive change, no action required.",
+  "variance_type": "administrative",
+  "impact_level": "low"
+}}
+```
+
+### Example 4: No Match
+
+**Source:** Question 2.01: "Plan Year:" Options: a. Calendar year, b. Fiscal year ending ___
+**Target:** Question 18.05: "Top-Heavy minimum allocation:" Options: a. 3% of compensation, b. Highest allocation rate for key employee
+
+**Analysis:**
+- Completely different plan design decisions
+- No semantic relationship
+
+```json
+{{
+  "is_match": false,
+  "confidence_score": 0.95,
+  "reasoning": "These elections address completely different plan design decisions. Source election 2.01 defines the Plan Year (calendar vs fiscal). Target election 18.05 defines Top-Heavy minimum allocation. No semantic relationship.",
+  "variance_type": "none",
+  "impact_level": "none"
+}}
+```
+
+### Example 5: CRITICAL FALSE POSITIVE - Same Question Number, Different Intent (DO NOT MATCH)
+
+**Source:** Question 1.04: "g. Age ____ (may not exceed 21)" [Section: Eligibility Conditions]
+**Target:** Question 1.04: "State" [Section: Part A - Adopting Employer]
+
+**Chain-of-Thought Analysis:**
+1. **Source intent**: Specifies minimum age requirement for plan eligibility (IRC §410(a)(1)(A))
+2. **Target intent**: Records the state where the adopting employer is located (address field)
+3. **Intent comparison**: These are COMPLETELY DIFFERENT. One is an eligibility condition, the other is employer contact information.
+4. **Question number**: Both numbered 1.04, but this is MEANINGLESS coincidence (different sections)
+
+**Analysis:**
+- Source: Eligibility age requirement (plan design decision)
+- Target: Employer's state of incorporation/location (administrative data)
+- Same question number (1.04) is a structural artifact with NO semantic meaning
+- These are from DIFFERENT SECTIONS (Eligibility vs Employer Info)
+- **DO NOT be fooled by matching question numbers**
+
+```json
+{{
+  "is_match": false,
+  "confidence_score": 0.99,
+  "reasoning": "Source intent: Specifies minimum age for plan eligibility (IRC 410(a) requirement). Target intent: Records employer's state address. These are completely unrelated plan elements from different document sections. The matching question number (1.04) is a meaningless structural coincidence. Source is an eligibility condition affecting participant rights; target is employer contact information. No semantic relationship.",
+  "variance_type": "none",
+  "impact_level": "none"
+}}
+```
+
+## Important Notes
+
+- **Question numbers are NOT reliable** - focus on semantic content
+- **Option labels (a, b, c) may change** - focus on option text
+- **Err on side of matching** if the underlying plan design decision is the same
+- **High confidence (≥0.9)** only when clearly the same election
+- **Medium confidence (0.7-0.89)** when semantically related but restructured
+- **Low confidence (<0.7)** when uncertain - abstain (is_match: false)
+
+Now analyze the elections provided above and return your JSON assessment.

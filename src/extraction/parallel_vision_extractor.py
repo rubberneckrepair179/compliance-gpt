@@ -25,8 +25,8 @@ def load_prompt(filename):
         return f.read()
 
 # Load extraction prompts
-BPD_PROMPT = load_prompt("provision_extraction_v2.txt")
-AA_PROMPT = load_prompt("aa_extraction_v2.txt")  # Updated to v2 with discriminated unions
+BPD_PROMPT = load_prompt("provision_extraction_v3.txt")  # v3: page_sequence (no ID generation)
+AA_PROMPT = load_prompt("aa_extraction_v3.txt")  # v3: page_sequence (no ID generation)
 
 
 def process_page_batch(client, model, pdf_path, page_start, page_end, doc_type):

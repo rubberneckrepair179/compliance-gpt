@@ -1,0 +1,82 @@
+{
+  "comparison_id": "876bb47c-629a-4e25-a8a9-5f902821d9f5",
+  "source_document_id": "pair_a_source_bpd",
+  "target_document_id": "pair_a_target_bpd",
+  "mappings": [
+    {
+      "mapping_id": "1246eb29-412b-4d3f-8eb0-9b0554e67fe6",
+      "source_provision_id": "bba80278-273c-4d7b-87f3-20adce585f02",
+      "target_provision_id": "fb3bd6d0-0776-4671-b59d-f37efdf8f1fc",
+      "embedding_similarity": 0.6199990933476583,
+      "llm_similarity": 0.4,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "medium",
+      "reasoning": "The source provision sets a clear eligibility rule for new employees: age 21 and one year of service, with entry on the next entry date. The target provision addresses eligibility for reemployed former employees, referencing additional rules in the Adoption Agreement, including service crediting and breaks in service. The provisions address different populations (new vs. rehired employees) and reference different eligibility mechanisms. The target provision introduces variables (e.g., break in service rules) not present in the source, which could affect participant rights and plan operations for rehired employees.",
+      "confidence_score": 0.95,
+      "created_at": "2025-10-19T17:11:39.207084"
+    },
+    {
+      "mapping_id": "b122851e-64dc-4a5e-b45c-8543dedca81f",
+      "source_provision_id": "08749200-e988-40d0-a1c8-f50ef1020a54",
+      "target_provision_id": "d316d0e8-9738-4036-ae91-2b47e4c32adb",
+      "embedding_similarity": 0.7694540066012586,
+      "llm_similarity": 0.75,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "medium",
+      "reasoning": "The source provision specifically addresses the eligibility of reemployed employees who have incurred a Break in Eligibility Service, requiring them to satisfy the eligibility requirements again unless otherwise provided. The target provision is a general eligibility rule for all employees, referencing age and service requirements as set in the Adoption Agreement, but does not explicitly address breaks in service or reemployment scenarios. This omission could affect how reemployed employees are treated, potentially impacting participant rights for those with breaks in service.",
+      "confidence_score": 0.8,
+      "created_at": "2025-10-19T17:11:45.824157"
+    },
+    {
+      "mapping_id": "584a9eab-6a4b-40de-92ae-fb3561da5d9f",
+      "source_provision_id": "331a66c1-78f7-44fc-8091-3e8628eaaa82",
+      "target_provision_id": "2e557282-cc7f-4178-bae5-d5fcc44df713",
+      "embedding_similarity": 0.6461894949748967,
+      "llm_similarity": 0.5,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "medium",
+      "reasoning": "The source provision addresses the suspension and reinstatement of plan participation when an employee transfers to an ineligible class and later returns to eligibility, allowing immediate participation if eligibility was previously satisfied. The target provision describes initial entry into the plan after satisfying eligibility requirements, based on the next Entry Date specified in the Adoption Agreement, and does not address suspension or reinstatement scenarios. The provisions cover related but distinct circumstances: ongoing eligibility after a class change (source) versus initial plan entry (target). This difference could affect participant rights regarding immediate re-entry versus waiting for an Entry Date, impacting plan operations and participant experience.",
+      "confidence_score": 0.85,
+      "created_at": "2025-10-19T17:11:52.546504"
+    },
+    {
+      "mapping_id": "6b72698e-37e9-4b39-9fb6-8f2c29580e3a",
+      "source_provision_id": "016c790c-8cc2-4d5c-924d-583c70e997fe",
+      "target_provision_id": "fb3bd6d0-0776-4671-b59d-f37efdf8f1fc",
+      "embedding_similarity": 0.618020953286222,
+      "llm_similarity": 0.2,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "high",
+      "reasoning": "The source provision describes a graded vesting schedule for employer contributions, specifying the percentage vested based on years of service. The target provision addresses eligibility for plan participation and service crediting rules for rehired employees, referencing the adoption agreement for details. These provisions address fundamentally different plan concepts: vesting of employer contributions versus eligibility to participate and service crediting. There is no semantic equivalence, and the difference is substantive, affecting both participant rights and plan operations.",
+      "confidence_score": 1.0,
+      "created_at": "2025-10-19T17:12:04.341102"
+    },
+    {
+      "mapping_id": "5f9db7f8-f9ed-4864-b70a-5c389b82b02a",
+      "source_provision_id": "6df2cf67-07c9-42bf-b382-b6f2f0b77b36",
+      "target_provision_id": "2e557282-cc7f-4178-bae5-d5fcc44df713",
+      "embedding_similarity": 0.5458464414008404,
+      "llm_similarity": 0.2,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "high",
+      "reasoning": "The source provision addresses vesting\u2014specifically, immediate 100% vesting for certain contribution types\u2014while the target provision addresses eligibility\u2014specifically, when an employee becomes a participant after meeting eligibility requirements. These are distinct plan concepts: vesting governs ownership of plan assets, while eligibility governs when an employee can participate. There is no substantive overlap in rule or requirement.",
+      "confidence_score": 1.0,
+      "created_at": "2025-10-19T17:12:16.854699"
+    }
+  ],
+  "total_source_provisions": 5,
+  "total_target_provisions": 5,
+  "matched_provisions": 0,
+  "unmatched_source_provisions": 5,
+  "unmatched_target_provisions": 5,
+  "high_impact_variances": 2,
+  "medium_impact_variances": 3,
+  "low_impact_variances": 0,
+  "created_at": "2025-10-19T17:12:16.856346",
+  "completed_at": "2025-10-19T17:12:16.856293"
+}

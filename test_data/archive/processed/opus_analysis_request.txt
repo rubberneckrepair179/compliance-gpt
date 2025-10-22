@@ -1,0 +1,151 @@
+================================================================================
+DOCUMENT ANALYSIS REQUEST FOR OPUS 4.1
+================================================================================
+
+CONTEXT:
+I'm building an AI tool to compare retirement plan documents during conversions.
+I have 4 documents that I categorized as follows:
+
+  • Document 1: pair_a_source_bpd.pdf (81 pages)
+    Assumed: Basic Plan Document (BPD) - SOURCE/OLD document
+
+  • Document 2: pair_a_target_bpd.pdf (98 pages)
+    Assumed: Basic Plan Document (BPD) - TARGET/NEW document
+
+  • Document 3: pair_b_source_adoption.pdf
+    Assumed: Adoption Agreement - SOURCE/OLD
+
+  • Document 4: pair_b_target_adoption_locked.pdf
+    Assumed: Adoption Agreement - TARGET/NEW (password-protected)
+
+================================================================================
+PROBLEM:
+================================================================================
+
+My semantic mapping algorithm found 0% matches between Documents 1 and 2.
+Even when checking ALL possible pairings, the LLM said 'no match' with 100%
+confidence. This makes me suspect I misunderstood the document structure.
+
+================================================================================
+WHAT I EXTRACTED FROM DOCUMENT 1 (pair_a_source_bpd.pdf):
+================================================================================
+
+1. Section Section 2.01: Eligibility to Participate
+   Type: eligibility
+   Text: An Employee shall be eligible to participate in the Plan upon attaining age 21 and completing one Year of Service. Entry into the Plan shall be as of the first Entry Date following satisfaction of the...
+
+2. Section Section 2.04: Eligibility to Participate After a Break in Eligibility Service or Upon Rehire
+   Type: eligibility
+   Text: If an Employee incurs a Break in Eligibility Service and is subsequently reemployed, such Employee shall be eligible to participate in the Plan upon completion of the eligibility requirements set fort...
+
+3. Section Section 2.03: Transfer to or from an Ineligible Class
+   Type: eligibility
+   Text: If an Employee transfers to an ineligible class of Employees, such Employee's participation in the Plan shall be suspended until the Employee again becomes a member of an eligible class. Upon becoming...
+
+4. Section Section 4.01: Determining the Vested Portion of Participant Individual Accounts
+   Type: vesting_schedule
+   Text: A Participant shall become vested in Employer Contributions according to the following schedule: 0% for less than 2 Years of Vesting Service, 20% after 2 Years of Vesting Service, 40% after 3 Years of...
+
+5. Section Section 4.02: 100 Percent Vesting of Certain Contributions
+   Type: vesting_schedule
+   Text: A Participant shall be 100% vested at all times in the portion of the Individual Account attributable to Elective Deferrals, Rollover Contributions, and Qualified Nonelective Contributions, as well as...
+
+================================================================================
+WHAT I EXTRACTED FROM DOCUMENT 2 (pair_a_target_bpd.pdf):
+================================================================================
+
+1. Section Section 3.1: CONDITIONS OF ELIGIBILITY
+   Type: eligibility
+   Text: An Employee shall be eligible to participate in the Plan upon satisfying the age and service requirements, if any, as elected in the Adoption Agreement. The eligibility requirements may include attain...
+
+2. Section Section 3.2: EFFECTIVE DATE OF PARTICIPATION
+   Type: eligibility
+   Text: An Employee who has satisfied the eligibility requirements of Section 3.1 shall become a Participant in the Plan as of the Entry Date specified in the Adoption Agreement next following the date the Em...
+
+3. Section Section 3.5: REHIRED EMPLOYEES AND 1-YEAR BREAKS IN SERVICE
+   Type: eligibility
+   Text: If a Former Employee is reemployed by the Employer, such Employee shall be eligible to participate in the Plan in accordance with the rules set forth in the Adoption Agreement and this Article III. Th...
+
+4. Section Section 13.5: VESTING REQUIREMENTS
+   Type: vesting_schedule
+   Text: A Participant's interest in the Plan attributable to salary reduction contributions and Employer matching contributions shall be fully Vested and nonforfeitable at all times. Any other contributions s...
+
+5. Section Section 1.37(a): Forfeiture
+   Type: vesting_schedule
+   Text: A Forfeiture will occur on the earlier of: (1) The last day of the Plan Year in which a Participant incurs five (5) consecutive 1-Year Breaks in Service, or (2) The distribution of the entire Vested p...
+
+================================================================================
+QUESTIONS FOR OPUS:
+================================================================================
+
+1. DOCUMENT IDENTIFICATION:
+   - Did I correctly identify these as BPD documents?
+   - Are they from the same vendor or different vendors?
+   - Should Document 1 and Document 2 be compared directly, or do they
+     require companion Adoption Agreements to be meaningful?
+
+2. STRUCTURE ANALYSIS:
+   For Document 1:
+   - Are the eligibility/vesting provisions self-contained with specific
+     values, or do they reference an Adoption Agreement?
+   - What pages contain the OPERATIONAL eligibility provisions?
+   - What pages contain the OPERATIONAL vesting provisions?
+
+   For Document 2:
+   - Same questions as Document 1
+   - Why do many provisions say 'as elected in the Adoption Agreement'?
+   - Is this a template/prototype document that REQUIRES an Adoption
+     Agreement to specify actual plan terms?
+
+3. SEMANTIC EQUIVALENCE TEST:
+   Compare these specific pairs and tell me if they're semantically
+   equivalent (same meaning/purpose):
+
+   a) Doc1 Section 2.01 (Eligibility to Participate)
+      vs
+      Doc2 Section 3.1 (CONDITIONS OF ELIGIBILITY)
+
+      Should these match? Why or why not?
+
+   b) Doc1 Section 4.02 (100 Percent Vesting of Certain Contributions)
+      vs
+      Doc2 Section 13.5 (VESTING REQUIREMENTS)
+
+      Should these match? Why or why not?
+
+4. MISSING MATCHES:
+   For each of the 5 provisions I extracted from Document 1, please
+   identify the BEST matching provision in Document 2 (if any exists).
+   Include the section number and explain why it's a match.
+
+5. EXTRACTION VALIDATION:
+   - Did I extract the right provisions (operational, not definitional)?
+   - Are there better/clearer provisions I should have extracted?
+   - Did I miss obvious matches because I extracted from the wrong sections?
+
+6. COMPARISON STRATEGY:
+   Given the structure of these documents, what's the correct way to
+   compare them for a plan conversion project?
+   - BPD to BPD directly?
+   - BPD + Adoption Agreement (combined) to BPD + Adoption Agreement?
+   - Something else?
+
+================================================================================
+ADDITIONAL CONTEXT:
+================================================================================
+
+My algorithm uses:
+1. OpenAI text-embedding-3-small to create vector embeddings (cosine similarity)
+2. GPT-4.1 to verify semantic equivalence of top candidates
+3. Only provision_text is embedded (no metadata like section numbers)
+
+Expected outcome: 70-90% of provisions should match (with some variances)
+Actual outcome: 0% matches, even when checking all 25 possible pairings
+
+This suggests either:
+- I misidentified the documents (wrong pairing)
+- I'm comparing incompatible document types (BPD vs Adoption Agreement)
+- The documents genuinely have no semantic overlap (unlikely)
+- My LLM is too strict in its matching criteria
+
+================================================================================

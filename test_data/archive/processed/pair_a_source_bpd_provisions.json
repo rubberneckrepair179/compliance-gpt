@@ -1,0 +1,178 @@
+[
+  {
+    "provision_id": "09d41097-5d0b-4165-9dda-dfe119cd3644",
+    "document_id": "pair_a_source_bpd",
+    "provision_type": "eligibility",
+    "section_reference": "Section 2.01",
+    "section_title": "Eligibility to Participate",
+    "provision_text": "2.01 Eligibility to Participate. Each Employee will become eligible to participate in the Plan in accordance with the eligibility requirements specified in the Adoption Agreement. Eligibility requirements may include attainment of a minimum age, completion of a minimum period of service, or both, as specified in the Adoption Agreement. Service will be determined in accordance with the method elected in the Adoption Agreement (e.g., Hours of Service or Elapsed Time method).",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.98,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Eligibility Requirements",
+        "Adoption Agreement",
+        "Hours of Service",
+        "Elapsed Time"
+      ]
+    },
+    "created_at": "2025-10-19T16:28:21.503085",
+    "updated_at": "2025-10-19T16:28:21.503093"
+  },
+  {
+    "provision_id": "21c73ab4-6b44-43d8-adb4-db5bb20fab3e",
+    "document_id": "pair_a_source_bpd",
+    "provision_type": "eligibility",
+    "section_reference": "Section 2.04",
+    "section_title": "Eligibility to Participate After a Break in Eligibility Service or Upon Rehire",
+    "provision_text": "2.04 Eligibility to Participate After a Break in Eligibility Service or Upon Rehire. An Employee who has a Break in Eligibility Service or is rehired will become eligible to participate in the Plan in accordance with the rules specified in the Adoption Agreement. The method for determining whether prior service will be counted and the effect of a Break in Eligibility Service will be as specified in the Adoption Agreement.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.95,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Break in Eligibility Service",
+        "Rehire",
+        "Prior Service",
+        "Adoption Agreement"
+      ]
+    },
+    "created_at": "2025-10-19T16:28:21.503115",
+    "updated_at": "2025-10-19T16:28:21.503116"
+  },
+  {
+    "provision_id": "3d4662c9-d67f-4aca-980d-a888513d7bd3",
+    "document_id": "pair_a_source_bpd",
+    "provision_type": "vesting_schedule",
+    "section_reference": "Section 4.01",
+    "section_title": "Determining the Vested Portion of Participant Individual Accounts",
+    "provision_text": "4.01 Determining the Vested Portion of Participant Individual Accounts. The vested portion of a Participant\u2019s Individual Account derived from Employer Contributions will be determined in accordance with the vesting schedule specified in the Adoption Agreement. The vesting schedule may be based on Years of Vesting Service or Periods of Service, as elected in the Adoption Agreement. A Participant will always be 100% vested in their Elective Deferrals, Rollover Contributions, and, if applicable, Qualified Nonelective Contributions and Qualified Matching Contributions, unless otherwise specified in the Adoption Agreement.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.97,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [
+        1.0
+      ],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Vesting Schedule",
+        "Years of Vesting Service",
+        "Elective Deferrals",
+        "Qualified Nonelective Contributions",
+        "Qualified Matching Contributions"
+      ]
+    },
+    "created_at": "2025-10-19T16:28:21.503131",
+    "updated_at": "2025-10-19T16:28:21.503131"
+  },
+  {
+    "provision_id": "bc5e2000-d524-4e01-976d-0bf096b8b8b4",
+    "document_id": "pair_a_source_bpd",
+    "provision_type": "employer_contribution",
+    "section_reference": "Section 3.04",
+    "section_title": "Employer Contributions",
+    "provision_text": "3.04 Employer Contributions. The Employer may make Employer Contributions to the Plan in such amounts and at such times as determined in accordance with the Adoption Agreement. Employer Contributions may include Profit Sharing Contributions, Money Purchase Pension Contributions, Prevailing Wage Contributions, or other contributions as specified in the Adoption Agreement. The allocation of Employer Contributions among Participants will be made in accordance with the allocation formula specified in the Adoption Agreement.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.96,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Employer Contributions",
+        "Profit Sharing",
+        "Money Purchase Pension",
+        "Prevailing Wage",
+        "Allocation Formula",
+        "Adoption Agreement"
+      ]
+    },
+    "created_at": "2025-10-19T16:28:21.503146",
+    "updated_at": "2025-10-19T16:28:21.503147"
+  },
+  {
+    "provision_id": "0972aba7-4668-4e84-a6bd-deb1891b4fab",
+    "document_id": "pair_a_source_bpd",
+    "provision_type": "employer_contribution",
+    "section_reference": "Section 3.02",
+    "section_title": "Matching Contributions",
+    "provision_text": "3.02 Matching Contributions. The Employer may make Matching Contributions on behalf of Participants who make Elective Deferrals or Nondeductible Employee Contributions, as specified in the Adoption Agreement. The amount and formula for Matching Contributions, including any limitations or conditions, will be as specified in the Adoption Agreement. Matching Contributions may be subject to a vesting schedule as provided in Section Four.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.95,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Matching Contributions",
+        "Elective Deferrals",
+        "Nondeductible Employee Contributions",
+        "Vesting Schedule",
+        "Adoption Agreement"
+      ]
+    },
+    "created_at": "2025-10-19T16:28:21.503163",
+    "updated_at": "2025-10-19T16:28:21.503163"
+  }
+]

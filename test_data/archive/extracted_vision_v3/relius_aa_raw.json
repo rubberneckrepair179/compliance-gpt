@@ -1,0 +1,5821 @@
+{
+  "document": "test_data/raw/target/aa/ascensus_aa_profit_sharing.pdf",
+  "doc_type": "AA",
+  "model": "gpt-5-nano",
+  "total_pages": 45,
+  "extraction_time_seconds": 238.05,
+  "pages_per_second": 0.19,
+  "aas": [
+    {
+      "page_sequence": 1,
+      "kind": "multi_select",
+      "question_number": "17.01",
+      "question_text": "SERVICE CREDITING METHOD (Plan Sections 1.62 and 1.88)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 8,
+        "question_number": "17.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Elapsed time method. (Period of Service applies instead of Year of Service) Instead of Hours of Service, elapsed time will be used for:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Alternative definitions for the Hours of Service method. Instead of the defaults, the following alternatives will apply for the Hours of Service method (select one or more):",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Equivalency method. Instead of using actual Hours of Service, an equivalency method will be used to determine Hours of Service for:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Number of Hours of Service required. Instead of 1,000 Hours of Service, Year of Service means the applicable computation period during which an Employee has completed at least ______ (not to exceed 1,000) Hours of Service for:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "other: __________ (e.g., option f. is used for per-diem Employees only)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "15",
+      "question_text": "Entry date (select one):",
+      "section_context": "Plan Section 3.2",
+      "status": "answered",
+      "confidence": 0.98,
+      "provenance": {
+        "page": 6,
+        "question_number": "15"
+      },
+      "value": {
+        "selected_label": "a"
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Entry date same for all contribution types.",
+          "is_selected": true,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Entry date - different dates apply.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "1.01",
+      "question_text": "d. No age and service required",
+      "section_context": "Eligibility Conditions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonelective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "single_select",
+      "question_number": "1.02",
+      "question_text": "e. Age 20 1/2",
+      "section_context": "Eligibility Conditions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.02"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonelective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "single_select",
+      "question_number": "1.03",
+      "question_text": "f. Age 21",
+      "section_context": "Eligibility Conditions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.03"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonelective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 4,
+      "kind": "single_select",
+      "question_number": "1.04",
+      "question_text": "g. Age ____ (may not exceed 21)",
+      "section_context": "Eligibility Conditions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.04"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonelective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 5,
+      "kind": "single_select",
+      "question_number": "1.05",
+      "question_text": "h. ____ (not to exceed 12) months of service (elapsed time)",
+      "section_context": "Eligibility Conditions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.05"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonelective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 6,
+      "kind": "single_select",
+      "question_number": "1.06",
+      "question_text": "i. 1 Year of Service",
+      "section_context": "Eligibility Conditions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.06"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonelective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 7,
+      "kind": "single_select",
+      "question_number": "1.07",
+      "question_text": "j. 2 Years of Service",
+      "section_context": "Eligibility Conditions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.07"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonelective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 8,
+      "kind": "single_select",
+      "question_number": "1.08",
+      "question_text": "k. ______ (not to exceed 12) consecutive month period from the Eligible Employee's employment commencement date and during which at least ______ (not to exceed 1,000) Hours of Service are completed. If an Eligible Employee does not complete the stated Hours of Service during the specified time period, the Employee is subject to the 1 Year of Service requirement in i. above.",
+      "section_context": "Eligibility Conditions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.08"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonelective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 9,
+      "kind": "single_select",
+      "question_number": "1.09",
+      "question_text": "l. ______ (not to exceed 12) consecutive months of employment from the Eligible Employee's employment commencement date. If an Eligible Employee does not complete the stated number of months, the Employee is subject to the 1 Year of Service requirement in i. above.",
+      "section_context": "Eligibility Conditions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.09"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonelective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 10,
+      "kind": "single_select",
+      "question_number": "1.10",
+      "question_text": "m. Other: ______",
+      "section_context": "Eligibility Conditions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.10"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonelective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 11,
+      "kind": "single_select",
+      "question_number": "1.11",
+      "question_text": "n. Other: ______ (e.g., date on which 1,000 Hours of Service is completed within the computation period) (must specify contributions to which conditions apply and satisfy the Notes below)",
+      "section_context": "Eligibility Conditions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.11"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonelective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "multi_select",
+      "question_number": "12.01",
+      "question_text": "CURRENT CONTRIBUTIONS",
+      "section_context": "Article III - Contributions",
+      "status": "answered",
+      "confidence": 0.98,
+      "provenance": {
+        "page": 3,
+        "question_number": "12.01"
+      },
+      "value": {
+        "selected_labels": [
+          "e"
+        ]
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Elective deferrals",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals (Question 25). Also select below if Roth Elective Deferrals are permitted.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "401(k) \"ADP test safe harbor contributions\" (Question 28)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Employer matching contributions (Questions 29)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "Employer Nonelective Contributions (includes Employer Profit Sharing contributions, Money Purchase Pension contributions and/or \"prevailing wage contributions\")",
+          "is_selected": true,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "Rollover contributions (Question 43)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "g",
+          "option_text": "After-tax voluntary Employee contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "h",
+          "option_text": "SIMPLE 401(k) contributions (Plan Section 13.1) (may not be selected with 12.c., 12.d., 12.e., or 12.g.)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "multi_select",
+      "question_number": "12.02",
+      "question_text": "PRIOR CONTRIBUTIONS",
+      "section_context": "Article III - Contributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 3,
+        "question_number": "12.02"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "i",
+          "option_text": "Pre-tax Elective Deferrals",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "j",
+          "option_text": "Roth Elective Deferrals",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "k",
+          "option_text": "401(k) \"ADP test safe harbor contributions\"",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "l",
+          "option_text": "Employer matching contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "m",
+          "option_text": "Employer Nonelective Contributions (includes Employer Profit Sharing contributions, Money Purchase Pension contributions)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "n",
+          "option_text": "Rollover contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "o",
+          "option_text": "After-tax voluntary Employee contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "p",
+          "option_text": "SIMPLE 401(k) contributions",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "multi_select",
+      "question_number": "13.01",
+      "question_text": "ELIGIBILITY REQUIREMENTS",
+      "section_context": "Eligibility Requirements",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 3,
+        "question_number": "13.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "No excluded Employees. There are no additional excluded Employees under the Plan (skip to Question 14).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Exclusions - same for all contribution types. The following Employees are not Eligible Employees for all contribution types (select one or more of e. \u2013 p. below):",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Exclusions - different exclusions apply. The following Employees are not Eligible Employees for all contribution types (select one or more of d. \u2013 p. below; also select column 1 or OR all that apply of columns 2. - 4. for each exclusion selected at d. \u2013 n.)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "2.01",
+      "question_text": "The effective date of the Catch-Up Contribution provisions is ______",
+      "section_context": "Special effective date",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 14,
+        "question_number": "2.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "D.01",
+      "question_text": "The Elective Deferral special effective date (choose if applicable): The effective date of the Elective Deferral component of the Plan, which is also the first Entry Date for the Elective Deferral component of the Plan, is ______",
+      "section_context": "Special effective date - Elective Deferral",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 14,
+        "question_number": "D.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "single_select",
+      "question_number": "26.01",
+      "question_text": "Automatic Deferral provisions. Will the Plan include Automatic Deferral provisions?",
+      "section_context": "26. AUTOMATIC CONTRIBUTION ARRANGEMENT",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 14,
+        "question_number": "26.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "No (skip to Question 27)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Yes, this Plan includes (select one):",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "1. A traditional Automatic Contribution Arrangement (not an Eligible Automatic Contribution Arrangement (EACA) or a Qualified Automatic Contribution Arrangement (QACA))",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "2. An Eligible Automatic Contribution Arrangement (EACA) but not a Qualified Automatic Contribution Arrangement (QACA)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "3. A Qualified Automatic Contribution Arrangement (QACA) (a QACA, by definition, satisfies the requirements of an Eligible Automatic Contribution Arrangement (EACA)) (must be selected if QACA safe harbor contributions is selected at 12.c.)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "multi_select",
+      "question_number": "18",
+      "question_text": "VESTING OF PARTICIPANT'S INTEREST (Plan Section 6.4(b))",
+      "section_context": "VESTING",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 9,
+        "question_number": "18"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "N/A (no Employer Nonelective Contributions (other than \"prevailing wage contributions\") (for 401(k) plans, also no matching contributions or QACA \"ADP test safe harbor contributions\") (skip to Question 20)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "The vesting provisions selected below apply to all Participants unless otherwise selected below. In addition, option I. under Section B of Appendix A to the Adoption Agreement (Special Effective Dates and Other Permitted Elections) can be used to specify any exceptions to the provisions below.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Vesting waiver. Employees who were employed on the date(s) indicated below and were Participants as of such date are 100% Vested. For Participants who enter the Plan after such date, the vesting provisions selected below apply (leave blank if no waiver applies):",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "1",
+          "option_text": "1. [ ] For all contributions. The vesting waiver applies to all contributions if employed on ______ (enter date)",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Enter date",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "2",
+          "option_text": "2. [ ] For designated contributions. The vesting waiver applies to (select one or more):",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "a",
+          "option_text": "a. [ ] Employer Nonelective Contributions if employed on ______",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Enter date",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "b",
+          "option_text": "b. [ ] Employer matching contributions if employed on ______",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Enter date",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "c",
+          "option_text": "c. [ ] QACA \"ADP test safe harbor contributions\" if employed on ______",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Enter date",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "d",
+          "option_text": "d. [ ] 100% vesting. Participants are 100% Vested in Employer Nonelective Contributions upon entering Plan. (required if eligibility requirement is greater than 1 Year (or Period) of Service).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "e. [ ] The following vesting schedule, based on a Participant's Years of Service (or Periods of Service if the elapsed time method is selected), applies to Employer Nonnelective Contributions:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "1",
+          "option_text": "1. [ ] 6 Year Graded: 0-1 year-0%; 2 years-20%; 3 years-40%; 4 years-60%; 5 years-80%; 6 years-100%",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "2",
+          "option_text": "2. [ ] 4 Year Graded: 1 year-25%; 2 years-50%; 3 years-75%; 4 years-100%",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "3",
+          "option_text": "3. [ ] 5 Year Graded: 1 year-20%; 2 years-40%; 3 years-60%; 4 years-80%; 5 years-100%",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "4",
+          "option_text": "4. [ ] 3 Year Cliff: 0-2 years-0%; 3 years-100%",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "5",
+          "option_text": "5. [ ] Other - Must be at least as liberal as either 1. or 4. above in each year without switching between the two schedules:",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Years (or Periods) of Service",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            },
+            {
+              "fill_in_sequence": 2,
+              "kind": "text",
+              "question_text": "Percentage",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "f",
+          "option_text": "f. [ ] Other - Must be at least as liberal as either 1. or 4. above in each year without switching between the two schedules:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "g",
+          "option_text": "g. [ ] Other - Must be at least as liberal as either 1. or 4. above in each year without switching between the two schedules:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "h",
+          "option_text": "h. [ ] 100% vesting. Participants are 100% Vested in Employer Nonelective Contributions upon entering Plan (required if eligibility requirement is greater than 1 Year (or Period) of Service).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "i",
+          "option_text": "i. [ ] The following vesting schedule, based on a Participant's Years of Service (or Periods of Service if the elapsed time method is selected), applies to Employer Matching Contributions:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "1",
+          "option_text": "1. [ ] 6 Year Graded: 0-1 year-0%; 2 years-20%; 3 years-40%; 4 years-60%; 5 years-80%; 6 years-100%",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "2",
+          "option_text": "2. [ ] 4 Year Graded: 1 year-25%; 2 years-50%; 3 years-75%; 4 years-100%",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "3",
+          "option_text": "3. [ ] 5 Year Graded: 1 year-20%; 2 years-40%; 3 years-60%; 4 years-80%; 5 years-100%",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "4",
+          "option_text": "4. [ ] 3 Year Cliff: 0-2 years-0%; 3 years-100%",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "5",
+          "option_text": "5. [ ] Other - must be at least as liberal as either 1. or 4. above in each year without switching between the two schedules.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "multi_select",
+      "question_number": "13.01",
+      "question_text": "g. Defaults apply",
+      "section_context": "Post-severance adjustments - different adjustments apply.",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 13,
+        "question_number": "13.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Non-elective",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "ADP Safe Harbor Non-elective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "multi_select",
+      "question_number": "13.02",
+      "question_text": "h. Exclude all post-severance compensation (may violate the nondiscrimination requirements)",
+      "section_context": "Post-severance adjustments - different adjustments apply.",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 13,
+        "question_number": "13.02"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Non-elective",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "ADP Safe Harbor Non-elective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "multi_select",
+      "question_number": "13.03",
+      "question_text": "i. Regular pay will be excluded (may violate the nondiscrimination requirements)",
+      "section_context": "Post-severance adjustments - different adjustments apply.",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 13,
+        "question_number": "13.03"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Non-elective",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "ADP Safe Harbor Non-elective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 4,
+      "kind": "multi_select",
+      "question_number": "13.04",
+      "question_text": "j. Leave cash-outs will be excluded",
+      "section_context": "Post-severance adjustments - different adjustments apply.",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 13,
+        "question_number": "13.04"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Non-elective",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "ADP Safe Harbor Non-elective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 5,
+      "kind": "multi_select",
+      "question_number": "13.05",
+      "question_text": "k. Nonqualified unfunded deferred compensation will be excluded",
+      "section_context": "Post-severance adjustments - different adjustments apply.",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 13,
+        "question_number": "13.05"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Non-elective",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "ADP Safe Harbor Non-elective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 6,
+      "kind": "multi_select",
+      "question_number": "13.06",
+      "question_text": "l. Disability continuation payments will be included for: a. NHCEs only; b. All Participants and the salary continuation will continue for the following fixed or determinable period: ______",
+      "section_context": "Post-severance adjustments - different adjustments apply.",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 13,
+        "question_number": "13.06"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "NHCEs only",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "All Participants and the salary continuation will continue for the following fixed or determinable period: ______",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Specify period:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_sequence": 7,
+      "kind": "multi_select",
+      "question_number": "13.07",
+      "question_text": "m. Other: ______ (must be definitely determinable and nondiscriminatory in accordance with Code \u00a7401(a)(4) and the regulations thereunder.)",
+      "section_context": "Post-severance adjustments - different adjustments apply.",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 13,
+        "question_number": "13.07"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Non-elective",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "Other (specify):",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Specify other:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "h",
+      "question_text": "h. [ ] QACA statutory minimum schedule (may select even if Plan is not a QACA). Unless a modified QACA statutory schedule is selected below, the Employer will withhold from a Participant's Compensation each payroll period the percentage of Compensation set forth in the following, which is based on the Plan Year of application to a Participant: 1-2 years-3%; 3 years-4%; 4 years-5%; 5 or more-6%. (if selected, skip D.)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 15,
+        "question_number": "h"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "i",
+      "question_text": "i. [ ] Other: __________ (in order to satisfy the QACA requirements (if applicable), an alternative Automatic Deferral amount schedule (i) must be uniform based on the number of years, or portions of years, since the beginning of the initial period for a Participant, (ii) must satisfy the minimum percentage requirement in h. above throughout the Plan Year, and (iii) must not exceed 10% of Compensation)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 15,
+        "question_number": "i"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "text",
+      "question_number": "D",
+      "question_text": "D. Escalation of Automatic Deferral amount (may not be selected with 26.h.)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 15,
+        "question_number": "D"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 4,
+      "kind": "text",
+      "question_number": "E",
+      "question_text": "E. Other Automatic Deferral elections (leave blank if none apply)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 15,
+        "question_number": "E"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "27.01",
+      "question_text": "Automatic Escalation of Affirmative Elections. Will the Plan automatically escalate Participants with an Affirmative Election?",
+      "section_context": "27. AUTOMATIC ESCALATION OF PARTICIPANTS WITH AFFIRMATIVE ELECTIONS",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 16,
+        "question_number": "27.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "No (skip to Question 28)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Yes. If Automatic Escalation applies to a Participant, this constitutes a provision that the Participant's affirmative election will expire annually.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "single_select",
+      "question_number": "27.02",
+      "question_text": "Participants affected. The Automatic Escalation provisions apply to the following Participants with Affirmative Elections (select one of c., d., or e.):",
+      "section_context": "27. AUTOMATIC ESCALATION OF PARTICIPANTS WITH AFFIRMATIVE ELECTIONS",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 16,
+        "question_number": "27.02"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "c",
+          "option_text": "All Deferring Participants. All Participants who have a Salary Reduction Agreement in effect as of the effective date of these automatic deferral provisions to defer at least ____% of Compensation.",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Minimum deferral percentage (%):",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "d",
+          "option_text": "New Deferral Elections. All Participants who file a Salary Reduction Agreement after the effective date of these provisions to defer at least ____% of Compensation.",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Minimum deferral percentage (%):",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "e",
+          "option_text": "Describe affected Participants: (the group of Participants must be definitively determinable and if an EACA (including a QACA) as elected in Question 26, must be uniform)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "single_select",
+      "question_number": "27.03",
+      "question_text": "Automatic Increases. Affirmative Elections of Participants covered by this Question 27 will be increased as follows (select one):",
+      "section_context": "27. AUTOMATIC ESCALATION OF PARTICIPANTS WITH AFFIRMATIVE ELECTIONS",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 16,
+        "question_number": "27.03"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "f",
+          "option_text": "Same as Automatic Enrollment escalation. The same escalation provisions selected in Question 26 apply to Participants covered by this Question 27 if selected, skip the remaining Questions.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "g",
+          "option_text": "Scheduled increases. The Affirmative Election amount will increase as follows below.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "4.01",
+      "question_text": "Date requirements met",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonselective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "single_select",
+      "question_number": "4.02",
+      "question_text": "First day of the month coinciding with or next following date requirements met",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.02"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonselective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "single_select",
+      "question_number": "4.03",
+      "question_text": "First day of the Plan Year quarter coinciding with or next following date requirements met",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.03"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonselective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 4,
+      "kind": "single_select",
+      "question_number": "4.04",
+      "question_text": "First day of Plan Year or first day of 7th month of Plan Year coinciding with or next following date requirements met",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.04"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonselective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 5,
+      "kind": "single_select",
+      "question_number": "4.05",
+      "question_text": "First day of Plan Year in which requirements met",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.05"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonselective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 6,
+      "kind": "single_select",
+      "question_number": "4.06",
+      "question_text": "First day of Plan Year nearest date requirements met",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.06"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonselective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 7,
+      "kind": "single_select",
+      "question_number": "4.07",
+      "question_text": "First day of Plan Year in which requirements met",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.07"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonselective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 8,
+      "kind": "single_select",
+      "question_number": "4.08",
+      "question_text": "Other:",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.08"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonselective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 9,
+      "kind": "single_select",
+      "question_number": "4.09",
+      "question_text": "Other: (must specify contributions to which the conditions apply, must be definitely determinable, and must satisfy the Note below)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.09"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "All Contributions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Elective Deferrals/SH",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Nonselective",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "multi_select",
+      "question_number": "4.01",
+      "question_text": "Exclusions",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 4,
+        "question_number": "4.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "No exclusions",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Union Employees (Plan Section 1.28(d))",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Nonresident aliens (Plan Section 1.28(e))",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Highly Compensated Employees (Plan Section 1.41)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "Leased Employees (Plan Section 1.49)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "Residents of Puerto Rico",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "g",
+          "option_text": "Interns (Plan Section 1.28(g))",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "h",
+          "option_text": "Part-time Employees (Plan Section 1.28(f)) A part-time Employee is an Employee whose regularly scheduled service is less than Hours of Service in the relevant eligibility computation period. See Note below.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "i",
+          "option_text": "Temporary Employees (Plan Section 1.28(f)) A temporary Employee is an Employee who is categorized as a temporary Employee on the Employer's payroll records. See Note below.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "j",
+          "option_text": "Seasonal Employees (Plan Section 1.28(f)) A seasonal Employee is an Employee who is categorized as a seasonal Employee on the Employer's payroll records. See Note below.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "k",
+          "option_text": "Other:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "l",
+          "option_text": "Other: [blank]",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "m",
+          "option_text": "Code \u00a7410(b)(6)(C) inclusion. The Code \u00a7410(b)(6)(C) exclusion set forth in Plan Section 1.28 will not apply with respect to the following (such Employees must still satisfy any applicable eligibility conditions) (select one): 1. All Employees. 2. Only the following Employees _________ (e.g., those who became Employees due to the acquisition of the assets of ABC Company)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "single_select",
+      "question_number": "4.02",
+      "question_text": "Conditions of Eligibility (Plan Section 3.1)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 4,
+        "question_number": "4.02"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "No age and service required. No age and service required for all contribution types (skip to Question 15).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Eligibility - same for all contribution types. An Eligible Employee will be eligible to participate in the Plan for all contribution types upon satisfaction of the following (select one or more of e.g. - n. below):",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Eligibility - different conditions apply. An Eligible Employee will be eligible to participate in the Plan upon satisfaction of the following either: (1) etc; also select column 1. OR all that apply of columns 2. - 4. for each condition selected at d. - m).",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "24.n",
+      "question_text": "n. excluding Compensation paid during the 'determination period' while not a Participant in any component of the Plan for which the definition applies.",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 12,
+        "question_number": "24.n"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "24.o",
+      "question_text": "o. excluding Military Differential Pay",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 12,
+        "question_number": "24.o"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "text",
+      "question_number": "24.p",
+      "question_text": "p. excluding amounts in excess of $ ______",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 12,
+        "question_number": "24.p"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 4,
+      "kind": "text",
+      "question_number": "24.a",
+      "question_text": "a. limited to HCEs (must be selected for ADP Safe Harbor Plans)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 12,
+        "question_number": "24.a"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 5,
+      "kind": "text",
+      "question_number": "24.q",
+      "question_text": "q. excluding overtime",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 12,
+        "question_number": "24.q"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 6,
+      "kind": "text",
+      "question_number": "24.r",
+      "question_text": "r. excluding bonuses",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 12,
+        "question_number": "24.r"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 7,
+      "kind": "text",
+      "question_number": "24.s",
+      "question_text": "s. excluding commissions",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 12,
+        "question_number": "24.s"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 8,
+      "kind": "text",
+      "question_number": "24.t",
+      "question_text": "t. excluding Compensation paid by an Affiliated Employer that has not adopted this Plan",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 12,
+        "question_number": "24.t"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 9,
+      "kind": "text",
+      "question_number": "24.u",
+      "question_text": "u. other: ______",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 12,
+        "question_number": "24.u"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 10,
+      "kind": "text",
+      "question_number": "24.v",
+      "question_text": "v. other: ______ (e.g., describe Compensation from the elections available above or a combination thereof as to a contribution source and Participant group (e.g., no exclusions as to Division A Employees and exclude bonuses as to Division B Employees); and/or describe another exclusion (e.g., exclude shift differential pay))",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 12,
+        "question_number": "24.v"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 11,
+      "kind": "multi_select",
+      "question_number": "24",
+      "question_text": "24. POST-SEVERANCE COMPENSATION (415 REGULATIONS) 415 Compensation (post-severance compensation adjustments) (select all that apply at a. - b.; leave blank if none apply)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 12,
+        "question_number": "24"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Leave cash-outs will be excluded",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "The last paycheck (\"administrative delay\") rule will be applied (treat as if ... )",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Defaults apply. For all contribution types, Compensation will include (to the extent provided in Plan Section 1.18 and to the extent such amounts would be included in Compensation if paid prior to severance of employment) post-severance regular pay, leave cash-outs, and payments from nonqualified unfunded deferred compensation plans (skip to Question 25).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Exclude all post-severance compensation. Exclude all post-severance compensation for all contribution types (may violate the nondiscrimination requirements) (skip to Question 25).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "Post-severance adjustments - same for all contribution types. The defaults listed at c. apply except for the following for all contribution types (select one or more of i. - l. below):",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "5",
+      "question_text": "PLAN STATUS",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "5"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "New Plan",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Amendment and restatement of existing Plan",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "6",
+      "question_text": "EFFECTIVE DATE (Plan Section 1.25) (complete a. if new plan; complete a. AND b. if an amendment and restatement)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "6"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "multi_select",
+      "question_number": "7",
+      "question_text": "PLAN YEAR (Plan Section 1.65) means, except as otherwise provided in d. below:",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "7"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "the calendar year",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "the twelve-month period ending on __________ (e.g., June 30th)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "other: __________ (e.g., a 52/53 week year ending on the date nearest the last Friday in December).",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 4,
+      "kind": "multi_select",
+      "question_number": "8",
+      "question_text": "VALUATION DATE (Plan Section 1.86) means:",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "8"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "every day that the Trustee (or Insurer), any transfer agent appointed by the Trustee (or Insurer) or the Employer, and any stock exchange used by such agent are open for business (daily valuation)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "the last day of each Plan Year",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "the last day of each Plan Year half (semi-annual)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "the last day of each Plan Year quarter",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "other (specify day or days): ________",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 5,
+      "kind": "single_select",
+      "question_number": "9",
+      "question_text": "PLAN NUMBER (3-digit number for Form 5500 reporting)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "9"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "001",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "002",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Other: ______",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 6,
+      "kind": "single_select",
+      "question_number": "10",
+      "question_text": "ADMINISTRATOR'S NAME, ADDRESS AND TELEPHONE NUMBER (If none is named, the Employer will be the Administrator (Plan Section 1.5.))",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "10"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Employer (use Employer address and telephone number)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "The Committee appointed by the Employer (use Employer address and telephone number)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Other:",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Name:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            },
+            {
+              "fill_in_sequence": 2,
+              "kind": "text",
+              "question_text": "Address:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            },
+            {
+              "fill_in_sequence": 3,
+              "kind": "text",
+              "question_text": "Street:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            },
+            {
+              "fill_in_sequence": 4,
+              "kind": "text",
+              "question_text": "City:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            },
+            {
+              "fill_in_sequence": 5,
+              "kind": "text",
+              "question_text": "State:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            },
+            {
+              "fill_in_sequence": 6,
+              "kind": "text",
+              "question_text": "Zip:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_sequence": 7,
+      "kind": "single_select",
+      "question_number": "11",
+      "question_text": "TYPE OF PLAN (select one)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "answered",
+      "confidence": 0.98,
+      "provenance": {
+        "page": 2,
+        "question_number": "11"
+      },
+      "value": {
+        "selected_label": "b"
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "401(k) Plan",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Profit Sharing Plan. (under Current Contributions, may only elect 12.e., and/or 12.f.)",
+          "is_selected": true,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Money Purchase Pension Plan. (under Current Contributions, may only elect 12.e., and/or 12.f.)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "2",
+      "question_text": "2. [ ] first day of the month coinciding with or next following the date on which a Participant satisfies the early retirement requirements",
+      "section_context": "Early retirement requirements",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 11,
+        "question_number": "2"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "3",
+      "question_text": "3. [ ] Anniversary Date coinciding with or next following the date on which a Participant satisfies the early retirement requirements",
+      "section_context": "Early retirement requirements",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 11,
+        "question_number": "3"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "text",
+      "question_number": "4",
+      "question_text": "4. [ ] Participant attains age _____ AND, completes... (leave blank if not applicable) a. [ ] at least _____ Years (or Periods) of Service for vesting purposes b. [ ] at least _____ Years (or Periods) of Service for eligibility purposes",
+      "section_context": "Early retirement requirements",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 11,
+        "question_number": "4"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 4,
+      "kind": "multi_select",
+      "question_number": "23",
+      "question_text": "COMPENSATION with respect to any Participant is defined as follows (Plan Sections 1.18 and 1.40).",
+      "section_context": "COMPENSATION",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 11,
+        "question_number": "23"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Wages, tips and other compensation on Form W-2",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Code \u00a7401(a) wages (wages for withholding purposes)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "415 safe harbor compensation",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "the Plan Year",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "the Fiscal Year coinciding with or ending within the Plan Year",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "the calendar year coinciding with or ending within the Plan Year",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "g",
+          "option_text": "No adjustments",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "h",
+          "option_text": "Adjustments - same for all contribution types",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "i",
+          "option_text": "Adjustments - different adjustments apply",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "j",
+          "option_text": "no Adjustments",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "k",
+          "option_text": "excluding salary reductions (401(k), 125, 132(f)(4), 403(b), SEP, 414(h)(2) pickup, & 457)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "l",
+          "option_text": "excluding reimbursements or other expense, allowances, fringe benefits (cash or non-cash) (see IRS Publication 15-B), moving expenses, deferred compensation (other than deferrals specified in k above) and welfare benefits",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "m",
+          "option_text": "excluding Compensation paid during the 'determination period' while not a Participant in the component of the Plan for which the definition applies",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "1.01",
+      "question_text": "EMPLOYER'S NAME, ADDRESS, TELEPHONE NUMBER, TIN AND FISCAL YEAR",
+      "section_context": "Employer Information",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "single_select",
+      "question_number": "2.01",
+      "question_text": "TYPE OF ENTITY",
+      "section_context": "Employer Information",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "2.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Corporation (including tax-exempt or non-profit Corporation)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Professional Service Corporation",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "S Corporation",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Limited Liability Company that is taxed as:",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "single_select",
+      "question_number": "3.01",
+      "question_text": "AFFILIATED EMPLOYERS/PARTICIPATING EMPLOYERS (Plan Sections 1.7 and 1.61). Is the Employer an Affiliated Employer (i.e., a member of a controlled group or an affiliated service group (within the meaning of Code \u00a7414(b), (c), (m) or (o))?",
+      "section_context": "Plan Information",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "3.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "No",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Yes, the Employer is a member of (select one or both of 1. - 2. AND select one of 3. - 4. below):",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 4,
+      "kind": "text",
+      "question_number": "4.01",
+      "question_text": "PLAN NAME",
+      "section_context": "Plan Information",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "31",
+      "question_text": "ALLOCATION CONDITIONS (Plan Section 12.3). Requirements to share in allocations of Employer Nonemployee Contributions and QNECs (as permitted by Plan Section 12.1(a)(4))",
+      "section_context": "Plan Section 12.3 - Allocation Conditions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 25,
+        "question_number": "31"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "No conditions. All Participants share in the allocations regardless of service completed during the Plan Year or employment status on the last day of the Plan Year (skip to Question 32).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Allocation conditions apply (select one of 1 - 5. AND one of 6 - 9 below)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "2.01",
+      "question_text": "Age-weighted method. The Schedule of Age-Weighted Allocation Factors is set forth in attached Exhibit A (which is hereby incorporated by reference and made a part of the Plan) and will be based on the following interest rate (select one; if no selection is made, c. will be deemed to have been selected):",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 24,
+        "question_number": "2.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "7.5% interest",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "8.0% interest",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "8.5% interest",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "18",
+      "question_text": "VESTING FOR QACA SAFE HARBOR CONTRIBUTIONS",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 10,
+        "question_number": "18"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "N/A (no QACA \"ADP test safe harbor contributions\"; skip to Question 19)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "100% vesting. Participants are 100% vested in QACA \"ADP test safe harbor contributions\" upon entering Plan (skip to Question 19)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "The following vesting schedule, based on a Participant's Years of Service (or Periods of Service if the elapsed time method is selected), applies to the Participant's Qualified Automatic Contribution Safe Harbor Account: 1. 100% after two years: 0-1 year-0%; 2 years-100% 2. Other - Must be at least as liberal as 1. above in each year",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "multi_select",
+      "question_number": "19",
+      "question_text": "VESTING OPTIONS",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 10,
+        "question_number": "19"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Service prior to the initial Effective Date of the Plan or a predecessor plan (as defined in Regulations \u00a71.411(a)-5(b)(3))",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Service prior to the compensation period in which an Employee has attained age 18",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Death",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Total and Permanent Disability",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "Early Retirement Date",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "single_select",
+      "question_number": "20",
+      "question_text": "NORMAL RETIREMENT AGE (\"NRA\") (Plan Section 1.55) means:",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 10,
+        "question_number": "20"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Specific age. The date a Participant attains age ____ (see Note below)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Age/participation. The later of the date a Participant attains age ____ or the ______ (not to exceed the 5th) anniversary of the first day of the Plan Year in which participation in the Plan commenced.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 4,
+      "kind": "single_select",
+      "question_number": "21",
+      "question_text": "NORMAL RETIREMENT DATE (Plan Section 1.56) means, with respect to any Participant, the:",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 10,
+        "question_number": "21"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "date on which the Participant attains NRA",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "first day of the month coinciding with or next following the Participant's NRA",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "first day of the month nearest the Participant's NRA",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Anniversary Date coinciding with or next following the Participant's NRA",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "Anniversary Date nearest the Participant's NRA",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "Other: ______",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Other (specify):",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_sequence": 5,
+      "kind": "single_select",
+      "question_number": "22",
+      "question_text": "EARLY RETIREMENT DATE (Plan Section 1.23) means:",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 10,
+        "question_number": "22"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "N/A (no early retirement provision provided)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Early Retirement Date means the: 1. date on which a Participant satisfies the early retirement requirements",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "multi_select",
+      "question_number": "D.01",
+      "question_text": "Optional elections (select one or more) Type of Elective Deferral.",
+      "section_context": "D. Other Automatic Escalation provisions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 17,
+        "question_number": "D.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "the Automatic Escalation is a Roth Elective Deferral",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Other (specify):",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Specify entry date:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "D.02",
+      "question_text": "The Automatic Escalation provisions set forth above are effective on and after",
+      "section_context": "D. Other Automatic Escalation provisions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 17,
+        "question_number": "D.02"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "text",
+      "question_number": "D.04",
+      "question_text": "Other: ",
+      "section_context": "D. Other Automatic Escalation provisions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 17,
+        "question_number": "D.04"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 4,
+      "kind": "single_select",
+      "question_number": "28.01",
+      "question_text": "ADP and ACP test safe harbor. For any Plan Year in which any type of matching contribution is made, will the 'ADP and ACP test safe harbor' provisions be used?",
+      "section_context": "28 - 401(k) ADP TEST SAFE HARBOR PROVISIONS",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 17,
+        "question_number": "28.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Yes",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "No",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 5,
+      "kind": "single_select",
+      "question_number": "28.02",
+      "question_text": "Safe harbor matching contribution (select one of 1.-4.)",
+      "section_context": "A. ADP and ACP test safe harbor",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 17,
+        "question_number": "28.02"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Option 1",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Option 2",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Option 3",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Option 4",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 6,
+      "kind": "single_select",
+      "question_number": "28.03",
+      "question_text": "Safe harbor matching contribution (select one of 5.-9.)",
+      "section_context": "A. ADP and ACP test safe harbor",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 17,
+        "question_number": "28.03"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "e",
+          "option_text": "Option 5",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "Option 6",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "g",
+          "option_text": "Option 7",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "h",
+          "option_text": "Option 8",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "i",
+          "option_text": "Option 9",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "44",
+      "question_text": "Matching after-tax voluntary Employee contributions. There are no Employer matching contributions on after-tax voluntary Employee contributions unless elected below.",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 33,
+        "question_number": "44"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "After-tax voluntary Employee contributions are aggregated with Elective Deferrals for purposes of applying any matching contributions under the Plan (may only be selected with 401(k) plans).",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "multi_select",
+      "question_number": "45",
+      "question_text": "QUALIFIED RESERVIST DISTRIBUTIONS AND HEART ACT (Plan Section 4.12) (select one or more, if applicable)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 33,
+        "question_number": "45"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "HEART Act Continued benefit accruals. Continued benefit accruals will apply.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Distributions for deemed severance of employment. The Plan permits distributions for deemed severance of employment.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Qualified reservist distributions. Qualified reservist distributions are permitted. (may only be selected for 401(k) plans)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "multi_select",
+      "question_number": "28",
+      "question_text": "Special effective dates (may be left blank if no special effective dates need to be specified in this Plan) (select all that apply):",
+      "section_context": "D. Special effective dates",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 19,
+        "question_number": "28"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "g",
+          "option_text": "Safe harbor provisions (other than QACA). The \"ADP and ACP test safe harbor\" provisions are effective as of:",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Effective date:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "h",
+          "option_text": "QACA provisions. The QACA provisions are effective as of:",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Effective date:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "i",
+          "option_text": "Other: (If there are multiple retroactive special effective dates, complete this Question 28 based on the current Plan provisions and then duplicate this Question 28 and attach as an Appendix to indicate the special retroactive effective dates and provisions that apply.)",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Description of other special retroactive dates and provisions:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "single_select",
+      "question_number": "29.A",
+      "question_text": "Matching formula.",
+      "section_context": "29 - EMPLOYER MATCHING CONTRIBUTIONS",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 19,
+        "question_number": "29.A"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Flexible Discretionary Match.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Rigid Discretionary Match.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "multi_select",
+      "question_number": "4.01",
+      "question_text": "Waiver of conditions for Participants NOT employed on the last day of the Plan Year. If p.1., 2., 3., or 5. is selected, Participants who are not employed on the last day of the Plan Year in which one of the following events occur will be eligible to share in the allocations regardless of the above conditions (select all that apply):",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 22,
+        "question_number": "4.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Death",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Total and Permanent Disability",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Termination of employment on or after Normal Retirement Age",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Early Retirement Date",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "multi_select",
+      "question_number": "4.02",
+      "question_text": "F. Additional matching contributions.",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 22,
+        "question_number": "4.02"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Additional matching contributions may be made (select above to enable)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "multi_select",
+      "question_number": "30.01",
+      "question_text": "A. Formula (select one or more) for Employer Nonelective Contributions (Plan Section 12.1(a)(3))",
+      "section_context": "Contributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 22,
+        "question_number": "30.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Discretionary. Discretionary contribution, to be determined by the Employer.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Fixed. Fixed contribution equal to a specified percentage of Compensation, a fixed dollar amount, or other fixed method.",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Fixed percentage (%):",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            },
+            {
+              "fill_in_sequence": 2,
+              "kind": "text",
+              "question_text": "Fixed dollar amount ($):",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "c",
+          "option_text": "Collectively Bargained Employees. Contributions will be made pursuant to a collective bargaining agreement.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Fixed Integrated contribution. Employer contributions may be based on integration with the Taxable Wage Base.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "Integration level: Taxable Wage Base or other base as applicable.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "C",
+      "question_text": "C. Timing after initial distributable event",
+      "section_context": "Distributions - Timing after initial distributable event",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 28,
+        "question_number": "C"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "D",
+      "question_text": "D. Participant consent (i.e., involuntary cash-outs)",
+      "section_context": "Distributions - Participant consent",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 28,
+        "question_number": "D"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "text",
+      "question_number": "E",
+      "question_text": "E. Rollovers in determination of $5,000 threshold",
+      "section_context": "Distributions - Rollovers and threshold",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 28,
+        "question_number": "E"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 4,
+      "kind": "text",
+      "question_number": "F",
+      "question_text": "F. Mandatory distribution at Normal Retirement Age",
+      "section_context": "Distributions - Normal Retirement Age",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 28,
+        "question_number": "F"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 5,
+      "kind": "text",
+      "question_number": "36",
+      "question_text": "36. DISTRIBUTIONS UPON DEATH (Plan Section 6.8(b)(2))",
+      "section_context": "Distributions upon death",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 28,
+        "question_number": "36"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 6,
+      "kind": "text",
+      "question_number": "37",
+      "question_text": "37. HARDSHIP DISTRIBUTIONS (Plan Sections 6.12 and/or 12.10)",
+      "section_context": "Hardship Distributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 28,
+        "question_number": "37"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 1,
+      "kind": "multi_select",
+      "question_number": "40",
+      "question_text": "HIGHLY COMPENSATED EMPLOYEE (Plan Section 1.41) Top-Paid Group election and calendar year data election are not used unless selected below (the selections made for the latest year will continue to apply to subsequent Plan Years unless the Plan is amended) (select all that apply):",
+      "section_context": "Nondiscrimination testing",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 31,
+        "question_number": "40"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Top-Paid Group election will be used.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Calendar year data election will be used.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "multi_select",
+      "question_number": "41",
+      "question_text": "ADP AND ACP TESTS (Plan Sections 12.4, 12.5 and 12.6) NOTE: The selections made below for the latest year will continue to apply to subsequent Plan Years unless the Plan is amended. Also, if the Employer uses the discretionary nonelective \"ADP test safe harbor contribution\" described in Plan Section 12.8(h) or if the Plan is amended during a Plan Year to eliminate an \"ADP test safe harbor contribution\" then the current Plan Year method will be used.",
+      "section_context": "Nondiscrimination testing",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 31,
+        "question_number": "41"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Prior year testing method. The prior year ratio will be used. If this selection is made for the first year the Code \u00a7401(k) feature is added to this Plan (unless this Plan is a successor plan), then for the first Plan Year only, the amount taken into account as the ADP of NHCEs for the preceding Plan Year will be the greater of 3% or the actual percentage for the initial Plan Year.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Prior year testing method. The prior year ratio will be used. If this selection is made for the first year the Code \u00a7401(m) feature is added to this Plan (unless this Plan is a successor plan), then for the first Plan Year only, the amount taken into account as the ACP of NHCEs for the preceding Plan Year will be the greater of 3% or the actual percentage for the initial Plan Year.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "4.01",
+      "question_text": "Provider Name:",
+      "section_context": "Execution for Page Substitution Amendment Only",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 34,
+        "question_number": "4.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "4.02",
+      "question_text": "Address:",
+      "section_context": "Execution for Page Substitution Amendment Only",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 34,
+        "question_number": "4.02"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "text",
+      "question_number": "4.03",
+      "question_text": "Telephone Number:",
+      "section_context": "Execution for Page Substitution Amendment Only",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 34,
+        "question_number": "4.03"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 4,
+      "kind": "text",
+      "question_number": "4.04",
+      "question_text": "Email address (optional):",
+      "section_context": "Execution for Page Substitution Amendment Only",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 34,
+        "question_number": "4.04"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 5,
+      "kind": "text",
+      "question_number": "4.05",
+      "question_text": "By:",
+      "section_context": "Execution for Page Substitution Amendment Only",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 34,
+        "question_number": "4.05"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 6,
+      "kind": "text",
+      "question_number": "4.06",
+      "question_text": "Date Signed",
+      "section_context": "Execution for Page Substitution Amendment Only",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 34,
+        "question_number": "4.06"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "32.01",
+      "question_text": "Timing of Forfeitures (select one):",
+      "section_context": "FORFEITURES (Plan Sections 1.37 and 4.3(e))",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 26,
+        "question_number": "32.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "N/A (may only be selected if all contributions are fully Vested (default provisions at Plan Section 4.3(e) apply))",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "As of the earlier of (1) the last day of the Plan Year in which the former Participant incurs five (5) consecutive 1-Year Breaks in Service, or (2) the distribution of the entire Vested portion of the Participant's Account",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "As of the last day of the Plan Year in which the former Participant incurs five (5) consecutive 1-Year Breaks in Service",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "single_select",
+      "question_number": "32.02",
+      "question_text": "Use of Forfeitures (select one):",
+      "section_context": "FORFEITURES (Plan Sections 1.37 and 4.3(e))",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 26,
+        "question_number": "32.02"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "d",
+          "option_text": "added to the Employer contribution and allocated in the same manner",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "used to reduce any Employer contribution",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "allocated to all Participants eligible to share in the allocations of Employer contributions or Forfeitures in the same proportion that each Participant's Compensation for the Plan Year bears to the Compensation of all Participants for such year",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "g",
+          "option_text": "other: (describe the treatment of forfeitures)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "single_select",
+      "question_number": "33.01",
+      "question_text": "Top-Heavy Minimum Allocation (select one):",
+      "section_context": "TOP-HEAVY MINIMUM ALLOCATION",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 26,
+        "question_number": "33.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "The Top-Heavy minimum will be provided to both Key and Non-Key Employee Participants.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 4,
+      "kind": "multi_select",
+      "question_number": "34.01",
+      "question_text": "Form of Distributions (select all that apply):",
+      "section_context": "DISTRIBUTIONS",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 26,
+        "question_number": "34.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "lump-sums",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "substantially equal installments",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "partial withdrawals, provided the minimum withdrawal is $____ (leave blank if no minimum)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "partial withdrawals or installments are only permitted for Participants or Beneficiaries who must receive required minimum distributions under Code \u00a7401(a)(9) except for the following (leave blank if no exceptions): 1. Only Participants (and not Beneficiaries) may elect partial withdrawals or installments 2. Other: (e.g., partial withdrawals are not permitted for death benefits. Must be definitely determinable and not subject to Employer discretion)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "other: (must be definitely determinable and not subject to Employer discretion)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "Annuities are not allowed or are not the normal form of distribution (except as indicated below). Plan Section 6.13(b) will apply and the joint and survivor rules of Code \u00a7\u00a7401(a)(11) and 417 will not apply to the Plan.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "g",
+          "option_text": "Special rules. Annuity form of distribution is available to certain Participants and/or with respect to only a portion of the Plan assets according to the following: 1. Pension assets. Annuities are the normal form of distribution for assets that are transferred pension assets (Plan Section 6.13(a)). 2. Annuity selected by Participant. Plan Section 6.13(c) will apply and if applicable and any annuity distribution is chosen, the Participant may only select an annuity distribution according to the following (choose a and/or b, if applicable): a. [ ] ______  b. [ ] ______",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "multi_select",
+      "question_number": "35.01",
+      "question_text": "Accounts in excess of $5,000",
+      "section_context": "Section 35 - CONDITIONS FOR DISTRIBUTIONS UPON SEVERANCE OF EMPLOYMENT",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 27,
+        "question_number": "35.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Distributions may be made as soon as administratively feasible following severance of employment.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Distributions may be made as soon as administratively feasible after the Participant has incurred ______ 1-Year Break(s) in Service (or Period(s) of Severance if the elapsed time method is selected).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Distributions may be made as soon as administratively feasible after the last day of the Plan Year coincident with or next following severance of employment.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Distributions may be made as soon as administratively feasible after the last day of the Plan Year quarter coincident with or next following severance of employment.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "Distributions may be made as soon as administratively feasible after the Valuation Date coincident with or next following severance of employment.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "Distributions may be made as soon as administratively feasible after ______ months have elapsed following severance of employment.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "g",
+          "option_text": "No distributions may be made as soon as administratively feasible after the Participant has reached Early or Normal Retirement Date.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "h",
+          "option_text": "Other: __________________ (must be objective conditions which are ascertainable and are not subject to Employer discretion except as otherwise permitted in Regulation \u00a71.411(d)-4 and may not exceed the limits of Code \u00a7401(a)(14) as set forth in Plan Section 6.7)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "multi_select",
+      "question_number": "35.02",
+      "question_text": "Accounts of $5,000 or less",
+      "section_context": "Section 35 - CONDITIONS FOR DISTRIBUTIONS UPON SEVERANCE OF EMPLOYMENT",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 27,
+        "question_number": "35.02"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "i",
+          "option_text": "Same as above",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "j",
+          "option_text": "Distributions may be made as soon as administratively feasible following severance of employment.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "k",
+          "option_text": "Distributions may be made as soon as administratively feasible after the Participant has incurred ______ 1-Year Break(s) in Service (or Period(s) of Severance if the elapsed time method is selected).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "l",
+          "option_text": "Distributions may be made as soon as administratively feasible after the last day of the Plan Year coincident with or next following severance of employment.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "m",
+          "option_text": "Distributions may be made as soon as administratively feasible after the last day of the Plan Year quarter coincident with or next following severance of employment.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "n",
+          "option_text": "Distributions may be made as soon as administratively feasible after the Valuation Date coincident with or next following severance of employment.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "o",
+          "option_text": "Distributions may be made as soon as administratively feasible after ______ months have elapsed following severance of employment.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "p",
+          "option_text": "No distributions may be made as soon as administratively feasible after the Participant has reached Early or Normal Retirement Date.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "q",
+          "option_text": "Other: __________________ (must be objective conditions which are ascertainable and are not subject to Employer discretion except as otherwise permitted in Regulation \u00a71.411(d)-4 and may not exceed the limits of Code \u00a7401(a)(14) as set forth in Plan Section 6.7)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "B.01",
+      "question_text": "B. Date of Elective Deferrals considered for matching contribution.",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 21,
+        "question_number": "B.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "The Plan will disregard a Participant's Elective Deferrals that are made prior to the date the matching contribution component of the Plan is effective with respect to such Participant unless otherwise elected below.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "The Plan will include a Participant's Elective Deferrals that are made prior to the date the matching contribution component of the Plan is effective with respect to such Participant.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "single_select",
+      "question_number": "C.01",
+      "question_text": "C. Computation period. Any matching contribution other than a \"Flexible Discretionary Match\" will be applied on the following basis (and Elective Deferrals and any Compensation or dollar limitation used in determining the matching contribution will be based on the applicable period. Skip if the only Matching Contribution is a Flexible Discretionary Match.).",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 21,
+        "question_number": "C.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "i",
+          "option_text": "the Plan Year (potential annual true-up required)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "j",
+          "option_text": "all payroll periods ending within each month (potential monthly true-up required)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "k",
+          "option_text": "all payroll periods ending within each Plan Year quarter (potential quarterly true-up required)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "l",
+          "option_text": "each payroll unit (e.g., hour) (no true-up)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "m",
+          "option_text": "Other (specify): __________",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Other (specify):",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "single_select",
+      "question_number": "D.01",
+      "question_text": "D. QMAs (Plan Section 1.69). The matching contributions will NOT be Qualified Matching Contributions (QMACs) unless otherwise selected below (leave blank if not applicable).",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 21,
+        "question_number": "D.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Not QMACs (default).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "The matching contributions will be QMACs (fully Vested and subject to restrictions on withdrawals as set forth in the Plan). Such contributions may be used in either the ADP or ACP test.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 4,
+      "kind": "multi_select",
+      "question_number": "E.01",
+      "question_text": "E. Allocation conditions (Plan Section 12.3). Select o. OR p. and all that apply of q. w. (Note: If the \"ACP test safe harbor\" provisions are being used (Question 28.b.), option o. below (no conditions) must be selected, unless no HCEs are eligible to receive the matching contribution.)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 21,
+        "question_number": "E.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "No conditions. All Participants share in the allocations regardless of service completed during the Plan Year or employment status on the last day of the Plan Year (skip to p. \u2014).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "p",
+          "option_text": "Allocation conditions apply (select one of 1. - 5. AND one of 6. - 9. below)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "6.01",
+      "question_text": "6. [ ] Non-safe harbor contribution and allocation (annual nondiscrimination testing under Code \u00a7401(a)(4) will be required). The Employer will contribute an amount equal to ______% (base percentage) of each Participant's total Compensation, plus (complete a. and b.).",
+      "section_context": "Article III - Contributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 23,
+        "question_number": "6.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "7.01",
+      "question_text": "7. [ ] Other: ______ (must be definitely determinable, nondiscriminatory, and not subject to Employer discretion)",
+      "section_context": "Article III - Contributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 23,
+        "question_number": "7.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "text",
+      "question_number": "8.01",
+      "question_text": "e. [ ] INCORPORATION OF CONTRIBUTION FORMULA. In accordance with the contribution formula specified above (may not be selected if a., d., or b.7 are the only selections above; if both a fixed and discretionary contribution are selected above, then this option e. applies to the fixed contribution).",
+      "section_context": "Article III - Contributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 23,
+        "question_number": "8.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 4,
+      "kind": "text",
+      "question_number": "9.01",
+      "question_text": "f. [ ] NON-INTEGRATED ALLOCATION. In accordance with Plan Section 4.3(b)(2) based on a Participant's Compensation bears to the total of such Compensation of all Participants 2. [ ] in the same dollar amount to all Participants (per capita) 3. [ ] in the same dollar amount per Hour of Service completed by each Participant 4. [ ] in the same proportion that each Participant's points bears to the total of such points of all Participants. A Participant's points with respect to any Plan Year will be computed as follows (select all that apply): a. [ ] ______ point(s) will be allocated for each Year of Service (or Period of Service). However, the maximum Years (or Periods if elapsed time method is used) of Service taken into account will not exceed: 1. [ ] ____ (leave blank if no limit on service) 2. [ ] service for eligibility purposes 3. [ ] service for vesting purposes",
+      "section_context": "Article III - Contributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 23,
+        "question_number": "9.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 5,
+      "kind": "text",
+      "question_number": "10.01",
+      "question_text": "g. [ ] INTEGRATED (PERMITTED DISPARITY) ALLOCATION. In accordance with Plan Section 4.3(b)(2) based on a Participant's Compensation in excess of: 1. [ ] the Taxable Wage Base 2. [ ] _____% (not to exceed 100%) of the Taxable Wage Base (see Note below)",
+      "section_context": "Article III - Contributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 23,
+        "question_number": "10.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "39",
+      "question_text": "IN-PLAN ROTH ROLLOVER CONTRIBUTIONS (Plan Section 12.11) (skip if Roth Elective Deferrals NOT selected at Question 12.b.1)",
+      "section_context": "In-Plan Roth Rollover Contributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 30,
+        "question_number": "39"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "In-Plan Roth rollover contributions are NOT permitted (skip to Question 40).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "In-Plan Roth rollover contributions are permitted according to the following provisions.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "single_select",
+      "question_number": "39.01",
+      "question_text": "Source of In-Plan Roth Rollover Contributions (Select one of i. or j.)",
+      "section_context": "Source of In-Plan Roth Rollover Contributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 30,
+        "question_number": "39"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "i",
+          "option_text": "All Sources. (select one or both of columns 1. - 2.)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "j",
+          "option_text": "Limited Sources. The Plan permits an In-Plan Roth Rollover only from the following qualifying sources (select one or more of a. - h. below; also select one or both of columns 1. - 2. for each account selected at a. - g.):",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "multi_select",
+      "question_number": "39.02",
+      "question_text": "Limitations. The following restrictions apply to In-Plan Roth Rollovers (choose one or more of c. - h. below if applicable; also select one or both of columns 1. - 2. for each account selected at a. - g.)",
+      "section_context": "Limitations on In-Plan Roth Rollovers",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 30,
+        "question_number": "39"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "c",
+          "option_text": "In-Plan Roth Rollovers limited to In-Service only. Only Participants who are Employees may elect to make an In-Plan Roth Rollover Contribution.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Vested In-Plan Roth Rollovers. In-Plan Roth Rollovers may only be made from accounts which are fully Vested.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "No transfer of loans. Loans may not be distributed as part of an In-Plan Roth Rollover Contribution.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "Minimum amount. The minimum amount that may be rolled over is ______ (may not exceed $1,000).",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Minimum amount:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "g",
+          "option_text": "Number of Transfers. No more than ______ transfer(s) may be made during a Plan Year.",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Number of Transfers:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "h",
+          "option_text": "Describe transfer provisions. Transfers may be made subject to the following provisions; specify different provisions for IRR and IRT if desired.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "2.01",
+      "question_text": "Fixed - uniform rate/amount. The Employer will make matching contributions equal to ____% (e.g., 50) of the Participant's Elective Deferrals, plus (select a. or leave blank if not applicable):",
+      "section_context": "Article III - Contributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 20,
+        "question_number": "2.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "an additional matching contribution of a discretionary percentage determined by the Employer, but not to exceed ______% of Compensation (leave blank if not applicable). Such contribution is subject to the Instructions and Notice requirement of Section 12.12.",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Specify maximum percentage of Compensation:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "b",
+          "option_text": "Discretionary - tiered. The Employer may make matching contributions equal to a discretionary percentage of a Participant's Elective Deferrals, to be determined by the Employer, or to be determined for each tier, to be determined by the Employer. The tiers may be based on the rate of a Participant's Elective Deferrals or Years of Service.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Fixed - tiered. The Employer will make matching contributions equal to a uniform percentage of each Participant's Elective Deferrals, determined as follows:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Fixed - Years of Service. The Employer will make matching contributions equal to a uniform percentage of each Participant's Elective Deferrals based on the Participant's Years of Service (or Periods of Service if the elapsed time method is selected), determined as follows: Years (or Periods) of Service  Matching Percentage _____% _____% _____%",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "Other: ______ (the formula described must satisfy the definitively determinable requirement under Reg. \u00a71.401-1(b). If the formula is non-uniform, it is not a design-based safe harbor for nondiscrimination purposes.) Such contribution is subject to the Instructions and Notice requirement of Section 12.12.",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Other: Describe formula",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "f",
+          "option_text": "Maximum matching contribution. The matching contribution made on behalf of any Participant for any Plan Year will not exceed (select 1 or 2): 1. [ ] $ ______ 2. [ ] ____% of Compensation.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "multi_select",
+      "question_number": "3.01",
+      "question_text": "The percentage or dollar amount specified below (select one or both):",
+      "section_context": "Article III - Contributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 20,
+        "question_number": "3.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "____% of a Participant's Compensation.",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Percentage:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        },
+        {
+          "label": "b",
+          "option_text": "$ ______",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Dollar amount:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "single_select",
+      "question_number": "4.01",
+      "question_text": "a discretionary percentage of a Participant's Compensation or a discretionary dollar amount, the percentage or dollar amount to be determined by the Employer on a uniform basis for all Participants. Such contribution is subject to the Instructions and Notice requirement of Section 12.12.",
+      "section_context": "Article III - Contributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 20,
+        "question_number": "4.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Percentage or dollar amount to be determined by the Employer",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Percentage or amount:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "3.01",
+      "question_text": "3. N/A (no additional limitations)",
+      "section_context": "Hardship Distributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 29,
+        "question_number": "3.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "N/A (no additional limitations)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "multi_select",
+      "question_number": "4.01",
+      "question_text": "4. Additional limitations (select one or more):",
+      "section_context": "Hardship Distributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 29,
+        "question_number": "4.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "The minimum amount of a distribution is $_____ (may not exceed $1,000).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "No more than ____ distribution(s) may be made to a Participant during a Plan Year.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Distributions may only be made from Accounts which are fully Vested.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "A Participant does not include a Former Employee at the time of the hardship distribution.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "Hardship distributions from the Roth Elective Deferral Account may only be made if the distribution is a \"qualified distribution.\"",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "Hardship distributions may be made subject to the following provisions: (must be definitely determinable and not subject to Employer discretion).",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "text",
+      "question_number": "5.01",
+      "question_text": "5. Beneficiary Hardship. Hardship distributions for Beneficiary expenses are NOT allowed unless otherwise selected below.",
+      "section_context": "Hardship Distributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 29,
+        "question_number": "5.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 4,
+      "kind": "single_select",
+      "question_number": "6.01",
+      "question_text": "6. Yes. The provisions of Plan Section 12.10 apply to all hardship distributions from all Accounts?",
+      "section_context": "Hardship Distributions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 29,
+        "question_number": "6.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Yes. The provisions of Plan Section 12.10 apply to all hardship distributions from all Accounts?",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "No. The provisions of Plan Section 6.12 apply to all hardship distributions from all Accounts other than a Participant's Elective Deferral Account and Accounts attributable to \"ADP test safe harbor contributions\" (may only be selected with 401(k) Plans)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 5,
+      "kind": "text",
+      "question_number": "38.01",
+      "question_text": "38. IN-SERVICE DISTRIBUTIONS (Plan Section 6.11)",
+      "section_context": "IN-SERVICE DISTRIBUTIONS (Plan Section 6.11)",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 29,
+        "question_number": "38.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "A.01",
+      "question_text": "Employer matching contributions. The Employer matching contribution provisions under Question 29 are effective: ________. (may only be selected with 401(k) plans)",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "A.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "A.02",
+      "question_text": "Employer Nonemployee Contributions. The Employer Nonemployee Contributions provisions under Questions 30 and 31 are effective: ________.",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "A.02"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "text",
+      "question_number": "A.03",
+      "question_text": "Distribution elections. The distribution elections under Questions 34 \u2013 39 (as applicable) are effective: ________.",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "A.03"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 4,
+      "kind": "text",
+      "question_number": "A.04",
+      "question_text": "Other special effective date(s): ________. For periods prior to the specified special effective date(s), the Plan terms in effect prior to its restatement under this Adoption Agreement will control for purposes of the designated provisions. A special effective date may not result in the delay of a Plan provision beyond the permissible effective date under any applicable law.",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "A.04"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 5,
+      "kind": "text",
+      "question_number": "A.05",
+      "question_text": "Spin-off. The Plan was a spin-off from the ______ (enter effective date of original plan) (enter effective date of original plan).",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "A.05"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 6,
+      "kind": "text",
+      "question_number": "A.06",
+      "question_text": "Merged plans. The following plan(s) are merged into this Plan (enter applicable information; attach addendum if more than 4 merged plans). The Employer has reliance on the IRS Opinion Letter only if the features described in the preceding sentence constitute protected benefits within the meaning of Code Section 411(d)(6) and the regulations thereunder, and only if such features are permissible in a \"Cycle 3\" preapproved plan, i.e., the features are not specifically prohibited by Revenue Procedure 2017-41 (or any superseding guidance). Limited to those provisions which have been the subject of a prior determination letter, opinion letter, or advisory letter):",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "A.06"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 7,
+      "kind": "text",
+      "question_number": "B.01",
+      "question_text": "No other permitted elections.",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "B.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 8,
+      "kind": "text",
+      "question_number": "B.02",
+      "question_text": "Deemed 125 compensation (Plan Section 1.40). Deemed 125 compensation will be included in Compensation and 415 Compensation.",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "B.02"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 9,
+      "kind": "text",
+      "question_number": "B.03",
+      "question_text": "Reemployed after five (5) 1-Year Breaks in Service (\"rule of parity\" provisions) (Plan Section 3.5(d)). The \"rule of parity\" provisions in Plan Section 3.5(d) will not apply for (select one or both): 1. [ ] eligibility purposes 2. [ ] vesting purposes",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "B.03"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 10,
+      "kind": "text",
+      "question_number": "B.04",
+      "question_text": "The \"one-year hold-out\" rule described in Plan Section 3.5(e) will apply to (select one or both): 1. [ ] determine eligibility 2. [ ] determine vesting",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "B.04"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 11,
+      "kind": "text",
+      "question_number": "B.05",
+      "question_text": "Normal form of annuity. If the Plan permits an annuity form of payment (e.g., joint and 50% survivor annuity, etc.) instead of a joint and 50% survivor annuity, the normal form of the qualified Joint and Survivor Annuity will be: 1. [ ] joint and 100% survivor annuity 2. [ ] joint and 75% survivor annuity 3. [ ] joint and 66 2/3% survivor annuity",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "B.05"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 12,
+      "kind": "text",
+      "question_number": "B.06",
+      "question_text": "Beneficiary if no beneficiary elected by Participant (Plan Section 6.2(e)). In the event designation of Beneficiary exists, then in lieu of the order set forth in Plan Section 6.2(e), the following order of priority will be used: __________",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "B.06"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 13,
+      "kind": "text",
+      "question_number": "B.07",
+      "question_text": "\"Section 411(d)(6) protected benefits\" (Plan Section 8.1(b)). The following are Code \u00a7411(d)(6) protected benefits that are preserved under this Plan: (specify the protected benefits and the accrued benefits that are subject to the protected benefits). In addition, list additional (text).",
+      "section_context": "APPENDIX A - Special effective dates and other permitted elections",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "B.07"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "G.01",
+      "question_text": "G. Trustee(s) or Insurer(s). (NOTE: Select a. if not using provided trust. MUST select b and following questions as applicable)",
+      "section_context": "G. Trustee(s) or Insurer(s)",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "G.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Do not provide the trust agreement",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Complete the following UNLESS not selecting supporting forms:",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "h",
+      "question_text": "Limitation Year (Plan Section 1.50). The Limitation Year for Code \u00a7415 purposes will be __________ (must be a consecutive twelve-month period) instead of the \"determination period\" for Compensation.",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "h"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "i",
+      "question_text": "415 Limits when 2 or more defined contribution plans are maintained (Plan Section 4.4). If any Participant is covered under another qualified defined contribution plan maintained by the Employer or an Affiliated Employer, or if the Employer or an Affiliated Employer maintains a welfare benefit fund, as defined in Code \u00a7415(e)(1)(2), under which amounts are treated as \"annual additions\" with respect to any Participant in this Plan, then the provisions of Plan Section 4.4(b) will apply unless otherwise specified below: 1. [ ] Specify, in a manner that precludes Employer discretion, the method under which the plans will limit total \"annual additions\" to the \"maximum permissible amount\" and will properly reduce any \"excess amounts\":",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "i"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "multi_select",
+      "question_number": "j",
+      "question_text": "Top-heavy duplications (select one or more):",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "j"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Top-heavy duplications when 2 or more defined contribution plans are maintained (Plan Section 4.3(f))",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Top-heavy duplications when a defined benefit plan is maintained (Plan Section 4.3(i))",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "q",
+      "question_text": "Applicable law. Instead of using the applicable laws set forth in Plan Section 10.4(a), the Plan will be governed by the laws of: ________________________________",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 5,
+        "question_number": "q"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "r",
+      "question_text": "Total and Permanent Disability. Instead of the definition at Plan Section 1.83, Total and Permanent Disability means: ____________________ (must be definitely determinable).",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 5,
+        "question_number": "r"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "text",
+      "question_number": "s",
+      "question_text": "Inclusion of Reclassified Employees (1.28(a)). The Employer does not exclude Reclassified Employees subject to the following provisions: (leave blank if not applicable): __________________________________",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 5,
+        "question_number": "s"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 4,
+      "kind": "text",
+      "question_number": "t",
+      "question_text": "Age 62 In-Service Distributions For Transferred Money Purchase Assets (Plan Section 6.16) In-service distributions will be allowed for Participants at age 62. (applies only for Transfer Accounts from a money purchase pension plan) (skip this question if the Plan is a Money Purchase Pension Plan or if in-service distributions are already permitted for Transferred Accounts at Question 38)\n\nLimitations. The following limitations apply to these in-service distributions:\n1. [ ] The Plan already provides for in-service distributions and the restrictions set forth in the Plan (e.g., minimum amount of distributions or frequency of distributions) are applicable to in-service distributions at age 62.\n2. [ ] N/A (no limitations)\n3. [ ] The following limitations apply to these in-service distributions:\n   a. [ ] The minimum amount of a distribution is ____ (may be fully vested)\n   b. [ ] No more than ____ distribution(s) may be made to a Participant during a Plan Year.\n   c. [ ] Distributions may only be made from Accounts which are Fully Vested.\n   d. [ ] In-service distributions may be made subject to the following provisions: ____ (must be definitely determinable and not subject to discretion).",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 5,
+        "question_number": "t"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 5,
+      "kind": "multi_select",
+      "question_number": "u",
+      "question_text": "Other provisions for matching contributions (select one or more; may only be selected for 401(k) plans)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 5,
+        "question_number": "u"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Match applied to elective deferrals to Code \u00a7403(b) arrangement maintained by the Employer will be aggregated with Elective Deferrals to this Plan.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Match applied to contributions made to Code \u00a7457(b) plan.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Matching contributions not used to satisfy top-heavy contribution requirements.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 6,
+      "kind": "multi_select",
+      "question_number": "v",
+      "question_text": "QACA safe harbor contributions vesting options. The vesting options selected at Question 19 on the Adoption Agreement also apply to the Participant's Qualified Automatic Contribution Arrangement Safe Harbor Account unless otherwise selected below (select all that apply):",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 5,
+        "question_number": "v"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "applies",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "does not apply",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 7,
+      "kind": "multi_select",
+      "question_number": "w",
+      "question_text": "Investment Fiduciary",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 5,
+        "question_number": "w"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Administrator (use Administrator address and telephone number)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "The Employer or a Committee appointed by the Employer (use Employer address and telephone number)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "2.01",
+      "question_text": "Use following address/telephone number/email",
+      "section_context": "Article II - Addresses and Contact Information",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "2.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "2.02",
+      "question_text": "Investment in common, collective or pooled trust funds. The nondiscretionary Trustee, as directed to invest in the discretionary Trustee's own funds, may invest in any of the following trust funds: (optional) Specify the names of one or more trust funds in which the Plan can invest",
+      "section_context": "Article II - Investments",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "2.02"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "single_select",
+      "question_number": "2.03",
+      "question_text": "Choice of law: This trust will be governed by the laws of the state of:",
+      "section_context": "Article II - Choice of Law",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "2.03"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "State in which the Employer's principal office is located",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "State in which the corporate trustee or insurer is located",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Other (specify):",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Other (specify):",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "2.01",
+      "question_text": "Email (optional):",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "2.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "single_select",
+      "question_number": "2.02",
+      "question_text": "Trustee is (select one):",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 2,
+        "question_number": "2.02"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Discretionary Trustee over all plan assets (may not be selected with 4. \u2013 6.)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "A discretionary Trustee over the following plan assets: ______ (may not be selected with 4. \u2013 6.)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Nondiscretionary Trustee over all plan assets (may not be selected with 3., 4. or 6.)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "A nondiscretionary (directed) Trustee over the following plan assets: ______ (may not be selected with 3. \u2013 4.)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "3.01",
+      "question_text": "3. [ ] If the minimum benefit requirement shall be met in another plan (including another plan that consists solely of a cash or deferred arrangement which meets the requirements of Code \u00a7401(k)(12) and matching contributions with respect to which the requirements of Code \u00a7401(m)(11) apply), the Employer must specify the name of the other plan, the minimum benefit that will be provided under such other plan, and the Employees who will receive the minimum benefit under such other plan: _____________________",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 3,
+        "question_number": "3.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "multi_select",
+      "question_number": "3.02",
+      "question_text": "k. [ ] Recognition of Service with other employers (Plan Sections 1.62 and 1.88). Service with the following employers (in addition to those specified at Question 16) will be recognized as follows (select one or more; if more than 6 employers, attach an addendum to the Adoption Agreement):",
+      "section_context": "Non-Standardized Defined Contribution - Recognition of Service with other employers",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 3,
+        "question_number": "3.02"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Employer name:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Employer name:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Employer name:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "Employer name:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "Employer name:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "Employer name:",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "multi_select",
+      "question_number": "3.03",
+      "question_text": "l. [ ] Other vesting provisions. The following vesting provisions apply to the Plan (select one or more):",
+      "section_context": "Non-Standardized Defined Contribution - Other vesting provisions",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 3,
+        "question_number": "3.03"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Special vesting provisions. The following vesting provisions apply to the vesting provisions of the Plan: (must be definitely determinable, non-discriminatory under Code \u00a7401(a)(4) and otherwise satisfy the parameters set forth in Questions 18 and 19 and Plan Section 6.4; e.g., rather than the schedule specified at Question 4, the 5-year graded schedule applies to amounts merged into the Plan from the XYZ Plan.)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Pre-amendment vesting schedule. (Plan Section 6.4). If the vesting schedule has been amended and a different vesting schedule other than the schedule at Question 18 applies to any Participants, then the following provisions apply (must select one of a. - d.):",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Top-heavy vesting schedule. (Plan Section 6.4(c)). The vesting schedules in Question 18 only apply to: a. Participants who are Employees as of _________ (enter date). b. Participants in the Plan who have an Hour of Service on or after _________ (enter date). c. Participants (even if not an Employee) in the Plan on or after _________ (enter date). d. Other: ______ (e.g., 'Certain Employees in Division A') ______",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 4,
+      "kind": "multi_select",
+      "question_number": "3.04",
+      "question_text": "m. [ ] Top-heavy vesting schedule (Plan Section 6.4(c)). Instead of any other vesting schedules set forth in the Plan, if this Plan becomes a Top-Heavy Plan, the following vesting schedule(s), based on number of Years of Service (or Periods of Service if the elapsed time method is selected) will apply:",
+      "section_context": "Non-Standardized Defined Contribution - Top-heavy vesting schedule",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 3,
+        "question_number": "3.04"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "1) 6 Year Graded: 0-1 year-0%; 2 years-20%; 3 years-40%; 4 years-60%; 5 years-80%; 6 years-100",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "2) 3 Year Cliff: 0-2 years-0%; 3 years-100%",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "3) Other - Must be at least as liberal as either 1. or 2. above in each year without switching between the two schedules. (If a different top-heavy schedule applies to different contribution sources, attach an addendum specifying the schedule that applies to each source): Years (or Periods of Service)  Percentage",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "1.01",
+      "question_text": "Plan expenses. Will the Plan assess against an individual Participant's Account certain Plan expenses that are incurred by, or are attributable to, a particular Participant based on use of a particular Plan service?",
+      "section_context": "C. Plan expenses and Forfeitures",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.01"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "No",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Yes",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "multi_select",
+      "question_number": "1.02",
+      "question_text": "Other than Employer matching contributions. Forfeitures of amounts attributable to Employer contributions other than Employer matching contributions will be:",
+      "section_context": "C. Plan expenses and Forfeitures",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.02"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "added to any Employer discretionary contribution (for 401(k) plans, matching or profit sharing) and allocated in the same manner",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "used to reduce any Employer contribution",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "added to any Employer matching contribution and allocated as an additional matching contribution (may only be selected with 401(k) Plans)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "allocated to all Participants eligible to share in the allocations of profit sharing contributions or Forfeitures in the same proportion that each Participant's Compensation for the Plan Year bears to the Compensation of all Participants for such year",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "other: __________ (describe the treatment of Forfeitures in a manner that is definitely determinable and not subject to Employer discretion)",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Specify other treatment of Forfeitures:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_sequence": 3,
+      "kind": "multi_select",
+      "question_number": "1.03",
+      "question_text": "Matching contributions. Forfeitures of amounts attributable to Employer matching contributions will be: (skip if this is NOT a 401(k) Plan)",
+      "section_context": "C. Plan expenses and Forfeitures",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.03"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "N/A (same as above or no Employer matching contributions)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "used to reduce the Employer matching contribution",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "added to any Employer matching contribution and allocated as an additional matching contribution (may only be selected with 401(k) Plans)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "added to any Employer discretionary profit sharing contribution",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "used to reduce any Employer contribution",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "other: __________ (describe the treatment of forfeit in a manner that is definitely determinable and not subject to Employer discretion)",
+          "is_selected": false,
+          "fill_ins": [
+            {
+              "fill_in_sequence": 1,
+              "kind": "text",
+              "question_text": "Specify other treatment of Forfeitures:",
+              "status": "unanswered",
+              "confidence": 1.0,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_sequence": 4,
+      "kind": "single_select",
+      "question_number": "1.04",
+      "question_text": "Directed investments. a. Participant directed investments are NOT permitted. b. Participant directed investments are permitted from the following Participant Accounts: (select all that apply)",
+      "section_context": "D. Directed investments",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.04"
+      },
+      "value": {
+        "selected_label": null
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Participant directed investments are NOT permitted.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Participant directed investments are permitted from the following Participant Accounts (select one or more): all Accounts; or from the following Accounts (select one or more):",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 5,
+      "kind": "multi_select",
+      "question_number": "1.05",
+      "question_text": "Directed investment options. If directed investments are permitted, select all that apply:",
+      "section_context": "D. Directed investments",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.05"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "ERISA Section 404(c). It is intended that the Plan comply with ERISA Section 404(c) with respect to the Accounts subject to Participant investment directions.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "QDIA. Plan will include a qualified default investment alternative.",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "multi_select",
+      "question_number": "A.01",
+      "question_text": "A. Loan limitations. Note: The separate loan program required by the DOL will override any inconsistent selections made below.",
+      "section_context": "Administrative Procedures",
+      "status": "answered",
+      "confidence": 0.98,
+      "provenance": {
+        "page": 1,
+        "question_number": "A.01"
+      },
+      "value": {
+        "selected_labels": [
+          "a"
+        ]
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Limitations (select one or more; leave blank if none apply):",
+          "is_selected": true,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Loans will be treated as Participant directed investments.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "c",
+          "option_text": "Loans will only be made for hardship or financial necessity as defined below (select a. or b.)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "d",
+          "option_text": "The minimum loan will be $____ (may not exceed $1,000).",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "e",
+          "option_text": "A Participant may only have ____ loan(s) outstanding at any time.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "f",
+          "option_text": "All outstanding loan balances will become due and payable upon severance of employment unless directly rolled over to another employer's plan.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "g",
+          "option_text": "The home loan term will be ____ years. (if not selected, default 5 years)",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "h",
+          "option_text": "Account restrictions. Loans will only be permitted from the following Participant Accounts (select all that apply) or leave blank if no limitations apply:",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "i",
+          "option_text": "Other: __________________",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "multi_select",
+      "question_number": "B.01",
+      "question_text": "B. Life insurance. (Plan Section 7.3)",
+      "section_context": "B. Life insurance. (Plan Section 7.3)",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "B.01"
+      },
+      "value": {
+        "selected_labels": []
+      },
+      "options": [
+        {
+          "label": "a",
+          "option_text": "Life insurance may not be purchased.",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Life insurance may be purchased...",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 1,
+      "kind": "single_select",
+      "question_number": "1.01",
+      "question_text": "Rollover limitations. Will the Plan specify which sources of rollovers will be accepted? (skip if rollover contributions are NOT selected at 12.f.)",
+      "section_context": "E. Rollover limitations",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.01"
+      },
+      "value": null,
+      "options": [
+        {
+          "label": "a",
+          "option_text": "No, Administrator determines in operation which sources will be accepted",
+          "is_selected": false,
+          "fill_ins": []
+        },
+        {
+          "label": "b",
+          "option_text": "Yes Rollover sources. Indicate the sources of rollovers that will be accepted (select one or more)",
+          "is_selected": false,
+          "fill_ins": []
+        }
+      ]
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "2.01",
+      "question_text": "Elective Deferral procedures (may only be selected with 401(k) Plans)",
+      "section_context": "F. Elective Deferral procedures",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "2.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 1,
+      "kind": "text",
+      "question_number": "1.01",
+      "question_text": "Leased Employees (Plan Section 1.49)",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 2,
+      "kind": "text",
+      "question_number": "1.02",
+      "question_text": "Offset of contributions to leasing organization plan.",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "1.02"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 3,
+      "kind": "text",
+      "question_number": "2.01",
+      "question_text": "Disregard one year requirement. The definition of Leased Employee shall be applied by discarding the requirement of performing services for at least one year, for the following contributions (select all that apply): a. All contributions; b. The following contributions (select all that apply): 1. Elective Deferrals; 2. Matching contributions; 3. Nonelective contributions include QMACs;",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "2.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 4,
+      "kind": "text",
+      "question_number": "3.01",
+      "question_text": "Minimum distribution transitional rules (Plan Section 6.8(e)(5)) NOTE: This Section does not apply to (1) a new Plan, (2) an amendment or restatement of an existing Plan that never contained the provisions of Code \u00a7401(a)(9) as in effect prior to the amendments made by the Small Business Job Protection Act of 1996 (SBJPA), or (3) a Plan where the transition rules below do not affect any current Participants. The 'required beginning date' for a Participant who is not a 'five percent (5%) owner' is: 1. [ ] April 1st of the calendar year following the year in which the Participant attains age 70 1/2. (pre-SBJPA rules continue to apply) 2. [ ] April 1st of the calendar year following the later of the year in which the Participant attains age 70 1/2 or retires (the post-SBJPA rules), with the following exceptions (select one or both; leave blank if both applied to the start date): 3. [ ] A Participant who was already receiving required minimum distributions under the pre-SBJPA rules as of ______ (may not be earlier than January 1, 1996) may elect to defer commencement of distributions until retirement. The option to defer commencement of distributions (i.e., to elect to receive in-service distributions upon attainment of age 70 1/2) applies to all such Participants unless selected below: 1. [ ] The in-service distribution option was eliminated with respect to Participants who attained age 70 1/2 in or after the calendar year that began after the later of (i) December 31, 1998, or (ii) the adoption date of the restatement to bring the Plan into compliance with the SBJPA.",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "3.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 5,
+      "kind": "text",
+      "question_number": "4.01",
+      "question_text": "Other spousal provisions (select one or more):",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.01"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 6,
+      "kind": "text",
+      "question_number": "4.02",
+      "question_text": "One-year marriage rule.",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.02"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 7,
+      "kind": "text",
+      "question_number": "4.03",
+      "question_text": "Definition of Spouse.",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.03"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 8,
+      "kind": "text",
+      "question_number": "4.04",
+      "question_text": "Automatic revocation of spousal designation.",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.04"
+      },
+      "value": null
+    },
+    {
+      "page_sequence": 9,
+      "kind": "text",
+      "question_number": "4.05",
+      "question_text": "Timing of QDRO payment.",
+      "section_context": "Non-Standardized Defined Contribution",
+      "status": "unanswered",
+      "confidence": 1.0,
+      "provenance": {
+        "page": 1,
+        "question_number": "4.05"
+      },
+      "value": null
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+[
+  {
+    "provision_id": "bba80278-273c-4d7b-87f3-20adce585f02",
+    "document_id": "pair_a_source_bpd",
+    "provision_type": "eligibility",
+    "section_reference": "Section 2.01",
+    "section_title": "Eligibility to Participate",
+    "provision_text": "An Employee shall be eligible to participate in the Plan upon attaining age 21 and completing one Year of Service. Entry into the Plan shall be as of the first Entry Date following satisfaction of these requirements.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.98,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [
+        21.0
+      ],
+      "service_years": [
+        1.0
+      ],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Year of Service",
+        "Entry Date"
+      ]
+    },
+    "created_at": "2025-10-19T17:09:27.126126",
+    "updated_at": "2025-10-19T17:09:27.126133"
+  },
+  {
+    "provision_id": "08749200-e988-40d0-a1c8-f50ef1020a54",
+    "document_id": "pair_a_source_bpd",
+    "provision_type": "eligibility",
+    "section_reference": "Section 2.04",
+    "section_title": "Eligibility to Participate After a Break in Eligibility Service or Upon Rehire",
+    "provision_text": "If an Employee incurs a Break in Eligibility Service and is subsequently reemployed, such Employee shall be eligible to participate in the Plan upon completion of the eligibility requirements set forth in Section 2.01, unless otherwise provided in the Adoption Agreement.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.92,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Break in Eligibility Service",
+        "rehire",
+        "eligibility requirements"
+      ]
+    },
+    "created_at": "2025-10-19T17:09:27.126162",
+    "updated_at": "2025-10-19T17:09:27.126163"
+  },
+  {
+    "provision_id": "331a66c1-78f7-44fc-8091-3e8628eaaa82",
+    "document_id": "pair_a_source_bpd",
+    "provision_type": "eligibility",
+    "section_reference": "Section 2.03",
+    "section_title": "Transfer to or from an Ineligible Class",
+    "provision_text": "If an Employee transfers to an ineligible class of Employees, such Employee's participation in the Plan shall be suspended until the Employee again becomes a member of an eligible class. Upon becoming a member of an eligible class, the Employee shall participate immediately if the Employee had previously satisfied the eligibility requirements.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.9,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "ineligible class",
+        "eligible class",
+        "suspension",
+        "immediate participation"
+      ]
+    },
+    "created_at": "2025-10-19T17:09:27.126178",
+    "updated_at": "2025-10-19T17:09:27.126179"
+  },
+  {
+    "provision_id": "016c790c-8cc2-4d5c-924d-583c70e997fe",
+    "document_id": "pair_a_source_bpd",
+    "provision_type": "vesting_schedule",
+    "section_reference": "Section 4.01",
+    "section_title": "Determining the Vested Portion of Participant Individual Accounts",
+    "provision_text": "A Participant shall become vested in Employer Contributions according to the following schedule: 0% for less than 2 Years of Vesting Service, 20% after 2 Years of Vesting Service, 40% after 3 Years of Vesting Service, 60% after 4 Years of Vesting Service, 80% after 5 Years of Vesting Service, and 100% after 6 or more Years of Vesting Service, unless otherwise specified in the Adoption Agreement.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.97,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0
+      ],
+      "percentages": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0
+      ],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "vesting",
+        "Employer Contributions",
+        "Years of Vesting Service"
+      ]
+    },
+    "created_at": "2025-10-19T17:09:27.126195",
+    "updated_at": "2025-10-19T17:09:27.126195"
+  },
+  {
+    "provision_id": "6df2cf67-07c9-42bf-b382-b6f2f0b77b36",
+    "document_id": "pair_a_source_bpd",
+    "provision_type": "vesting_schedule",
+    "section_reference": "Section 4.02",
+    "section_title": "100 Percent Vesting of Certain Contributions",
+    "provision_text": "A Participant shall be 100% vested at all times in the portion of the Individual Account attributable to Elective Deferrals, Rollover Contributions, and Qualified Nonelective Contributions, as well as any Safe Harbor Contributions, unless otherwise specified in the Adoption Agreement.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.96,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [
+        1.0
+      ],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "100% vested",
+        "Elective Deferrals",
+        "Rollover Contributions",
+        "Qualified Nonelective Contributions",
+        "Safe Harbor Contributions"
+      ]
+    },
+    "created_at": "2025-10-19T17:09:27.126210",
+    "updated_at": "2025-10-19T17:09:27.126210"
+  }
+]

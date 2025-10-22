@@ -1,0 +1,1563 @@
+{
+  "stats": {
+    "total_elections": 543,
+    "critical_elections": 74,
+    "by_topic": {
+      "contributions": 84,
+      "plan_identification": 41,
+      "eligibility": 18,
+      "testing": 18,
+      "plan_type": 17,
+      "distributions": 27,
+      "vesting": 3
+    }
+  },
+  "critical_by_topic": {
+    "contributions": [
+      {
+        "id": "q2_01",
+        "question_number": "2.01",
+        "question_text": "Will Matching Contributions be made in accordance with the Matching Contribution formula specified in items 3 and 4 below, with regard to Catch-up Contributions (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Matching Contribution Formula: If the Employer selected to make Matching Contributions in Part B, item 1 above, then the amount of such Matching Contributions made on behalf of a Qualifying Contributing Participant each Plan Year will be equal to (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "Will eligible Contributing Participants be permitted to make Catch-up Contributions pursuant to Plan Section 3.01(H) (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q10_02",
+        "question_number": "10.02",
+        "question_text": "Current Employees: If an ACA or EACA provision is being added to the Plan or an existing ACA or EACA provision is being changed, will automatic enrollment for Elective Deferrals apply to all Employees who meet the eligibility requirements and who fail to return a salary reduction agreement on or after the Effective Date (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q11_02",
+        "question_number": "11.02",
+        "question_text": "Comparison Percentage: Will the Employer withhold and contribute to the Plan as an Elective Deferral the greater of the standard percentage as described in item (i) above or the Participant\u2019s Elective Deferral rate in effect before being automatically enrolled in the QACA (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q11_03",
+        "question_number": "11.03",
+        "question_text": "Initial Period: Will QACA rate increases occur during the Initial Period? (select one).",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q11_04",
+        "question_number": "11.04",
+        "question_text": "Subsequent Periods: QACA rate increases following the Initial Period, if applicable, will occur on the following date (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_c",
+        "question_number": "4.c",
+        "question_text": "Participants Entitled to Receive QACA Safe Harbor Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_d",
+        "question_number": "4.d",
+        "question_text": "QACA ADP Test Safe Harbor Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_e",
+        "question_number": "4.e",
+        "question_text": "QACA ACP Test Safe Harbor Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q9_02",
+        "question_number": "9.02",
+        "question_text": "Tax Character of Elective Deferrals \u2013 ACA/EACA/QACA",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q12_03",
+        "question_number": "12.03",
+        "question_text": "Authorization of Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q12_04",
+        "question_number": "12.04",
+        "question_text": "Recipient Plan: The QACA Safe Harbor Contributions will be made to (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_02",
+        "question_number": "2.02",
+        "question_text": "Enhanced Matching Contributions",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_03",
+        "question_number": "2.03",
+        "question_text": "Other Enhanced Matching Contribution",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_04",
+        "question_number": "2.04",
+        "question_text": "Safe Harbor Noneligible Contributions",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "ACP Test Safe Harbor Matching Contributions",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "Will the Employer be permitted to make supplemental Matching Contributions, in an amount to be determined at the Employer's discretion, in addition to the Matching Contributions described in Part B, items 2 and 3 above (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q25_02",
+        "question_number": "25.02",
+        "question_text": "1. Qualified Matching Contribution Formula \u2014 For each Plan Year, can the Employer contribute an amount to be determined as a Qualified Matching Contribution (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q25_03",
+        "question_number": "25.03",
+        "question_text": "2. Qualified Matching Contributions (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q25_04",
+        "question_number": "25.04",
+        "question_text": "3. Qualified Matching Contribution Formula (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "Recipient Plan: The Safe Harbor Contributions will be made to (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_02",
+        "question_number": "4.02",
+        "question_text": "Authorization of Employer Profit Sharing Contributions: Will the Employer make Employer Profit Sharing Contributions to the Plan on behalf of Qualifying Participants (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_04",
+        "question_number": "4.04",
+        "question_text": "Allocation Formula \u2013 Employer Profit Sharing Contributions will be allocated to the Individual Accounts of Qualifying Participants as follows (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4",
+        "question_number": "4",
+        "question_text": "Additional Conditions for Receiving Employer Profit Sharing Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5_01",
+        "question_number": "5.01",
+        "question_text": "Matching Contribution Limit: Notwithstanding the Matching Contribution formula(s) specified above, no Matching Contributions in excess of $ __________ or ______ percent of a Contributing Participant's Compensation will be made with respect to any Contributing Participant for any Plan Year.",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q6_01",
+        "question_number": "6.01",
+        "question_text": "Additional Conditions for Receiving Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q7_01",
+        "question_number": "7.01",
+        "question_text": "Will the Safe Harbor CODA provisions of Plan Section 3.03 apply (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q7_02",
+        "question_number": "7.02",
+        "question_text": "Participants Entitled to Receive Safe Harbor CODA Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q8_01",
+        "question_number": "8.01",
+        "question_text": "ADP Test Safe Harbor Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_01",
+        "question_number": "2.01",
+        "question_text": "Qualified Matching Contribution Limit",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Contributing Participants Eligible for Qualified Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_02",
+        "question_number": "3.02",
+        "question_text": "Additional Conditions for Receiving Qualified Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "Part A. Vesting Schedule for Matching Contributions",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q6_02",
+        "question_number": "6.02",
+        "question_text": "Contribution Offset Will the Employer Prevailing Wage Contributions offset any other Employer Profit Sharing Contribution to which the Participant may be entitled to under the Plan (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5_03",
+        "question_number": "5.03",
+        "question_text": "Employee Has Not Reached Normal Retirement Age - Will an Employee be entitled to request a distribution of their Individual Account upon Termination of Employment for the following contributions? (select one)  (Note: If yes, applies to matching contributions and/or employer profit sharing contributions.)",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "qB_01",
+        "question_number": "B.01",
+        "question_text": "Vesting Schedule for Employer Profit Sharing Contributions (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "qC_01",
+        "question_number": "C.01",
+        "question_text": "Vesting Schedule for QACA ADP Test Safe Harbor Contributions (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_03",
+        "question_number": "2.03",
+        "question_text": "In-Service Availability for Employer Contributions (A) Will a Participant be entitled to request an in-service distribution of their Individual Account attributable to Matching Contributions and Employer Profit Sharing Contributions (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "qK_02",
+        "question_number": "K.02",
+        "question_text": "2. If the Employer makes the nonelective contribution described in Section 3.02 of the Plan instead of a Matching Contribution, the nonelective contribution will be made to each Eligible Employee who received Compensation for the SIMPLE 401(k) Year equal to at least:",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_06",
+        "question_number": "4.06",
+        "question_text": "Forfeitures of Matching Contributions will be (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5",
+        "question_number": "5",
+        "question_text": "Retirement Equity Act Safe Harbor",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_03",
+        "question_number": "4.03",
+        "question_text": "Hardship Availability for Matching Contributions and Employer Profit Sharing Contributions (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_02",
+        "question_number": "4.02",
+        "question_text": "Matching Contributions: Will Compensation include Matching Contributions?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_03",
+        "question_number": "4.03",
+        "question_text": "Employer Profit Sharing Contributions: Will Compensation include Employer Profit Sharing Contributions?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q6_01",
+        "question_number": "6.01",
+        "question_text": "Part B. Matching Contribution Computation Period: The Matching Contribution Computation Period applicable to Matching Contributions will be (Select one. If Matching Contributions are not available under the Plan, select 'Not applicable')",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "Catch-up Contributions (Will eligible Contributing Participants be permitted to make Catch-up Contributions pursuant to Plan Section 3.01(H) (select one)?)",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_01",
+        "question_number": "1.01",
+        "question_text": "Age Requirement. An Employee will be eligible to become a Participant in the Plan for purposes of becoming a Contributing Participant (and thus eligible to make Elective Deferrals), receiving Matching Contributions, or receiving an allocation of any Employer Profit Sharing Contributions, Safe Harbor Contributions and Qualified Nonelective Contributions, as applicable, made pursuant to Section Three of this Participating Employer Election Attachment, after attaining the following age (select one):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_02",
+        "question_number": "1.02",
+        "question_text": "Eligibility Service Requirement. An Employee will be eligible to become a Participant in the Plan for purposes of becoming a Contributing Participant (and thus eligible to make Elective Deferrals), receiving Matching Contributions, or receiving an allocation of any Employer Profit Sharing Contributions, Safe Harbor Contributions and Qualified Nonelective Contributions, as applicable, made pursuant to Section Three of this Participating Employer Election Attachment (select and complete all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q68_e01",
+        "question_number": "e.01",
+        "question_text": "QACA ACP Test Safe Harbor Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Matching contribution method (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_01",
+        "question_number": "2.01",
+        "question_text": "Comparison Percentage: Will the Employer withhold and contribute to the Plan as an Elective Deferral the greater of the standard percentage as described in item (i) above or the Participant\u2019s Elective Deferral rate in effect before being automatically enrolled in the QACA (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_02",
+        "question_number": "2.02",
+        "question_text": "Initial Period: Will QACA rate increases, if applicable, occur during the Initial Period (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_03",
+        "question_number": "2.03",
+        "question_text": "Subsequent Periods: QACA rate increases following the Initial Period, if applicable, will occur on the following date (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_04",
+        "question_number": "2.04",
+        "question_text": "Participants Entitled to Receive QACA Safe Harbor Contributions: QACA Safe Harbor Contributions will be made on behalf of (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_05",
+        "question_number": "2.05",
+        "question_text": "QACA ADP Test Safe Harbor Contribution: For the Plan Year, the Employer will make the following QACA ADP Test Safe Harbor Contributions to the Individual Account of each Eligible Employee, as described in item 11(c) above, in the amount of (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q11_01",
+        "question_number": "11.01",
+        "question_text": "QACA Elective Deferral Rates \u2013 Standard Percentage",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q_b_01",
+        "question_number": "b.01",
+        "question_text": "b. Tax Character of Elective Deferrals \u2013 ACA/EACA/QACA (How will amounts withheld from Compensation and contributed to the Plan as automatic Elective Deferrals be designated for tax purposes (select one)?)",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Will the Safe Harbor CODA provisions of Plan Section 3.03 apply (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_02",
+        "question_number": "3.02",
+        "question_text": "Safe Harbor CODA contributions will be made on behalf of (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_03",
+        "question_number": "3.03",
+        "question_text": "ADP Test Safe Harbor Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "ACP Test Safe Harbor Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_01",
+        "question_number": "1.01",
+        "question_text": "Authorization of Employer Profit Sharing Contributions Will the Employer make Employer Profit Sharing Contributions to the Plan on behalf of Qualifying Participants (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q12_03",
+        "question_number": "12.03",
+        "question_text": "Authorization of Matching Contributions (Will the Employer make Matching Contributions to the Plan on behalf of a Qualifying Contributing Participant) (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q12_04",
+        "question_number": "12.04",
+        "question_text": "Matching Contributions and Catch-up Contributions (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q12_05",
+        "question_number": "12.05",
+        "question_text": "Matching Contribution Formula",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_01",
+        "question_number": "2.01",
+        "question_text": "Qualified Matching Contribution Limit: Notwithstanding the Qualified Matching Contribution formula(s) specified above, no Qualified Matching Contributions in excess of $________ or ____ percent of a Contribution Participant's Compensation will be made with respect to any Contribution Participant for any Plan Year. (Complete the applicable blank(s), if any.)",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Participants Entitled to Qualified Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_02",
+        "question_number": "3.02",
+        "question_text": "Additional Conditions for Receiving Qualified Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5_01",
+        "question_number": "5.01",
+        "question_text": "Matching Contribution Limit: Notwithstanding the Matching Contribution formula(s) specified above, no Matching Contributions in excess of $ ______ or percent of a Contributing Participant's Compensation will be made with respect to any Contributing Participant for any Plan Year. (Complete the applicable blank(s), if any.)",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q6_01",
+        "question_number": "6.01",
+        "question_text": "Additional Conditions for Receiving Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "Additional Conditions for Receiving Employer Profit Sharing Contributions (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q7_02",
+        "question_number": "7.02",
+        "question_text": "1. Qualified Matching Contribution Formula: For each Plan Year, can the Employer contribute an amount to be determined as a Qualified Matching Contribution (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q7_03",
+        "question_number": "7.03",
+        "question_text": "b. Qualified Matching Contributions, if made to the Plan, will be made with respect to (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q7_04",
+        "question_number": "7.04",
+        "question_text": "c. Qualified Matching Contribution Formula: If the Employer will make Qualified Matching Contributions, then the amount of such Qualified Matching Contributions made on behalf of a Qualifying Participant each Plan Year will be equal to (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "A Participant will become Vested in the portion of their Individual Account derived from QACA ADP Test Safe Harbor Contributions, if applicable, made to the Plan pursuant to Section Three of this Participating Employer Election Attachment as follows.",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2",
+        "question_number": "2",
+        "question_text": "If the Employer makes the nonselective contribution described in Section 3.02 of the Plan instead of a Matching Contribution, the nonselective contribution will be made to each Eligible Employee who received Compensation for the SIMPLE 401(k) Year equal to at least:",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q6_02",
+        "question_number": "6.02",
+        "question_text": "2. Employer Profit Sharing Contributions will be allocated to the Individual Accounts of Qualifying Participants in each Allocation Group as follows (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5_02",
+        "question_number": "5.02",
+        "question_text": "The Matching Contribution Computation Period applicable to Matching Contributions will be (Select one. If Matching Contributions are not available under the Plan, select 'Not applicable'):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_04",
+        "question_number": "3.04",
+        "question_text": "Allocation of Forfeitures of Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_06",
+        "question_number": "3.06",
+        "question_text": "Allocation of Forfeitures of Employer Profit Sharing Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_02",
+        "question_number": "4.02",
+        "question_text": "Hardship Availability for Matching Contributions and Employer Profit Sharing Contributions: Will an Employee be entitled to request a hardship distribution of their Individual Account attributable to Matching Contributions and Employer Profit Sharing Contributions (select all that apply)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_02",
+        "question_number": "2.02",
+        "question_text": "In-Service Availability for Employer Contributions (A) Will a Participant be entitled to request an in-service distribution of their Individual Account attributable to Matching Contributions and Employer Profit Sharing Contributions (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_01",
+        "question_number": "2.01",
+        "question_text": "Retirement Equity Act Safe Harbor",
+        "kind": "single_select",
+        "status": "unanswered"
+      }
+    ],
+    "plan_identification": [
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Matching Contribution Formula: If the Employer selected to make Matching Contributions in Part B, item 1 above, then the amount of such Matching Contributions made on behalf of a Qualifying Contributing Participant each Plan Year will be equal to (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q10_02",
+        "question_number": "10.02",
+        "question_text": "Current Employees: If an ACA or EACA provision is being added to the Plan or an existing ACA or EACA provision is being changed, will automatic enrollment for Elective Deferrals apply to all Employees who meet the eligibility requirements and who fail to return a salary reduction agreement on or after the Effective Date (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q11_02",
+        "question_number": "11.02",
+        "question_text": "Comparison Percentage: Will the Employer withhold and contribute to the Plan as an Elective Deferral the greater of the standard percentage as described in item (i) above or the Participant\u2019s Elective Deferral rate in effect before being automatically enrolled in the QACA (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_01",
+        "question_number": "1.01",
+        "question_text": "Name of Adopting Employer",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "New Plan Effective Date",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_01",
+        "question_number": "2.01",
+        "question_text": "The Effective Date of this amendment or restatement is: __________",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q6_06",
+        "question_number": "6.06",
+        "question_text": "An Employee as the result of a transaction described in Code section 410(b)(6)(C). Such Employee will be excluded during the period beginning on the date of the change in the member(s) of the group and ending on the last day of the first Plan Year beginning after the date of the change. If this exclusion is selected, it will apply to the following contributions (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q25_02",
+        "question_number": "25.02",
+        "question_text": "1. Qualified Matching Contribution Formula \u2014 For each Plan Year, can the Employer contribute an amount to be determined as a Qualified Matching Contribution (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5_01",
+        "question_number": "5.01",
+        "question_text": "Matching Contribution Limit: Notwithstanding the Matching Contribution formula(s) specified above, no Matching Contributions in excess of $ __________ or ______ percent of a Contributing Participant's Compensation will be made with respect to any Contributing Participant for any Plan Year.",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Top-Heavy Contributions - Minimum Allocation or Benefit: For any Plan Year with respect to which this Plan is a Top-Heavy Plan, any minimum allocation required pursuant to Plan Section 3.04(E) will be made (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q50_01",
+        "question_number": "50.01",
+        "question_text": "Name of Adopting Employer",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_02",
+        "question_number": "4.02",
+        "question_text": "If the Plan Year is a non-calendar year, for purposes of determining who is a Highly Compensated Employee (other than a five-percent owner) under the Plan, will the calendar year data election apply (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_01",
+        "question_number": "1.01",
+        "question_text": "Name of Adopting Employer: _____________________",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_02",
+        "question_number": "2.02",
+        "question_text": "Source of Provision (e.g., plan name and sequence number, good faith amendment):",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_04",
+        "question_number": "2.04",
+        "question_text": "Source of Provision (e.g., plan name and sequence number, good faith amendment):",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_06",
+        "question_number": "2.06",
+        "question_text": "Source of Provision (e.g., plan name and sequence number, good faith amendment):",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "qA_01",
+        "question_number": "A.01",
+        "question_text": "Will the amount of Employer Contributions (other than Elective Deferrals) made to the Plan on behalf of the Participating Employer named above be determined by such Participating Employer and allocated, pursuant to the formula selected in Plan Section Three, only to Participants who are employed by the Participating Employer named above and satisfy the Plan\u2019s allocation conditions (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "qA_02",
+        "question_number": "A.02",
+        "question_text": "Will Forfeitures related to the Participating Employer named above be allocated only to Participants employed by the Participating Employer named above (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q51_01",
+        "question_number": "51.01",
+        "question_text": "Special Effective Date(s): The following special effective dates will apply to the Plan: (Select one or more as applicable.)",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_02",
+        "question_number": "4.02",
+        "question_text": "Plan Year Means (Select one)",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "a. Employees Employed as of the Effective Date (select one and complete, if applicable):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q60_02",
+        "question_number": "60.02",
+        "question_text": "An Employee as the result of a transaction described in Code section 410(b)(6)(C). Such Employee will be excluded during the period beginning on the date of the change in the member(s) of the group and ending on the last day of the first Plan Year beginning after the date of the change. If this election is selected, it will apply to the following contributions (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q0_01",
+        "question_number": "0.01",
+        "question_text": "Will Forfeitures related to the Participating Employer named above be allocated only to Participants employed by the Participating Employer named above (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Annually \u2013 The first day of the Plan Year. (Refer to the NOTE at the end of this Part C for restrictions that may apply.) If this Entry Date option is selected, it will apply to the following contributions and dates (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_01",
+        "question_number": "1.01",
+        "question_text": "Name of Adopting Employer",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Effective Date (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "Part A. Contributions: Will the amount of Employer Contributions (other than Elective Deferrals) made to the Plan on behalf of the Participating Employer named above be determined by such Participating Employer and allocated, pursuant to the formula selected in Plan Section Three, only to Participants who are employed by the Participating Employer named above and satisfy the Plan's allocation conditions (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_01",
+        "question_number": "2.01",
+        "question_text": "Comparison Percentage: Will the Employer withhold and contribute to the Plan as an Elective Deferral the greater of the standard percentage as described in item (i) above or the Participant\u2019s Elective Deferral rate in effect before being automatically enrolled in the QACA (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_05",
+        "question_number": "2.05",
+        "question_text": "QACA ADP Test Safe Harbor Contribution: For the Plan Year, the Employer will make the following QACA ADP Test Safe Harbor Contributions to the Individual Account of each Eligible Employee, as described in item 11(c) above, in the amount of (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_01",
+        "question_number": "2.01",
+        "question_text": "Qualified Matching Contribution Limit: Notwithstanding the Qualified Matching Contribution formula(s) specified above, no Qualified Matching Contributions in excess of $________ or ____ percent of a Contribution Participant's Compensation will be made with respect to any Contribution Participant for any Plan Year. (Complete the applicable blank(s), if any.)",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5_01",
+        "question_number": "5.01",
+        "question_text": "Matching Contribution Limit: Notwithstanding the Matching Contribution formula(s) specified above, no Matching Contributions in excess of $ ______ or percent of a Contributing Participant's Compensation will be made with respect to any Contributing Participant for any Plan Year. (Complete the applicable blank(s), if any.)",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q7_01",
+        "question_number": "7.01",
+        "question_text": "Last Day Requirement. The Participant is an Employee of the Employer on the last day of the Plan Year. However, this condition will be waived for the following reason(s) (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q7_02",
+        "question_number": "7.02",
+        "question_text": "1. Qualified Matching Contribution Formula: For each Plan Year, can the Employer contribute an amount to be determined as a Qualified Matching Contribution (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q7_04",
+        "question_number": "7.04",
+        "question_text": "c. Qualified Matching Contribution Formula: If the Employer will make Qualified Matching Contributions, then the amount of such Qualified Matching Contributions made on behalf of a Qualifying Participant each Plan Year will be equal to (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "Measuring Period for Vesting: Years of Vesting Service will be measured over the following 12-consecutive month period (select one): Option 1 The Plan Year; Option 2 The 12-consecutive month period commencing with the Employee\u2019s Employment Commencement Date and each successive 12-month period commencing on the anniversaries of the Employee\u2019s Employment Commencement Date; Option 3 Other (Specify); Option 4 Not applicable. NOTE: If no option is selected and the Hours of Service method of determining service applies.",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_01",
+        "question_number": "2.01",
+        "question_text": "Source of Provision (e.g., plan name and sequence number, good faith amendment):",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_02",
+        "question_number": "2.02",
+        "question_text": "Source of Provision (e.g., plan name and sequence number, good faith amendment):",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_03",
+        "question_number": "2.03",
+        "question_text": "Source of Provision (e.g., plan name and sequence number, good faith amendment):",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_06",
+        "question_number": "4.06",
+        "question_text": "Special Effective Date 1:",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_07",
+        "question_number": "4.07",
+        "question_text": "Special Effective Date 2:",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_08",
+        "question_number": "4.08",
+        "question_text": "Special Effective Date 3:",
+        "kind": "single_select",
+        "status": "unanswered"
+      }
+    ],
+    "eligibility": [
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "Entry Date (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5_02",
+        "question_number": "5.02",
+        "question_text": "ii. Applicable Contributions (If Option 1 is selected, the waiver of the age and eligibility service requirements will apply to all contributions that are made pursuant to Section Three of the Adoption Agreement except the following (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5_04",
+        "question_number": "5.04",
+        "question_text": "iii. Entry Date The following date will be an Entry Date for an Employee who is subject to this waiver (select one and complete, if applicable):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_04",
+        "question_number": "2.04",
+        "question_text": "1. Age Requirement (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q7_01",
+        "question_number": "7.01",
+        "question_text": "A Leased Employee. If this exclusion is selected, it will apply to the following contributions (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q7_05",
+        "question_number": "7.05",
+        "question_text": "Part C - Entry Dates. The Entry Dates will be (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_02",
+        "question_number": "2.02",
+        "question_text": "No eligibility service required. (select all that apply) - If this option is selected, there will be no eligibility service requirement for the following contributions:",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q6_02",
+        "question_number": "6.02",
+        "question_text": "Entry Date (select one): The following date will be an entry date for an Employee who is subject to this waiver (select one and complete, if applicable):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q60_03",
+        "question_number": "60.03",
+        "question_text": "A Leased Employee. If this election is selected, it will apply to the following contributions (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q61_01",
+        "question_number": "61.01",
+        "question_text": "Entry Dates (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q61_01_opt_a_sub1",
+        "question_number": "61.01.a",
+        "question_text": "If this Entry Date option is selected, it will apply to the following contributions (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q61_01_opt_b_sub1",
+        "question_number": "61.01.b",
+        "question_text": "If this Entry Date option is selected, it will apply to the following contributions (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q61_01_opt_c_sub1",
+        "question_number": "61.01.c",
+        "question_text": "If this Entry Date option is selected, it will apply to the following contributions (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q61_01_opt_d_sub1",
+        "question_number": "61.01.d",
+        "question_text": "If this Entry Date option is selected, it will apply to the following contributions (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_03",
+        "question_number": "3.03",
+        "question_text": "The following date will be an Entry Date for an Employee who is subject to this waiver (select one and complete, if applicable):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_01",
+        "question_number": "1.01",
+        "question_text": "Age Requirement. An Employee will be eligible to become a Participant in the Plan for purposes of becoming a Contributing Participant (and thus eligible to make Elective Deferrals), receiving Matching Contributions, or receiving an allocation of any Employer Profit Sharing Contributions, Safe Harbor Contributions and Qualified Nonelective Contributions, as applicable, made pursuant to Section Three of this Participating Employer Election Attachment, after attaining the following age (select one):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_02",
+        "question_number": "1.02",
+        "question_text": "Eligibility Service Requirement. An Employee will be eligible to become a Participant in the Plan for purposes of becoming a Contributing Participant (and thus eligible to make Elective Deferrals), receiving Matching Contributions, or receiving an allocation of any Employer Profit Sharing Contributions, Safe Harbor Contributions and Qualified Nonelective Contributions, as applicable, made pursuant to Section Three of this Participating Employer Election Attachment (select and complete all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Annually \u2013 The first day of the Plan Year. (Refer to the NOTE at the end of this Part C for restrictions that may apply.) If this Entry Date option is selected, it will apply to the following contributions and dates (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      }
+    ],
+    "testing": [
+      {
+        "id": "q4_d",
+        "question_number": "4.d",
+        "question_text": "QACA ADP Test Safe Harbor Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_e",
+        "question_number": "4.e",
+        "question_text": "QACA ACP Test Safe Harbor Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "ACP Test Safe Harbor Matching Contributions",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q8_01",
+        "question_number": "8.01",
+        "question_text": "ADP Test Safe Harbor Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "qH01",
+        "question_number": "H.01",
+        "question_text": "The testing method used for purposes of the ADP test under this Plan will be (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "qI01",
+        "question_number": "I.01",
+        "question_text": "The testing method used for purposes of the ACP test under this Plan will be (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Top-Heavy Contributions - Minimum Allocation or Benefit: For any Plan Year with respect to which this Plan is a Top-Heavy Plan, any minimum allocation required pursuant to Plan Section 3.04(E) will be made (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_02",
+        "question_number": "3.02",
+        "question_text": "Top-Heavy Contributions - Participants Entitled to Receive Minimum Allocation: If any minimum allocation required pursuant to Plan Section 3.04(E) is not satisfied with other allowable contribution sources, the remaining minimum allocation required pursuant to Plan Section 3.04(E) will be allocated to the Individual Accounts of (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_03",
+        "question_number": "3.03",
+        "question_text": "Top-Heavy Contributions - Top-Heavy Ratio: For purposes of computing the top-heavy ratio as described in Plan Section 7.19(B), the Present Value of benefits under a defined benefit plan will be discounted only for mortality and interest based on the following (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "qC_01",
+        "question_number": "C.01",
+        "question_text": "Vesting Schedule for QACA ADP Test Safe Harbor Contributions (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q68_e01",
+        "question_number": "e.01",
+        "question_text": "QACA ACP Test Safe Harbor Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_05",
+        "question_number": "2.05",
+        "question_text": "QACA ADP Test Safe Harbor Contribution: For the Plan Year, the Employer will make the following QACA ADP Test Safe Harbor Contributions to the Individual Account of each Eligible Employee, as described in item 11(c) above, in the amount of (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_03",
+        "question_number": "3.03",
+        "question_text": "ADP Test Safe Harbor Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "ACP Test Safe Harbor Matching Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_01",
+        "question_number": "1.01",
+        "question_text": "The testing method used for purposes of the ACP test under this Plan will be (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "A Participant will become Vested in the portion of their Individual Account derived from QACA ADP Test Safe Harbor Contributions, if applicable, made to the Plan pursuant to Section Three of this Participating Employer Election Attachment as follows.",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_03",
+        "question_number": "3.03",
+        "question_text": "Top-Heavy Ratio (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "ADP Testing Method (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      }
+    ],
+    "plan_type": [
+      {
+        "id": "q4_02",
+        "question_number": "4.02",
+        "question_text": "Authorization of Employer Profit Sharing Contributions: Will the Employer make Employer Profit Sharing Contributions to the Plan on behalf of Qualifying Participants (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_04",
+        "question_number": "4.04",
+        "question_text": "Allocation Formula \u2013 Employer Profit Sharing Contributions will be allocated to the Individual Accounts of Qualifying Participants as follows (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4",
+        "question_number": "4",
+        "question_text": "Additional Conditions for Receiving Employer Profit Sharing Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q6_02",
+        "question_number": "6.02",
+        "question_text": "Contribution Offset Will the Employer Prevailing Wage Contributions offset any other Employer Profit Sharing Contribution to which the Participant may be entitled to under the Plan (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5_03",
+        "question_number": "5.03",
+        "question_text": "Employee Has Not Reached Normal Retirement Age - Will an Employee be entitled to request a distribution of their Individual Account upon Termination of Employment for the following contributions? (select one)  (Note: If yes, applies to matching contributions and/or employer profit sharing contributions.)",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "qB_01",
+        "question_number": "B.01",
+        "question_text": "Vesting Schedule for Employer Profit Sharing Contributions (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_03",
+        "question_number": "2.03",
+        "question_text": "In-Service Availability for Employer Contributions (A) Will a Participant be entitled to request an in-service distribution of their Individual Account attributable to Matching Contributions and Employer Profit Sharing Contributions (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_03",
+        "question_number": "4.03",
+        "question_text": "Hardship Availability for Matching Contributions and Employer Profit Sharing Contributions (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_03",
+        "question_number": "4.03",
+        "question_text": "Employer Profit Sharing Contributions: Will Compensation include Employer Profit Sharing Contributions?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_01",
+        "question_number": "1.01",
+        "question_text": "Age Requirement. An Employee will be eligible to become a Participant in the Plan for purposes of becoming a Contributing Participant (and thus eligible to make Elective Deferrals), receiving Matching Contributions, or receiving an allocation of any Employer Profit Sharing Contributions, Safe Harbor Contributions and Qualified Nonelective Contributions, as applicable, made pursuant to Section Three of this Participating Employer Election Attachment, after attaining the following age (select one):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_02",
+        "question_number": "1.02",
+        "question_text": "Eligibility Service Requirement. An Employee will be eligible to become a Participant in the Plan for purposes of becoming a Contributing Participant (and thus eligible to make Elective Deferrals), receiving Matching Contributions, or receiving an allocation of any Employer Profit Sharing Contributions, Safe Harbor Contributions and Qualified Nonelective Contributions, as applicable, made pursuant to Section Three of this Participating Employer Election Attachment (select and complete all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_01",
+        "question_number": "1.01",
+        "question_text": "Authorization of Employer Profit Sharing Contributions Will the Employer make Employer Profit Sharing Contributions to the Plan on behalf of Qualifying Participants (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "Additional Conditions for Receiving Employer Profit Sharing Contributions (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q6_02",
+        "question_number": "6.02",
+        "question_text": "2. Employer Profit Sharing Contributions will be allocated to the Individual Accounts of Qualifying Participants in each Allocation Group as follows (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_06",
+        "question_number": "3.06",
+        "question_text": "Allocation of Forfeitures of Employer Profit Sharing Contributions",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_02",
+        "question_number": "4.02",
+        "question_text": "Hardship Availability for Matching Contributions and Employer Profit Sharing Contributions: Will an Employee be entitled to request a hardship distribution of their Individual Account attributable to Matching Contributions and Employer Profit Sharing Contributions (select all that apply)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_02",
+        "question_number": "2.02",
+        "question_text": "In-Service Availability for Employer Contributions (A) Will a Participant be entitled to request an in-service distribution of their Individual Account attributable to Matching Contributions and Employer Profit Sharing Contributions (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      }
+    ],
+    "distributions": [
+      {
+        "id": "q5_16",
+        "question_number": "5.16",
+        "question_text": "Will a Participant be entitled to request a loan pursuant to Plan Section 5.16 (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_02",
+        "question_number": "2.02",
+        "question_text": "Loans: May an outstanding loan amount be included in a Direct In-Plan Roth Rollover (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5_03",
+        "question_number": "5.03",
+        "question_text": "Employee Has Not Reached Normal Retirement Age - Will an Employee be entitled to request a distribution of their Individual Account upon Termination of Employment for the following contributions? (select one)  (Note: If yes, applies to matching contributions and/or employer profit sharing contributions.)",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_02",
+        "question_number": "2.02",
+        "question_text": "Will a Participant who has not incurred a Severance from Employment but has incurred a Deemed Severance from Employment be entitled to request an in-service distribution of their Individual Account attributable to Elective Deferrals (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_03",
+        "question_number": "2.03",
+        "question_text": "In-Service Availability for Employer Contributions (A) Will a Participant be entitled to request an in-service distribution of their Individual Account attributable to Matching Contributions and Employer Profit Sharing Contributions (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_04",
+        "question_number": "4.04",
+        "question_text": "The Employee satisfies the conditions for Early Retirement Age (if applicable).",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1",
+        "question_number": "1",
+        "question_text": "Death, Disability or Attainment of Normal Retirement Age",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "The maximum number of in-service withdrawals that may be taken while a Participant is employed by the Employer is (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_02",
+        "question_number": "4.02",
+        "question_text": "Hardship Availability for Elective Deferrals: Will an Employee be entitled to request a hardship distribution of their Individual Account attributable to Elective Deferrals, not including any earnings attributable (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_03",
+        "question_number": "4.03",
+        "question_text": "Hardship Availability for Matching Contributions and Employer Profit Sharing Contributions (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_04",
+        "question_number": "4.04",
+        "question_text": "How will hardship be defined for purposes of this section (select all that apply)? Subsection (a): The definition of hardship described in Plan Section 5.01(C)(2)(a) will apply with respect to the following types of contributions, therefore an Employee's Elective Deferrals (and Non- deductible Employee Contributions, if applicable) will not be suspended for six months (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_02",
+        "question_number": "1.02",
+        "question_text": "Early Retirement Age (The Early Retirement Age under the Plan will be (select one)):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q1_03",
+        "question_number": "1.03",
+        "question_text": "Normal Retirement Age (The Normal Retirement Age under the Plan will be (select and complete one)):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q8_01",
+        "question_number": "8.01",
+        "question_text": "Fully Vested Under Certain Circumstances: Will an Employee be fully vested under the following circumstances (select \"Yes\" or \"No\" to each of the following items)? 1. The Employee dies. 2. The Employee incurs a Disability. 3. The Employee satisfies the conditions for Early Retirement Age (if applicable). NOTE: If a box is not selected for an item, \"Yes\" will apply for such item.",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_04",
+        "question_number": "4.04",
+        "question_text": "Loans. May an outstanding loan amount be included in a Direct In-Plan Roth Rollover (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5_03",
+        "question_number": "5.03",
+        "question_text": "Employee Has Not Reached Normal Retirement Age - Will an Employee who has not reached Normal Retirement Age be entitled to a distribution of their Individual Account attributable to the following types of contributions upon incurring a Termination of Employment (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q5_05",
+        "question_number": "5.05",
+        "question_text": "Distributions During Employment - In-Service Withdrawals - In-Service Availability for Elective Deferrals In General - Will a Participant who has not incurred a Severance from Employment be entitled to request an in-service distribution of their Individual Account attributable to Elective Deferrals (select all that apply)?",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "Hardship Availability for Elective Deferrals: Will an Employee be entitled to request a hardship distribution of their Individual Account attributable to Elective Deferrals, not including any earnings attributable (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_02",
+        "question_number": "4.02",
+        "question_text": "Hardship Availability for Matching Contributions and Employer Profit Sharing Contributions: Will an Employee be entitled to request a hardship distribution of their Individual Account attributable to Matching Contributions and Employer Profit Sharing Contributions (select all that apply)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_01",
+        "question_number": "2.01",
+        "question_text": "In-Service Availability for Elective Deferrals Due to Deemed Severance from Employment (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_02",
+        "question_number": "2.02",
+        "question_text": "In-Service Availability for Employer Contributions (A) Will a Participant be entitled to request an in-service distribution of their Individual Account attributable to Matching Contributions and Employer Profit Sharing Contributions (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q2_03",
+        "question_number": "2.03",
+        "question_text": "The maximum number of in-service withdrawals that may be taken while a Participant is employed by the Employer is (select all that apply):",
+        "kind": "multi_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Death, Disability or Attainment of Normal Retirement Age: If a Participant dies, incurs a Disability or attains Normal Retirement Age, and a distributable event has occurred, distributions will commence as soon as administratively feasible following (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Hardship Availability Due to Beneficiary Hardship If the Plan permits hardship distributions, will hardship distributions also be permitted because of a hardship incurred by the Primary Beneficiary of an Employee (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q3_01",
+        "question_number": "3.01",
+        "question_text": "Will a Participant be entitled to request a loan pursuant to Plan Section 5.16 (select one)?",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_02",
+        "question_number": "4.02",
+        "question_text": "Early Retirement Age under the Plan will be (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "q4_03",
+        "question_number": "4.03",
+        "question_text": "Normal Retirement Age under the Plan will be (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      }
+    ],
+    "vesting": [
+      {
+        "id": "q4_01",
+        "question_number": "4.01",
+        "question_text": "Part A. Vesting Schedule for Matching Contributions",
+        "kind": "text",
+        "status": "unanswered"
+      },
+      {
+        "id": "qB_01",
+        "question_number": "B.01",
+        "question_text": "Vesting Schedule for Employer Profit Sharing Contributions (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      },
+      {
+        "id": "qC_01",
+        "question_number": "C.01",
+        "question_text": "Vesting Schedule for QACA ADP Test Safe Harbor Contributions (select one):",
+        "kind": "single_select",
+        "status": "unanswered"
+      }
+    ]
+  },
+  "critical_ids": [
+    "q0_01",
+    "q1",
+    "q10_02",
+    "q11_01",
+    "q11_02",
+    "q11_03",
+    "q11_04",
+    "q12_03",
+    "q12_04",
+    "q12_05",
+    "q1_01",
+    "q1_02",
+    "q1_03",
+    "q2",
+    "q25_02",
+    "q25_03",
+    "q25_04",
+    "q2_01",
+    "q2_02",
+    "q2_03",
+    "q2_04",
+    "q2_05",
+    "q2_06",
+    "q3_01",
+    "q3_02",
+    "q3_03",
+    "q3_04",
+    "q3_06",
+    "q4",
+    "q4_01",
+    "q4_02",
+    "q4_03",
+    "q4_04",
+    "q4_06",
+    "q4_07",
+    "q4_08",
+    "q4_c",
+    "q4_d",
+    "q4_e",
+    "q5",
+    "q50_01",
+    "q51_01",
+    "q5_01",
+    "q5_02",
+    "q5_03",
+    "q5_04",
+    "q5_05",
+    "q5_16",
+    "q60_02",
+    "q60_03",
+    "q61_01",
+    "q61_01_opt_a_sub1",
+    "q61_01_opt_b_sub1",
+    "q61_01_opt_c_sub1",
+    "q61_01_opt_d_sub1",
+    "q68_e01",
+    "q6_01",
+    "q6_02",
+    "q6_06",
+    "q7_01",
+    "q7_02",
+    "q7_03",
+    "q7_04",
+    "q7_05",
+    "q8_01",
+    "q9_02",
+    "qA_01",
+    "qA_02",
+    "qB_01",
+    "qC_01",
+    "qH01",
+    "qI01",
+    "qK_02",
+    "q_b_01"
+  ]
+}

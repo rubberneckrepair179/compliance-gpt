@@ -1,0 +1,82 @@
+{
+  "comparison_id": "832f4a80-c44d-43e1-805d-64858c9d34b6",
+  "source_document_id": "pair_a_source_bpd",
+  "target_document_id": "pair_a_target_bpd",
+  "mappings": [
+    {
+      "mapping_id": "da214b74-2cbf-4e03-9a30-a28404e5252b",
+      "source_provision_id": "09d41097-5d0b-4165-9dda-dfe119cd3644",
+      "target_provision_id": "3fc83f63-77a4-4fba-82bc-55ae09c07b23",
+      "embedding_similarity": 0.5357879691314855,
+      "llm_similarity": 0.3,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "medium",
+      "reasoning": "The source provision defines eligibility to participate in the plan, focusing on when an employee can begin participating based on age and service requirements. The target provision defines 'Normal Retirement Age,' which determines when a participant's account becomes nonforfeitable (i.e., fully vested) and may also relate to mandatory retirement age in certain plan types. These are distinct plan concepts: eligibility to participate versus vesting/nonforfeitability at retirement age. The difference affects both participant rights (timing of participation vs. vesting) and plan operations (administration of eligibility vs. vesting schedules).",
+      "confidence_score": 0.98,
+      "created_at": "2025-10-19T16:54:42.775832"
+    },
+    {
+      "mapping_id": "1bcc0a40-9fb0-4b52-bd99-23ab514ecc83",
+      "source_provision_id": "21c73ab4-6b44-43d8-adb4-db5bb20fab3e",
+      "target_provision_id": "3191ad70-834c-4c72-bdba-4ff2c5f8d3b7",
+      "embedding_similarity": 0.4802484815802189,
+      "llm_similarity": 0.1,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "high",
+      "reasoning": "The source provision addresses eligibility to participate in the plan after a break in service or rehire, focusing on when an employee can join or rejoin the plan. The target provision defines 'Elective Deferrals,' which are employer contributions made at the participant's election, and outlines compliance requirements for such contributions. These provisions address entirely different plan concepts: eligibility rules versus contribution definitions and requirements. There is no semantic overlap or equivalence.",
+      "confidence_score": 1.0,
+      "created_at": "2025-10-19T16:54:57.267179"
+    },
+    {
+      "mapping_id": "60ff4d34-dc2f-4be3-91aa-33e48a983a11",
+      "source_provision_id": "3d4662c9-d67f-4aca-980d-a888513d7bd3",
+      "target_provision_id": "6de9354f-4f09-4af3-8935-720436b57301",
+      "embedding_similarity": 0.548486871580982,
+      "llm_similarity": 0.2,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "high",
+      "reasoning": "The source provision addresses vesting schedules, specifically how and when participants become vested in employer contributions and certain other contributions. The target provision addresses eligibility, defining who is considered an Eligible Employee and the various exclusions that may apply. These provisions govern entirely different aspects of plan operation: one governs when a participant's account becomes nonforfeitable (vesting), while the other governs who can participate in the plan (eligibility). There is no semantic overlap or equivalence between the two; they serve distinct regulatory and operational functions within a retirement plan.",
+      "confidence_score": 1.0,
+      "created_at": "2025-10-19T16:55:08.417733"
+    },
+    {
+      "mapping_id": "989bc2ed-f28d-4c4f-a22b-c38d39b3ad9e",
+      "source_provision_id": "bc5e2000-d524-4e01-976d-0bf096b8b8b4",
+      "target_provision_id": "6de9354f-4f09-4af3-8935-720436b57301",
+      "embedding_similarity": 0.5609076570289258,
+      "llm_similarity": 0.2,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "high",
+      "reasoning": "The source provision (Section 3.04) addresses the types, timing, and allocation of employer contributions to the plan, focusing on how and when the employer may contribute and how those contributions are allocated among participants. The target provision (Section 1.28) defines 'Eligible Employee' and details various classes of employees who may be excluded from plan participation based on employment status, union status, residency, and other factors. These provisions address fundamentally different plan concepts: one governs employer contributions, the other governs employee eligibility. There is no semantic overlap or equivalence between the two; a change from one to the other would significantly alter participant rights and plan operations.",
+      "confidence_score": 1.0,
+      "created_at": "2025-10-19T16:55:12.781576"
+    },
+    {
+      "mapping_id": "75d6c067-2e0c-43f7-9875-0a2c7f1b926c",
+      "source_provision_id": "0972aba7-4668-4e84-a6bd-deb1891b4fab",
+      "target_provision_id": "3191ad70-834c-4c72-bdba-4ff2c5f8d3b7",
+      "embedding_similarity": 0.6935229292940015,
+      "llm_similarity": 0.2,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "high",
+      "reasoning": "The source provision describes the employer's matching contributions, including the conditions, formula, and vesting, whereas the target provision defines 'Elective Deferrals' as employee salary deferrals and outlines their regulatory requirements. The provisions address different plan concepts: one is about employer contributions (matching), the other about employee contributions (deferrals). There is no semantic equivalence, and the difference is substantive, affecting both plan design and participant rights.",
+      "confidence_score": 1.0,
+      "created_at": "2025-10-19T16:55:20.677254"
+    }
+  ],
+  "total_source_provisions": 5,
+  "total_target_provisions": 5,
+  "matched_provisions": 0,
+  "unmatched_source_provisions": 5,
+  "unmatched_target_provisions": 5,
+  "high_impact_variances": 4,
+  "medium_impact_variances": 1,
+  "low_impact_variances": 0,
+  "created_at": "2025-10-19T16:55:26.069058",
+  "completed_at": "2025-10-19T16:55:26.068982"
+}

@@ -1,0 +1,82 @@
+{
+  "comparison_id": "6aeabf4c-df3b-4900-b4b1-ee78c8a742bb",
+  "source_document_id": "pair_a_source_bpd",
+  "target_document_id": "pair_a_target_bpd",
+  "mappings": [
+    {
+      "mapping_id": "ae7f80dc-d4f3-48ab-aa5c-7c1a6397e095",
+      "source_provision_id": "bba80278-273c-4d7b-87f3-20adce585f02",
+      "target_provision_id": "f73d5c82-35d1-495c-94d9-ba485a9ae627",
+      "embedding_similarity": 0.5713749781790403,
+      "llm_similarity": 0.2,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "high",
+      "reasoning": "The source provision addresses eligibility requirements for plan participation (age and service), while the target provision addresses vesting of contributions. These are distinct plan concepts: eligibility determines when an employee can participate, while vesting determines when a participant has a nonforfeitable right to their account. There is no semantic overlap; the provisions govern different aspects of plan operation and participant rights.",
+      "confidence_score": 1.0,
+      "created_at": "2025-10-19T17:15:45.898404"
+    },
+    {
+      "mapping_id": "a010a60b-abeb-4889-aa68-b6fa40c4c497",
+      "source_provision_id": "08749200-e988-40d0-a1c8-f50ef1020a54",
+      "target_provision_id": "f73d5c82-35d1-495c-94d9-ba485a9ae627",
+      "embedding_similarity": 0.5410770529058159,
+      "llm_similarity": 0.1,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "high",
+      "reasoning": "The source provision addresses eligibility for plan participation after a break in service, specifying when a reemployed employee becomes eligible again. The target provision addresses vesting of participant accounts, specifically the vesting status of salary reduction and employer matching contributions versus other contributions. These provisions govern entirely different aspects of plan administration\u2014eligibility versus vesting\u2014and do not represent the same rule or requirement. The difference is substantive and affects participant rights and plan operations in distinct ways.",
+      "confidence_score": 1.0,
+      "created_at": "2025-10-19T17:16:09.132580"
+    },
+    {
+      "mapping_id": "d06af555-02a1-4b0b-92df-3943e157f403",
+      "source_provision_id": "331a66c1-78f7-44fc-8091-3e8628eaaa82",
+      "target_provision_id": "f73d5c82-35d1-495c-94d9-ba485a9ae627",
+      "embedding_similarity": 0.5045354920115637,
+      "llm_similarity": 0.1,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "high",
+      "reasoning": "The source provision addresses plan eligibility and the suspension/resumption of participation when an employee moves between eligible and ineligible classes. The target provision addresses vesting of contributions, specifying immediate full vesting for certain contributions and a schedule for others. These provisions govern entirely different aspects of plan administration\u2014eligibility versus vesting\u2014and do not overlap in rule or requirement. The difference is substantive and affects participant rights and plan operations in distinct ways.",
+      "confidence_score": 1.0,
+      "created_at": "2025-10-19T17:16:29.474136"
+    },
+    {
+      "mapping_id": "453c0b3f-d9cd-4c6d-b5a1-c0293250b04e",
+      "source_provision_id": "016c790c-8cc2-4d5c-924d-583c70e997fe",
+      "target_provision_id": "fb3bd6d0-0776-4671-b59d-f37efdf8f1fc",
+      "embedding_similarity": 0.618020953286222,
+      "llm_similarity": 0.2,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "high",
+      "reasoning": "The source provision describes a graded vesting schedule for employer contributions, specifying the percentage vested based on years of service. The target provision addresses eligibility for plan participation and service crediting rules for rehired employees, referencing the adoption agreement for details. These provisions address fundamentally different plan concepts: one governs when employer contributions become nonforfeitable (vesting), while the other governs when an employee can participate in the plan (eligibility) and how breaks in service affect eligibility and vesting. There is no semantic equivalence, and the difference is substantive, affecting both participant rights and plan operations.",
+      "confidence_score": 1.0,
+      "created_at": "2025-10-19T17:16:36.160458"
+    },
+    {
+      "mapping_id": "132a15a2-9931-41dc-b1f6-9e95fab5b6b8",
+      "source_provision_id": "6df2cf67-07c9-42bf-b382-b6f2f0b77b36",
+      "target_provision_id": "2e557282-cc7f-4178-bae5-d5fcc44df713",
+      "embedding_similarity": 0.5458464414008404,
+      "llm_similarity": 0.2,
+      "is_match": false,
+      "variance_type": "design",
+      "impact_level": "high",
+      "reasoning": "The source provision addresses vesting\u2014specifically, immediate 100% vesting for certain contribution types\u2014while the target provision addresses eligibility\u2014specifically, when an employee becomes a participant after meeting eligibility requirements. These are distinct plan concepts: vesting governs ownership of plan assets, while eligibility governs when an employee can participate. There is no semantic overlap or equivalence between the two provisions.",
+      "confidence_score": 1.0,
+      "created_at": "2025-10-19T17:16:55.880930"
+    }
+  ],
+  "total_source_provisions": 5,
+  "total_target_provisions": 5,
+  "matched_provisions": 0,
+  "unmatched_source_provisions": 5,
+  "unmatched_target_provisions": 5,
+  "high_impact_variances": 5,
+  "medium_impact_variances": 0,
+  "low_impact_variances": 0,
+  "created_at": "2025-10-19T17:17:00.397896",
+  "completed_at": "2025-10-19T17:17:00.397845"
+}

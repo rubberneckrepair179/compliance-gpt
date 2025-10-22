@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Extract AA (Adoption Agreement) pairs using parallel vision extraction
+Extract BPD (Basic Plan Document) pairs using parallel vision extraction with v3 prompts
 
-Extracts both source and target AA documents with 16 parallel workers.
-Uses aa_extraction_v3.txt (page_sequence, no ID generation) prompt with discriminated union model.
+Extracts both source and target BPD documents with 16 parallel workers.
+Uses provision_extraction_v3.txt prompt with page_sequence (no ID generation).
 """
 import sys
 from pathlib import Path
@@ -13,29 +13,28 @@ import time
 from src.extraction.parallel_vision_extractor import extract_document_parallel
 
 def main():
-    """Extract both AA documents in parallel"""
+    """Extract both BPD documents in parallel"""
     sys.stdout.reconfigure(line_buffering=True)
 
     print("="*80)
-    print("AA EXTRACTION (Parallel Vision - v3 Page Sequence Model)")
+    print("BPD EXTRACTION (Parallel Vision - v3 Page Sequence Model)")
     print("="*80)
     print()
     print("Configuration:")
-    print("  - Prompt: aa_extraction_v3.txt (page_sequence, no ID generation)")
+    print("  - Prompt: provision_extraction_v3.txt (page_sequence, no ID generation)")
     print("  - Model: gpt-5-nano")
     print("  - Workers: 16 (parallel)")
     print("  - Batch size: 1 page/request")
     print()
-    print("Expected for SAMPLE documents:")
-    print("  - All elections: status = 'unanswered'")
-    print("  - All text fields: value = null")
-    print("  - All selections: option_id = null or option_ids = []")
-    print("  - Zero false positives (v2 fix validated)")
+    print("Purpose:")
+    print("  - Extract provisions with page_sequence for deterministic IDs")
+    print("  - Enable provenance tracking for BPD+AA merger")
+    print("  - Support compliance-on-compliance audit trail")
     print()
 
     documents = [
-        ("test_data/raw/source/aa/source_aa.pdf", "AA", "test_data/extracted_vision_v3/source_aa_raw.json"),
-        ("test_data/raw/target/aa/target_aa.pdf", "AA", "test_data/extracted_vision_v3/target_aa_raw.json"),
+        ("test_data/raw/source/bpd/source_bpd_01.pdf", "BPD", "test_data/extracted_vision_v3/source_bpd_raw.json"),
+        ("test_data/raw/target/bpd/target_bpd_05.pdf", "BPD", "test_data/extracted_vision_v3/target_bpd_raw.json"),
     ]
 
     total_start = time.time()
@@ -53,22 +52,22 @@ def main():
 
     print()
     print("="*80)
-    print("AA EXTRACTION COMPLETE")
+    print("BPD EXTRACTION COMPLETE")
     print("="*80)
     print(f"Total time: {total_elapsed/60:.1f} minutes")
     print()
     print("Output files (raw v3 extraction - NO IDs yet):")
-    print("  - test_data/extracted_vision_v3/source_aa_raw.json")
-    print("  - test_data/extracted_vision_v3/target_aa_raw.json")
+    print("  - test_data/extracted_vision_v3/source_bpd_raw.json")
+    print("  - test_data/extracted_vision_v3/target_bpd_raw.json")
     print()
     print("Next steps:")
     print("  1. Run ID assignment post-processing:")
     print("     python scripts/assign_unique_ids.py \\")
-    print("       test_data/extracted_vision_v3/source_aa_raw.json \\")
-    print("       test_data/extracted_vision/source_aa_elections.json")
+    print("       test_data/extracted_vision_v3/source_bpd_raw.json \\")
+    print("       test_data/extracted_vision/source_bpd_01_provisions.json")
     print("  2. Validate 100% unique IDs")
-    print("  3. Verify no regressions in election detection")
-    print("  4. Resume synthetic election workflow")
+    print("  3. Verify no regressions in provision detection")
+    print("  4. Resume BPD+AA merger workflow")
     print("="*80)
 
 

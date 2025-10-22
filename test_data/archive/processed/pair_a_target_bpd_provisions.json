@@ -1,0 +1,184 @@
+[
+  {
+    "provision_id": "6de9354f-4f09-4af3-8935-720436b57301",
+    "document_id": "pair_a_target_bpd",
+    "provision_type": "eligibility",
+    "section_reference": "Section 1.28",
+    "section_title": "\"Eligible Employee\"",
+    "provision_text": "\"Eligible Employee\" means any Eligible Employee as elected in the Adoption Agreement and as provided herein.\n(a) \"Reclassified Employees.\" With respect to a non-standardized Adoption Agreement, an individual shall not be an Eligible Employee (unless otherwise elected in Appendix A to the Adoption Agreement) if such individual is a \"Reclassified Employee.\" A \"Reclassified Employee\" is any person the Employer does not treat as a common law employee or as a self-employed individual (including, but not limited to, independent contractors, persons the Employer pays outside of its payroll system and out-sourced workers) for federal income tax withholding purposes under Code \u00a73401(a), irrespective of whether there is a binding determination that the individual is an Employee or a Leased Employee of the Employer. Self-Employed Individuals are not \"Reclassified Employees.\"\n(b) Affiliated Employers. With respect to a non-standardized Adoption Agreement, Employees of an Affiliated Employer will not be treated as Eligible Employees prior to the date the Affiliated Employer adopts the Plan as a Participating Employer.\n(c) \"Code \u00a7410(b)(6)(C) transactions.\" Employees who became Employees as the result of a \"Code \u00a7410(b)(6)(C) transaction\" will, unless otherwise specified in the Adoption Agreement, only be Eligible Employees after the expiration of the transition period beginning on the date of the transaction and ending on the last day of the first Plan Year beginning after the date of the transaction. A \"Code \u00a7410(b)(6)(C) transaction\" is an asset or stock acquisition, merger, or similar transaction involving a change in the Employer of the Employees of a trade or business that is subject to the special rules set forth in Code \u00a7410(b)(6)(C). However, regardless of any election made in the Adoption Agreement, if a separate entity becomes an Affiliated Employer as the result of a \"Code \u00a7410(b)(6)(C) transaction,\" then Employees of such separate entity will not be treated as Eligible Employees prior to the date the entity adopts the Plan as a Participating Employer or, with respect to a standardized Adoption Agreement, if earlier, the expiration of the transition period set forth above.\n(d) Union Employees. If, in the Adoption Agreement, the Employer elects to exclude union employees, then Employees whose employment is governed by a collective bargaining agreement between the Employer and \"employee representatives\" under which retirement benefits were the subject of good faith bargaining and if two percent (2%) or less of the Employees covered pursuant to that agreement are professionals as defined in Regulation \u00a71.410(b)-9, shall not be eligible to participate in this Plan to the extent of employment covered by such agreement, unless the agreement provides for coverage in the Plan (see Section 4.1(d)). For this purpose, the term \"employee representatives\" does not include any organization more than half of whose members are employees who are owners, officers, or executives of the Employer. If a Participant performs services both as a collectively bargained Employee and as a non-collectively bargained Employee, then the Participant's Hours of Service in each respective category are treated separately.\n(e) Nonresident aliens. If, in the Adoption Agreement, the Employer elects to exclude nonresident aliens, then Employees who are nonresident aliens (within the meaning of Code \u00a77701(b)(1)(B)) who received no earned income (within the meaning of Code \u00a7911(d)(2)) from the Employer which constitutes income from sources within the United States (within the meaning of Code \u00a7861(a)(3)) shall not be eligible to participate in this Plan. In addition, this paragraph shall also apply to exclude from participation in the Plan an Employee who is a nonresident alien (within the meaning of Code \u00a77701(b)(1)(B)) but who receives earned income (within the meaning of Code \u00a7911(d)(2)) from the Employer that constitutes income from sources within the United States (within the meaning of Code \u00a7861(a)(3)), if all of the Employee's earned income from the Employer from sources within the United States is exempt from United States income tax under an applicable income tax convention. The preceding sentence will apply only if all Employees described in the preceding sentence are excluded from the Plan.\n(f) Part-Time/Temporary/Seasonal Employees. If, in the Adoption Agreement, the Employer elects to exclude Part-Time/Temporary/Seasonal Employees, then notwithstanding any such exclusion, if any such excluded Employee actually completes or completed a Year of Service, then such Employee will cease to be within this particular excluded class. An Eligible Employee who is no longer part of this excluded class because of this subsection will become a Participant in the Plan in accordance with the Plan\u2019s eligibility and entry date provisions that apply to other Eligible Employees.\n(g) Intern. The Employer in its Adoption Agreement may elect to exclude Employees that it defines in its payroll records as \u201cinterns.\u201d The Employer will not apply this exclusion in a manner to effectively require an age or service condition in violation of Treas. Reg. \u00a71.401(a)-3(e)(1).",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.98,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [
+        0.02
+      ],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Eligible Employee",
+        "Reclassified Employee",
+        "Affiliated Employer",
+        "Code \u00a7410(b)(6)(C) transaction",
+        "Union Employees",
+        "Nonresident aliens",
+        "Part-Time/Temporary/Seasonal Employees",
+        "Intern",
+        "collective bargaining",
+        "Year of Service"
+      ]
+    },
+    "created_at": "2025-10-19T16:28:52.554040",
+    "updated_at": "2025-10-19T16:28:52.554041"
+  },
+  {
+    "provision_id": "7f587600-637e-45fd-8c3d-365827731beb",
+    "document_id": "pair_a_target_bpd",
+    "provision_type": "eligibility",
+    "section_reference": "Section 1.88",
+    "section_title": "\"Year of Service\"",
+    "provision_text": "\"Year of Service\" means the computation period of twelve (12) consecutive months, herein set forth, and during which an Employee has completed at least 1,000 Hours of Service (unless a lower number of Hours of Service is specified in the Adoption Agreement).\nFor purposes of eligibility for participation, the initial computation period shall begin with the date on which the Employee first performs an Hour of Service (employment commencement date). Unless otherwise elected in the Service Crediting Method Section of the Adoption Agreement, the succeeding computation periods shall begin on the anniversary of the Employee's employment commencement date. However, unless otherwise elected in the Adoption Agreement, if one (1) Year of Service or less is required as a condition of eligibility, then the computation period after the initial computation period shall shift to the current Plan Year which includes the employment commencement date.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.95,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [
+        1.0
+      ],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Year of Service",
+        "Hours of Service",
+        "eligibility for participation",
+        "Service Crediting Method"
+      ]
+    },
+    "created_at": "2025-10-19T16:28:52.554065",
+    "updated_at": "2025-10-19T16:28:52.554065"
+  },
+  {
+    "provision_id": "3fc83f63-77a4-4fba-82bc-55ae09c07b23",
+    "document_id": "pair_a_target_bpd",
+    "provision_type": "eligibility",
+    "section_reference": "Section 1.55",
+    "section_title": "\"Normal Retirement Age\"",
+    "provision_text": "\"Normal Retirement Age\" means the age elected in the Adoption Agreement at which time a Participant's Account shall be nonforfeitable (if the Participant is employed by the Employer on or after that date). For money purchase pension plans, if the Employer enforces a mandatory retirement age, then the Normal Retirement Age is the lesser of that mandatory age or the age specified in the Adoption Agreement.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.9,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Normal Retirement Age",
+        "nonforfeitable",
+        "money purchase pension plan",
+        "mandatory retirement age"
+      ]
+    },
+    "created_at": "2025-10-19T16:28:52.554082",
+    "updated_at": "2025-10-19T16:28:52.554082"
+  },
+  {
+    "provision_id": "e6038eb2-7a4b-475f-89e4-707a3fb6b497",
+    "document_id": "pair_a_target_bpd",
+    "provision_type": "vesting_schedule",
+    "section_reference": "Section 1.87",
+    "section_title": "\"Vested\"",
+    "provision_text": "\"Vested\" means the nonforfeitable portion of any Account maintained on behalf of a Participant.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.85,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Vested",
+        "nonforfeitable",
+        "Account"
+      ]
+    },
+    "created_at": "2025-10-19T16:28:52.554097",
+    "updated_at": "2025-10-19T16:28:52.554097"
+  },
+  {
+    "provision_id": "3191ad70-834c-4c72-bdba-4ff2c5f8d3b7",
+    "document_id": "pair_a_target_bpd",
+    "provision_type": "employer_contribution",
+    "section_reference": "Section 1.26",
+    "section_title": "\"Elective Deferrals\"",
+    "provision_text": "\"Elective Deferrals\" means the Employer's contributions to the Plan that are made pursuant to a Participant's salary deferral election in accordance with Section 12.2. Elective Deferrals shall be subject to the requirements of Sections 12.2(d) and 12.2(e) and shall, except as otherwise provided herein, be required to satisfy the nondiscrimination requirements of the Code \u00a7401(k) Regulations. The term \"Elective Deferrals\" includes Pre-Tax Elective Deferrals and, if permitted by the Plan, Roth Elective Deferrals.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.9,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Elective Deferrals",
+        "Employer's contributions",
+        "salary deferral election",
+        "Pre-Tax Elective Deferrals",
+        "Roth Elective Deferrals",
+        "nondiscrimination requirements",
+        "Code \u00a7401(k)"
+      ]
+    },
+    "created_at": "2025-10-19T16:28:52.554112",
+    "updated_at": "2025-10-19T16:28:52.554112"
+  }
+]

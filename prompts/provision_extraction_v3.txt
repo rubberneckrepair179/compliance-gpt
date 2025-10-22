@@ -1,0 +1,197 @@
+# Provision Extraction Prompt v3
+# Changes from v2: Added page_sequence for deterministic ID generation (no IDs during extraction)
+# Model: OpenAI GPT-5-nano (vision)
+# Date: 2025-10-21
+# Purpose: Extract provision boundaries from retirement plan BPD pages
+
+Extract all provisions from this BPD page as JSON array ONLY.
+
+---
+
+## PROVISION STRUCTURE
+
+Each provision must include:
+{
+  "page_sequence": 1,  // Sequential number within THIS page only (1, 2, 3, ...)
+  "section_number": "1.01",
+  "section_title": "Plan Name",
+  "provision_text": "Full text of the provision...",
+  "provision_type": "definition|operational|regulatory"
+}
+
+// CRITICAL: NO "id" or "provision_id" field during extraction
+// Post-processing will generate deterministic IDs: provision_p{page:03d}_seq{seq:02d}
+// LLMs cannot reliably maintain global uniqueness across 80+ pages
+// Your job: Count provisions sequentially within each page ONLY
+
+---
+
+## PROVISION TYPES
+
+### "definition"
+Provisions that define terms using "means" language.
+Examples:
+- "'Eligible Employee' means any Employee as elected in the Adoption Agreement."
+- "'Year of Service' means a 12-consecutive month period..."
+- "'Vested' means the nonforfeitable portion of any Account."
+
+### "operational"
+Provisions that establish rules, requirements, schedules, or procedures.
+Use SHALL, WILL, MUST, MAY or other action language.
+Examples:
+- "An Employee shall be eligible to participate upon attaining age 21..."
+- "The vesting schedule shall be as follows: 0% for years 1-2, 100% after year 3."
+- "The Employer shall make matching contributions equal to 50%..."
+
+### "regulatory"
+Provisions that reference IRS codes, Treasury regulations, or compliance requirements.
+Examples:
+- "In accordance with Code section 401(a)(9)..."
+- "The Plan shall comply with the requirements of IRC §415..."
+- "As required by Rev. Proc. 2017-41..."
+
+---
+
+## PAGE SEQUENCE TRACKING (CRITICAL)
+
+**YOUR JOB: Count provisions within each page sequentially**
+
+Start page_sequence at 1 for the first provision on each page.
+Increment for each subsequent provision on the SAME page.
+
+Example page 42 with 3 provisions:
+- First provision: "page_sequence": 1
+- Second provision: "page_sequence": 2
+- Third provision: "page_sequence": 3
+
+**DO NOT attempt global uniqueness across pages!**
+LLMs cannot reliably track state across 80+ pages.
+Post-processing will handle global ID generation.
+
+**Post-processing ID generation examples:**
+- Page 42, sequence 1 → `provision_p042_seq01`
+- Page 42, sequence 2 → `provision_p042_seq02`
+- Page 15, sequence 1 → `provision_p015_seq01`
+
+This guarantees global uniqueness by any means necessary.
+
+---
+
+## EXTRACTION RULES
+
+1. **Extract ALL provisions on the page**
+   - Don't skip definitions (we need them for BPD+AA merger)
+   - Don't skip short provisions
+   - Extract complete provision text (don't truncate)
+
+2. **Preserve section numbers exactly as they appear**
+   - "1.01", "Section 2.03", "Article III", "DEFINITIONS", etc.
+   - If no section number visible, use blank string ""
+
+3. **Section titles are optional**
+   - Include if visible (e.g., "Eligibility to Participate")
+   - Use blank string "" if not present
+
+4. **Full provision text required**
+   - Extract complete sentences
+   - Preserve paragraph breaks if multiple paragraphs
+   - Don't truncate mid-sentence
+
+5. **NO ID GENERATION - Use page_sequence only**
+   - page_sequence: Sequential within this page
+   - Post-processing generates all IDs deterministically
+
+6. **Output JSON array only**
+   - No explanatory text before/after
+   - Valid JSON that can be parsed directly
+
+---
+
+## SPECIAL CASES
+
+### Multi-paragraph provisions
+If a provision spans multiple paragraphs, include all paragraphs in provision_text:
+```json
+{
+  "page_sequence": 1,
+  "section_number": "2.01",
+  "section_title": "Eligibility Requirements",
+  "provision_text": "An Employee shall be eligible to participate...\n\nNotwithstanding the above, if the Employee...\n\nFor purposes of this Section, Year of Service means...",
+  "provision_type": "operational"
+}
+```
+
+### Nested definitions
+If a definition section contains multiple term definitions, extract each as separate provision:
+```json
+[
+  {
+    "page_sequence": 1,
+    "section_number": "1.01",
+    "section_title": "Compensation",
+    "provision_text": "'Compensation' means W-2 wages as defined...",
+    "provision_type": "definition"
+  },
+  {
+    "page_sequence": 2,
+    "section_number": "1.02",
+    "section_title": "Eligible Employee",
+    "provision_text": "'Eligible Employee' means any Employee who...",
+    "provision_type": "definition"
+  }
+]
+```
+
+### Provisions with "as elected in AA" language
+Extract these as-is (we'll merge with AA elections later):
+```json
+{
+  "page_sequence": 3,
+  "section_number": "3.01",
+  "section_title": "Vesting Schedule",
+  "provision_text": "The vesting schedule shall be as elected in the Adoption Agreement.",
+  "provision_type": "operational"
+}
+```
+
+### Tables and schedules
+If provision contains a table/schedule, include it in text form:
+```json
+{
+  "page_sequence": 4,
+  "section_number": "4.01",
+  "section_title": "Vesting Schedule",
+  "provision_text": "The vesting schedule shall be:\nYears of Service | Vested Percentage\n1 | 0%\n2 | 20%\n3 | 40%\n4 | 60%\n5 | 80%\n6 | 100%",
+  "provision_type": "operational"
+}
+```
+
+---
+
+## OUTPUT FORMAT
+
+Return a JSON array of provisions:
+
+[
+  {
+    "page_sequence": 1,
+    "section_number": "1.01",
+    "section_title": "Plan Name",
+    "provision_text": "The name of this Plan is the [Plan Name as elected in Adoption Agreement].",
+    "provision_type": "operational"
+  },
+  {
+    "page_sequence": 2,
+    "section_number": "1.02",
+    "section_title": "Eligible Employee",
+    "provision_text": "'Eligible Employee' means any Employee who satisfies the age and service requirements elected in the Adoption Agreement.",
+    "provision_type": "definition"
+  },
+  {
+    "page_sequence": 3,
+    "section_number": "2.01",
+    "section_title": "Eligibility Requirements",
+    "provision_text": "An Employee shall be eligible to participate in the Plan upon attaining the age and completing the Years of Service elected in the Adoption Agreement. Entry into the Plan shall be as of the Entry Date(s) elected in the Adoption Agreement.",
+    "provision_type": "operational"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "source_document_id": "Relius Cycle 3 Basic Plan Document",
+  "target_document_id": "Ascensus Basic Plan Document",
+  "total_source_provisions": 623,
+  "total_target_provisions": 426,
+  "matched_provisions": 86,
+  "unmatched_source_provisions": 537,
+  "unmatched_target_provisions": 359,
+  "high_impact_variances": 295,
+  "medium_impact_variances": 228,
+  "low_impact_variances": 4,
+  "completed_at": "2025-10-21T20:30:33.125812",
+  "mappings": [
+    {
+      "source_provision_id": 

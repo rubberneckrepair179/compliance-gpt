@@ -1,0 +1,175 @@
+[
+  {
+    "provision_id": "d316d0e8-9738-4036-ae91-2b47e4c32adb",
+    "document_id": "pair_a_target_bpd",
+    "provision_type": "eligibility",
+    "section_reference": "Section 3.1",
+    "section_title": "CONDITIONS OF ELIGIBILITY",
+    "provision_text": "An Employee shall be eligible to participate in the Plan upon satisfying the age and service requirements, if any, as elected in the Adoption Agreement. The eligibility requirements may include attainment of a specified age and/or completion of a specified period of service, as set forth in the Adoption Agreement. Eligibility shall be determined in accordance with the provisions of this Article III and the Adoption Agreement.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.95,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Adoption Agreement",
+        "age requirement",
+        "service requirement"
+      ]
+    },
+    "created_at": "2025-10-19T17:09:49.372099",
+    "updated_at": "2025-10-19T17:09:49.372101"
+  },
+  {
+    "provision_id": "2e557282-cc7f-4178-bae5-d5fcc44df713",
+    "document_id": "pair_a_target_bpd",
+    "provision_type": "eligibility",
+    "section_reference": "Section 3.2",
+    "section_title": "EFFECTIVE DATE OF PARTICIPATION",
+    "provision_text": "An Employee who has satisfied the eligibility requirements of Section 3.1 shall become a Participant in the Plan as of the Entry Date specified in the Adoption Agreement next following the date the Employee satisfies such requirements, unless otherwise provided in the Adoption Agreement.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.95,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Entry Date",
+        "Adoption Agreement"
+      ]
+    },
+    "created_at": "2025-10-19T17:09:49.372127",
+    "updated_at": "2025-10-19T17:09:49.372127"
+  },
+  {
+    "provision_id": "fb3bd6d0-0776-4671-b59d-f37efdf8f1fc",
+    "document_id": "pair_a_target_bpd",
+    "provision_type": "eligibility",
+    "section_reference": "Section 3.5",
+    "section_title": "REHIRED EMPLOYEES AND 1-YEAR BREAKS IN SERVICE",
+    "provision_text": "If a Former Employee is reemployed by the Employer, such Employee shall be eligible to participate in the Plan in accordance with the rules set forth in the Adoption Agreement and this Article III. The service crediting rules for rehired Employees and the effect of 1-Year Breaks in Service on eligibility and vesting shall be as specified in the Adoption Agreement.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.9,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [
+        1.0
+      ],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Rehired Employee",
+        "1-Year Break in Service",
+        "Adoption Agreement"
+      ]
+    },
+    "created_at": "2025-10-19T17:09:49.372146",
+    "updated_at": "2025-10-19T17:09:49.372146"
+  },
+  {
+    "provision_id": "f73d5c82-35d1-495c-94d9-ba485a9ae627",
+    "document_id": "pair_a_target_bpd",
+    "provision_type": "vesting_schedule",
+    "section_reference": "Section 13.5",
+    "section_title": "VESTING REQUIREMENTS",
+    "provision_text": "A Participant's interest in the Plan attributable to salary reduction contributions and Employer matching contributions shall be fully Vested and nonforfeitable at all times. Any other contributions shall be Vested in accordance with the vesting schedule elected in the Adoption Agreement.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.95,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [],
+      "percentages": [
+        1.0
+      ],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "salary reduction contributions",
+        "Employer matching contributions",
+        "vesting schedule",
+        "Adoption Agreement"
+      ]
+    },
+    "created_at": "2025-10-19T17:09:49.372163",
+    "updated_at": "2025-10-19T17:09:49.372164"
+  },
+  {
+    "provision_id": "37ba1d70-f20e-457f-bfb7-e3be2e83d07e",
+    "document_id": "pair_a_target_bpd",
+    "provision_type": "vesting_schedule",
+    "section_reference": "Section 1.37(a)",
+    "section_title": "Forfeiture",
+    "provision_text": "A Forfeiture will occur on the earlier of: (1) The last day of the Plan Year in which a Participant incurs five (5) consecutive 1-Year Breaks in Service, or (2) The distribution of the entire Vested portion of the Participant's Account of a Participant who has severed employment with the Employer. For purposes of this provision, if the Participant has a Vested benefit of zero, then such Participant shall be deemed to have received a distribution of such Vested benefit as of the year in which the severance of employment occurs. For this purpose, a Participant's Vested benefit shall not include: (i) the Participant's Qualified Voluntary Employee Contribution Account, and (ii) the Participant's Rollover Account.",
+    "normalized_text": null,
+    "page_number": null,
+    "extraction_method": "text_api",
+    "confidence_score": 0.9,
+    "metadata": {
+      "vendor": null,
+      "document_type": null,
+      "effective_date": null,
+      "plan_name": null,
+      "custom_fields": {}
+    },
+    "extracted_entities": {
+      "ages": [],
+      "service_years": [
+        5.0
+      ],
+      "percentages": [],
+      "dollar_amounts": [],
+      "dates": [],
+      "keywords": [
+        "Forfeiture",
+        "1-Year Break in Service",
+        "Vested benefit",
+        "Qualified Voluntary Employee Contribution Account",
+        "Rollover Account"
+      ]
+    },
+    "created_at": "2025-10-19T17:09:49.372181",
+    "updated_at": "2025-10-19T17:09:49.372181"
+  }
+]
