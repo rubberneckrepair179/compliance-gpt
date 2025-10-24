@@ -1,0 +1,487 @@
+# Adoption Agreement Extraction Prompt v4
+# Changes from v3: Reinforce semantic fingerprinting (question numbers are provenance only)
+# Model: OpenAI GPT-5-nano (vision)
+# Date: 2025-10-24
+# Purpose: Extract election questions from retirement plan Adoption Agreement pages
+
+Extract election questions from this Adoption Agreement page as JSON array ONLY.
+
+CRITICAL: Distinguish between blank templates and completed elections.
+
+---
+
+## ELECTION MODEL (Discriminated Union by "kind")
+
+Each election has a base structure with kind-specific values:
+
+### Base Election Structure
+{
+  "page_sequence": 1,  // Sequential number within THIS page only (1, 2, 3, ...)
+  "kind": "text|single_select|multi_select",
+  "question_number": "1.01",
+  "question_text": "Plan Name",
+  "section_context": "Article I - Plan Identification",
+  "status": "unanswered|answered|ambiguous|conflict",
+  "confidence": 0.95,
+  "provenance": {
+    "page": 1,
+    "question_number": "1.01"
+  },
+  "value": { ... }  // Structure depends on "kind"
+}
+
+// CRITICAL: NO "id" field in extraction - post-processing generates globally unique IDs
+// LLMs cannot reliably maintain global uniqueness across 100+ pages
+// Your job: Count elections sequentially within each page ONLY
+
+---
+
+## SEMANTIC FINGERPRINTING CONTEXT (NEW IN V4)
+
+**IMPORTANT:** The `question_number` field is PROVENANCE METADATA ONLY.
+
+**Why this matters:**
+- Downstream semantic matching uses embeddings to find equivalent elections across vendors
+- Question numbers are vendor-specific (Relius Q 3.01 ≠ Ascensus Q 3.01)
+- Including question numbers in semantic comparison causes FALSE POSITIVES
+
+**Example of what we prevent:**
+- "Q 1.04: Minimum age for eligibility"
+- "Q 1.04: Employer's State for tax purposes"
+- These are COMPLETELY DIFFERENT topics but share "1.04"
+- Embedding pollution would make them appear similar
+
+**Your role:**
+- Extract question_number accurately for human reference
+- Extract question_text and option_text with full semantic content
+- Post-processing will create "semantic fingerprints" that EXCLUDE question numbers
+
+**What you should focus on:**
+- **Question semantic:** "Minimum age for eligibility" (not "Q 1.04")
+- **Option semantics:** "21 years", "Immediate", "Safe harbor match" (not "option a/b/c")
+- **Section context:** "Eligibility Requirements" (helps disambiguate similar questions)
+
+---
+
+## ELECTION KINDS
+
+### KIND: "text"
+For fill-in-the-blank fields, text entries, numeric entries without dropdowns.
+
+**Value structure:**
+{
+  "value": "ABC Company 401(k) Plan"  // String if filled, null if blank
+}
+
+**Status rules:**
+- "unanswered": Field is blank (underscores ____, empty line, no text)
+- "answered": Field has text/numbers filled in
+- "ambiguous": Handwritten text unclear or partial erasure
+- "conflict": Multiple conflicting values crossed out/rewritten
+
+**Examples:**
+
+Blank text field:
+{
+  "page_sequence": 1,
+  "kind": "text",
+  "question_number": "1.01",
+  "question_text": "Plan Name: _____________________",
+  "section_context": "Article I - Plan Identification",
+  "status": "unanswered",
+  "confidence": 1.0,
+  "provenance": {"page": 1, "question_number": "1.01"},
+  "value": null
+}
+
+Completed text field:
+{
+  "page_sequence": 2,
+  "kind": "text",
+  "question_number": "1.02",
+  "question_text": "Plan Name: _____________________",
+  "section_context": "Article I - Plan Identification",
+  "status": "answered",
+  "confidence": 0.98,
+  "provenance": {"page": 1, "question_number": "1.02"},
+  "value": "ABC Company 401(k) Plan"
+}
+
+---
+
+### KIND: "single_select"
+For radio buttons, checkboxes where only ONE option can be selected.
+
+**Value structure:**
+{
+  "value": {
+    "selected_label": "b"  // Label of selected option (a, b, c...), null if none
+  },
+  "options": [
+    {
+      "label": "a",
+      "option_text": "First day of month following satisfaction of eligibility",
+      "is_selected": false,
+      "fill_ins": []
+    },
+    {
+      "label": "b",
+      "option_text": "Immediate",
+      "is_selected": true,
+      "fill_ins": []
+    }
+  ]
+}
+
+// CRITICAL: NO option_id fields - post-processing generates them from parent election ID
+
+**Status rules:**
+- "unanswered": No checkbox/radio marked (all empty: ☐ [ ] )
+- "answered": Exactly one option marked (☑ ✓ ✗ [X])
+- "ambiguous": Mark unclear (partial check, faint mark)
+- "conflict": Multiple options marked when only one allowed
+
+**Fill-ins within options:**
+Some options have sub-fields like "Other (specify): _____"
+
+{
+  "label": "c",
+  "option_text": "Other (specify):",
+  "is_selected": true,
+  "fill_ins": [
+    {
+      "fill_in_sequence": 1,  // Sequential within this option (1, 2, 3...)
+      "kind": "text",
+      "question_text": "Specify entry date:",
+      "status": "answered",
+      "confidence": 0.95,
+      "value": "First day of quarter"
+    }
+  ]
+}
+
+// CRITICAL: fill_ins use fill_in_sequence, NO "id" field
+// Post-processing generates IDs like: election_p002_seq01_opt_c_fill_01
+
+**Examples:**
+
+Blank single_select:
+{
+  "page_sequence": 1,
+  "kind": "single_select",
+  "question_number": "2.03",
+  "question_text": "Entry date (select one):",
+  "section_context": "Article II - Eligibility and Entry",
+  "status": "unanswered",
+  "confidence": 1.0,
+  "provenance": {"page": 2, "question_number": "2.03"},
+  "value": {
+    "selected_label": null
+  },
+  "options": [
+    {
+      "label": "a",
+      "option_text": "First day of month following satisfaction of eligibility",
+      "is_selected": false,
+      "fill_ins": []
+    },
+    {
+      "label": "b",
+      "option_text": "Immediate",
+      "is_selected": false,
+      "fill_ins": []
+    }
+  ]
+}
+
+Completed single_select:
+{
+  "page_sequence": 2,
+  "kind": "single_select",
+  "question_number": "2.04",
+  "question_text": "Entry date (select one):",
+  "section_context": "Article II - Eligibility and Entry",
+  "status": "answered",
+  "confidence": 0.98,
+  "provenance": {"page": 2, "question_number": "2.04"},
+  "value": {
+    "selected_label": "b"
+  },
+  "options": [
+    {
+      "label": "a",
+      "option_text": "First day of month following satisfaction of eligibility",
+      "is_selected": false,
+      "fill_ins": []
+    },
+    {
+      "label": "b",
+      "option_text": "Immediate",
+      "is_selected": true,
+      "fill_ins": []
+    }
+  ]
+}
+
+---
+
+### KIND: "multi_select"
+For checkboxes where MULTIPLE options can be selected simultaneously.
+
+**Value structure:**
+{
+  "value": {
+    "selected_labels": ["a", "c"]  // Array of selected labels, empty if none
+  },
+  "options": [...]  // Same structure as single_select
+}
+
+// CRITICAL: Use selected_labels (array), NO option_ids
+
+**Status rules:**
+- "unanswered": No checkboxes marked (all empty: ☐ [ ] )
+- "answered": At least one checkbox marked
+- "ambiguous": Some marks unclear
+- "conflict": Contradictory selections (e.g., "None" + other options both checked)
+
+**Examples:**
+
+Blank multi_select:
+{
+  "page_sequence": 1,
+  "kind": "multi_select",
+  "question_number": "3.02",
+  "question_text": "Types of contributions permitted (check all that apply):",
+  "section_context": "Article III - Contributions",
+  "status": "unanswered",
+  "confidence": 1.0,
+  "provenance": {"page": 3, "question_number": "3.02"},
+  "value": {
+    "selected_labels": []
+  },
+  "options": [
+    {
+      "label": "a",
+      "option_text": "Elective deferrals",
+      "is_selected": false,
+      "fill_ins": []
+    },
+    {
+      "label": "b",
+      "option_text": "Matching contributions",
+      "is_selected": false,
+      "fill_ins": []
+    },
+    {
+      "label": "c",
+      "option_text": "Profit sharing contributions",
+      "is_selected": false,
+      "fill_ins": []
+    }
+  ]
+}
+
+Completed multi_select:
+{
+  "page_sequence": 2,
+  "kind": "multi_select",
+  "question_number": "3.03",
+  "question_text": "Types of contributions permitted (check all that apply):",
+  "section_context": "Article III - Contributions",
+  "status": "answered",
+  "confidence": 0.97,
+  "provenance": {"page": 3, "question_number": "3.03"},
+  "value": {
+    "selected_labels": ["a", "c"]
+  },
+  "options": [
+    {
+      "label": "a",
+      "option_text": "Elective deferrals",
+      "is_selected": true,
+      "fill_ins": []
+    },
+    {
+      "label": "b",
+      "option_text": "Matching contributions",
+      "is_selected": false,
+      "fill_ins": []
+    },
+    {
+      "label": "c",
+      "option_text": "Profit sharing contributions",
+      "is_selected": true,
+      "fill_ins": []
+    }
+  ]
+}
+
+---
+
+## VISUAL INDICATORS
+
+### Blank Templates (status: "unanswered")
+- Checkboxes: ☐ [ ] (empty/unchecked)
+- Fill-ins: ____ _____ (underscores), blank lines, no text
+- Document watermark: "SAMPLE" diagonal text
+- Clean template appearance
+
+### Completed Elections (status: "answered")
+- Checkboxes: ☑ ✓ ✗ [X] (marked/checked)
+- Fill-ins: Handwritten or typed text in blanks
+- Circled options
+- Highlighted selections
+
+### Ambiguous Cases (status: "ambiguous")
+- Partial checkmarks (unclear if selected)
+- Faint handwriting (hard to read text)
+- Smudged or erased marks
+- Multiple conflicting marks with unclear intent
+
+### Conflict Cases (status: "conflict")
+- Multiple radio options selected when only one allowed
+- Crossed-out text with new text written
+- "None" option checked alongside other options
+- Contradictory elections visible
+
+---
+
+## PAGE SEQUENCE TRACKING (CRITICAL)
+
+**YOUR JOB: Count elections within each page sequentially**
+
+Start page_sequence at 1 for the first election on each page.
+Increment for each subsequent election on the SAME page.
+
+Example page 16 with 3 elections:
+- First election: "page_sequence": 1
+- Second election: "page_sequence": 2
+- Third election: "page_sequence": 3
+
+**DO NOT attempt global uniqueness across pages!**
+LLMs cannot reliably track state across 100+ pages.
+Post-processing will handle global ID generation.
+
+**Post-processing ID generation examples:**
+- Page 16, sequence 1 → `election_p016_seq01`
+- Page 16, sequence 2 → `election_p016_seq02`
+- Page 16, seq 1, option a → `election_p016_seq01_opt_a`
+- Page 16, seq 1, opt c, fill-in 1 → `election_p016_seq01_opt_c_fill01`
+
+This guarantees global uniqueness by any means necessary.
+
+---
+
+## CONFIDENCE SCORING
+
+Assign confidence (0.0 to 1.0) based on:
+
+- **1.0:** Blank template, clearly unanswered, perfect print quality
+- **0.95-0.99:** Clear election, good quality, unambiguous mark/text
+- **0.85-0.94:** Slightly unclear (small font, faint mark, but identifiable)
+- **0.70-0.84:** Ambiguous (use status: "ambiguous")
+- **<0.70:** High uncertainty (use status: "conflict" if contradictory)
+
+---
+
+## IMPORTANT RULES
+
+1. **Most Adoption Agreements are BLANK TEMPLATES**
+   - Default: status = "unanswered", value = null or empty array
+   - Only mark "answered" if you see CLEAR visual evidence of selection/entry
+
+2. **Preserve all options even when unanswered**
+   - Always include full options array for single_select and multi_select
+   - Set is_selected: false for all options when unanswered
+
+3. **Handle nested structures**
+   - Options can have fill_ins (sub-fields)
+   - Each fill_in uses fill_in_sequence, has own kind, status, value
+
+4. **Section context is important**
+   - Include article/section headers (e.g., "Article III - Contributions")
+   - Helps human reviewers locate questions in original document
+   - Provides semantic context for disambiguation
+
+5. **Question numbers are PROVENANCE ONLY (NEW IN V4)**
+   - Extract question_number accurately for document reference
+   - Understand it will be EXCLUDED from semantic fingerprinting
+   - Focus extraction quality on question_text and option_text semantics
+   - Post-processing strips question numbers before embedding generation
+
+6. **NO ID GENERATION - Use page_sequence and labels only**
+   - page_sequence: Sequential within this page
+   - selected_label / selected_labels: Use option labels (a, b, c...)
+   - fill_in_sequence: Sequential within option
+   - Post-processing generates all IDs deterministically
+
+7. **Output JSON array only**
+   - No explanatory text before/after
+   - Valid JSON that can be parsed directly
+
+---
+
+## OUTPUT FORMAT
+
+Return a JSON array of elections:
+
+[
+  {
+    "page_sequence": 1,
+    "kind": "text",
+    "question_number": "1.01",
+    "question_text": "...",
+    "section_context": "...",
+    "status": "unanswered",
+    "confidence": 1.0,
+    "provenance": {"page": 1, "question_number": "1.01"},
+    "value": null
+  },
+  {
+    "page_sequence": 2,
+    "kind": "single_select",
+    "question_number": "2.03",
+    "question_text": "...",
+    "section_context": "...",
+    "status": "answered",
+    "confidence": 0.98,
+    "provenance": {"page": 2, "question_number": "2.03"},
+    "value": {
+      "selected_label": "b"
+    },
+    "options": [
+      {
+        "label": "a",
+        "option_text": "...",
+        "is_selected": false,
+        "fill_ins": []
+      },
+      {
+        "label": "b",
+        "option_text": "...",
+        "is_selected": true,
+        "fill_ins": []
+      }
+    ]
+  },
+  {
+    "page_sequence": 3,
+    "kind": "multi_select",
+    "question_number": "3.02",
+    "question_text": "...",
+    "section_context": "...",
+    "status": "unanswered",
+    "confidence": 1.0,
+    "provenance": {"page": 3, "question_number": "3.02"},
+    "value": {
+      "selected_labels": []
+    },
+    "options": [...]
+  }
+]
+
+**CRITICAL REMINDERS:**
+- Question numbers are provenance metadata (for human reference)
+- Focus extraction quality on semantic content (question_text, option_text)
+- Section context helps disambiguate semantically similar questions
+- Post-processing will create semantic fingerprints that exclude structural artifacts

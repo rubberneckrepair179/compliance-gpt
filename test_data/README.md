@@ -6,25 +6,28 @@ This directory contains test documents and generated crosswalks for POC validati
 
 ---
 
-## Test Corpus: Ascensus Cycle 3 Documents
+## Test Corpus: Cross-Vendor Conversion (Relius → Ascensus)
 
-**Vendor:** Ascensus (all documents)
-**Document Set:** Cycle 3 Basic Plan Documents + Adoption Agreements
-**Scenario:** Intra-vendor BPD edition comparison (BPD 01 → BPD 05)
+**Scenario:** Cross-vendor conversion (hardest semantic mapping use case)
+**Source Vendor:** Relius Cycle 3
+**Target Vendor:** Ascensus
+**SME Identification:** Lauren Leneis, Oct 21, 2025
 
-### Source Documents (BPD 01)
+⚠️ **Critical Note on Relius Documents**: The Relius source documents contain Ascensus (ASC) markings, footers, and branding text. This is because they were previously ASC documents for this client's prior plan. Despite the ASC text in the PDFs, Lauren Leneis confirmed these are **Relius documents** based on document structure, template language, and section organization.
 
-| File | Document Type | Pages | Provisions/Elections | Description |
-|------|---------------|-------|---------------------|-------------|
-| `Basic Plan Document.pdf` | Basic Plan Document 01 | ~150 | 426 provisions | Ascensus Cycle 3 BPD template (earlier edition) |
-| `401(k) Profit Sharing Plan.pdf` | Adoption Agreement (completed) | ~75 | 521 elections | Employer elections for BPD 01 |
+### Source Documents (Relius Cycle 3)
 
-### Target Documents (BPD 05)
+| Original Filename | Canonical Name | Document Type | Pages | Provisions/Elections | Description |
+|-------------------|----------------|---------------|-------|---------------------|-------------|
+| `Cycle 3 Basic Plan Document 05-001.pdf` | `source_bpd.pdf` | Basic Plan Document | ~200 | 426 provisions | Relius Cycle 3 BPD (shows ASC branding but is Relius) |
+| `Blank Cycle 3 Adoption Agreement.pdf` | `source_aa.pdf` | Adoption Agreement | ~60 | 521 elections | Relius Cycle 3 AA (shows ASC branding but is Relius) |
 
-| File | Document Type | Pages | Provisions/Elections | Description |
-|------|---------------|-------|---------------------|-------------|
-| `Cycle 3 Basic Plan Document 05-001.pdf` | Basic Plan Document 05 | ~150 | 507 provisions | Ascensus Cycle 3 BPD template (restated edition) |
-| `Blank Cycle 3 Adoption Agreement.pdf` | Adoption Agreement (template) | ~75 | 235 elections | Blank AA template for BPD 05 |
+### Target Documents (Ascensus)
+
+| Original Filename | Canonical Name | Document Type | Pages | Provisions/Elections | Description |
+|-------------------|----------------|---------------|-------|---------------------|-------------|
+| `Basic Plan Document.pdf` | `target_bpd.pdf` | Basic Plan Document | ~120 | 507 provisions | Ascensus BPD (©2020 Ascensus markings) |
+| `401(k) Profit Sharing Plan.pdf` | `target_aa.pdf` | Adoption Agreement | ~90 | 235 elections | Ascensus Profit Sharing AA (©2020 Ascensus markings) |
 
 ---
 
@@ -74,60 +77,67 @@ This directory contains test documents and generated crosswalks for POC validati
 
 ### ✅ Validates (Proven by POC)
 
-1. **Semantic mapping algorithm works** - Correctly identifies equivalent provisions despite different wording
-2. **Confidence scoring works** - High-confidence matches are accurate (Red Team Sprint in progress)
-3. **Variance detection works** - Identifies substantive differences with impact classification
-4. **Hybrid architecture works** - Embeddings + LLM provides 99% cost reduction with high accuracy
-5. **Vision extraction works** - Handles complex form structures (checkboxes, nested options)
-6. **Parallel processing works** - 16-worker architecture provides 6x speedup
-7. **Intra-vendor edition comparison** - Detects BPD Cycle restatement changes
+1. **Cross-vendor mapping** - Testing Relius → Ascensus (hardest use case)
+2. **Vision extraction works** - Handles complex form structures (checkboxes, nested options)
+3. **Parallel processing works** - 16-worker architecture provides 6x speedup
+4. **Hybrid architecture works** - Embeddings + LLM provides 99% cost reduction
 
-### ⬜ Not Yet Validated (Requires Additional Test Data)
+### ⚠️ Validation In Progress (Red Team Sprint Oct 23, 2025)
 
-1. **Cross-vendor mapping** - Relius → ASC, ftwilliam → DATAIR, etc.
-2. **Vendor-specific default detection** - e.g., Relius auto-includes HCEs vs ASC requires checkbox
-3. **Multiple vendor document formats** - Different template structures across providers
-4. **Real production data** - Actual client conversions with live plan elections
+1. **Semantic mapping algorithm** - Initial results show quality issues (section headings matched to provisions, embedding pollution)
+2. **Confidence scoring calibration** - Need to validate 94% high-confidence claim against SME review
+3. **Variance detection accuracy** - Need to validate Administrative/Design/Regulatory classification
+4. **Provisional matching for templates** - BPD template matches may not be valid if election structures differ
 
----
+### ⬜ Not Yet Validated (Requires Fixes or Additional Test Data)
 
-## Why Intra-Vendor Testing is Valuable
-
-**Common assumption:** Cross-vendor comparison (Relius → ASC) is harder than intra-vendor (ASC → ASC).
-
-**Reality:** Intra-vendor BPD edition comparison is **equally challenging** and often **more subtle**:
-
-1. **Same legal framework** - Both documents follow Ascensus template structure, making differences harder to detect
-2. **Regulatory updates** - Cycle restatements incorporate IRS/DOL law changes that affect wording
-3. **Template refinements** - Vendor improves clarity, reorganizes sections, updates cross-references
-4. **Default value changes** - Subtle shifts in how elections are presented or defaulted
-5. **Election-dependent provisions** - BPD language like "as elected in AA" requires merger for full comparison
-
-**Example:** 19% match rate for BPD 01 → BPD 05 means 81% of provisions changed wording, structure, or placement between editions. This validates the algorithm can detect fine-grained semantic deltas.
-
-**Cross-vendor validation** will test handling of **different terminology** (e.g., "Plan Administrator" vs "Employer") but the **core semantic matching logic** is vendor-agnostic.
+1. **Vendor-specific default detection** - e.g., Relius auto-includes HCEs vs ASC requires checkbox
+2. **Multiple vendor document formats** - Different template structures across providers
+3. **Real production data** - Actual client conversions with live plan elections
+4. **Intra-vendor edition comparison** - Would require obtaining Ascensus BPD 01 → BPD 05 pair
 
 ---
 
-## Cross-Vendor Test Data Requirements
+## Why Cross-Vendor Testing is Critical
 
-To validate cross-vendor capability, obtain sample documents from:
+**This corpus tests the hardest use case**: Relius → Ascensus conversion.
 
-### Priority 1: Common Cross-Vendor Scenarios
-- **Relius → Ascensus** - Most common conversion per market research
-- **ftwilliam → Ascensus** - Second most common
+**Challenges:**
+1. **Different terminology** - "Plan Administrator" (Relius) vs "Employer" (Ascensus)
+2. **Different section numbering** - No alignment between document structures
+3. **Different election presentation** - Question numbering, option structures vary
+4. **Vendor-specific defaults** - Implicit vs explicit elections (e.g., HCE inclusion in safe harbor)
+5. **Template language differences** - Same legal concept, completely different wording
+
+**Why this validates the core algorithm:** If semantic matching works for cross-vendor (different words, different structure), it will work even better for intra-vendor edition changes (same vendor, just updated language).
+
+**Current status:** POC has generated crosswalks, but quality issues identified in Red Team Sprint suggest extraction and fingerprinting need revision before validation can proceed.
+
+---
+
+## Additional Test Data Needs (Future)
+
+To expand validation beyond current Relius → Ascensus corpus:
+
+### Priority 1: Other Cross-Vendor Scenarios
+- **ftwilliam → Ascensus** - Second most common conversion
 - **DATAIR → Ascensus** - Enterprise recordkeeper migrations
+- **Ascensus → Relius** - Reverse direction for bidirectional validation
 
-### Priority 2: Edge Cases
+### Priority 2: Intra-Vendor Scenarios
+- **Ascensus BPD 01 → BPD 05** - Edition change within same vendor
+- **Relius Cycle 2 → Cycle 3** - Regulatory update restatements
+
+### Priority 3: Edge Cases
 - **Volume submitter → Prototype** - Different IRS Opinion Letter structure
 - **Standardized → Non-standardized AA** - Different election presentation
 - **Multiple Employer Plan (MEP) documents** - Participating employer addendums
 
 ### Document Requirements
-- Matching plan (same 401(k) Profit Sharing structure)
+- Matching plan structure (same 401(k) Profit Sharing type)
 - Same IRS Cycle (for apples-to-apples comparison)
 - Both source and target BPDs + AAs
-- Actual client elections (not blank templates) for realistic test
+- Mix of blank and completed AAs for testing election merging
 
 ---
 
@@ -135,36 +145,56 @@ To validate cross-vendor capability, obtain sample documents from:
 
 ```
 test_data/
-├── README.md                                      # This file
+├── README.md                                      # This file - corpus documentation
+│
 ├── raw/                                           # Original PDFs (GITIGNORED)
-│   ├── Basic Plan Document.pdf                   # Source BPD 01
-│   ├── 401(k) Profit Sharing Plan.pdf            # Source AA (completed)
-│   ├── Cycle 3 Basic Plan Document 05-001.pdf    # Target BPD 05
-│   └── Blank Cycle 3 Adoption Agreement.pdf      # Target AA (template)
+│   ├── source_bpd.pdf                            # Relius Cycle 3 BPD (canonical)
+│   ├── source_aa.pdf                             # Relius Cycle 3 AA (canonical)
+│   ├── target_bpd.pdf                            # Ascensus BPD (canonical)
+│   ├── target_aa.pdf                             # Ascensus AA (canonical)
+│   │
+│   ├── Cycle 3 Basic Plan Document 05-001.pdf    # Original filename → source_bpd.pdf
+│   ├── Blank Cycle 3 Adoption Agreement.pdf      # Original filename → source_aa.pdf
+│   ├── Basic Plan Document.pdf                   # Original filename → target_bpd.pdf
+│   └── 401(k) Profit Sharing Plan.pdf            # Original filename → target_aa.pdf
 │
-├── extracted_vision/                              # GPT-5-nano vision extraction outputs
-│   ├── source_bpd_01_provisions.json             # 426 provisions
-│   ├── source_aa_elections.json                  # 521 elections
-│   ├── target_bpd_05_provisions.json             # 507 provisions
-│   └── target_aa_elections.json                  # 235 elections
+├── extracted/                                     # Vision extraction outputs (current)
+│   ├── source_bpd_provisions.json                # 426 provisions from Relius BPD
+│   ├── source_aa_elections.json                  # 521 elections from Relius AA
+│   ├── target_bpd_provisions.json                # 507 provisions from Ascensus BPD
+│   └── target_aa_elections.json                  # 235 elections from Ascensus AA
 │
-└── crosswalk/                                    # Semantic mapping outputs
-    ├── bpd_crosswalk.json                        # 425 provision mappings (JSON)
-    └── bpd_crosswalk.csv                         # 425 provision mappings (CSV)
+├── crosswalks/                                   # Semantic mapping outputs (current)
+│   ├── bpd_crosswalk.json                        # 425 Relius→Ascensus BPD mappings (JSON)
+│   ├── bpd_crosswalk.csv                         # 425 Relius→Ascensus BPD mappings (CSV)
+│   ├── aa_crosswalk.json                         # Relius→Ascensus AA mappings (JSON)
+│   └── aa_crosswalk.csv                          # Relius→Ascensus AA mappings (CSV)
+│
+└── archive/                                      # Historical extractions and experiments
+    └── YYYY-MM-DD_description/                   # Timestamped experiment archives
+        ├── extracted/
+        ├── crosswalks/
+        └── notes.md
 ```
+
+**Naming Convention:**
+- **Canonical names** (source_*.pdf, target_*.pdf) are explicit about direction
+- **Original filenames** preserved for reference but canonical names used in processing
+- **Extracted outputs** match canonical naming (source_bpd_provisions.json, not relius_bpd_provisions.json)
+- **Archive folders** use timestamps to preserve experiment history
 
 ---
 
 ## Data Lineage
 
 ```
-Raw PDFs (Ascensus BPD 01 + AA, BPD 05 + AA)
+Raw PDFs (Relius BPD + AA, Ascensus BPD + AA)
    ↓ (GPT-5-nano vision extraction, 18 min, 16 workers)
 Vision Extraction JSONs (426 + 521 + 507 + 235 items)
    ↓ (Embeddings + LLM semantic mapping, 11 min, 16 workers)
-BPD Crosswalk (425 source → 507 target mappings)
-   ↓ (Red Team Sprint validation, in progress)
-Validated Accuracy Claims (94% high confidence → X% actual accuracy)
+BPD Crosswalk (425 Relius → 507 Ascensus mappings)
+   ↓ (Red Team Sprint validation, in progress Oct 23, 2025)
+⚠️ Quality Issues Identified (see Validation Status below)
 ```
 
 ---
@@ -194,12 +224,30 @@ Validated Accuracy Claims (94% high confidence → X% actual accuracy)
 
 ## Validation Status
 
-**Current:** Red Team Sprint #1 in progress (BPD crosswalk validation)
-**Findings:** [Pending manual review - see test_results/red_team_2025-10-20.md]
-**Next:** AA crosswalk generation and validation
+**Current Status**: Red Team Sprint in progress (Oct 23, 2025)
+
+**Quality Issues Identified:**
+1. ❌ **Section headings extracted as provisions** - Vision extraction includes TOC entries and headers with no substantive content
+2. ❌ **Embedding pollution** - Question numbers and section numbers skew semantic similarity (unrelated provisions show 40-60% similarity)
+3. ❌ **Cross-topic false matches** - Template matches valid but provisional (depend on election compatibility)
+4. ❌ **AA false positives** - Age eligibility matched to State address at 92% confidence due to question number pollution
+
+**Remediation Plan:**
+1. Revise vision extraction prompts to skip section headings
+2. Implement semantic fingerprinting (strip structural artifacts before embedding)
+3. Add provision type classification (definition, rule, heading)
+4. Re-extract corpus with improved prompts
+5. Execute Red Team Sprint on extraction quality before attempting semantic mapping
+
+**Next Milestones:**
+- ⬜ Complete provisional matching design document
+- ⬜ Fix vision extraction and re-run
+- ⬜ Validate extraction quality (Red Team Sprint)
+- ⬜ Re-generate crosswalks with clean data
+- ⬜ Validate semantic mapping accuracy
 
 ---
 
-*Last Updated: 2025-10-20*
+*Last Updated: 2025-10-23*
 *Test Corpus Owner: Sergio DuBois*
-*Vendor: Ascensus (all documents confirmed)*
+*Vendor Identity Confirmed: Relius (source) → Ascensus (target) per Lauren Leneis, Oct 21, 2025*

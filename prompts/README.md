@@ -49,12 +49,31 @@ This directory contains all LLM prompts used in the compliance-gpt project. Prom
 ## Current Prompts
 
 ### provision_extraction_v2.txt
-- **Status**: ✅ Approved (implemented in POC)
+- **Status**: ❌ DEPRECATED - Extracted section headings without substantive content
 - **Purpose**: Extract provision boundaries from Basic Plan Documents
+- **Model**: OpenAI GPT-5-nano (vision)
+- **Issue**: No classification of heading vs substantive, caused false positives in semantic matching
+- **Superseded by**: provision_extraction_v3.txt
+
+### provision_extraction_v3.txt
+- **Status**: ❌ DEPRECATED - Still extracted section headings, lacked semantic fingerprinting support
+- **Purpose**: Extract provision boundaries from Basic Plan Documents
+- **Model**: OpenAI GPT-5-nano (vision)
+- **Issue**: Added page_sequence but didn't exclude headings
+- **Superseded by**: provision_extraction_v4.txt
+
+### provision_extraction_v4.txt
+- **Status**: ✅ APPROVED (Oct 24, 2025)
+- **Purpose**: Extract provision boundaries from Basic Plan Documents with semantic fingerprinting support
 - **Model**: OpenAI GPT-5-nano (vision)
 - **Input**: PDF pages as images
 - **Output**: JSON array of provisions with full text
-- **Performance**: 426 provisions extracted from 81-page source BPD
+- **Key Changes from v3**:
+  - Add provision_classification (heading vs substantive) - ONLY extract substantive
+  - Add semantic fingerprinting guidance (question numbers are provenance only)
+  - Enhanced provision_type categorization for downstream filtering
+  - Explicit rules to skip section headings, TOC entries, page headers
+- **Expected Impact**: Eliminate false positives from section heading matches
 
 ### aa_extraction_v1.txt
 - **Status**: ❌ DEPRECATED - Had false positive bug (blank template misidentified as completed)
@@ -64,8 +83,22 @@ This directory contains all LLM prompts used in the compliance-gpt project. Prom
 - **Superseded by**: aa_extraction_v2.txt
 
 ### aa_extraction_v2.txt
-- **Status**: 🟡 Pending validation (implemented, awaiting test)
+- **Status**: ❌ DEPRECATED - No semantic fingerprinting guidance
 - **Purpose**: Extract election questions from Adoption Agreements with discriminated union model
+- **Model**: OpenAI GPT-5-nano (vision)
+- **Issue**: No guidance that question numbers are provenance only
+- **Superseded by**: aa_extraction_v3.txt
+
+### aa_extraction_v3.txt
+- **Status**: ❌ DEPRECATED - Lacked explicit semantic fingerprinting warnings
+- **Purpose**: Extract election questions from Adoption Agreements
+- **Model**: OpenAI GPT-5-nano (vision)
+- **Issue**: Question number embedding pollution caused false positives (Age Q 1.04 → State Q 4.01)
+- **Superseded by**: aa_extraction_v4.txt
+
+### aa_extraction_v4.txt
+- **Status**: ✅ APPROVED (Oct 24, 2025)
+- **Purpose**: Extract election questions from Adoption Agreements with semantic fingerprinting
 - **Model**: OpenAI GPT-5-nano (vision)
 - **Input**: PDF pages as images
 - **Output**: JSON array of elections with kind-based structure (text, single_select, multi_select)
@@ -75,7 +108,12 @@ This directory contains all LLM prompts used in the compliance-gpt project. Prom
   - Nested fill-ins within options
   - Provenance tracking (page, question_number)
   - Confidence scoring
-- **Data Model**: See `/src/models/election.py`
+- **Key Changes from v3**:
+  - Add explicit semantic fingerprinting context section
+  - Emphasize question_number is PROVENANCE ONLY (excluded from embeddings)
+  - Add examples of false positive prevention (Age ≠ State)
+  - Reinforce focus on semantic content (question_text, option_text)
+- **Expected Impact**: Eliminate embedding pollution false positives
 
 ### semantic_mapping_v1.txt
 - **Status**: ✅ Approved (implemented in POC)
@@ -110,9 +148,13 @@ This directory contains all LLM prompts used in the compliance-gpt project. Prom
 | Date | Prompt | Version | Change | Rationale |
 |------|--------|---------|--------|-----------|
 | 2025-10-19 | provision_extraction | v2 | Vision-based extraction with full text | POC implementation |
+| 2025-10-19 | provision_extraction | v3 | Add page_sequence for deterministic IDs | Fix ID generation reliability |
+| 2025-10-24 | provision_extraction | v4 | Add heading classification, semantic fingerprinting support | Red Team finding: section headings matched to provisions |
 | 2025-10-19 | semantic_mapping | v1 | Hybrid embeddings + LLM verification | POC implementation |
 | 2025-10-20 | aa_extraction | v1 | Initial AA extraction (DEPRECATED) | False positive bug on blank templates |
 | 2025-10-20 | aa_extraction | v2 | Discriminated union model | Advisor's model: kind-based structure with status triage |
+| 2025-10-21 | aa_extraction | v3 | Add page_sequence, refine status triage | Consistency with provision extraction |
+| 2025-10-24 | aa_extraction | v4 | Add semantic fingerprinting context | Red Team finding: question number embedding pollution (Age→State false positive) |
 
 ---
 

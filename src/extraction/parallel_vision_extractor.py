@@ -25,8 +25,8 @@ def load_prompt(filename):
         return f.read()
 
 # Load extraction prompts
-BPD_PROMPT = load_prompt("provision_extraction_v3.txt")  # v3: page_sequence (no ID generation)
-AA_PROMPT = load_prompt("aa_extraction_v3.txt")  # v3: page_sequence (no ID generation)
+BPD_PROMPT = load_prompt("provision_extraction_v4.txt")  # v4: heading classification + semantic fingerprinting
+AA_PROMPT = load_prompt("aa_extraction_v4.txt")  # v4: semantic fingerprinting (question numbers are provenance only)
 
 
 def process_page_batch(client, model, pdf_path, page_start, page_end, doc_type):
@@ -159,10 +159,10 @@ def main():
     print()
 
     documents = [
-        ("test_data/raw/source/bpd/source_bpd_01.pdf", "BPD", "test_data/extracted_vision/source_bpd_01_provisions.json"),
-        ("test_data/raw/source/aa/source_aa.pdf", "AA", "test_data/extracted_vision/source_aa_elections.json"),
-        ("test_data/raw/target/bpd/target_bpd_05.pdf", "BPD", "test_data/extracted_vision/target_bpd_05_provisions.json"),
-        ("test_data/raw/target/aa/target_aa.pdf", "AA", "test_data/extracted_vision/target_aa_elections.json"),
+        ("test_data/raw/relius/relius_bpd_cycle3.pdf", "BPD", "test_data/extracted_vision_v4/source_bpd_provisions.json"),
+        ("test_data/raw/relius/relius_aa_cycle3.pdf", "AA", "test_data/extracted_vision_v4/source_aa_elections.json"),
+        ("test_data/raw/ascensus/ascensus_bpd.pdf", "BPD", "test_data/extracted_vision_v4/target_bpd_provisions.json"),
+        ("test_data/raw/ascensus/ascensus_aa_profit_sharing.pdf", "AA", "test_data/extracted_vision_v4/target_aa_elections.json"),
     ]
 
     total_start = time.time()
