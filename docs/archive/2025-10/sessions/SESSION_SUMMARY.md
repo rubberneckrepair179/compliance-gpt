@@ -514,3 +514,23 @@ TPAs already have document generators (Relius, ASC, ftwilliam). Our value is the
 
 *Session ended at ~50% context capacity (96K/200K tokens)*
 *Ready to continue with clear architectural understanding and prioritized tasks*
+
+---
+
+## Oct 30, 2025 — AA Crosswalk Pipeline Hardening
+
+**Highlights:**
+- ✅ Converted v6 AA provisions to the `Election` schema (`scripts/convert_aa_v6_to_elections.py`, converted JSON artifacts under `test_data/extracted_vision_v6/*_converted.json`).
+- ✅ Upgraded AA prompt to v1.1.1 (mirrors BPD v3 discipline, adds cross-field rules, richer few-shots).
+- ✅ Added parser guardrails in `AASemanticMapper` to reject incomplete LLM responses (empty rationale, missing abstain reasons, incompatible/impact mismatch) and updated data model to accept structured consistency checks.
+- ✅ Expanded unit test suite (`tests/test_aa_semantic_mapper.py`, 8 cases) covering validation fallbacks.
+- ✅ Pipeline docs bumped to v8, documenting conversion stage + new prompt requirements.
+
+**Outstanding:**
+- Await Claude’s rerun of `scripts/run_aa_crosswalk.py` with the new prompt to confirm abstain reasoning now populates (logs + JSON review still pending).
+- Need to update `test_results/crosswalk_runs.md` once new run completes and capture reasoning metrics.
+
+**Next session priorities:**
+1. Review rerun outputs (reasoning quality, match distribution) and adjust prompt if we still see unjustified abstains.
+2. Backfill sprint board / docs with run metrics and link to new artifacts.
+3. Start planning conditional/compatible heuristics once reasoning fields are reliable.

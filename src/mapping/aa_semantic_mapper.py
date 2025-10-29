@@ -1,453 +1,572 @@
-"""
-AA Semantic Mapper
+"""Adoption Agreement Semantic Mapper.
 
-Compares elections across Adoption Agreement documents using embedding-based
-candidate matching followed by LLM verification.
-
-Similar to SemanticMapper but adapted for election structures instead of prose provisions.
+Implements Stage-2 semantic mapping for Adoption Agreement elections using the
+schema defined in design/reconciliation/aa_mapping.md.
 """
 
-from pathlib import Path
-from typing import List, Dict, Any
+import json
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import json
+from pathlib import Path
+from typing import Dict, List, Optional
+from uuid import uuid4
+
 import numpy as np
+from anthropic import Anthropic
 from openai import OpenAI
 from rich.console import Console
 
 from src.config import settings
+from src.mapping.aa_input_builder import (
+    build_aa_input,
+    build_election_fingerprint,
+    build_section_hierarchy,
+)
+from src.models.aa_mapping import (
+    AAComparison,
+    AAElectionMapping,
+    Classification,
+    ElectionAnchor,
+    ElectionDependency,
+    ConsistencyChecks,
+    MatchType,
+    OptionDescriptor,
+    OptionMapping,
+    OptionRelationship,
+    QuestionAlignment,
+    StructureAnalysis,
+    ValueAlignment,
+)
+from src.models.election import Election
+from src.models.mapping import ConfidenceLevel, ImpactLevel
 
 console = Console()
 
 
+def _strip_markdown_fences(response_text: str) -> str:
+    text = response_text.strip()
+    if text.startswith("```json"):
+        text = text[7:]
+    if text.startswith("```"):
+        text = text[3:]
+    if text.endswith("```"):
+        text = text[:-3]
+    return text.strip()
+
+
+def _confidence_sort_key(mapping: AAElectionMapping) -> tuple:
+    level_map = {
+        ConfidenceLevel.HIGH: 3.0,
+        ConfidenceLevel.MEDIUM: 2.0,
+        ConfidenceLevel.LOW: 1.0,
+    }
+    return (level_map.get(mapping.classification.confidence_level, 0.0), mapping.embedding_similarity)
+
+
 class AASemanticMapper:
-    """
-    Maps elections across AA documents using hybrid embedding + LLM approach.
+    """Semantic mapper for Adoption Agreement elections."""
 
-    Key differences from BPD mapper:
-    - Elections have question_text + options (not prose provision_text)
-    - Need to compare option structures semantically
-    - Question numbering changes across BPD versions (can't rely on numbers)
-    """
-
-    def __init__(self, provider: str = None, top_k: int = 3, max_workers: int = 16) -> None:
-        """
-        Initialize AA semantic mapper.
-
-        Args:
-            provider: 'openai' or 'anthropic' (defaults to settings.llm_provider)
-            top_k: Number of candidates to verify with LLM (default 3)
-            max_workers: Number of parallel workers for LLM verification (default 16)
-        """
+    def __init__(self, provider: Optional[str] = None, top_k: int = 3, max_workers: int = 16) -> None:
         self.provider = provider or settings.llm_provider
         self.top_k = top_k
         self.max_workers = max_workers
         self.console = console
 
-        # Initialize OpenAI client (required for embeddings)
+        self.openai_client: Optional[OpenAI] = None
+        self.anthropic_client: Optional[Anthropic] = None
+
         if settings.openai_api_key:
             self.openai_client = OpenAI(api_key=settings.openai_api_key)
-        else:
-            raise ValueError("OpenAI API key required for AA semantic mapping")
 
-        # Load prompt
-        self.prompt_template = self._load_prompt()
+        if self.provider == "anthropic" and settings.anthropic_api_key:
+            self.anthropic_client = Anthropic(api_key=settings.anthropic_api_key)
 
-    def _load_prompt(self) -> str:
-        """Load AA semantic mapping prompt from external file."""
+        self.system_prompt, self.user_prompt = self._load_prompt()
+
+    # ------------------------------------------------------------------
+    # Prompt loading & LLM helpers
+    # ------------------------------------------------------------------
+    def _load_prompt(self) -> tuple[str, str]:
         prompt_path = Path("prompts/aa_semantic_mapping_v1.txt")
         if not prompt_path.exists():
             raise FileNotFoundError(f"Prompt file not found: {prompt_path}")
 
-        with open(prompt_path, "r", encoding="utf-8") as f:
-            return f.read()
+        system_lines: List[str] = []
+        user_lines: List[str] = []
+        current = None
 
-    def _election_to_text(self, election: Dict[str, Any]) -> str:
-        """
-        Convert election structure to text for embedding.
+        with prompt_path.open("r", encoding="utf-8") as handle:
+            for raw_line in handle:
+                line = raw_line.rstrip("\n")
+                if line.startswith("===SYSTEM==="):
+                    current = "system"
+                    continue
+                if line.startswith("===USER==="):
+                    current = "user"
+                    continue
+                if line.startswith("#") and current is None:
+                    continue
 
-        CRITICAL: Question numbers are stripped to prevent false positives.
-        Section numbers are provenance only and have NO BEARING on semantic similarity.
+                if current == "system":
+                    system_lines.append(line)
+                elif current == "user":
+                    user_lines.append(line)
 
-        Research finding: Including question numbers caused 1.0 embedding similarity
-        for unrelated elections (e.g., Age eligibility vs State address both numbered 1.04).
+        return "\n".join(system_lines).strip(), "\n".join(user_lines).strip()
 
-        Format:
-        Section: {section_context}
-        {question_text} (question number stripped)
-        Type: {kind}
-        Options:
-        - {option_text}
-        """
-        # Strip question number prefix if present (e.g., "Question 1.04: Text" → "Text")
-        question_text = election['question_text']
-        if ':' in question_text and question_text.split(':')[0].strip().startswith('Question'):
-            question_text = question_text.split(':', 1)[1].strip()
+    def _call_openai(self, payload_json: str) -> str:
+        if not self.openai_client:
+            raise RuntimeError("OPENAI_API_KEY not configured")
 
-        parts = [
-            f"Section: {election.get('section_context', 'Unknown')}",
-            question_text,
-            f"Type: {election.get('kind', 'unknown')}"
-        ]
+        user_content = self.user_prompt.replace("{payload}", payload_json)
+        params = {
+            "model": settings.llm_model,
+            "messages": [
+                {"role": "system", "content": self.system_prompt},
+                {"role": "user", "content": user_content},
+            ],
+            "temperature": 0.0,
+        }
 
-        if election.get('options'):
-            parts.append("Options:")
-            for opt in election['options']:
-                parts.append(f"- {opt['label']}. {opt['option_text']}")
+        if "gpt-5" in settings.llm_model.lower():
+            params["max_completion_tokens"] = 2000
+        else:
+            params["max_tokens"] = 2000
 
-        return "\n".join(parts)
+        response = self.openai_client.chat.completions.create(**params)
+        return response.choices[0].message.content
 
-    def generate_embeddings(self, elections: List[Dict[str, Any]]) -> Dict[str, np.ndarray]:
-        """
-        Generate embeddings for all elections.
+    def _call_anthropic(self, payload_json: str) -> str:
+        if not self.anthropic_client:
+            raise RuntimeError("ANTHROPIC_API_KEY not configured")
 
-        Args:
-            elections: List of election dicts from AA extraction
+        user_content = self.user_prompt.replace("{payload}", payload_json)
+        response = self.anthropic_client.messages.create(
+            model=settings.llm_model,
+            max_tokens=2000,
+            temperature=0.0,
+            system=self.system_prompt,
+            messages=[{"role": "user", "content": user_content}],
+        )
+        return response.content[0].text
 
-        Returns:
-            Dict mapping election_id to embedding vector
-        """
-        self.console.print(
-            f"[cyan]Generating embeddings for {len(elections)} elections...[/cyan]"
+    # ------------------------------------------------------------------
+    # Embeddings & candidate search
+    # ------------------------------------------------------------------
+    def _generate_embeddings(self, elections: List[Election]) -> Dict[str, np.ndarray]:
+        if not self.openai_client:
+            raise RuntimeError("OpenAI client required for embeddings")
+
+        fingerprints = [build_election_fingerprint(election) for election in elections]
+        election_ids = [str(election.id) for election in elections]
+
+        response = self.openai_client.embeddings.create(
+            model=settings.embedding_model,
+            input=fingerprints,
         )
 
-        embeddings = {}
-
-        # Convert elections to text
-        texts = [self._election_to_text(e) for e in elections]
-        election_ids = [e['id'] for e in elections]
-
-        try:
-            response = self.openai_client.embeddings.create(
-                model=settings.embedding_model, input=texts
-            )
-
-            for i, embedding_obj in enumerate(response.data):
-                embeddings[election_ids[i]] = np.array(embedding_obj.embedding)
-
-            self.console.print(f"[green]✓ Generated {len(embeddings)} embeddings[/green]\n")
-
-        except Exception as e:
-            self.console.print(f"[red]Error generating embeddings: {e}[/red]")
-            raise
+        embeddings: Dict[str, np.ndarray] = {}
+        for index, embedding in enumerate(response.data):
+            embeddings[election_ids[index]] = np.array(embedding.embedding)
 
         return embeddings
 
-    def compute_similarity_matrix(
+    def _compute_similarity_matrix(
         self,
-        source_elections: List[Dict[str, Any]],
-        target_elections: List[Dict[str, Any]],
+        source: List[Election],
+        target: List[Election],
         source_embeddings: Dict[str, np.ndarray],
         target_embeddings: Dict[str, np.ndarray],
-    ) -> Dict[str, List[Dict[str, Any]]]:
-        """
-        Compute cosine similarity matrix and find top candidates.
+    ) -> Dict[str, List[tuple[Election, float]]]:
+        candidates: Dict[str, List[tuple[Election, float]]] = {}
 
-        Returns:
-            Dict mapping source_election_id to list of top candidates
-            Each candidate: {target_id, similarity}
-        """
-        self.console.print(
-            f"[cyan]Computing similarity matrix ({len(source_elections)}×{len(target_elections)})...[/cyan]"
+        for source_election in source:
+            source_vector = source_embeddings[str(source_election.id)]
+            similarities: List[tuple[Election, float]] = []
+
+            for target_election in target:
+                target_vector = target_embeddings[str(target_election.id)]
+                similarity = float(
+                    np.dot(source_vector, target_vector)
+                    / (np.linalg.norm(source_vector) * np.linalg.norm(target_vector))
+                )
+                similarities.append((target_election, similarity))
+
+            similarities.sort(key=lambda item: item[1], reverse=True)
+            candidates[str(source_election.id)] = similarities[: self.top_k]
+
+        return candidates
+
+    # ------------------------------------------------------------------
+    # Mapping verification & parsing
+    # ------------------------------------------------------------------
+    def _verify_mapping(
+        self,
+        source_election: Election,
+        target_election: Election,
+        *,
+        embedding_similarity: float,
+        candidate_rank: int,
+        section_hierarchy: Dict[str, str],
+        run_id: str,
+    ) -> AAElectionMapping:
+        payload_dict = build_aa_input(
+            source_election=source_election,
+            target_election=target_election,
+            candidate_rank=candidate_rank,
+            run_id=run_id,
+            section_hierarchy=section_hierarchy,
+        )
+        payload_json = json.dumps(payload_dict, ensure_ascii=False)
+
+        if self.provider == "anthropic":
+            response_text = self._call_anthropic(payload_json)
+        else:
+            response_text = self._call_openai(payload_json)
+
+        return self._parse_mapping(
+            response_text,
+            source=source_election,
+            target=target_election,
+            embedding_similarity=embedding_similarity,
+            fallback_run_id=run_id,
         )
 
-        candidates_map = {}
+    def _validate_mapping(self, mapping: AAElectionMapping) -> List[str]:
+        """
+        Validate LLM response quality (parser guardrails).
 
-        for source_election in source_elections:
-            source_id = source_election['id']
-            source_vec = source_embeddings[source_id]
+        Returns list of validation error messages (empty list if valid).
+        """
+        errors = []
 
-            similarities = []
+        # 1. Validate confidence_rationale is non-empty (post-strip)
+        if not mapping.classification.confidence_rationale.strip():
+            errors.append("confidence_rationale is empty")
 
-            for target_election in target_elections:
-                target_id = target_election['id']
-                target_vec = target_embeddings[target_id]
+        # 2. Validate abstain_reasons contains ≥1 entry when match_type=="abstain"
+        if mapping.classification.match_type == MatchType.ABSTAIN:
+            if not mapping.classification.abstain_reasons:
+                errors.append("abstain_reasons is empty when match_type=abstain")
 
-                # Cosine similarity
-                similarity = float(
-                    np.dot(source_vec, target_vec)
-                    / (np.linalg.norm(source_vec) * np.linalg.norm(target_vec))
+        # 3. Validate question_alignment.reasons non-empty when question_alignment.value is False
+        if not mapping.structure_analysis.question_alignment.value:
+            if not mapping.structure_analysis.question_alignment.reasons:
+                errors.append("question_alignment.reasons is empty when alignment is false")
+
+        # 4. Validate exact match outputs do not include partial/missing/incompatible relationships
+        if mapping.classification.match_type == MatchType.EXACT:
+            forbidden_relationships = {
+                OptionRelationship.PARTIAL,
+                OptionRelationship.MISSING,
+                OptionRelationship.INCOMPATIBLE,
+            }
+            for opt_mapping in mapping.option_mappings:
+                if opt_mapping.relationship in forbidden_relationships:
+                    errors.append(
+                        f"exact match has {opt_mapping.relationship.value} relationship in option_mappings"
+                    )
+                    break
+
+        # 5. Validate incompatible relationships force impact to medium or high
+        has_incompatible = any(
+            opt_mapping.relationship == OptionRelationship.INCOMPATIBLE
+            for opt_mapping in mapping.option_mappings
+        )
+        if has_incompatible:
+            if mapping.classification.impact == ImpactLevel.NONE:
+                errors.append("incompatible relationship present but impact=none")
+
+        return errors
+
+    def _parse_mapping(
+        self,
+        response_text: str,
+        *,
+        source: Election,
+        target: Election,
+        embedding_similarity: float,
+        fallback_run_id: str,
+    ) -> AAElectionMapping:
+        payload = json.loads(_strip_markdown_fences(response_text))
+
+        def to_confidence_level(value: str) -> ConfidenceLevel:
+            mapping = {
+                "high": ConfidenceLevel.HIGH,
+                "medium": ConfidenceLevel.MEDIUM,
+                "low": ConfidenceLevel.LOW,
+            }
+            return mapping.get(value.lower(), ConfidenceLevel.LOW)
+
+        def to_match_type(value: str) -> MatchType:
+            try:
+                return MatchType(value)
+            except ValueError:
+                return MatchType.ABSTAIN
+
+        def to_impact(value: str) -> ImpactLevel:
+            mapping = {
+                "none": ImpactLevel.NONE,
+                "low": ImpactLevel.LOW,
+                "medium": ImpactLevel.MEDIUM,
+                "high": ImpactLevel.HIGH,
+            }
+            return mapping.get(value.lower(), ImpactLevel.LOW)
+
+        def to_relationship(value: str) -> OptionRelationship:
+            try:
+                return OptionRelationship(value)
+            except ValueError:
+                return OptionRelationship.INCOMPATIBLE
+
+        structure_payload = payload.get("structure_analysis", {})
+        qa_payload = structure_payload.get("question_alignment", {})
+        dependency_payload = structure_payload.get("election_dependency", {})
+
+        option_mappings_payload = payload.get("option_mappings", [])
+        option_mappings: List[OptionMapping] = []
+        for item in option_mappings_payload:
+            source_option = item.get("source_option", {})
+            target_option = item.get("target_option")
+
+            source_descriptor = OptionDescriptor(
+                label=source_option.get("label"),
+                text=source_option.get("text", ""),
+                is_selected=source_option.get("is_selected"),
+                fill_ins=source_option.get("fill_ins", []),
+            )
+
+            target_descriptor = None
+            if target_option:
+                target_descriptor = OptionDescriptor(
+                    label=target_option.get("label"),
+                    text=target_option.get("text", ""),
+                    is_selected=target_option.get("is_selected"),
+                    fill_ins=target_option.get("fill_ins", []),
                 )
 
-                similarities.append({
-                    'target_id': target_id,
-                    'similarity': similarity
-                })
+            option_mappings.append(
+                OptionMapping(
+                    source=source_descriptor,
+                    target=target_descriptor,
+                    relationship=to_relationship(item.get("relationship", "incompatible")),
+                    notes=item.get("notes"),
+                )
+            )
 
-            # Sort by similarity and take top K
-            top_candidates = sorted(
-                similarities, key=lambda x: x['similarity'], reverse=True
-            )[: self.top_k]
-
-            candidates_map[source_id] = top_candidates
-
-        self.console.print(
-            f"[green]✓ Found top {self.top_k} candidates for each source election[/green]\n"
+        value_alignment_payload = payload.get("value_alignment", {})
+        value_alignment = ValueAlignment(
+            source_selected=value_alignment_payload.get("source_selected", []),
+            target_selected=value_alignment_payload.get("target_selected", []),
+            compatible=bool(value_alignment_payload.get("compatible", False)),
+            justification=value_alignment_payload.get("justification"),
         )
 
-        return candidates_map
+        classification_payload = payload.get("classification", {})
+        classification = Classification(
+            match_type=to_match_type(classification_payload.get("match_type", "abstain")),
+            impact=to_impact(classification_payload.get("impact", "low")),
+            confidence_level=to_confidence_level(classification_payload.get("confidence_level", "low")),
+            confidence_rationale=classification_payload.get("confidence_rationale", ""),
+            abstain_reasons=classification_payload.get("abstain_reasons", []),
+        )
 
-    def verify_mapping(
+        consistency_payload = payload.get("consistency_checks", {})
+        consistency_checks = ConsistencyChecks(
+            exact_requires_none_impact=consistency_payload.get("exact_requires_none_impact", "failed"),
+            incompatible_requires_non_none_impact=consistency_payload.get("incompatible_requires_non_none_impact", "failed"),
+            abstain_requires_alignment_false_or_insufficient_context=consistency_payload.get(
+                "abstain_requires_alignment_false_or_insufficient_context", "failed"
+            ),
+            violations=consistency_payload.get("violations", []),
+        )
+
+        mapping = AAElectionMapping(
+            schema_version=payload.get("schema_version", "aa-v1"),
+            run_id=payload.get("run_id", fallback_run_id),
+            source_election_id=source.id,
+            target_election_id=target.id,
+            source_anchor=ElectionAnchor(
+                question_id=payload.get("source_anchor", {}).get("question_id", str(source.id)),
+                section_context=payload.get("source_anchor", {}).get("section_context", source.section_context),
+                page=payload.get("source_anchor", {}).get("page", getattr(source.provenance, "page", None)),
+            ),
+            target_anchor=ElectionAnchor(
+                question_id=payload.get("target_anchor", {}).get("question_id", str(target.id)),
+                section_context=payload.get("target_anchor", {}).get("section_context", target.section_context),
+                page=payload.get("target_anchor", {}).get("page", getattr(target.provenance, "page", None)),
+            ),
+            structure_analysis=StructureAnalysis(
+                question_alignment=QuestionAlignment(
+                    value=bool(qa_payload.get("value", False)),
+                    reasons=qa_payload.get("reasons", []),
+                ),
+                requires_definition=structure_payload.get("requires_definition", []),
+                election_dependency=ElectionDependency(
+                    status=dependency_payload.get("status", "none"),
+                    evidence=dependency_payload.get("evidence", []),
+                ),
+            ),
+            option_mappings=option_mappings,
+            value_alignment=value_alignment,
+            classification=classification,
+            consistency_checks=consistency_checks,
+            embedding_similarity=embedding_similarity,
+        )
+
+        # Validate LLM response quality (parser guardrails)
+        validation_errors = self._validate_mapping(mapping)
+        if validation_errors:
+            console.print(f"[yellow]⚠ LLM response validation failed: {'; '.join(validation_errors)}[/yellow]")
+            return self._fallback_mapping(
+                source=source,
+                target=target,
+                embedding_similarity=embedding_similarity,
+                run_id=fallback_run_id,
+                error=ValueError(f"Invalid LLM response: {'; '.join(validation_errors)}"),
+            )
+
+        return mapping
+
+    def _fallback_mapping(
         self,
-        source_election: Dict[str, Any],
-        target_election: Dict[str, Any],
-        embedding_score: float
-    ) -> Dict[str, Any]:
-        """
-        Use LLM to verify semantic mapping between two elections.
-
-        Returns:
-            Dict with mapping result:
-            {
-                source_id, target_id, embedding_similarity,
-                is_match, confidence_score, reasoning,
-                variance_type, impact_level
-            }
-        """
-        # Build prompt
-        prompt = self.prompt_template.format(
-            source_number=source_election['question_number'],
-            source_question=source_election['question_text'],
-            source_options=self._format_options(source_election.get('options', [])),
-            target_number=target_election['question_number'],
-            target_question=target_election['question_text'],
-            target_options=self._format_options(target_election.get('options', []))
+        *,
+        source: Election,
+        target: Election,
+        embedding_similarity: float,
+        run_id: str,
+        error: Exception,
+    ) -> AAElectionMapping:
+        classification = Classification(
+            match_type=MatchType.ABSTAIN,
+            impact=ImpactLevel.LOW,
+            confidence_level=ConfidenceLevel.LOW,
+            confidence_rationale=f"LLM verification failed: {error}",
+            abstain_reasons=["llm_failure"],
         )
 
-        # Call LLM
-        try:
-            response_text = self._call_openai(prompt)
-            result = self._parse_llm_response(response_text)
-
-            # Build mapping result
-            mapping = {
-                'source_id': source_election['id'],
-                'target_id': target_election['id'],
-                'source_question_number': source_election['question_number'],
-                'target_question_number': target_election['question_number'],
-                'embedding_similarity': embedding_score,
-                'is_match': result['is_match'],
-                'confidence_score': result['confidence_score'],
-                'reasoning': result['reasoning'],
-                'variance_type': result.get('variance_type', 'none'),
-                'impact_level': result.get('impact_level', 'none')
-            }
-
-            return mapping
-
-        except Exception as e:
-            self.console.print(f"[yellow]⚠️  Error verifying mapping: {e}[/yellow]")
-            # Return low-confidence mapping on error
-            return {
-                'source_id': source_election['id'],
-                'target_id': target_election['id'],
-                'source_question_number': source_election['question_number'],
-                'target_question_number': target_election['question_number'],
-                'embedding_similarity': embedding_score,
-                'is_match': False,
-                'confidence_score': 0.0,
-                'reasoning': f"LLM verification failed: {str(e)}",
-                'variance_type': 'none',
-                'impact_level': 'none'
-            }
-
-    def _format_options(self, options: List[Dict[str, Any]]) -> str:
-        """Format election options for prompt."""
-        if not options:
-            return "(No options - text field)"
-
-        lines = []
-        for opt in options:
-            lines.append(f"{opt['label']}. {opt['option_text']}")
-        return "\n".join(lines)
-
-    def _call_openai(self, prompt: str) -> str:
-        """Call OpenAI API."""
-        response = self.openai_client.chat.completions.create(
-            model=settings.llm_model,
-            messages=[
-                {
-                    "role": "system",
-                    "content": "You are an ERISA compliance specialist analyzing Adoption Agreement elections. Return ONLY valid JSON, no other text.",
-                },
-                {"role": "user", "content": prompt},
-            ],
-            max_tokens=1000,
-            temperature=0.0,
+        return AAElectionMapping(
+            schema_version="aa-v1",
+            run_id=run_id,
+            source_election_id=source.id,
+            target_election_id=target.id,
+            source_anchor=ElectionAnchor(
+                question_id=str(source.id),
+                section_context=source.section_context,
+                page=getattr(source.provenance, "page", None),
+            ),
+            target_anchor=ElectionAnchor(
+                question_id=str(target.id),
+                section_context=target.section_context,
+                page=getattr(target.provenance, "page", None),
+            ),
+            structure_analysis=StructureAnalysis(
+                question_alignment=QuestionAlignment(value=False, reasons=[]),
+                requires_definition=[],
+                election_dependency=ElectionDependency(status="none", evidence=[]),
+            ),
+            option_mappings=[],
+            value_alignment=ValueAlignment(),
+            classification=classification,
+            consistency_checks=ConsistencyChecks(
+                exact_requires_none_impact="failed",
+                incompatible_requires_non_none_impact="failed",
+                abstain_requires_alignment_false_or_insufficient_context="failed",
+                violations=["llm_response_invalid"],
+            ),
+            embedding_similarity=embedding_similarity,
         )
-        return response.choices[0].message.content
 
-    def _parse_llm_response(self, response_text: str) -> Dict:
-        """Parse LLM JSON response."""
-        # Remove markdown code blocks if present
-        json_text = response_text.strip()
-        if json_text.startswith("```json"):
-            json_text = json_text[7:]
-        if json_text.startswith("```"):
-            json_text = json_text[3:]
-        if json_text.endswith("```"):
-            json_text = json_text[:-3]
-
-        json_text = json_text.strip()
-
-        try:
-            return json.loads(json_text)
-        except json.JSONDecodeError as e:
-            self.console.print(f"[red]Failed to parse LLM response: {e}[/red]")
-            self.console.print(f"[dim]Response: {response_text[:200]}...[/dim]")
-            raise
-
-    def compare_aa_documents(
+    # ------------------------------------------------------------------
+    # Public API
+    # ------------------------------------------------------------------
+    def compare_documents(
         self,
-        source_elections: List[Dict[str, Any]],
-        target_elections: List[Dict[str, Any]],
+        source_elections: List[Election],
+        target_elections: List[Election],
+        *,
         source_doc_id: str,
         target_doc_id: str,
-    ) -> Dict[str, Any]:
-        """
-        Complete AA document comparison workflow.
-
-        Returns:
-            Dict with comparison results and statistics
-        """
-        self.console.print(f"\n[cyan bold]Comparing AA Documents[/cyan bold]")
+    ) -> AAComparison:
+        self.console.print("\n[cyan bold]Comparing AA Documents[/cyan bold]")
         self.console.print(f"[dim]Source: {source_doc_id} ({len(source_elections)} elections)[/dim]")
-        self.console.print(
-            f"[dim]Target: {target_doc_id} ({len(target_elections)} elections)[/dim]\n"
-        )
+        self.console.print(f"[dim]Target: {target_doc_id} ({len(target_elections)} elections)[/dim]\n")
 
-        # Step 1: Generate embeddings
-        all_elections = source_elections + target_elections
-        all_embeddings = self.generate_embeddings(all_elections)
+        run_id = f"aa-{uuid4()}"
+        section_hierarchy = build_section_hierarchy(source_elections + target_elections)
 
-        source_embeddings = {e['id']: all_embeddings[e['id']] for e in source_elections}
-        target_embeddings = {e['id']: all_embeddings[e['id']] for e in target_elections}
+        embeddings = self._generate_embeddings(source_elections + target_elections)
+        source_embeddings = {str(e.id): embeddings[str(e.id)] for e in source_elections}
+        target_embeddings = {str(e.id): embeddings[str(e.id)] for e in target_elections}
 
-        # Step 2: Find candidates
-        candidates_map = self.compute_similarity_matrix(
+        candidates_map = self._compute_similarity_matrix(
             source_elections, target_elections, source_embeddings, target_embeddings
         )
 
-        # Step 3: LLM verification (parallel)
-        self.console.print(
-            f"[cyan]Verifying top candidates with LLM ({self.provider.upper()}, {self.max_workers} workers)...[/cyan]"
-        )
-
-        all_mappings = []
-        total_verifications = len(source_elections) * self.top_k
-
-        # Build target election map
-        target_election_map = {e['id']: e for e in target_elections}
-
-        # Build verification tasks
+        all_mappings: List[AAElectionMapping] = []
         verification_tasks = []
+
         for source_election in source_elections:
-            source_id = source_election['id']
-            candidates = candidates_map[source_id]
+            source_id = str(source_election.id)
+            for rank, (target_election, similarity) in enumerate(candidates_map[source_id], start=1):
+                verification_tasks.append(
+                    (source_election, target_election, similarity, rank)
+                )
 
-            for candidate in candidates:
-                target_id = candidate['target_id']
-                target_election = target_election_map[target_id]
-                verification_tasks.append((
-                    source_election,
-                    target_election,
-                    candidate['similarity']
-                ))
-
-        # Parallel verification
-        verified_count = 0
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-            # Submit all tasks
             future_to_task = {
                 executor.submit(
-                    self.verify_mapping,
+                    self._verify_mapping,
                     source_election,
                     target_election,
-                    emb_score
+                    embedding_similarity=similarity,
+                    candidate_rank=rank,
+                    section_hierarchy=section_hierarchy,
+                    run_id=f"{run_id}-c{rank}-{uuid4().hex[:6]}",
                 ): (source_election, target_election)
-                for source_election, target_election, emb_score in verification_tasks
+                for source_election, target_election, similarity, rank in verification_tasks
             }
 
-            # Collect results as they complete
             for future in as_completed(future_to_task):
+                source_election, target_election = future_to_task[future]
                 try:
                     mapping = future.result()
-                    all_mappings.append(mapping)
-                    verified_count += 1
-
-                    if verified_count % 50 == 0:
-                        self.console.print(
-                            f"[dim]  Verified {verified_count}/{total_verifications}...[/dim]"
-                        )
-                except Exception as e:
-                    source_election, target_election = future_to_task[future]
-                    self.console.print(
-                        f"[red]Error verifying {source_election['question_number']}: {e}[/red]"
+                except Exception as error:  # pragma: no cover - defensive
+                    mapping = self._fallback_mapping(
+                        source=source_election,
+                        target=target_election,
+                        embedding_similarity=0.0,
+                        run_id=run_id,
+                        error=error,
                     )
+                all_mappings.append(mapping)
 
-        self.console.print(f"[green]✓ Completed {verified_count} verifications[/green]\n")
+        best_matches: List[AAElectionMapping] = []
+        for source_election in source_elections:
+            candidates = [m for m in all_mappings if m.source_election_id == source_election.id]
+            if not candidates:
+                continue
+            candidates.sort(key=_confidence_sort_key, reverse=True)
+            best_matches.append(candidates[0])
 
-        # Step 4: Select best matches
-        best_matches = self._select_best_matches(all_mappings, source_elections)
-
-        # Step 5: Calculate statistics
-        matched_count = sum(1 for m in best_matches if m['is_match'])
-        unmatched_source = len(source_elections) - matched_count
-        matched_target_ids = {m['target_id'] for m in best_matches if m['is_match']}
-        unmatched_target = len(target_elections) - len(matched_target_ids)
-
-        # Confidence distribution
-        high_confidence = sum(1 for m in best_matches if m['confidence_score'] >= 0.9)
-        medium_confidence = sum(
-            1 for m in best_matches
-            if 0.7 <= m['confidence_score'] < 0.9
-        )
-        low_confidence = sum(1 for m in best_matches if m['confidence_score'] < 0.7)
-
-        comparison = {
-            'source_document_id': source_doc_id,
-            'target_document_id': target_doc_id,
-            'mappings': best_matches,
-            'statistics': {
-                'total_source_elections': len(source_elections),
-                'total_target_elections': len(target_elections),
-                'matched_elections': matched_count,
-                'unmatched_source_elections': unmatched_source,
-                'unmatched_target_elections': unmatched_target,
-                'high_confidence': high_confidence,
-                'medium_confidence': medium_confidence,
-                'low_confidence': low_confidence,
-            },
-            'completed_at': datetime.utcnow().isoformat(),
+        matched_count = sum(1 for mapping in best_matches if mapping.match_decision())
+        matched_target_ids = {
+            mapping.target_election_id for mapping in best_matches if mapping.match_decision()
         }
+
+        comparison = AAComparison(
+            source_document_id=source_doc_id,
+            target_document_id=target_doc_id,
+            mappings=best_matches,
+            total_source_elections=len(source_elections),
+            total_target_elections=len(target_elections),
+            matched_elections=matched_count,
+            unmatched_source_elections=len(source_elections) - matched_count,
+            unmatched_target_elections=len(target_elections) - len(matched_target_ids),
+            completed_at=datetime.utcnow(),
+        )
 
         return comparison
 
-    def _select_best_matches(
-        self,
-        all_mappings: List[Dict[str, Any]],
-        source_elections: List[Dict[str, Any]]
-    ) -> List[Dict[str, Any]]:
-        """
-        Select the best match for each source election.
 
-        Each source election gets exactly one mapping (highest confidence match).
-        """
-        best_matches = []
-
-        for source_election in source_elections:
-            # Get all candidates for this source
-            candidates = [
-                m for m in all_mappings
-                if m['source_id'] == source_election['id']
-            ]
-
-            if not candidates:
-                continue
-
-            # Select highest confidence match
-            best_match = max(candidates, key=lambda m: m['confidence_score'])
-            best_matches.append(best_match)
-
-        return best_matches
+__all__ = ["AASemanticMapper"]

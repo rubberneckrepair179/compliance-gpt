@@ -30,6 +30,14 @@ class ImpactLevel(str, Enum):
     HIGH = "high"  # Critical, requires attention
 
 
+class ConfidenceLevel(str, Enum):
+    """Confidence level for semantic mapping decisions."""
+
+    HIGH = "High"  # 90-100% confidence
+    MEDIUM = "Medium"  # 70-89% confidence
+    LOW = "Low"  # <70% confidence
+
+
 class ProvisionMapping(BaseModel):
     """
     Represents a semantic mapping between source and target provisions.

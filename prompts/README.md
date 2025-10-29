@@ -159,3 +159,67 @@ This directory contains all LLM prompts used in the compliance-gpt project. Prom
 ---
 
 *For questions about prompt design decisions, see `/design/llm_strategy/`*
+
+### aa_semantic_mapping_v1.txt
+- **Status**: ❌ DEPRECATED (Oct 30, 2025)
+- **Purpose**: Semantic comparison of Adoption Agreement elections (cross-vendor)
+- **Model**: OpenAI GPT-4.1 or Claude Sonnet 4.5
+- **Issue**: 100% abstention rate with no reasoning fields populated (prompt/parser mismatch)
+- **Root Cause**: 
+  - No explicit requirement for mandatory reasoning fields
+  - Missing few-shot examples for cross-vendor matches
+  - Overly strict alignment criteria
+  - No structured output validation in parser
+- **Superseded by**: aa_semantic_mapping_v1.1.1.txt (copied to aa_semantic_mapping_v1.txt)
+- **Diagnostic Report**: `test_results/aa_crosswalk_v1_abstain_diagnostics.md`
+
+### aa_semantic_mapping_v1.1.1.txt (Current: aa_semantic_mapping_v1.txt)
+- **Status**: ✅ APPROVED (Oct 30, 2025)
+- **Purpose**: Semantic comparison of Adoption Agreement elections with auditable reasoning
+- **Model**: OpenAI GPT-4.1 or Claude Sonnet 4.5
+- **Input**: JSON payload with source/target election details
+- **Output**: Structured JSON with classification, option mappings, and mandatory reasoning
+- **Key Changes from v1**:
+  - **Mandatory reasoning fields**: `confidence_rationale`, `abstain_reasons`, `question_alignment.reasons`
+  - **10 few-shot examples**: Cross-vendor matches, legitimate abstains, conditional dependencies, multi-select overlap, value conflicts
+  - **Clarified alignment criteria**: Topic-first reasoning, regulatory equivalents align despite wording differences
+  - **Expanded option coverage rules**: Single vs multi-select handling, selection vs relationship semantics
+  - **Cross-field constraints**: Explicit rules for abstain→reasons, exact→no-incompatible, incompatible→non-none-impact
+  - **Evidence span rule**: Quotes ≤12 words, must come from payload
+  - **Vendor synonym guidance**: HCE, Entry Date, safe harbor terms
+  - **Consistency checks**: Self-validation of output constraints
+- **Parser Guardrails** (implemented in `AASemanticMapper._validate_mapping`):
+  - Reject empty `confidence_rationale`
+  - Reject abstain without `abstain_reasons` entries
+  - Reject alignment=false without `question_alignment.reasons`
+  - Reject exact match with partial/missing/incompatible relationships
+  - Reject incompatible relationships with impact=none
+  - Return fallback mapping with `abstain_reasons=["llm_failure"]` on validation failure
+- **Expected Impact**: Eliminate 100% abstention rate, provide auditable reasoning for all decisions
+
+## Version History
+
+| Prompt | Version | Date | Status | Key Changes |
+|--------|---------|------|--------|-------------|
+| provision_extraction | v2 | Oct 18, 2025 | Deprecated | First vision extraction |
+| provision_extraction | v3 | Oct 19, 2025 | Deprecated | Added page_sequence |
+| provision_extraction | v4 | Oct 24, 2025 | Approved | Exclude headings, semantic fingerprinting |
+| aa_extraction | v1 | Oct 20, 2025 | Deprecated | Initial AA extraction |
+| aa_extraction | v2 | Oct 20, 2025 | Deprecated | Discriminated union model |
+| aa_extraction | v3 | Oct 21, 2025 | Deprecated | First semantic fingerprinting |
+| aa_extraction | v4 | Oct 24, 2025 | Approved | Explicit embedding warnings |
+| aa_semantic_mapping | v1 | Oct 28, 2025 | Deprecated | Initial cross-vendor comparison |
+| aa_semantic_mapping | v1.1.1 | Oct 30, 2025 | Approved | Mandatory reasoning + parser guardrails |
+
+## Red Team Findings Integration
+
+Prompt iterations are driven by adversarial testing documented in `/test_results/`:
+
+- **aa_crosswalk_v1_abstain_diagnostics.md** (Oct 28, 2025): Identified 100% abstention with no reasoning → prompted v1.1.1 mandatory reasoning requirements
+- **aa_crosswalk_v1_samples.json** (Oct 28, 2025): High-similarity abstentions analyzed to tune alignment criteria and add few-shot examples
+
+Future red team sprints will validate:
+- v1.1.1 reasoning field population rate
+- Abstention rate reduction (target: <30% for high-similarity pairs)
+- Cross-vendor match accuracy (manual verification sample)
+- Confidence score calibration (90%+ scores should be 90%+ accurate)
