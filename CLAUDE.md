@@ -77,49 +77,55 @@ compliance-gpt/
 
 ## Project Status
 
-**Phase:** POC Parallel Crosswalk Complete (Oct 19, 2025) ✅
-**Previous:** POC Architecture Pivot (Oct 19, 2025)
-**Achievement:** Vision extraction + parallel semantic mapping working end-to-end
+**Phase:** ADR-001 Approved - Merge Strategy Defined (Oct 30, 2025) ✅
+**Previous:** Complete Extraction Pipeline (Oct 21, 2025)
+**Achievement:** Architectural decision for BPD+AA merger formally documented and approved
 
-**Major Architectural Pivot (Oct 19, 2025):**
-🔴 **CRITICAL FINDING:** Both source and target documents are BPD (template) + AA (elections) pairs, NOT standalone documents. Initial POC approach was comparing templates to templates, which produced 0% match rate (correctly).
-
-**Validated by:** OpenAI GPT-5 Pro with actual PDF analysis
-**Impact:** Requires document merger layer (BPD + AA → complete provisions) before semantic comparison
+**Major Architectural Decision (Oct 30, 2025):**
+✅ **ADR-001 APPROVED:** Merge-Then-Crosswalk strategy selected for semantic comparison
+- **Approach:** Merge BPD+AA into complete provisions BEFORE semantic crosswalk
+- **Rationale:** Election-dependent provisions require merged comparison for semantic accuracy
+- **Implementation:** Phased approach (proof-of-concept → smart merger MVP → full pipeline)
+- **Documentation:** [`/design/architecture/adr_001_merge_strategy.md`](design/architecture/adr_001_merge_strategy.md)
 
 **What's Done:**
 1. ✅ Process framework defined (`/process`) - Updated for BPD+AA architecture
 2. ✅ Market research completed (`/research/market_research.pdf`)
-3. ✅ Functional requirements drafted (`/requirements/functional_requirements.md`) - Pending update
+3. ✅ Functional requirements drafted (`/requirements/functional_requirements.md`)
 4. ✅ Competitive analysis (PlanPort is only AI competitor, does single-doc analysis only)
-5. ✅ **Phase 1 Design complete** (`/design`) - Requires update for BPD+AA merger
-6. ✅ **Model selection:** OpenAI GPT-4.1 (switched from Claude due to rate limits)
-7. ✅ **POC extraction & semantic mapping** - Proved algorithm works, but revealed wrong input data
-8. ✅ **Document structure validation** - Opus 4.1 + GPT-5 Pro confirmed BPD+AA architecture
+5. ✅ **Phase 1 Design complete** (`/design`) - Architecture, data models, LLM strategy
+6. ✅ **Model selection:** GPT-5-nano (extraction), GPT-5-Mini (semantic mapping)
+7. ✅ **POC extraction complete** - 4,901 provisions extracted (Relius + Ascensus BPDs + AAs)
+8. ✅ **Document structure validation** - BPD+AA architecture confirmed
 9. ✅ **Prompt engineering workflow** - Externalized prompts with approval process
+10. ✅ **ADR-001: Merger Strategy** - Merge-then-crosswalk approach with data models, merge rules, evaluation plan
 
-**Current Status (Oct 19, 2025 - POC Parallel Crosswalk Complete):**
+**Test Corpus:**
+- **Source:** Relius BPD Cycle 3 + Adoption Agreement (623 provisions, 182 elections)
+- **Target:** Ascensus BPD 05 + Adoption Agreement (426 provisions, 550 elections)
+- **Scenario:** Cross-vendor conversion (validates hardest use case - different template structures)
 
-**Test Corpus:** Ascensus Cycle 3 documents (BPD 01 → BPD 05 restatement)
-- Source: Ascensus BPD 01 + Adoption Agreement (426 provisions, 521 elections)
-- Target: Ascensus BPD 05 + Adoption Agreement (507 provisions, 235 elections)
-- Scenario: Intra-vendor Cycle 3 restatement (validates semantic mapping algorithm)
+**Extraction Complete:**
+1. ✅ **Vision extraction** - All 4 documents extracted (GPT-5-nano, 4,901 total provisions)
+2. ✅ **AA extraction v2** - 100% accuracy validation (762/762 elections, discriminated union model)
+3. ✅ **Embedding pollution fix** - False positives eliminated with semantic cleaning
+4. ✅ **Red Team Sprint A** - Extraction quality validated
 
-**Completed:**
-1. ✅ **Vision extraction complete** - GPT-5-nano extracts BPD provisions + AA elections (328 pages, 18 min)
-2. ✅ **Parallel processing implemented** - 16-worker architecture for extraction and semantic mapping
-3. ✅ **BPD crosswalk complete** - Ascensus BPD 01 → BPD 05
-   - 425 source → 507 target provisions mapped (2,125 verifications, 11 min)
-   - 82 semantic matches (19.3% - expected for BPD edition comparisons)
-   - 94% high confidence (≥90%)
-   - 186 high-impact variances, 136 medium-impact variances
-4. ✅ **CSV export working** - Human-readable crosswalk with confidence scores and variance classification
+**Next Phase: BPD+AA Merger Implementation**
+Phase 1 (2-3 days): Proof-of-concept with 20-provision golden set
+- Manually merge 5 election-heavy provision types (eligibility, compensation, match, vesting, HCE/top-heavy)
+- Compare merged vs template-only crosswalk quality
+- Exit criteria: ≥20% recall gain at ≥0.85 precision
 
-**Pending:**
-5. ⬜ **AA crosswalk** - Election mapping (521 source → 235 target elections)
-6. ⬜ **BPD+AA merger** - Substitute elected values into template provisions for complete comparison
-7. ⬜ **Executive summary** - Natural language report generation
-8. ⬜ **Cross-vendor validation** - Requires obtaining Relius/ftwilliam/DATAIR sample documents
+Phase 2 (4-6 days): Smart merger MVP
+- Implement top 10 merge patterns (direct anchor, checkbox enum, conditionals, vendor synonyms, etc.)
+- Target ≥80% auto-merge coverage for high-impact provisions
+- Full provenance tracking (BPD sections + AA fields → merged provision)
+
+Phase 3 (2-3 days): Full pipeline integration
+- End-to-end merged crosswalk (Relius → Ascensus)
+- Executive summary generation
+- Demo-ready artifact
 
 ---
 
@@ -493,6 +499,26 @@ Red Team Sprints are adversarial testing sessions conducted after major mileston
 
 ## Project History / Changelog
 
+**2025-10-30** - ADR-001: Merge Strategy Decision
+- **Morning:** Architectural decision session with advisor feedback
+  - Question: Should we merge-then-crosswalk or crosswalk-then-merge?
+  - Created formal ADR with decision hygiene (scope, risks, KPIs, rollback criteria)
+  - Defined crisp terminology (BPD, AA, election-dependent provision, merge, crosswalk)
+  - Specified merge mechanics (anchor finding, substitution, normalization, provenance)
+  - Documented data models (MergedProvision, CrosswalkResult with full audit trail)
+  - Catalogued 10 merge rule patterns (direct anchor, conditionals, vendor synonyms, etc.)
+  - Hardened exit criteria per phase (precision/recall targets, coverage %, timing benchmarks)
+  - Built evaluation plan (golden set, metrics, ablations)
+  - Added reporting precedence rules (primary: merged, secondary: template diffs)
+- **Decision:** Merge-Then-Crosswalk with phased implementation (proof-of-concept → MVP → pipeline)
+- **Rationale:** Election-dependent provisions require merged comparison for semantic accuracy
+- **Next:** Phase 1 proof-of-concept with 20-provision golden set
+- **Key Learnings:**
+  - Advisor feedback transformed initial analysis into production-ready ADR
+  - Decision hygiene (assumptions, boundaries, metrics, risks) prevents scope creep
+  - Data models and merge rules catalogue make "merge" concrete (not black box)
+  - Phased approach derisks "merger is too hard" concern
+
 **2025-10-21** - Embedding Research & False Positive Fix
 - **Morning:** Vendor identity correction (Lauren Leneis meeting)
   - Source = Relius Cycle 3, Target = Ascensus (cross-vendor, not intra-vendor)
@@ -599,5 +625,5 @@ Red Team Sprints are adversarial testing sessions conducted after major mileston
 
 ---
 
-*Last Updated: 2025-10-19*
-*Next Review: After vision extraction completion and AA crosswalk generation*
+*Last Updated: 2025-10-30*
+*Next Review: After Phase 1 merger proof-of-concept completion*

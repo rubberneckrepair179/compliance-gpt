@@ -26,50 +26,61 @@ compliance-gpt automates the four-control framework defined in [`/process`](./pr
 
 ## Status
 
-**POC Vision Extraction + Semantic Mapping Complete** (Oct 20, 2025) 🎉
+**ADR-001 Approved: Merge Strategy Defined** (Oct 30, 2025) ✅
 
-👉 **[See DEMO.md for complete walkthrough with examples](DEMO.md)** 👈
+👉 **[See ADR-001 for architectural decision details](design/architecture/adr_001_merge_strategy.md)** 👈
 
 ✅ Process framework defined (updated for BPD+AA architecture)
 ✅ Market research completed
 ✅ Functional requirements drafted
 ✅ **Phase 1 design complete** — architecture, data models, LLM strategy
-✅ **Document structure validated** — Opus 4.1 + GPT-5 Pro confirmed BPD+AA requirements
-✅ **Parallel vision extraction complete** — All 4 documents extracted (302 pages, 24 minutes)
-  - Source BPD: 426 provisions (81 pages, GPT-5-nano)
-  - Source AA: 543 elections (104 pages, GPT-5-nano)
-  - Target BPD: 507 provisions (72 pages, GPT-5-nano)
-  - Target AA: 219 elections (45 pages, GPT-5-nano)
-✅ **AA extraction v2 validated** — 100% accuracy (762/762 elections, discriminated union model)
-✅ **Parallel semantic crosswalk complete** — BPD mapping with 16 workers (2,125 verifications, 11 minutes)
-  - 82 semantic matches found (19.3% - expected for template comparisons)
-  - 94% high confidence (≥90%)
-  - 186 high-impact variances detected
-  - 136 medium-impact variances detected
-✅ **CSV export working** — Human-readable crosswalk ready for Excel/review
+✅ **Document structure validated** — BPD+AA architecture confirmed
+✅ **Extraction pipeline complete** — 4,901 provisions extracted (Relius + Ascensus, BPDs + AAs)
+  - GPT-5-nano vision extraction with 100% accuracy validation
+  - Embedding pollution fix (false positives eliminated)
+  - Red Team Sprint A validation
+✅ **ADR-001: Merger Strategy** — Merge-then-crosswalk approach formally documented
+  - Data models defined (MergedProvision, CrosswalkResult)
+  - 10 merge rule patterns catalogued
+  - Evaluation plan with golden set and metrics
+  - Phased implementation roadmap (proof-of-concept → MVP → pipeline)
 
 **Key Achievements:**
 - **Vision extraction with GPT-5-nano:** Most thorough model for structured document parsing
-- **Parallel processing:** 16-worker architecture reduces crosswalk time from ~70 min to ~11 min (6x speedup)
-- **Hybrid embeddings + LLM:** 99% cost reduction (215,475 comparisons → 2,125 LLM calls)
+- **Parallel processing:** 16-worker architecture for extraction and semantic mapping
+- **Hybrid embeddings + LLM:** 99% cost reduction (candidate filtering before LLM verification)
 - **Semantic matching with GPT-5-Mini:** High-quality reasoning for variance detection
+- **Architectural rigor:** Formal ADR process with advisor feedback, decision hygiene, exit criteria
 
 **Test Corpus:**
-The POC was validated using Ascensus Cycle 3 documents:
-- **Source:** Ascensus BPD 01 + Adoption Agreement (426 provisions, 543 elections)
-- **Target:** Ascensus BPD 05 + Adoption Agreement (507 provisions, 219 elections)
-- **Scenario:** Intra-vendor Cycle 3 restatement (BPD 01 → BPD 05)
+- **Source:** Relius BPD Cycle 3 + Adoption Agreement (623 provisions, 182 elections)
+- **Target:** Ascensus BPD 05 + Adoption Agreement (426 provisions, 550 elections)
+- **Scenario:** Cross-vendor conversion (hardest use case - different template structures)
 
-This validates the semantic mapping algorithm works correctly. Cross-vendor testing (e.g., Relius → ASC, ftwilliam → DATAIR) requires obtaining additional sample documents.
+**Next Phase: BPD+AA Merger Implementation**
 
-**Next Steps:** Simulate filled source AA with elections, implement BPD+AA merger, run merged crosswalk for complete conversion workflow validation
+**Phase 1 (2-3 days):** Proof-of-concept with 20-provision golden set
+- Manually merge election-heavy provisions (eligibility, compensation, match, vesting, HCE/top-heavy)
+- Compare merged vs template-only crosswalk quality
+- Exit criteria: ≥20% recall gain at ≥0.85 precision
+
+**Phase 2 (4-6 days):** Smart merger MVP
+- Implement top 10 merge patterns (anchors, conditionals, vendor synonyms)
+- Target ≥80% auto-merge coverage for high-impact provisions
+- Full provenance tracking (BPD + AA → merged provision)
+
+**Phase 3 (2-3 days):** Full pipeline integration
+- End-to-end merged crosswalk (Relius → Ascensus)
+- Executive summary generation
+- Demo-ready artifact
 
 ## Repo map
 
 - **[`/process`](./process/README.md)** — the four-control compliance framework (the "spec")
 - **[`/requirements`](./requirements/README.md)** — functional requirements for MVP (doc-to-doc comparison focus)
 - **[`/research`](./research/)** — market research on existing TPA tools and AI opportunities
-- **[`/design`](./design/README.md)** — technical architecture, data models, and LLM strategy ✨ **NEW**
+- **[`/design`](./design/README.md)** — technical architecture, data models, and LLM strategy
+- **[`/design/architecture/adr_001_merge_strategy.md`](./design/architecture/adr_001_merge_strategy.md)** — Architectural Decision Record: Merge Strategy ✨ **NEW**
 
 ### Design Highlights
 
@@ -96,7 +107,8 @@ This validates the semantic mapping algorithm works correctly. Cross-vendor test
 **Key Innovations:**
 1. **Vision-first extraction** - Handles form layouts, checkboxes, nested options better than text parsing
 2. **Parallel processing** - 16-worker architecture for both extraction and semantic mapping
-3. **BPD+AA crosswalk** - Maps both template provisions AND election options for complete conversion spec
-4. **Semantic provision mapping** - AI-powered cross-vendor capability (POC validated with Ascensus BPD 01 → BPD 05)
+3. **Merge-then-crosswalk** - Substitute AA elections into BPD provisions BEFORE semantic comparison (prevents false negatives on election-dependent provisions)
+4. **Semantic provision mapping** - AI-powered cross-vendor capability with full provenance tracking
+5. **Formal ADR process** - Decision hygiene with data models, merge rules, evaluation plan, exit criteria
 
 See [`/design/README.md`](./design/README.md) for complete architecture and design decisions.
