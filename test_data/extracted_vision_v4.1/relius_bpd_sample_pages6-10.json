@@ -1,0 +1,371 @@
+{
+  "document": "test_data/raw/relius/relius_bpd_cycle3.pdf",
+  "doc_type": "BPD",
+  "model": "gpt-5-nano",
+  "prompt_version": "v4.1",
+  "total_pages": 5,
+  "successful_pages": 5,
+  "provisions": [
+    {
+      "section_number": "1.1(a)",
+      "section_title": "Combined Account",
+      "provision_text": "\"Combined Account' means the account representing the Participant's total interest under the Plan resulting from (1) the Employer's contributions in the case of a Profit Sharing Plan or Money Purchase Plan, and (2) the Employer Nonemployee Contributions in the case of a 401(k) Profit Sharing Plan. In addition, Forfeitures are a part of the Combined Account to the extent they are reallocated. Separate accountings shall be maintained with respect to that portion of a Participant's Account attributable to Employer contributions made pursuant to Section 12.1(a)(2) and to Employer contributions made pursuant to Section 12.1(a)(3).\"",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 6,
+      "page_sequence": 1
+    },
+    {
+      "section_number": "1.1(b)(i)",
+      "section_title": "Pre-Tax Elective Deferral Account",
+      "provision_text": "\"Pre-Tax Elective Deferral Account' means the portion of the Elective Deferral Account attributable to Pre-Tax Elective Deferrals (i.e., Elective Deferrals that are not subject to federal income tax at the time of their deferral to the Plan).\"",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 6,
+      "page_sequence": 2
+    },
+    {
+      "section_number": "1.1(b)(ii)",
+      "section_title": "Roth Elective Deferral Account",
+      "provision_text": "\"Roth Elective Deferral Account' means the portion of the Elective Deferral Account attributable to Roth Elective Deferrals (i.e., that are subject to federal income tax at the time of their deferral to the Plan) which does not include amounts attributable to 'in-Plan Roth rollover contributions' (as defined in Section 12.1). No contributions other than Roth Elective Deferrals and properly attributable earnings will be credited to each Participant's Roth Elective Deferral Account.\"",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 6,
+      "page_sequence": 3
+    },
+    {
+      "section_number": "1.1(b)(iii)",
+      "section_title": "In-Plan Roth Rollover Account",
+      "provision_text": "\"In-Plan Roth Rollover Account' means the account attributable to an 'in-Plan Roth rollover contribution' (an IRR) that is directly rolled over within this Plan, as defined and described in Section 12.11. The amount thus contributed retains the characteristics of the source Account from which the amount of the IRR was distributed (except for the tax treatment of such amount when distributed out of the Plan).\"",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 6,
+      "page_sequence": 4
+    },
+    {
+      "section_number": "1.1(b)(iv)",
+      "section_title": "In-Plan Roth Transfer Account",
+      "provision_text": "\"In-Plan Roth Transfer Account' means the account attributable to an 'in-Plan Roth rollover transfer' (an IRT) that is directly rolled over within this Plan, as defined and described in Section 12.11. The amount thus contributed retains the characteristics of the source Account from which the amount of the IRT was distributed (except for the tax treatment of such amount when distributed out of the Plan).\"",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 6,
+      "page_sequence": 5
+    },
+    {
+      "section_number": "1.1(b)(v)",
+      "section_title": "Qualified Automatic Contribution Safe Harbor Account",
+      "provision_text": "\"Qualified Automatic Contribution Safe Harbor Account' means the account established hereunder to which Qualified Automatic Contribution Safe Harbor Contributions are allocated. Amounts in the Qualified Automatic Contribution Safe Harbor Account are subject to the distribution restrictions of Section 12.2(e). The Administrator may maintain a separate Qualified Automatic Contribution Safe Harbor Account for matching contributions and nonelective contributions made pursuant to a QACA.\"",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 6,
+      "page_sequence": 6
+    },
+    {
+      "section_number": "1.1(b)(vi)",
+      "section_title": "Qualified Matching Contribution Account",
+      "provision_text": "\"Qualified Matching Contribution Account' means the account established hereunder to which Qualified Matching Contributions are allocated. Amounts in the Qualified Matching Contribution Account are nonforfeitable when made and are subject to the distribution restrictions of Section 12.2(e).\"",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 6,
+      "page_sequence": 7
+    },
+    {
+      "section_number": "1.1(b)(vii)",
+      "section_title": "Qualified Nonelective Contribution Account",
+      "provision_text": "\"Qualified Nonelective Contribution Account' means the account established hereunder to which Qualified Nonelective Contributions are allocated. Amounts in the Qualified Nonelective Contribution Account are nonforfeitable when made and are subject to the distribution restrictions of Section 12.2(e).\"",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 6,
+      "page_sequence": 8
+    },
+    {
+      "section_number": "1.1(b)(viii)",
+      "section_title": "Qualified Voluntary Employee Contribution Account",
+      "provision_text": "\"Qualified Voluntary Employee Contribution Account' means the account established hereunder to which a Participant's tax-deductible qualified voluntary Employee contributions made pursuant to Section 4.9 are allocated.\"",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 6,
+      "page_sequence": 9
+    },
+    {
+      "section_number": "1.1(b)(ix)",
+      "section_title": "Rollover Account",
+      "provision_text": "\"Rollover Account' means the account established hereunder to which amounts transferred from a qualified plan (including this Plan) or individual retirement account in accordance with Section 4.6 are allocated.\"",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 6,
+      "page_sequence": 10
+    },
+    {
+      "section_number": "1.1(b)(x)",
+      "section_title": "Transfer Account",
+      "provision_text": "\"Transfer Account' means the account established hereunder to which amounts transferred to this Plan from a direct plan-to-plan transfer in accordance with Section 4.7 are allocated.\"",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 6,
+      "page_sequence": 11
+    },
+    {
+      "section_number": "1.2",
+      "section_title": "ACP",
+      "provision_text": "\"ACP\" means the \"Actual Contribution Percentage\" determined pursuant to Section 12.6(d).",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 1
+    },
+    {
+      "section_number": "1.3",
+      "section_title": "Act",
+      "provision_text": "\"Act\" means the Employee Retirement Income Security Act of 1974, as it may be amended from time to time and includes applicable Department of Labor (DOL) guidance.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 2
+    },
+    {
+      "section_number": "1.4",
+      "section_title": "ADP",
+      "provision_text": "\"ADP\" means the \"Actual Deferral Percentage\" determined pursuant to Section 12.4(d).",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 3
+    },
+    {
+      "section_number": "1.5",
+      "section_title": "Administrator",
+      "provision_text": "\"Administrator\" means the Employer unless another person, entity or committee has been designated by the Employer pursuant to Section 2.2 to administer the Plan on behalf of the Employer. \"Administrator\" also includes any Qualified Termination Administrator (QTA) that has assumed the responsibilities of the Administrator in accordance with guidelines set forth by the Department of Labor.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 4
+    },
+    {
+      "section_number": "1.6",
+      "section_title": "Adoption Agreement",
+      "provision_text": "\"Adoption Agreement\" means the separate agreement which is executed by the Employer and sets forth the elective provisions of this Plan as specified by the Employer.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 5
+    },
+    {
+      "section_number": "1.7",
+      "section_title": "Affiliated Employer",
+      "provision_text": "\"Affiliated Employer\" means any corporation which is a member of a controlled group of corporations (as defined in Code \u00a7414(b)) which includes the Employer; any trade or business (whether or not incorporated) which is under common control (as defined in Code \u00a7414(c)) with the Employer; any organization (whether or not incorporated) which is a member of an affiliated service group (as defined in Code \u00a7414(m)) which includes the Employer; and any other entity required to be aggregated with the Employer pursuant to Regulations under Code \u00a7414(o).",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 6
+    },
+    {
+      "section_number": "1.8",
+      "section_title": "Affirmative Election",
+      "provision_text": "\"Affirmative Election\" means a Salary Deferral Agreement submitted by a Participant to the Administrator in accordance with Section 12.2 that provides instructions to defer a specific amount of Compensation (including an affirmative election to defer no amount) as an Elective Deferral to the Plan. A Participant's Affirmative Election is generally effective as of the first payroll period which follows the payroll period in which the Participant made the Affirmative Election. However, a Participant may make an Affirmative Election which is effective: (a) for the first payroll period in which he or she becomes a Participant in the Plan following an Affirmative Election; or (b) for the first payroll period following the effective date of the Automatic Contribution Arrangement if the Participant makes an Affirmative Election not later than the Automatic Contribution Arrangement's effective date.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 7
+    },
+    {
+      "section_number": "1.9",
+      "section_title": "Alternate Payee",
+      "provision_text": "\"Alternate Payee\" means an alternate payee pursuant to a qualified domestic relations order that meets the requirements of Code \u00a7414(p).",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 8
+    },
+    {
+      "section_number": "1.10",
+      "section_title": "Anniversary Date",
+      "provision_text": "\"Anniversary Date\" means the last day of the Plan Year.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 9
+    },
+    {
+      "section_number": "1.11",
+      "section_title": "Annuity Starting Date",
+      "provision_text": "\"Annuity Starting Date\" means, with respect to any Participant, the first day of the third period for which an amount is paid as an annuity, or, in the case of a benefit not payable in the form of an annuity, the first day on which all events have occurred which entitles the Participant to such benefit.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 10
+    },
+    {
+      "section_number": "1.12",
+      "section_title": "Automatic Contribution Arrangement",
+      "provision_text": "\"Automatic Contribution Arrangement\" means the Automatic Deferral provisions described by Section 12.2 and, if applicable, Section 12.9.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 11
+    },
+    {
+      "section_number": "1.13",
+      "section_title": "Automatic Deferral",
+      "provision_text": "\"Automatic Deferral\" means the amount (if any) that a Participant is deemed to defer in accordance with an Automatic Contribution Arrangement. The effective date of an Employee's Automatic Deferral will be as soon as practicable after the Employee is subject to Automatic Deferrals described by the Adoption Agreement, Section 12.2(b) and/or 12.9, consistent with (a) applicable law, and (b) the objective of affording the Employee a reasonable period of time after receipt of the notice to make an Affirmative Election (and, if applicable, an investment election). All Automatic Deferrals constitute Elective Deferrals.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 12
+    },
+    {
+      "section_number": "1.14",
+      "section_title": "Beneficiary",
+      "provision_text": "\"Beneficiary\" means the person (or entity) to whom all or a portion of a deceased Participant's interest in the Plan is, or may become, payable upon the Participant's death as identified in records maintained by the Plan, subject to the restrictions of Sections 6.2 and 6.6.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 7,
+      "page_sequence": 13
+    },
+    {
+      "section_number": "1.16",
+      "section_title": "Catch-Up Eligible Participant",
+      "provision_text": "\"Catch-Up Eligible Participant\" means a Participant who: (a) is eligible to make Elective Deferrals to the Plan pursuant to Section 12.2; and (b) will attain age 50 or older by the end of such taxable year.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 8,
+      "page_sequence": 1
+    },
+    {
+      "section_number": "1.17",
+      "section_title": "Code",
+      "provision_text": "\"Code\" means the Internal Revenue Code of 1986, as it may be amended from time to time and includes applicable Internal Revenue Service (IRS) guidance.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 8,
+      "page_sequence": 2
+    },
+    {
+      "section_number": "1.18",
+      "section_title": "Compensation",
+      "provision_text": "\"Compensation\" means, with respect to any Participant, the amount determined in accordance with the following provisions, except as otherwise provided in the Adoption Agreement.\n\n(a) Base definition. One of the following, as elected in the Adoption Agreement:\n\n(1) Information required to be reported under Code \u00a7\u00a76041, 6051 and 6052 (Wages, tips and other compensation as reported on Form W-2). Compensation means wages, within the meaning of Code \u00a73401(a), and all other payments of compensation to an Employee by the Employer (in the course of the Employer's trade or business) for which the Employer is required to furnish the Employee a written statement under Code \u00a7\u00a76041(d), 6051(a)(3) and 6052. Compensation must be determined without regard to any rules under Code \u00a73401(a) that limit the remuneration included in wages based on the nature or location of the employment or the services performed (such as the exception for agricultural labor in Code \u00a73401(a)(2)).\n\n(2) Code \u00a73401(a) Wages. Compensation means an Employee's wages within the meaning of Code \u00a73401(a) for the purposes of income tax withholding at the source but determined without regard to any rules that limit the remuneration included in wages based on the nature or location of the employment or the services performed (such as the exception for agricultural labor in Code \u00a73401(a)(2)).\n\n(3) 415 safe harbor compensation. Compensation means wages, salaries, Military Differential Pay, and fees for professional services and other amounts received (without regard to whether or not the contributions are actually excludable from the gross income of the Employee and not salary reduction amounts under Code \u00a7125), whether or not the contributions are actually excludable from the gross income of the Employee.\n\n(b) Earned Income for Self-Employed Individual. Notwithstanding the foregoing, Compensation for any Self-Employed Individual shall be equal to Earned Income. Furthermore, the contributions on behalf of any \"owner-Employee\" shall be made only with respect to the Earned Income for such \"owner-Employee\" which is derived from the trade or business with respect to which such Plan is established. For this purpose, an \"owner-Employee\" means a sole proprietor who owns the entire interest in the Employer or a partner (or member in the case of a limited liability company treated as a partnership or sole proprietorship for federal income tax purposes).",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 8,
+      "page_sequence": 3
+    },
+    {
+      "section_number": "(c)",
+      "section_title": "Paid during 'determination period'",
+      "provision_text": "Paid during 'determination period.' Compensation shall include only that Compensation which is actually paid to the Participant during the 'determination period.' Except as otherwise provided in this Plan, the 'determination period' is the period elected by the Employer in the Adoption Agreement. If the Employer makes no election, the 'determination period' shall be the Plan Year.",
+      "provision_type": "operational",
+      "provision_classification": "substantive",
+      "pdf_page": 9,
+      "page_sequence": 1
+    },
+    {
+      "section_number": "(d)",
+      "section_title": "Inclusion of deferrals",
+      "provision_text": "(d) Inclusion of deferrals. Notwithstanding the above, unless otherwise elected in the Adoption Agreement, Compensation shall include all of the following types of elective contributions and all of the following types of deferred compensation:\n\n(1) Elective contributions that are made by the Employer on behalf of a Participant that are not includible in gross income under Code \u00a7125, 402(e)(3), 402(h)(3), 402(k), 403(b), and 132(f)(4). However, regardless of any election in the Adoption Agreement to the contrary, amounts described in the preceding sentence will be included in Compensation for purposes of making Elective Deferrals under this Plan. If specified in Appendix A to the Adoption Agreement (Special Effective Dates and Other Permitted Elections), amounts under Code \u00a7125 shall be deemed to include any amounts not available to a Participant in cash in lieu of group health coverage because the Participant is unable to elect to receive cash or the Participant's other health coverage as part of the enrollment process for the health plan. An amount will be treated as an amount under Code \u00a7125 pursuant to the preceding sentence only if the Employer does not request or collect information regarding the Participant's other health coverage as part of the enrollment process for the health plan.\n\n(2) Compensation deferred under an eligible deferred compensation plan within the meaning of Code \u00a7457(b).\n\n(3) Employee contributions (under governmental plans) described in Code \u00a7414(h)(2) that are picked up by the employing unit and thus are treated as Employer contributions.",
+      "provision_type": "operational",
+      "provision_classification": "substantive",
+      "pdf_page": 9,
+      "page_sequence": 2
+    },
+    {
+      "section_number": "(e)",
+      "section_title": "Post-severance compensation \u2013 Code \u00a7415 Regulations",
+      "provision_text": "(e) Post-severance compensation \u2013 Code \u00a7415 Regulations. The Administrator shall adjust Compensation for amounts that would otherwise be included in the definition of Compensation but are paid by the later of 2 1/2 months after a Participant's severance from employment with the Employer or the end of the Plan Year that includes the date of the Participant's severance from employment with the Employer, in accordance with the following, as elected in the Compensation Section of the Adoption Agreement. The preceding time period, however, does not apply with respect to payments described in Subsections (4) and (5) below. Any other payment of Compensation paid after severance of employment that is not described in the following types of compensation is not considered Compensation, even if payment is made within the time period specified above.\n\n(1) Regular pay. Compensation shall include regular pay after severance of employment (to the extent otherwise included in the definition of Compensation) if the payment is regular pay after severance of employment; and\n\n(i) The payment is regular compensation for services during the Participant's regular working hours, or compensation for services outside the Participant's regular working hours (such as overtime or shift differential), commissions, bonuses, or other similar payments; and\n\n(ii) The payment would have been paid to the Participant prior to a severance from employment if the Participant had continued in employment with the Employer.\n\n(2) Leave cash-outs. Compensation shall include leave cash-outs if those amounts would have been included in the definition of Compensation if they were paid prior to the Participant's severance from employment with the Employer, and the amounts are for unused accrued bona fide sick, vacation, or other leave, but only if the Participant would have been able to use the leave if employment had continued.\n\n(3) Deferred compensation. Compensation shall include deferred compensation if those amounts would have been included in the definition of Compensation if they were paid prior to the Participant's severance from employment with the Employer, and the amounts are received pursuant to a nonqualified funded deferred compensation plan, but only if the payment would have been paid at the same time if the Participant had continued in employment with the Employer and only to the extent the payment is includible in the Participant's gross income.\n\n(4) Military Differential pay. Compensation shall include payments to an individual who does not currently perform services for the Employer by reason of qualified military service (as that term is used in Code \u00a7414(u)(1)) to the extent those payments do not exceed the amounts the individual would have received if the individual had continued to perform services for the Employer rather than entering qualified military service.\n\n(5) Disability pay. Compensation shall include compensation paid to a Participant who is permanently and totally disabled, as defined in Code \u00a722(e)(3), provided, as elected by the Employer in the Compensation Section of the Adoption Agreement, salary continuation applies to all Participants who are permanently and totally disabled for a fixed or determinable period, or the Participant was not a Highly Compensated Employee immediately before becoming disabled.",
+      "provision_type": "operational",
+      "provision_classification": "substantive",
+      "pdf_page": 9,
+      "page_sequence": 3
+    },
+    {
+      "section_number": "",
+      "section_title": "",
+      "provision_text": "(f) Compensation Dollar limitation. For any Plan Year (or other applicable determination period) Compensation in excess of $200,000 shall be disregarded for all purposes other than for purposes of Elective Deferrals, except that the Administrator may impose the limit for purposes of a Plan imposed limit on Elective Deferrals. The dollar amount shall be adjusted by the Commissioner for increases in the cost-of-living in accordance with Code \u00a7401(a)(17)(B) and is $275,000 for 2018. The cost-of-living adjustment in effect for a calendar year applies to any \u201cdetermination period\u201d beginning with or within such calendar year. If a \u201cdetermination period\u201d consists of fewer than twelve (12) months, the $275,000 annual Compensation limit will be multiplied by a fraction, the numerator of which is the number of months in the \u201cdetermination period,\u201d and the denominator of which is twelve (12). In applying any Plan limitation on the amount of matching contributions or any Plan limit on Elective Deferrals which are subject to matching contributions, where such limits are expressed as a percentage of Compensation, the Administrator may apply the Compensation limit under this Section annually, even if the matching contribution formula is applied on any time interval which is less than the full Plan Year or the Administrator may pro rate the Compensation limit.",
+      "provision_type": "operational",
+      "provision_classification": "substantive",
+      "pdf_page": 10,
+      "page_sequence": 1
+    },
+    {
+      "section_number": "",
+      "section_title": "",
+      "provision_text": "(g) Noneligible Employee. If, in the Adoption Agreement, the Employer elects to exclude a class of Employees from the Plan, then Compensation for any Employee who becomes eligible or ceases to be eligible to participate during a \u201cdetermination period\u201d shall only include Compensation while the Employee is an Eligible Employee. In addition, with respect to the determination of any matching contributions, the Plan will disregard Elective Deferrals made while the Participant is not eligible for the matching contribution component of the Plan.",
+      "provision_type": "operational",
+      "provision_classification": "substantive",
+      "pdf_page": 10,
+      "page_sequence": 2
+    },
+    {
+      "section_number": "",
+      "section_title": "",
+      "provision_text": "(h) Amendment. If, in connection with the adoption of any amendment, the definition of Compensation has been modified, then, except as otherwise provided herein, for Plan Years prior to the Plan Year which includes the adoption date of such amendment, Compensation means compensation determined pursuant to the terms of the Plan then in effect.",
+      "provision_type": "operational",
+      "provision_classification": "substantive",
+      "pdf_page": 10,
+      "page_sequence": 3
+    },
+    {
+      "section_number": "",
+      "section_title": "",
+      "provision_text": "(i) Affiliated Employers. Affiliated Employers are treated as one Employer for purposes of Compensation. If, however, one or more Affiliated Employers are Participating Employers and the Plan (including the Adoption Agreement or a participation agreement) allocate Employer Contributions separately among the Employees directly employed by a Participating Employer, then, in computing such allocations, Compensation paid by other Participating Employers is excluded Compensation.",
+      "provision_type": "operational",
+      "provision_classification": "substantive",
+      "pdf_page": 10,
+      "page_sequence": 4
+    },
+    {
+      "section_number": "1.19",
+      "section_title": "Contract or Policy",
+      "provision_text": "\"Contract\" or \"Policy\" means any life insurance policy, retirement income policy, or annuity contract (group or individual) issued by the Insurer. In the event of any conflict between the terms of this Plan and the terms of any contract purchased hereunder, the Plan provisions shall control.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 10,
+      "page_sequence": 5
+    },
+    {
+      "section_number": "1.20",
+      "section_title": "Custodian",
+      "provision_text": "\"Custodian\" means a person or entity that has custody of all or any portion of the Plan assets.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 10,
+      "page_sequence": 6
+    },
+    {
+      "section_number": "1.21",
+      "section_title": "Directed Trustee",
+      "provision_text": "\"Directed Trustee\" means a Trustee who, with respect to the investment of Plan assets, is subject to the direction of the Administrator, the Employer, a properly appointed Investment Manager, a named Fiduciary, or Plan Participant.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 10,
+      "page_sequence": 7
+    },
+    {
+      "section_number": "1.22",
+      "section_title": "Discretionary Trustee",
+      "provision_text": "\"Discretionary Trustee\" means a Trustee who has the authority and discretion to invest, manage or control any portion of the Plan assets.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 10,
+      "page_sequence": 8
+    },
+    {
+      "section_number": "1.23",
+      "section_title": "Early Retirement Date",
+      "provision_text": "\"Early Retirement Date\" means the date specified in the Adoption Agreement on which a Participant has satisfied the requirements specified in the Adoption Agreement (Early Retirement Age). If elected in the Adoption Agreement, a Participant shall become fully Vested upon satisfying such requirements if the Participant is still employed at the Early Retirement Age.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 10,
+      "page_sequence": 9
+    },
+    {
+      "section_number": "1.24",
+      "section_title": "Earned Income",
+      "provision_text": "\"Earned Income\" means the net earnings from self-employment in the trade or business with respect to which the Plan is established, for which the personal services of the individual are a material income-producing factor. Net earnings will be determined without regard to items not included in gross income and the deductions allowable to such items. Net earnings are reduced by contributions by the employer to a qualified plan to the extent deductible under \u00a7404 of the Code. The Administrator will determine net earnings by the deduction allowed to the Self-Employed Individual for all contributions made by the Employer to a qualified plan and after the deduction allowed to the Self-Employed Individual under Code \u00a7164(f) for self-employment taxes. If Compensation is defined to exclude any items of Compensation (other than safe harbor adjustments permitted under the Code \u00a7414(s) Regulations or limiting Compensation to periods of Plan participation), then for purposes of determining the Compensation of a Self-Employed Individual, Earned Income shall be adjusted by multiplying Earned Income by the percentage of total compensation that is included for the eligible Participants who are Nonhighly Compensated Participants. That percentage is determined by calculating the percentage of each eligible Nonhighly Compensated Participant's total Compensation prior to excluding any non-safe harbor adjustments selected in the Adjustments to Compensation Section of the Adoption Agreement that are included in the definition of Compensation and averaging those percentages.",
+      "provision_type": "definition",
+      "provision_classification": "substantive",
+      "pdf_page": 10,
+      "page_sequence": 10
+    }
+  ],
+  "failed_pages": []
+}

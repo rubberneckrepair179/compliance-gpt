@@ -1,7 +1,8 @@
 # PIPELINE.md - Production Pipeline Manifest
 
-**Last Updated:** 2025-10-30
-**Pipeline Version:** v8 (AA semantic mapping v1 integrated)
+**Last Updated:** 2025-10-30 (Full Extraction Pipeline Complete)
+**Pipeline Version:** BPD v4.1 + AA v5.1 (Oct 30, 2025)
+**Status:** ✅ Phase 1 complete (all 4 documents extracted)
 
 ---
 
@@ -23,53 +24,105 @@ This document defines the **production-ready components** of the compliance-gpt 
 
 ### Phase 1: Extraction
 
-#### 1.1 BPD Extraction (Templates)
+#### 1.1 BPD Extraction (Templates) ✅ PRODUCTION READY
 
 **Production Scripts:**
-- `scripts/extract_relius_bpd_v6.py` - Extract Relius BPD provisions
-- `scripts/extract_ascensus_bpd_v6.py` - Extract Ascensus BPD provisions
+- `scripts/extract_relius_bpd_v4.1.py` - Extract Relius BPD
+- `scripts/extract_ascensus_bpd_v4.1.py` - Extract Ascensus BPD
 
 **Configuration:**
-- **Prompt:** `prompts/provision_extraction_v6_draft.txt`
-- **Model:** GPT-5-nano (gpt-5-nano)
+- **Prompt:** `prompts/provision_extraction_v4.1.txt` (recovered from GPT-5 Pro consultation)
+  - Extraction gate: Filters TOC/headers/footers (only complete sentences)
+  - Layout rules: Two-column reading order, hyphenation, continued sections
+  - provision_classification: substantive vs heading (only substantive extracted)
+  - page_sequence assigned by post-processing (NOT by LLM - bookkeeping rule)
+  - Parent-child hierarchy support via `parent_section` field
+  - Single taxonomy: definition|operational|regulatory|unknown
+- **Model:** GPT-5-nano with GPT-5-mini fallback
 - **Workers:** 16 parallel
-- **Batch size:** 1 page/request (required for page number substitution)
+- **Batch size:** 1 page/request
+- **Retry Logic:** 3 attempts (repair prompt → mini fallback)
+- **Validation:** JSON schema + page numbers + parent_section type checking
+- **Output:** Automatically sorted by page + section number
 
 **Inputs:**
 - `test_data/raw/relius/relius_bpd_cycle3.pdf` (100 pages)
 - `test_data/raw/ascensus/ascensus_bpd.pdf` (81 pages)
 
 **Outputs:**
-- `test_data/extracted_vision_v6/relius_bpd_provisions_raw.json` (489 provisions)
-- `test_data/extracted_vision_v6/ascensus_bpd_provisions_raw.json` (218 provisions)
+- `test_data/extracted_vision_v4.1/relius_bpd_provisions.json` (565 provisions, 98% success - 98/100 pages)
+- `test_data/extracted_vision_v4.1/ascensus_bpd_provisions.json` (466 provisions, 100% success - 81/81 pages)
 
-**Success Rate:** 96% (Relius), 96% (Ascensus)
-**Processing Time:** ~6-8 minutes per document
+**Processing Time:** ~14 min (Relius), ~11 min (Ascensus)
+**Success Rate:** 98.9% overall (179/181 successful pages)
+**Extraction Date:** Oct 30, 2025
+
+**Key Features:**
+- ✅ Every provision has `pdf_page` + `page_sequence` fields (critical for provenance)
+- ✅ Hierarchical structure captured (parent provisions + children via `parent_section`)
+- ✅ Extraction gate prevents TOC/header pollution
+- ✅ Automatic sorting for easy review
+- ✅ Complete provision text (no truncation)
+- ✅ page_sequence assigned deterministically in post-processing (not hallucinated by LLM)
+
+**Validation Status:** ✅ User approved
+- All provisions have required fields
+- Extraction gate working (no TOC/header entries)
+- Sorted output ready for review
 
 ---
 
-#### 1.2 AA Extraction (Elections)
+#### 1.2 AA Extraction (Elections) ✅ PRODUCTION READY
 
 **Production Scripts:**
-- `scripts/extract_relius_aa_v6.py` - Extract Relius AA elections
-- `scripts/extract_ascensus_aa_v6.py` - Extract Ascensus AA elections
+- `scripts/extract_relius_aa_v5.1.py` - Extract Relius AA elections
+- `scripts/extract_ascensus_aa_v5.1.py` - Extract Ascensus AA elections
 
 **Configuration:**
-- **Prompt:** `prompts/aa_extraction_v6_unified.txt`
-- **Model:** GPT-5-mini (gpt-5-mini) - 100% success rate validated
+- **Prompt:** `prompts/aa_extraction_v5.1.txt` (~314 words)
+  - Atomic Field Rule: Each labeled field = separate provision
+  - Hierarchical: Nested provisions with `parent_section` tracking
+  - local_ordinal: Sequential numbering for unlabeled children (1..N)
+  - field_label: Semantic labels for form fields
+  - Form elements: Checkboxes, text fields, multi-select with confidence scores
+  - Status tracking: unanswered|answered|ambiguous|conflict|unknown
+- **Model:** GPT-5-mini (gpt-5-mini-2025-07-18) - Complex forms require mini
 - **Workers:** 16 parallel
-- **Batch size:** 1 page/request (required for page number substitution)
+- **Batch size:** 1 page/request
+- **Retry Logic:** 3 attempts (repair only, no model escalation)
+- **Validation:** JSON schema + page numbers + form_elements + local_ordinal + field_label
+- **Output:** Automatically sorted by page + section number
 
 **Inputs:**
 - `test_data/raw/relius/relius_aa_cycle3.pdf` (45 pages)
 - `test_data/raw/ascensus/ascensus_aa_profit_sharing.pdf` (104 pages)
 
 **Outputs:**
-- `test_data/extracted_vision_v6/relius_aa_elections_raw.json` (1,294 elections)
-- `test_data/extracted_vision_v6/ascensus_aa_elections_raw.json` (2,716 elections)
+- `test_data/extracted_vision_v5.1/relius_aa_provisions.json` (1,216 provisions, 95.6% success - 43/45 pages)
+- `test_data/extracted_vision_v5.1/ascensus_aa_provisions.json` (2,654 provisions, 95.2% success - 99/104 pages)
 
-**Success Rate:** 100% (both documents)
-**Processing Time:** 7m 11s (Relius), 11m 13s (Ascensus)
+**Processing Time:** ~11 min (Relius), ~14 min (Ascensus)
+**Success Rate:** 95.3% overall (142/149 successful pages)
+**Extraction Date:** Oct 30, 2025
+
+**Key Features:**
+- ✅ Atomic Field Rule: Each labeled field extracted separately (Name, City, TIN, etc.)
+- ✅ Hierarchical structure: Complete parent-child tracking (2.d → 2.d.1 → 2.d.2)
+- ✅ Form elements: Checkboxes, text fields with is_selected/text_value/confidence
+- ✅ Field labels: 530 field-labeled provisions in Ascensus (20% of total)
+- ✅ Complete provision text with form context
+
+**Validation Status:** ✅ User approved
+- Programmatic validation: 0 critical issues
+- Manual review: "AMAZING" quality (user feedback)
+- Ready for production use
+
+**Known Issue - Fragmentation (5% failure rate):**
+- All 12 failed pages (7 Relius, 5 Ascensus) start mid-hierarchy
+- Pattern: Pages beginning with H3/H4 depth provisions whose parents are on previous page
+- LLM lacks parent context → schema violations (missing form_elements) or truncation
+- **Solution proposed:** See docs/AA_V5.1_FRAGMENTATION_CONSULTATION_2025-10-30.md
+- **Architecture decision pending:** v5.2 with two-stage extraction + selective overlap
 
 ---
 

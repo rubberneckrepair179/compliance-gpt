@@ -1,0 +1,77 @@
+SYSTEM ROLE:
+You extract provisions from a single BPD page and return JSON ONLY. No code fences, no prose.
+
+USER INSTRUCTIONS:
+
+INPUTS
+- PDF_PAGE: {{PDF_PAGE}}   (integer)
+- IMAGE: (the page image)
+
+TASK
+From this page, extract only substantive provisions (actual legal content). Skip headings, TOC lines, headers/footers, section dividers, and pages that say only "(continued on next page)".
+
+OUTPUT
+Return a JSON array. Each item must have exactly these keys:
+
+{
+  "pdf_page": {{PDF_PAGE}},
+  "section_number": "string",
+  "section_title": "string",
+  "provision_text": "string",
+  "provision_type": "definition|operational|regulatory|unknown",
+  "parent_section": "string or null"
+}
+
+RULES
+- JSON array only. No preface or trailing text.
+- Extract BOTH parent provisions AND their children as separate items.
+  • Example: If section 1.01 has subsections 1.01(a) and 1.01(b), extract all three:
+    - 1.01 (parent_section: null)
+    - 1.01(a) (parent_section: "1.01")
+    - 1.01(b) (parent_section: "1.01")
+  • If 1.01(b) has subsections 1.01(b)(1), 1.01(b)(2), extract:
+    - 1.01(b) (parent_section: "1.01")
+    - 1.01(b)(1) (parent_section: "1.01(b)")
+    - 1.01(b)(2) (parent_section: "1.01(b)")
+- A heading with no following sentences is NOT a provision.
+- If nothing substantive appears on this page, return [].
+- Don't summarize or paraphrase. Copy text verbatim (normalized whitespace is OK).
+- If a table conveys a rule, include it as plain text with line breaks.
+- Heuristics:
+  • Definitions often use "means".
+  • Operational language often uses SHALL/MUST/MAY/WILL or prescribes schedules/procedures.
+  • Regulatory provisions cite Code/Reg sections (e.g., IRC §401(a)(9)).
+  Choose the single best provision_type; if uncertain, use "unknown".
+
+EXAMPLES
+
+Example 1 - Page with hierarchical definitions:
+[
+  {
+    "pdf_page": 6,
+    "section_number": "1.01",
+    "section_title": "Account",
+    "provision_text": "'Account' means any separate notational account established and maintained by the Administrator for each Participant under the Plan.",
+    "provision_type": "definition",
+    "parent_section": null
+  },
+  {
+    "pdf_page": 6,
+    "section_number": "1.01(a)",
+    "section_title": "Combined Account",
+    "provision_text": "'Combined Account' means the account representing the Participant's total interest under the Plan...",
+    "provision_type": "definition",
+    "parent_section": "1.01"
+  },
+  {
+    "pdf_page": 6,
+    "section_number": "1.01(b)",
+    "section_title": "Elective Deferral Account",
+    "provision_text": "'Elective Deferral Account' means the account established hereunder to which Elective Deferrals are allocated...",
+    "provision_type": "definition",
+    "parent_section": "1.01"
+  }
+]
+
+Example 2 - Page with headings only:
+[]

@@ -1,0 +1,10 @@
+{
+  "document": "test_data/raw/relius/relius_bpd_cycle3.pdf",
+  "doc_type": "BPD",
+  "model": "gpt-5-nano",
+  "prompt_version": "v4.1",
+  "total_pages": 5,
+  "successful_pages": 5,
+  "provisions": [],
+  "failed_pages": []
+}
