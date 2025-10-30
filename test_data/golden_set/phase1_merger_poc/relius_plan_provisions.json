@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "phase": "Phase 1 - Plan Provisions POC",
+    "vendor": "Relius",
+    "total_provisions": 3,
+    "completeness": "template"
+  },
+  "plan_provisions": [
+    {
+      "plan_provision_id": "prov_relius_eligibility_001",
+      "canonical_key": "eligibility.template",
+      "provision_category": "eligibility",
+      "source_vendor": "Relius",
+      "completeness": "template",
+      "bpd_component": {
+        "section_number": "3.1",
+        "section_title": "CONDITIONS OF ELIGIBILITY",
+        "provision_text": "An Eligible Employee shall be eligible to participate hereunder on the date such Employee has satisfied the conditions of eligibility, if any, elected in the Adoption Agreement. The Administrator may, on a uniform and consistent basis, apply Plan provisions relating to months based on a 30-day month.",
+        "provision_type": "operational",
+        "pdf_page": 25
+      },
+      "aa_components": [
+        {
+          "question_id": "AA.13",
+          "section_number": "13",
+          "section_title": "ELIGIBLE EMPLOYEES",
+          "provision_text": "ELIGIBLE EMPLOYEES (Plan Section 1.28) means all Employees (including Leased Employees) EXCEPT those Employees who are excluded below or elsewhere in the Plan:",
+          "provision_type": "definition",
+          "pdf_page": 3,
+          "form_elements": [],
+          "selected_values": null
+        },
+        {
+          "question_id": "AA.13.b",
+          "section_number": "13.b",
+          "section_title": "",
+          "provision_text": "Exclusions - same for all contribution types. The following Employees are not Eligible Employees for all contribution types (select one or more of e. - p. below):",
+          "provision_type": "operational",
+          "pdf_page": 3,
+          "form_elements": [
+            {
+              "element_type": "checkbox",
+              "element_sequence": 1,
+              "is_selected": false,
+              "text_value": null,
+              "confidence": 0.95
+            }
+          ],
+          "selected_values": null
+        }
+      ],
+      "linkage": {
+        "link_method": "keyword_matching",
+        "confidence": 0.8,
+        "category": "eligibility"
+      },
+      "semantic_summary": "Eligibility provision combining BPD template with 2 related AA election form(s)"
+    },
+    {
+      "plan_provision_id": "prov_relius_compensation_001",
+      "canonical_key": "compensation.template",
+      "provision_category": "compensation",
+      "source_vendor": "Relius",
+      "completeness": "template",
+      "bpd_component": {
+        "section_number": "1.18",
+        "section_title": "Compensation",
+        "provision_text": "\"Compensation\" means, with respect to any Participant, the amount determined in accordance with the following provisions, except as otherwise provided in the Adoption Agreement.",
+        "provision_type": "definition",
+        "pdf_page": 8
+      },
+      "aa_components": [
+        {
+          "question_id": "AA.n.",
+          "section_number": "n.",
+          "section_title": "Other",
+          "provision_text": "Other: (must (1) be definitely determinable and may not be based on age or length of service (except in a manner consistent with k., l., and m. above) or level of Compensation, (2) be nondiscriminatory under Code \u00a7401(a)(4) and the regulations thereunder, and (3) if using the average benefits test to satisfy Code \u00a7410(b) coverage testing, must be a reasonable classification within the meaning of Regulation \u00a71.410(b)-4(b)).",
+          "provision_type": "regulatory",
+          "pdf_page": 4,
+          "form_elements": [
+            {
+              "element_type": "checkbox",
+              "element_sequence": 1,
+              "is_selected": false,
+              "text_value": null,
+              "confidence": 0.97
+            },
+            {
+              "element_type": "checkbox",
+              "element_sequence": 2,
+              "is_selected": false,
+              "text_value": null,
+              "confidence": 0.85
+            },
+            {
+              "element_type": "checkbox",
+              "element_sequence": 3,
+              "is_selected": false,
+              "text_value": null,
+              "confidence": 0.85
+            },
+            {
+              "element_type": "checkbox",
+              "element_sequence": 4,
+              "is_selected": false,
+              "text_value": null,
+              "confidence": 0.85
+            },
+            {
+              "element_type": "text",
+              "element_sequence": 5,
+              "is_selected": null,
+              "text_value": null,
+              "confidence": 0.9
+            }
+          ],
+          "selected_values": null
+        },
+        {
+          "question_id": "AA.o.",
+          "section_number": "o.",
+          "section_title": "Other",
+          "provision_text": "Other: __________ (must (1) specify contributions to which exclusions apply, (2) be definitely determinable and not based on age or length of service (except in a manner consistent with k., l., and m. above) or level of Compensation, (3) be nondiscriminatory under Code \u00a7401(a)(4) and the regulations thereunder, and (4) if using the average benefits test to satisfy Code \u00a7410(b) coverage testing, be a reasonable classification within the meaning of Regulation \u00a71.410(b)-4(b)).",
+          "provision_type": "regulatory",
+          "pdf_page": 4,
+          "form_elements": [
+            {
+              "element_type": "checkbox",
+              "element_sequence": 1,
+              "is_selected": false,
+              "text_value": null,
+              "confidence": 0.97
+            },
+            {
+              "element_type": "checkbox",
+              "element_sequence": 2,
+              "is_selected": false,
+              "text_value": null,
+              "confidence": 0.85
+            },
+            {
+              "element_type": "checkbox",
+              "element_sequence": 3,
+              "is_selected": false,
+              "text_value": null,
+              "confidence": 0.85
+            },
+            {
+              "element_type": "checkbox",
+              "element_sequence": 4,
+              "is_selected": false,
+              "text_value": null,
+              "confidence": 0.85
+            },
+            {
+              "element_type": "text",
+              "element_sequence": 5,
+              "is_selected": null,
+              "text_value": null,
+              "confidence": 0.9
+            }
+          ],
+          "selected_values": null
+        }
+      ],
+      "linkage": {
+        "link_method": "keyword_matching",
+        "confidence": 0.8,
+        "category": "compensation"
+      },
+      "semantic_summary": "Compensation provision combining BPD template with 2 related AA election form(s)"
+    },
+    {
+      "plan_provision_id": "prov_relius_vesting_001",
+      "canonical_key": "vesting.template",
+      "provision_category": "vesting",
+      "source_vendor": "Relius",
+      "completeness": "template",
+      "bpd_component": {
+        "section_number": "b",
+        "section_title": "Vesting schedule",
+        "provision_text": "The Vested portion of any Participant's Account shall be a percentage of such Participant's Account determined on the basis of the Participant's number of Years of Service (or Periods of Service if the elapsed time method is elected) according to the vesting schedule specified in the Adoption Agreement. However, a Participant's entire interest in the Plan shall be non-forfeitable upon the Participant's Normal Retirement Age (if the Participant is employed by the Employer on or after such date).",
+        "provision_type": "operational",
+        "pdf_page": 46
+      },
+      "aa_components": [
+        {
+          "question_id": "AA.",
+          "section_number": "",
+          "section_title": "",
+          "provision_text": "NOTE: If m. or n. is selected, the condition must be an age or service requirement that is definitely determinable and may not exceed age 21 and for Elective Deferrals, 1 Year of Service; for Employer matching and/or Nonelective Contributions, may not exceed 2 Years of Service. If more than 1 Year of Service is required for Employer matching and/or Nonelective Contributions, 100% immediate vesting is required.",
+          "provision_type": "regulatory",
+          "pdf_page": 5,
+          "form_elements": [],
+          "selected_values": null
+        },
+        {
+          "question_id": "AA.",
+          "section_number": "",
+          "section_title": "NOTE: For 401(k) Plans - Option g. below can only be selected when eligibility for Elective Deferral purposes is six months of service or less and age is 20 1/2 or less. Options g.3. and g.4. may be selected when eligibility is 1 1/2 Years of Service or less and age is 20 1/2 or less and the Plan provides for 100% vesting.",
+          "provision_text": "NOTE: For 401(k) Plans - Option g. below can only be selected when eligibility for Elective Deferral purposes is six months of service or less and age is 20 1/2 or less. Options g.3. and g.4. may be selected when eligibility is 1 1/2 Years of Service or less and age is 20 1/2 or less and the Plan provides for 100% vesting.",
+          "provision_type": "regulatory",
+          "pdf_page": 6,
+          "form_elements": [],
+          "selected_values": null
+        }
+      ],
+      "linkage": {
+        "link_method": "keyword_matching",
+        "confidence": 0.8,
+        "category": "vesting"
+      },
+      "semantic_summary": "Vesting provision combining BPD template with 2 related AA election form(s)"
+    }
+  ]
+}

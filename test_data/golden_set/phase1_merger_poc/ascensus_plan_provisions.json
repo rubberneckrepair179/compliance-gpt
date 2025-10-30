@@ -1,0 +1,50 @@
+{
+  "plan_provisions": [
+    {
+      "plan_provision_id": "prov_ascensus_eligibility_001",
+      "provision_category": "eligibility",
+      "source_vendor": "Ascensus",
+      "bpd_component": {
+        "section_number": "ENTRY DATES",
+        "section_title": "ENTRY DATES",
+        "provision_text": "Means the first day of the Plan Year and the first day of the seventh month of the Plan Year coinciding with or following the date the Employee satisfies the eligibility requirements of Plan Section 2.01 for the applicable contribution source, unless the Adopting Employer has specified different dates in the Adoption Agreement. If this is an initial adoption of the Plan by the Employer, the initial Effective Date will also be considered an Entry Date.",
+        "pdf_page": 15
+      },
+      "aa_components": [
+        {
+          "section_number": "2",
+          "section_title": "Employers That Are Not Related Employers",
+          "pdf_page": 2
+        },
+        {
+          "section_number": "Option 1",
+          "section_title": "",
+          "pdf_page": 2
+        }
+      ]
+    },
+    {
+      "plan_provision_id": "prov_ascensus_vesting_001",
+      "provision_category": "vesting",
+      "source_vendor": "Ascensus",
+      "bpd_component": {
+        "section_number": "8.B",
+        "section_title": "B. Minimum Vesting Schedule for Top-Heavy Plans",
+        "provision_text": "B. Minimum Vesting Schedule for Top-Heavy Plans \u2013 The following vesting provisions apply for any Plan Year in which this Plan is a Top-Heavy Plan.",
+        "pdf_page": 52
+      },
+      "aa_components": [
+        {
+          "section_number": "",
+          "section_title": "NOTE",
+          "pdf_page": 5
+        },
+        {
+          "section_number": "",
+          "section_title": "",
+          "pdf_page": 16
+        }
+      ]
+    }
+  ]
+}

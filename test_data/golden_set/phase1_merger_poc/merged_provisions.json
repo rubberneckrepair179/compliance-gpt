@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "phase": "Phase 1 - Lean POC",
+    "purpose": "Demonstrate that merged provisions enable better semantic comparison than templates",
+    "merge_approach": "Manual substitution with realistic election values",
+    "test_scenario": "Cross-vendor conversion: Relius → Ascensus with DIFFERENT elections",
+    "hypothesis": "Merged crosswalk will detect semantic differences that template-only crosswalk misses"
+  },
+  "merged_provisions": [
+    {
+      "id": "relius_eligibility_merged",
+      "category": "eligibility",
+      "source_vendor": "Relius",
+      "bpd_section": "3.1",
+      "aa_elections_applied": {
+        "age_requirement": 21,
+        "service_requirement": "1 year",
+        "entry_date_frequency": "quarterly"
+      },
+      "merge_rule": "Pattern-01: Direct substitution of age/service requirements",
+      "merged_text": "An Eligible Employee shall be eligible to participate hereunder on the date such Employee has satisfied the following conditions: attainment of age 21 and completion of 1 Year of Service. Upon satisfying these conditions, the Employee shall become a Participant as of the first day of the calendar quarter coinciding with or next following satisfaction of the eligibility requirements.",
+      "provenance": {
+        "bpd_sections": ["3.1", "3.2(a)"],
+        "aa_fields": ["AA.Q1.04.age", "AA.Q1.04.service", "AA.Q1.05.entry_dates"],
+        "merge_timestamp": "2025-10-30T10:00:00Z"
+      }
+    },
+    {
+      "id": "ascensus_eligibility_merged",
+      "category": "eligibility",
+      "source_vendor": "Ascensus",
+      "bpd_section": "ENTRY DATES",
+      "aa_elections_applied": {
+        "age_requirement": 18,
+        "service_requirement": "6 months",
+        "entry_date_frequency": "monthly"
+      },
+      "merge_rule": "Pattern-01: Direct substitution of age/service requirements (DIFFERENT VALUES)",
+      "merged_text": "An Employee who satisfies the Plan's eligibility requirements shall become a Participant on the Entry Date coinciding with or next following the date the Employee satisfies those requirements. Eligibility requirements: age 18 and 6 months of Service. Entry Dates occur monthly on the first day of each calendar month.",
+      "provenance": {
+        "bpd_sections": ["ENTRY DATES", "ELIGIBILITY CONDITIONS"],
+        "aa_fields": ["AA.Q2.age", "AA.Q2.service", "AA.Q3.entry_frequency"],
+        "merge_timestamp": "2025-10-30T10:00:00Z"
+      },
+      "semantic_note": "MORE LIBERAL: Younger age (18 vs 21), shorter service (6 months vs 1 year), more frequent entry (monthly vs quarterly)"
+    },
+    {
+      "id": "relius_vesting_merged",
+      "category": "vesting",
+      "source_vendor": "Relius",
+      "bpd_section": "b",
+      "aa_elections_applied": {
+        "vesting_schedule_type": "6-year graded",
+        "vesting_percentages": {
+          "1": "0%",
+          "2": "20%",
+          "3": "40%",
+          "4": "60%",
+          "5": "80%",
+          "6": "100%"
+        }
+      },
+      "merge_rule": "Pattern-02: Checkbox enumeration (6-year graded schedule selected)",
+      "merged_text": "The Vested portion of any Participant's Account shall be a percentage of such Participant's Account determined on the basis of the Participant's number of Years of Service according to the following schedule:\n\nYears of Service | Vested Percentage\n1 year           | 0%\n2 years          | 20%\n3 years          | 40%\n4 years          | 60%\n5 years          | 80%\n6 or more years  | 100%",
+      "provenance": {
+        "bpd_sections": ["9.1.b"],
+        "aa_fields": ["AA.Q8.vesting_schedule"],
+        "merge_timestamp": "2025-10-30T10:00:00Z"
+      }
+    },
+    {
+      "id": "ascensus_vesting_merged",
+      "category": "vesting",
+      "source_vendor": "Ascensus",
+      "bpd_section": "8.A",
+      "aa_elections_applied": {
+        "vesting_schedule_type": "3-year cliff",
+        "vesting_percentages": {
+          "1": "0%",
+          "2": "0%",
+          "3": "100%"
+        }
+      },
+      "merge_rule": "Pattern-02: Checkbox enumeration (3-year cliff selected, DIFFERENT SCHEDULE)",
+      "merged_text": "A Participant's vested interest in Employer Contributions (and income allocable thereto) shall be determined based on the Participant's Years of Service as follows:\n\nYears of Service | Vested Percentage\nLess than 3 years | 0%\n3 or more years   | 100%",
+      "provenance": {
+        "bpd_sections": ["8.A"],
+        "aa_fields": ["AA.Q12.vesting_option"],
+        "merge_timestamp": "2025-10-30T10:00:00Z"
+      },
+      "semantic_note": "FASTER VESTING: 3-year cliff (100% at 3 years) vs 6-year graded (100% at 6 years)"
+    },
+    {
+      "id": "relius_match_merged",
+      "category": "match",
+      "source_vendor": "Relius",
+      "bpd_section": "12.1(a)(2)",
+      "aa_elections_applied": {
+        "match_formula": "100% of first 3% deferred",
+        "match_percentage_tier1": "100%",
+        "compensation_tier1_limit": "3%"
+      },
+      "merge_rule": "Pattern-03: Numeric parameter substitution",
+      "merged_text": "Qualified Matching Contribution (QMAC) means Employer matching contributions equal to 100% of the first 3% of Compensation that the Participant defers to the Plan as Elective Deferrals. The matching contribution shall be made for each Plan Year with respect to Participants who are eligible for matching contributions under the terms of the Adoption Agreement.",
+      "provenance": {
+        "bpd_sections": ["1.69", "12.1(a)(2)"],
+        "aa_fields": ["AA.Q14.match_formula", "AA.Q14.match_tier1_pct", "AA.Q14.match_tier1_limit"],
+        "merge_timestamp": "2025-10-30T10:00:00Z"
+      }
+    },
+    {
+      "id": "ascensus_match_merged",
+      "category": "match",
+      "source_vendor": "Ascensus",
+      "bpd_section": "3.01(F)",
+      "aa_elections_applied": {
+        "match_formula": "50% of first 6% deferred",
+        "match_percentage_tier1": "50%",
+        "compensation_tier1_limit": "6%"
+      },
+      "merge_rule": "Pattern-03: Numeric parameter substitution (DIFFERENT FORMULA)",
+      "merged_text": "Matching Contributions means Employer contributions made on behalf of Participants equal to 50% of the first 6% of Compensation that the Participant contributes to the Plan as Elective Deferrals. Matching Contributions shall be allocated to the Accounts of Participants who are eligible to receive such contributions for the Plan Year.",
+      "provenance": {
+        "bpd_sections": ["3.01(F)", "ACP TEST SAFE HARBOR MATCHING CONTRIBUTIONS"],
+        "aa_fields": ["AA.Q18.match_type", "AA.Q18.match_pct", "AA.Q18.comp_limit"],
+        "merge_timestamp": "2025-10-30T10:00:00Z"
+      },
+      "semantic_note": "DIFFERENT ECONOMICS: 50% of 6% (max 3% match) vs 100% of 3% (max 3% match) - SAME dollar result but different perception"
+    }
+  ],
+  "expected_results": {
+    "template_only_crosswalk": {
+      "prediction": "Will match all 3 pairs as 'similar' because template language uses similar legal terminology",
+      "false_negatives_expected": [
+        "Eligibility: Won't detect age 21→18, service 1yr→6mo, quarterly→monthly changes",
+        "Vesting: Won't detect 6-year graded→3-year cliff change (major participant impact)",
+        "Match: Won't detect 100% of 3%→50% of 6% formula difference"
+      ]
+    },
+    "merged_crosswalk": {
+      "prediction": "Will correctly identify all 3 as 'semantically different' with HIGH impact",
+      "true_positives_expected": [
+        "Eligibility: Detects MORE LIBERAL requirements (younger age, shorter service, more frequent entry)",
+        "Vesting: Detects FASTER VESTING (3-year cliff vs 6-year graded) - participant-favorable change",
+        "Match: Detects SAME DOLLAR RESULT but different formula presentation"
+      ]
+    }
+  },
+  "success_criteria": {
+    "merged_must_outperform_template": true,
+    "minimum_recall_gain": 0.20,
+    "target_precision": 0.85,
+    "key_test": "Did merged crosswalk detect vesting schedule change that template-only missed?"
+  }
+}

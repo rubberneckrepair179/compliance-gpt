@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "phase": "Phase 1 - Proof of Concept",
+    "purpose": "Validate merge-then-crosswalk vs template-only crosswalk",
+    "total_provisions": 10,
+    "provision_types": [
+      "eligibility",
+      "compensation",
+      "match",
+      "vesting",
+      "hce_topheavy"
+    ],
+    "exit_criteria": "\u226520% recall gain at \u22650.85 precision"
+  },
+  "relius_source_provisions": [
+    {
+      "category": "eligibility",
+      "section_number": "3.1",
+      "section_title": "CONDITIONS OF ELIGIBILITY",
+      "provision_text": "An Eligible Employee shall be eligible to participate hereunder on the date such Employee has satisfied the conditions of eligibility, if any, elected in the Adoption Agreement. The Administrator may, on a uniform and consistent basis, apply Plan provisions relating to months based on a 30-day month.",
+      "provision_type": "operational",
+      "election_dependent": true,
+      "pdf_page": 25
+    },
+    {
+      "category": "eligibility",
+      "section_number": "3.2(a)",
+      "section_title": "General rule",
+      "provision_text": "An Eligible Employee who has satisfied the conditions of eligibility pursuant to Section 3.1 shall become a Participant effective as of the date elected in the Adoption Agreement. Regardless of any election in the Adoption Agreement to the contrary, an Eligible Employee who has satisfied the maximum age (21) and service requirements (one (1) Year or Period of Service) or, with respect to contributions other than Elective Deferrals, more than one (1) year if full administrative vesting) and who is otherwise entitled to participate, will become a Participant no later than the earlier of (1) six (6) months after such requirements are satisfied, or (2) the first day of the first Plan Year after such requirements are satisfied, unless the Employee separates from service before such participation date.",
+      "provision_type": "operational",
+      "election_dependent": true,
+      "pdf_page": 25
+    },
+    {
+      "category": "compensation",
+      "section_number": "1.18",
+      "section_title": "Compensation",
+      "provision_text": "\"Compensation\" means, with respect to any Participant, the amount determined in accordance with the following provisions, except as otherwise provided in the Adoption Agreement.",
+      "provision_type": "definition",
+      "election_dependent": true,
+      "pdf_page": 8
+    },
+    {
+      "category": "match",
+      "section_number": "1.69",
+      "section_title": "Qualified Matching Contribution",
+      "provision_text": "'Qualified Matching Contribution' (QMAC) means any Employer matching contributions that are made pursuant to Sections 12.1(a)(2) (if elected in the Adoption Agreement), 12.5 and 12.7 or pursuant to any other Plan provision which provides for such contributions.",
+      "provision_type": "definition",
+      "election_dependent": true,
+      "pdf_page": 19
+    },
+    {
+      "category": "match",
+      "section_number": "3.2(f)",
+      "section_title": "Matching contributions",
+      "provision_text": "Matching contributions. With respect to the determination of any matching contributions, the Plan will disregard Elective Deferrals made while a Participant is not eligible to participate in the Plan unless otherwise elected in the Adoption Agreement.",
+      "provision_type": "operational",
+      "election_dependent": true,
+      "pdf_page": 25
+    },
+    {
+      "category": "vesting",
+      "section_number": "b",
+      "section_title": "Vesting schedule",
+      "provision_text": "The Vested portion of any Participant's Account shall be a percentage of such Participant's Account determined on the basis of the Participant's number of Years of Service (or Periods of Service if the elapsed time method is elected) according to the vesting schedule specified in the Adoption Agreement. However, a Participant's entire interest in the Plan shall be non-forfeitable upon the Participant's Normal Retirement Age (if the Participant is employed by the Employer on or after such date).",
+      "provision_type": "operational",
+      "election_dependent": true,
+      "pdf_page": 46
+    },
+    {
+      "category": "vesting",
+      "section_number": "c",
+      "section_title": "Top-heavy vesting schedule",
+      "provision_text": "Top-heavy vesting schedule. For any Top-Heavy Plan Year, the minimum top-heavy vesting schedule elected by the Employer in Appendix A to the Adoption Agreement (Special Effective Dates and Other Permitted Elections) will automatically apply to the Plan. The minimum top-heavy vesting schedule applies to all benefits within the meaning of Code \u00a7411(a)(7) except those attributable to Employee contributions, including benefits accrued before the effective date of Code \u00a7416 and benefits attributable to the Plan's other Accounts.",
+      "provision_type": "operational",
+      "election_dependent": true,
+      "pdf_page": 46
+    },
+    {
+      "category": "hce_topheavy",
+      "section_number": "1.41",
+      "section_title": "\"Highly Compensated Employee\" means an Employee described in Code \u00a7414(q) and the Regulations thereunder, and generally means any Employee who:",
+      "provision_text": "\"Highly Compensated Employee\" means an Employee described in Code \u00a7414(q) and the Regulations thereunder, and generally means any Employee who:",
+      "provision_type": "definition",
+      "election_dependent": true,
+      "pdf_page": 14
+    },
+    {
+      "category": "hce_topheavy",
+      "section_number": "1.80",
+      "section_title": "Top-Heavy Plan",
+      "provision_text": "\"Top-Heavy Plan\" means a plan described in Section 9.2(a).",
+      "provision_type": "definition",
+      "election_dependent": true,
+      "pdf_page": 20
+    }
+  ],
+  "ascensus_target_provisions": [
+    {
+      "category": "eligibility",
+      "section_number": "ENTRY DATES",
+      "section_title": "ENTRY DATES",
+      "provision_text": "Means the first day of the Plan Year and the first day of the seventh month of the Plan Year coinciding with or following the date the Employee satisfies the eligibility requirements of Plan Section 2.01 for the applicable contribution source, unless the Adopting Employer has specified different dates in the Adoption Agreement. If this is an initial adoption of the Plan by the Employer, the initial Effective Date will also be considered an Entry Date.",
+      "provision_type": "definition",
+      "election_dependent": true,
+      "pdf_page": 15
+    },
+    {
+      "category": "match",
+      "section_number": "ACP TEST SAFE HARBOR MATCHING CONTRIBUTIONS",
+      "section_title": "ACP TEST SAFE HARBOR MATCHING CONTRIBUTIONS",
+      "provision_text": "Means Matching Contributions described in Plan Section 3.01(F) or Plan Section 3.03(B).",
+      "provision_type": "definition",
+      "election_dependent": true,
+      "pdf_page": 6
+    },
+    {
+      "category": "vesting",
+      "section_number": "8.B",
+      "section_title": "B. Minimum Vesting Schedule for Top-Heavy Plans",
+      "provision_text": "B. Minimum Vesting Schedule for Top-Heavy Plans \u2013 The following vesting provisions apply for any Plan Year in which this Plan is a Top-Heavy Plan.",
+      "provision_type": "regulatory",
+      "election_dependent": true,
+      "pdf_page": 52
+    },
+    {
+      "category": "vesting",
+      "section_number": "8.B",
+      "section_title": "B. Minimum Vesting Schedule for Top-Heavy Plans",
+      "provision_text": "B. Minimum Vesting Schedule for Top-Heavy Plans \u2013 The following vesting provisions apply for any Plan Year in which this Plan is a Top-Heavy Plan.",
+      "provision_type": "regulatory",
+      "election_dependent": true,
+      "pdf_page": 52
+    },
+    {
+      "category": "hce_topheavy",
+      "section_number": "HIGHLY COMPENSATED EMPLOYEE",
+      "section_title": "HIGHLY COMPENSATED EMPLOYEE",
+      "provision_text": "Means any Employee who 1) was a five-percent owner at any time during the year or the preceding year, or 2) for the preceding year had Compensation from the Employer in excess of $80,000 and, if elected by the Adopting Employer in the Adoption Agreement, was in the top-paid group for the preceding year. The $80,000 amount is adjusted at the same time and in the same manner as under Code section 415(d), except that the base period is the calendar quarter ending September 30, 1996.",
+      "provision_type": "definition",
+      "election_dependent": true,
+      "pdf_page": 15
+    }
+  ]
+}

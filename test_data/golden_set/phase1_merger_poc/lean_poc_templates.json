@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "phase": "Phase 1 - Lean POC",
+    "purpose": "Quick validation: merged vs template-only crosswalk",
+    "total_examples": 3,
+    "approach": "Manual merge with clear election values"
+  },
+  "examples": [
+    {
+      "id": 1,
+      "category": "eligibility",
+      "relius_template": {
+        "section_number": "3.1",
+        "section_title": "CONDITIONS OF ELIGIBILITY",
+        "provision_text": "An Eligible Employee shall be eligible to participate hereunder on the date such Employee has satisfied the conditions of eligibility, if any, elected in the Adoption Agreement. The Administrator may, on a uniform and consistent basis, apply Plan provisions relating to months based on a 30-day month."
+      },
+      "ascensus_template": {
+        "section_number": null,
+        "section_title": null,
+        "provision_text": null
+      },
+      "aa_elections_needed": [
+        "age_requirement",
+        "service_requirement",
+        "entry_date_frequency"
+      ],
+      "merge_notes": "Substitute age (21) and service (1 year) requirements, resolve entry date logic"
+    },
+    {
+      "id": 2,
+      "category": "vesting",
+      "relius_template": {
+        "section_number": "b",
+        "section_title": "Vesting schedule",
+        "provision_text": "The Vested portion of any Participant's Account shall be a percentage of such Participant's Account determined on the basis of the Participant's number of Years of Service (or Periods of Service if the elapsed time method is elected) according to the vesting schedule specified in the Adoption Agreement. However, a Participant's entire interest in the Plan shall be non-forfeitable upon the Participant's Normal Retirement Age (if the Participant is employed by the Employer on or after such date)."
+      },
+      "ascensus_template": {
+        "section_number": "8.B",
+        "section_title": "B. Minimum Vesting Schedule for Top-Heavy Plans",
+        "provision_text": "B. Minimum Vesting Schedule for Top-Heavy Plans \u2013 The following vesting provisions apply for any Plan Year in which this Plan is a Top-Heavy Plan."
+      },
+      "aa_elections_needed": [
+        "vesting_schedule_type",
+        "vesting_percentages_by_year"
+      ],
+      "merge_notes": "Substitute vesting schedule (e.g., 6-year graded: 0%/20%/40%/60%/80%/100%)"
+    },
+    {
+      "id": 3,
+      "category": "match",
+      "relius_template": {
+        "section_number": "1.69",
+        "section_title": "Qualified Matching Contribution",
+        "provision_text": "'Qualified Matching Contribution' (QMAC) means any Employer matching contributions that are made pursuant to Sections 12.1(a)(2) (if elected in the Adoption Agreement), 12.5 and 12.7 or pursuant to any other Plan provision which provides for such contributions."
+      },
+      "ascensus_template": {
+        "section_number": "ACP TEST SAFE HARBOR MATCHING CONTRIBUTIONS",
+        "section_title": "ACP TEST SAFE HARBOR MATCHING CONTRIBUTIONS",
+        "provision_text": "Means Matching Contributions described in Plan Section 3.01(F) or Plan Section 3.03(B)."
+      },
+      "aa_elections_needed": [
+        "match_formula",
+        "match_percentage",
+        "compensation_cap"
+      ],
+      "merge_notes": "Substitute match formula (e.g., 100% of first 3% deferred)"
+    }
+  ]
+}
