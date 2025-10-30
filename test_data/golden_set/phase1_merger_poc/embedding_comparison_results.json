@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "model": "text-embedding-3-small",
+    "pairs": 2
+  },
+  "summary": {
+    "avg_bpd_similarity": 0.6668882002181946,
+    "avg_plan_provision_similarity": 0.7082334627092641,
+    "avg_improvement": 0.04134526249106951,
+    "avg_improvement_percent": 6.1997292016176075
+  },
+  "results": [
+    {
+      "category": "eligibility",
+      "bpd_only_similarity": 0.730131343180087,
+      "plan_provision_similarity": 0.7455695408499544,
+      "improvement": 0.015438197669867426,
+      "improvement_percent": 2.114441163781075
+    },
+    {
+      "category": "vesting",
+      "bpd_only_similarity": 0.6036450572563022,
+      "plan_provision_similarity": 0.670897384568574,
+      "improvement": 0.06725232731227171,
+      "improvement_percent": 11.141038347592563
+    }
+  ]
+}

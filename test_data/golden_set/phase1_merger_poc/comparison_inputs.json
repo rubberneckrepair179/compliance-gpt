@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "phase": "Phase 1.5 - Quantitative Comparison",
+    "comparison_pairs": 2,
+    "approach": "BPD-only vs Plan Provision (BPD+AA context)"
+  },
+  "pairs": [
+    {
+      "category": "eligibility",
+      "bpd_only": {
+        "relius_text": "An Eligible Employee shall be eligible to participate hereunder on the date such Employee has satisfied the conditions of eligibility, if any, elected in the Adoption Agreement. The Administrator may, on a uniform and consistent basis, apply Plan provisions relating to months based on a 30-day month.",
+        "ascensus_text": "Means the first day of the Plan Year and the first day of the seventh month of the Plan Year coinciding with or following the date the Employee satisfies the eligibility requirements of Plan Section 2.01 for the applicable contribution source, unless the Adopting Employer has specified different dates in the Adoption Agreement. If this is an initial adoption of the Plan by the Employer, the initial Effective Date will also be considered an Entry Date."
+      },
+      "plan_provision": {
+        "relius_text": "An Eligible Employee shall be eligible to participate hereunder on the date such Employee has satisfied the conditions of eligibility, if any, elected in the Adoption Agreement. The Administrator may, on a uniform and consistent basis, apply Plan provisions relating to months based on a 30-day month.\n\nRelated Election Forms:\n- ELIGIBLE EMPLOYEES\n- \n",
+        "ascensus_text": "Means the first day of the Plan Year and the first day of the seventh month of the Plan Year coinciding with or following the date the Employee satisfies the eligibility requirements of Plan Section 2.01 for the applicable contribution source, unless the Adopting Employer has specified different dates in the Adoption Agreement. If this is an initial adoption of the Plan by the Employer, the initial Effective Date will also be considered an Entry Date.\n\nRelated Election Forms:\n- Employers That Are Not Related Employers\n- \n"
+      }
+    },
+    {
+      "category": "vesting",
+      "bpd_only": {
+        "relius_text": "The Vested portion of any Participant's Account shall be a percentage of such Participant's Account determined on the basis of the Participant's number of Years of Service (or Periods of Service if the elapsed time method is elected) according to the vesting schedule specified in the Adoption Agreement. However, a Participant's entire interest in the Plan shall be non-forfeitable upon the Participant's Normal Retirement Age (if the Participant is employed by the Employer on or after such date).",
+        "ascensus_text": "B. Minimum Vesting Schedule for Top-Heavy Plans \u2013 The following vesting provisions apply for any Plan Year in which this Plan is a Top-Heavy Plan."
+      },
+      "plan_provision": {
+        "relius_text": "The Vested portion of any Participant's Account shall be a percentage of such Participant's Account determined on the basis of the Participant's number of Years of Service (or Periods of Service if the elapsed time method is elected) according to the vesting schedule specified in the Adoption Agreement. However, a Participant's entire interest in the Plan shall be non-forfeitable upon the Participant's Normal Retirement Age (if the Participant is employed by the Employer on or after such date).\n\nRelated Election Forms:\n- \n- NOTE: For 401(k) Plans - Option g. below can only be selected when eligibility for Elective Deferral purposes is six months of service or less and age is 20 1/2 or less. Options g.3. and g.4. may be selected when eligibility is 1 1/2 Years of Service or less and age is 20 1/2 or less and the Plan provides for 100% vesting.\n",
+        "ascensus_text": "B. Minimum Vesting Schedule for Top-Heavy Plans \u2013 The following vesting provisions apply for any Plan Year in which this Plan is a Top-Heavy Plan.\n\nRelated Election Forms:\n- NOTE\n- \n"
+      }
+    }
+  ]
+}
